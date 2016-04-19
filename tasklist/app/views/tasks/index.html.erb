@@ -1,0 +1,27 @@
+<h1 class="WHOOT">Lisa and Suzanne's Tasklist</h1>
+
+<% if @tasks %>
+  <section>
+    <table>
+      <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Completed Date</th>
+        <th>       </th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @tasks.each do |task| %>
+        <tr class="<%= task.completed_at == '' ? '' : 'completed' %>">
+          <td><%= link_to task.title, "/#{task.id}" %></td>
+          <td><%= task.description %></td>
+          <td><%= task.completed_at %></td>
+          <td class="edit_delete"><a href="/tasks/edit/<%= task.id %>">Edit/Delete</a></button></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </section>
+<% end %>
