@@ -1,3 +1,21 @@
+<% iteration_count = 0 %>
 <% @tasks.each do |task| %>
-	<%= task.name %><br>
-<%end%>
+	<% iteration_count += 1%>
+
+		<% if iteration_count % 2 == 0 %>
+
+			<li class="even-task">
+				<span class="task-title"><%= task.id %>. <%= task.name.capitalize %></span><br>
+				<span class="task-desc"><%= task.description %></span><br>
+	 			<span class="completion"><span class="bold-text">Completed On:</span> <%= task.completed_at %></span>
+			</li>
+			<% else %>
+
+			<li class="odd-task">
+				<span class="task-title"><%= task.id %>. <%= task.name.capitalize %></span><br>
+				<span class="task-desc"><%= task.description %></span><br>
+	 			<span class="completion"><span class="bold-text">Completed On:</span> <%= task.completed_at %></span>
+			</li>
+		<% end %>
+
+<% end %>
