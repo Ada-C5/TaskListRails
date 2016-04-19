@@ -1,0 +1,26 @@
+<h1>Task List</h1>
+
+
+<ul>
+  <%@tasklist.each do |task|%>
+<li>
+ <%= link_to task.title, "#{task.title}"%> <ul>
+   <li>
+     <%=task.description%>
+   </li>
+
+   <li>
+     <%=task.completed_at %>
+   </li>
+
+   <li>
+      <%=task.completion_status%>
+   </li>
+
+ </ul>
+</li>
+
+<%end%>
+</ul>
+
+<%= link_to "home", root_path%>
