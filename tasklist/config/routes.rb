@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   # display a specific task
   get '/tasks/:id' => 'tasks#show'
 
+  # make a new task!
+  get 'tasks/new' => 'tasks#new'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

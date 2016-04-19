@@ -6,7 +6,17 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
+  <header>
+
+    <h1>Tasks#index</h1>
+    <nav class="user-choice">
+      <%= link_to "Add Task", "/tasks/new", class: "link" %>
+
+    </nav>
+  </header>
+
 
 <%= yield %>
 

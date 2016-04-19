@@ -7,4 +7,8 @@ class TasksController < ApplicationController
     @tasks = Task.where(id: params[:id])
   end
 
+  def new
+    #nothing?
+  end
+
 end
