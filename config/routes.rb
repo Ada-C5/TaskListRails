@@ -53,4 +53,23 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  root 'tasks#home'
+
+  get '/tasks' => "tasks#index"
+  # display all tasks
+
+	get '/tasks/new' => "tasks#create"
+  # return html form to create new task
+
+	post '/tasks/new' => "tasks#create"
+  # create a new task
+
+  get '/task/:id' => "tasks#show"
+  # display one specific task
+
+  # get '/tasks/:id/edit' => "tasks#edit"
+  # return html form to edit a task
+
+  # delete /tasks/:id
+
 end
