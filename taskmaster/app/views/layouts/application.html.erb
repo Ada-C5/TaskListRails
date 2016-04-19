@@ -9,6 +9,10 @@
 <body>
 
 <%= yield %>
+<div class ="bottom">
+<p class= 'bottom'><%= link_to "All to-dos", root_path %></p>
+<p class= "bottom"><%= link_to "Add a task", "/tasks/new"%></p>
+</div>
 
 </body>
 </html>
