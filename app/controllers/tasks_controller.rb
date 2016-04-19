@@ -9,7 +9,7 @@ class TasksController < ApplicationController
     @task = Task.where(id: params[:id]).first
   end
 
-  def destroy
-    Task.where(id: params[:id]).destroy_all
-  end
+  # def destroy
+  #   Task.where(id: params[:id]).destroy_all
+  # end
 end
