@@ -1,2 +1,17 @@
-<h1>Tasks#new</h1>
 <p>Find me in app/views/tasks/new.html.erb</p>
+
+<form action="" method="post" accept-charset="utf-8" class="task-entry">
+
+  <fieldset>
+    <legend>Add Task</legend>
+
+      <label>Task:<input type="text" name="tasks[title]" value=""></label>
+      <label>Description:<input type="text" name="tasks[description]" value=""></label>
+      <input type="hidden" name="tasks[added_at]" value="">
+      <input type="hidden" name="tasks[completed_at]" value="">
+      <input type="hidden" name="tasks[removed]" value="">
+      <input type="submit" value="" class="add-task">
+  </fieldset>
+
+
+</form>
