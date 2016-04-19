@@ -1,0 +1,17 @@
+<header>
+<h1>Travel Checklist</h1>
+</header>
+<main>
+	<table>
+    <tr>
+      <th><h2>Title</h2></th>
+      <th><h2>Description</h2></th>
+      <th><h2>Completed At</h2></th>
+    </tr>
+    <tr><% @task_list.each do |task| %></tr>
+    <td><p><%=link_to task.title, "/#{task.title}" %></p></td>
+    <td><p><%=task.description %></p></td>
+		<td><p><%=task.completed_at %></p></td>
+    <% end %>
+  </table>
+  </main>
