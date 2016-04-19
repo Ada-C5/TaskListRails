@@ -1,0 +1,30 @@
+<h1>Here is your task</h1>
+
+<table>
+	<tr>
+		<th>Task Name</th>
+		<th>Description</th>
+		<th>Completed</th>
+		<th>Edit</th>
+		<th>Delete</th>
+	</tr>
+
+	<tr>
+
+		<td><%= @task.name %> </td>
+		<td><%= @task.description %> </td>
+		<td><%= @task.completed_at %> </td>
+		
+
+		<td><form method="post" action="">
+     	<input type="hidden" name="" value="">
+     	<input type='submit' value='Update!'>
+ 		  </form>
+ 		</td>
+ 		<td><form method="post" action="">
+     	<input type="hidden" name="" value="">
+     	<input type='submit' value='Delete!'>
+ 		  </form>
+ 		</td>
+	</tr>
+</table>

@@ -1,0 +1,33 @@
+<h1> Here is a big list of tasks</h1>
+
+
+
+<table>
+	<tr>
+		<th>Task Name</th>
+		<th>Description</th>
+		<th>Completed</th>
+		<th>Edit</th>
+		<th>Delete</th>
+	</tr>
+	<% @tasks.each do |task|%>
+	<tr>
+
+		<td><%= link_to task.name, "/tasks/#{task.id}" %>: <%= task.description %> </td>
+		<td><%= task.description %> </td>
+		<td><%= task.completed_at %> </td>
+		
+
+		<td><form method="post" action="">
+     	<input type="hidden" name="" value="">
+     	<input type='submit' value='Update!'>
+ 		  </form>
+ 		</td>
+ 		<td><form method="post" action="">
+     	<input type="hidden" name="" value="">
+     	<input type='submit' value='Delete!'>
+ 		  </form>
+ 		</td>
+	</tr>
+	<% end %>
+</table>
