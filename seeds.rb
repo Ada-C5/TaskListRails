@@ -2,7 +2,7 @@ def random_time
   Time.at(rand * Time.now.to_i)
 end
 
-tasks = [
+RailsTaskList = [
   { name: "The First Task", description: "", completed_at: random_time },
   { name: "Go to Brunch", description: "" },
   { name: "Go to Lunch", description: "", completed_at: random_time },
@@ -15,6 +15,6 @@ tasks = [
   { name: "Nap.", description: "", completed_at: random_time }
 ]
 
-tasks.each do |task|
-  Task.create task
+RailsTaskList.each do |task|
+  RailsTaskList.create task
 end
