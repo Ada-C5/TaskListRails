@@ -1,6 +1,10 @@
-<h1 class="WHOOT">Lisa and Suzanne's Tasklist</h1>
+<header>
+  <a href="" class="add_button">Add a task!</a>
+</header>
+
 
 <% if @tasks %>
+<h1 class="WHOOT">Tasks</h1>
   <section>
     <table>
       <thead>
@@ -8,17 +12,17 @@
         <th>Title</th>
         <th>Description</th>
         <th>Completed Date</th>
-        <th>       </th>
+        <th></th>
       </tr>
       </thead>
 
       <tbody>
       <% @tasks.each do |task| %>
-        <tr class="<%= task.completed_at == '' ? '' : 'completed' %>">
+        <tr class="<%= 'completed' unless task.completed_at.nil? %>">
           <td><%= link_to task.title, "/#{task.id}" %></td>
           <td><%= task.description %></td>
           <td><%= task.completed_at %></td>
-          <td class="edit_delete"><a href="/tasks/edit/<%= task.id %>">Edit/Delete</a></button></td>
+          <td class="edit_delete"><a href="/tasks/<%= task.id %>/edit">Edit/Delete</a></button></td>
         </tr>
       <% end %>
       </tbody>
