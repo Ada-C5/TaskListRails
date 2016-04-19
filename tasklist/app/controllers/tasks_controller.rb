@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   def index #homepage
-    @tasks = Task.all
+    @all_tasks = Task.all
   end
 
   def add
