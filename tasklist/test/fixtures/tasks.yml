@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  task: MyString
+  priority: MyString
+  status: MyString
+  date_created: 2016-04-19 13:43:42
+  due_date: 2016-04-19 13:43:42
+  comments: MyString
+  date_completed: 2016-04-19 13:43:42
+
+two:
+  task: MyString
+  priority: MyString
+  status: MyString
+  date_created: 2016-04-19 13:43:42
+  due_date: 2016-04-19 13:43:42
+  comments: MyString
+  date_completed: 2016-04-19 13:43:42
