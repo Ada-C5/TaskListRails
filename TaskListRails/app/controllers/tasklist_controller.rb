@@ -1,0 +1,2 @@
+class TasklistController < ApplicationController
+end
