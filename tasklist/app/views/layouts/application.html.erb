@@ -7,8 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<%= link_to "Home", "/", class: "home" %>
+<%= link_to "Add a task", "/new", class: "add_button" %>
 
 <%= yield %>
 
+
+  <footer>
+    <span class="copyright">© 2016 lisa<span class="small-heart">❤︎</span>sano</span>
+    <%= link_to "Contact me!", "mailto:lisa.sano@gmail.com?Subject=Hey%20Lisa" %>
+  </footer>
 </body>
 </html>
