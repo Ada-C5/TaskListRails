@@ -15,11 +15,11 @@ class Task < ActiveRecord::Base
   end
 
   def self.uncompleted_tasks
-    Task.where.not(completed_at: nil)
+    Task.where(completed_at: nil)
   end
 
   def self.completed_tasks
-    Task.where(completed_at: nil)
+    Task.where.not(completed_at: nil)
   end
 
 end
