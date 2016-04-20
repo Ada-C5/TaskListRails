@@ -4,12 +4,15 @@
   <title>Travel Checklist</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+<div class="header-wrapper">
 <header>
-<%= image_tag "sailboat.png", alt: "airplane wing in the air with sunset" %>
+<%= image_tag "sailboat.png", alt: "sailboat in ocean during sunset" %>
 	</header>
+	</div>
 <body>
 
 <%= yield %>

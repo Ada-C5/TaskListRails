@@ -1,17 +1,25 @@
 <header>
 <h1>Travel Checklist</h1>
 </header>
-<main>
+<div class="container">
 	<table>
-    <tr>
+    <tr class="header-row">
+
       <th><h2>Title</h2></th>
       <th><h2>Description</h2></th>
-      <th><h2>Completed At</h2></th>
+      <th><h2>Mark Complete</h2></th>
+      <th><h2>Edit</h2></th>
+      <th><h2>Delete</h2></th>
+
     </tr>
-    <tr><% @task_list.each do |task| %></tr>
-    <td><p><%=link_to task.title, "/#{task.title}" %></p></td>
+    <tr class="table-row"><% @task_list.each do |task| %></tr>
+    <td><p class="link-background"><%=link_to task.title, "/#{task.title}", class: "links" %></p></td>
     <td><p><%=task.description %></p></td>
-		<td><p><%=task.completed_at %></p></td>
+    <td class="delete-edit"><p><i class="fa fa-square-o" aria-hidden="true"></i><%=task.completed_at %></p></td>
+    <td class="delete-edit"><i class="fa fa-pencil" aria-hidden="true"></i>
+    </td>
+    <td class="delete-edit"><i class="fa fa-trash" aria-hidden="true"></i></td>
     <% end %>
   </table>
-  </main>
+
+  </div>
