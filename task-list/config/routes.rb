@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
   get '/:title' => 'home#single_task'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
