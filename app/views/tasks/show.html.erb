@@ -21,10 +21,12 @@
      	<input type='submit' value='Update!'>
  		  </form>
  		</td>
- 		<td><form method="post" action="">
+ 		<td><%= button_to "Remove That", "/tasks/#{@task.id}", method: :delete %>
+ 		</td>
+ 		<!-- <td><form method="delete" action="">
      	<input type="hidden" name="" value="">
      	<input type='submit' value='Delete!'>
  		  </form>
- 		</td>
+ 		</td> -->
 	</tr>
 </table>

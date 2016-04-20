@@ -8,8 +8,12 @@ Rails.application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
     root 'tasks#index'
+
+     #get the form before you can fill it out   
+    get '/tasks/new' => 'tasks#new'
+    post '/tasks' => 'tasks#create', as: 'tasks'
+
     get 'tasks/:id' => 'tasks#show'
-    post '/tasks'  => 'tasks#create'
     # delete 'tasks/:id' => 'tasks#destroy'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
