@@ -6,7 +6,7 @@ class TasksController < ApplicationController
 	end
 
 	def show
-		@task = Task.where(id: params[:id])
+		@task = Task.find(params[:id])
 		render :detail_view
 	end
 
