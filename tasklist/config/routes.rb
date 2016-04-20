@@ -4,16 +4,20 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'tasks#index'
   get '/' => 'tasks#index'
   # also want /tasks to display a list of all tasks
-  get '/tasks' => 'tasks#index'
-  # display a specific task
+  # get '/tasks' => 'tasks#index' had to remove this to rake routes?
+  # form for new task entry
+  get '/tasks/new' => 'tasks#new'
+  post '/tasks' => 'tasks#create', as: 'tasks'
+
+  # display a specific task -- needs to go below or else the new doesn't work. stupid smart computer.
   get '/tasks/:id' => 'tasks#show'
 
-  # make a new task!
-  get 'tasks/new' => 'tasks#new'
-
+  # delete a specific photo
+  delete '/tasks/:id' => 'tasks#destroy'
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

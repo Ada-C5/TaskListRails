@@ -2,9 +2,12 @@
 
 <ul class="list-tasks">
 
+<%# loop through all tasks and display task titles %>
 <% @tasks.each do |task| %>
-  <li class="to-do task-tile">
+  <li class="task-tile">
     <%= link_to "#{task.title}", "/tasks/#{task.id}", class: "single-task"%>
+    <%= link_to "Delete", "/tasks/#{task.id}", method: :delete, data: { confirm: 'Are you certain you want to delete this?' } %>
+
   </li>
 
 <% end %>
