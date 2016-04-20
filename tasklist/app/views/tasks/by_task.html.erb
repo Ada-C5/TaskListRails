@@ -1,0 +1,42 @@
+<!-- <a href="/add">Add a new task</a>
+<a href="/priority/DESC">Sort by Priority</a>
+<a href="/status/DESC">Sort by Status</a>
+<a href="/due_date/ASC">Sort by Due Date</a> -->
+
+  <article>
+    <section>
+      <div class="floating <%= @task.status == 'Completed' ? 'completed' : '' %>">
+        <section class="card-head">
+          <strong> <h3><%= @task.task %></h3></strong>
+        </section>
+        <div>
+          <strong>Priority</strong> : <div class="<%= @task.priority %>"><%= @task.priority %></div>
+        </div>
+        <div>
+          <strong>Status</strong> : <%= @task.status %> <br/>
+        </div>
+        <div>
+          <strong>Date Created</strong> : <%= @task.date_created %> <br/>
+        </div>
+        <div>
+          <strong>Due Date</strong> : <%= @task.due_date %> <br/>
+        </div>
+        <div>
+          <strong>Comments</strong> : <%= @task.comments %> <br/>
+        </div>
+        <div>
+          <strong>Date Completed</strong> : <%= @task.date_completed %>
+        </div>
+        <section class="action-buttons">
+          <form action="/edit/<%= @task.id %>" method "get">
+            <input type="submit" value = "edit">
+            <!-- <input type="hidden" name= 'id' value="<%= @task.id%>"> -->
+          </form>
+          <form action="/delete" method="post">
+            <input type="submit" value="Delete" onclick="return confirm('Are you sure?')"/>
+            <input type="hidden" name="id" value="<%= @task.id %>"/>
+          </form>
+        </section>
+      </div>
+    </section>
+  </article>

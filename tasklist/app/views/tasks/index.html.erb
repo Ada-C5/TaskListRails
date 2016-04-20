@@ -9,7 +9,7 @@
     <section>
       <div class="floating <%= task.status == 'Completed' ? 'completed' : '' %>">
         <section class="card-head">
-          <strong> <h3><%= task.task %></h3></strong>
+          <strong> <h3 class="link"><%= link_to task.task, "/by_task/#{task.id}" %></h3></strong>
         </section>
         <div>
           <strong>Priority</strong> : <div class="<%= task.priority %>"><%= task.priority %></div>
@@ -29,14 +29,17 @@
         <div>
           <strong>Date Completed</strong> : <%= task.date_completed %>
         </div>
-        <section class="action-buttons">
-          <form action="/edit" method "get">
-            <input type="submit" value = "edit">
-            <input type="hidden" name= 'task_id' value="<%= task[0]%>">
-          </form>
+
+        <a href="/edit/<%= task.id %>" class="btn">Edit</a>
+
+        <!-- <section class="action-buttons">
+          <form action="/edit/<%= task.id %>" method "get">
+            <input type="submit" value = "edit"> -->
+            <!-- <input type="hidden" name= 'id' value="<%= task.id%>"> -->
+          <!-- </form> -->
           <form action="/delete" method="post">
-            <input type="submit" value="Delete" onclick="return confirm('Are you sure?')"/>
-            <input type="hidden" name="task_id" value="<%= task[0] %>"/>
+            <input class="btn" type="submit" value="Delete" onclick="return confirm('Are you sure?')"/>
+            <input type="hidden" name="id" value="<%= task.id %>"/>
           </form>
         </section>
       </div>

@@ -8,7 +8,13 @@ class TasksController < ApplicationController
   end
 
   def edit
+    @find_task = Task.where(id: params[:id]).first
+    # render :edit
+  end
 
+  def update
+
+    redirect_to action: "index"
   end
 
   def delete
@@ -16,7 +22,7 @@ class TasksController < ApplicationController
   end
 
   def by_task
-    @all_tasks = Task.where(task: params[:task])
-    render :index
+    @task = Task.where(id: params[:id]).first
+    # render :index
   end
 end

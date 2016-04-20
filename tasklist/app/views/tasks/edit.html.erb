@@ -1,0 +1,43 @@
+<section>
+  <div class="edit-floating">
+    <form action="/update" method="post" accept-charset="utf-8">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <div class ="item-task">
+        <input type="hidden" name="task_id" value="<%= @find_task.id %>"/>
+        <label for="task">Task</label>
+        <input type="text" name="task" value="<%= @find_task.task %>" id="task"/>
+      </div>
+      <div class="item">
+        <label for="priority">Priority</label>
+        <fieldset>
+          <label class = "radio"><input type="radio" name="priority" value="urgent" <%= @find_task.priority == "urgent" ? "checked" : "" %>/>Urgent</label>
+          <label class = "radio"><input type="radio" name="priority" value="medium" <%= @find_task.priority == "medium" ? "checked" : "" %>/>Medium</label>
+          <label class = "radio"><input type="radio" name="priority" value="low" <%= @find_task.priority == "low" ? "checked" : "" %>/>Low</label>
+        </fieldset>
+      </div>
+      <div class="item">
+        <label for="status">Status</label>
+        <select name="status">
+          <option <%= @find_task.status == "Not Started" ? "selected" : "" %>>Not Started</option>
+          <option <%= @find_task.status == "In Progress" ? "selected" : "" %>>In Progress</option>
+          <option <%= @find_task.status == "Completed" ? "selected" : "" %>>Completed</option>
+        </select>
+      </div>
+      <div class="item">
+        <label for="due_date">Due Date</label>
+        <input type="text" name="due_date" value="<%= @find_task.due_date %>" id="due_date"/>
+      </div>
+      <div class="item">
+        <label for="comments">Comments</label>
+        <input type="text" name="comments" value="<%= @find_task.comments %>" id="comments"/>
+      </div>
+        <input class="btn" type="submit" value="Edit Task">
+    </form>
+  </div>
+</form>
+</section>
+
+
+<!-- <div class="params">
+<#%= params %>
+</div> -->

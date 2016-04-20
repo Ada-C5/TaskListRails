@@ -189,6 +189,27 @@ footer {
   opacity: 0.3;
 }
 
+.link a:link {color: black;}
+.link a:visited {color: black;}
+.link a:hover {color: black;}
+.link a:active {color: black;}
+
+.btn {
+  padding: 7px 15px 0px 15px;
+  background: whitesmoke;
+  color: #FFF;
+  text-decoration: none;
+  border-radius: 5px;
+  color: black;
+  border: .5px solid;
+  font-size: 1.1rem;
+  font-family: fantasy;
+  margin: 1.5rem .5rem;
+}
+
+.btn:hover {
+  background-color: #ccc;
+}
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
