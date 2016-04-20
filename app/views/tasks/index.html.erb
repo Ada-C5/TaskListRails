@@ -4,18 +4,18 @@
   </div>
 </a>
 <section>
-  <div class = "column-title">
+  <span class = "column-title">
     <h2>Tasks to do:</h2>
-  </div>
+  </span>
 
   <%= render :partial => 'task', :object => @uncompleted_tasks %>
 
 </section>
 <section>
 
-  <div class = "column-title">
+  <span class = "column-title">
     <h2>Completed tasks:</h2>
-  </div>
+  </span>
 
   <%= render :partial => 'task', :object => @completed_tasks %>
 

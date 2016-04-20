@@ -89,7 +89,7 @@
    width: 2.5rem;
    margin: 2%;
    background-color: #ABB8C4;
-   background-image: url('/images/check.png');
+   background-image: url('/app/assets/images/check.png');
    opacity: 0.3;
    background-size: contain;
    border: .25rem solid #ABB8C4;
@@ -102,11 +102,11 @@
  .checkbox:hover {
    background-color: #E9E9E9;
    border: .25rem solid #E9E9E9;
-   background-image: url('/images/check.png');
+   background-image: url('/apps/assets/images/check.png');
    opacity: 0.6;}
 
  .completed .checkbox  {
-   background-image: url('/images/creepysmile.png');
+   background-image: url('/apps/assets/images/creepysmile.png');
    z-index: 1;
    opacity: .8;
    background-repeat: no-repeat;
@@ -161,6 +161,7 @@
  }
 
  .column-title{
+   display: inline-block;
    clear: both;
    width: 100%;
    text-align: center;
