@@ -16,7 +16,7 @@
 
 html {
   font-size: 14px;
-  height: 100%;
+  /*height: 100%;*/
   background: url(../assets/pen-paper-light.jpg) no-repeat center center fixed;
   background-size: cover;
 }
@@ -34,11 +34,8 @@ body {
   padding: 1rem 2rem;
   text-align: center;
   text-decoration: none;
-  display: block;
   font-size: 1.2rem;
   margin: 0.5rem;
-  cursor: pointer;
-  float: right;
   position: fixed;
   top: 0.5rem;
   right: 0.5rem;
@@ -48,15 +45,45 @@ body {
   font-family: 'Reenie Beanie', cursive;
   font-size: 3.3vw;
   text-shadow: 1px 1px 1px white;
-  position: fixed;
+  position: static;
   left: 45%;
-  top: 5%;
+  /*top: 5%;*/
 }
 
-section {
+h1 {
+  text-align: center;
+  margin-top: 5%;
+ }
+
+.single-task-title {
+  font-family: 'Reenie Beanie', cursive;
+  font-variant: small-caps;
+  font-size: 5rem;
+}
+
+.one-view-all {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.one-view-all h2 {
+  margin-top: 8rem;
+}
+
+.one-view-all p {
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 3rem;
+}
+
+a {
+  text-decoration: none;
+  color: #231c82;
+}
+
+section.table {
   font-size: 1.5rem;
   text-align: center;
-  height: 65%;
+  height: 63%;
   width: 57%;
   position: fixed;
   overflow-y: scroll;
