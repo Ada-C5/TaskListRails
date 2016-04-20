@@ -4,7 +4,7 @@
 
 <% @tasks.each do |task| %>
   <li class="to-do task-tile">
-    <%= link_to "#{task.title}", "/tasks/#{task.id}", class: ""%>
+    <%= link_to "#{task.title}", "/tasks/#{task.id}", class: "single-task"%>
   </li>
 
 <% end %>

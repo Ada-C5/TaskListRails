@@ -93,3 +93,15 @@ a:hover {
   border-width: thick;
   border-style: solid;
 }
+
+.single-task {
+display:inline-block;
+max-width: 10rem;
+max-height: 10rem;
+word-wrap: break-word;
+/*wrap the link so it doesn't overflow - need to play with elipse more*/
+/*white-space: nowrap;*/
+overflow:hidden;
+text-overflow: ellipsis;
+}
+}
