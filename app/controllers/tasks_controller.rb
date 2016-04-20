@@ -2,8 +2,8 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task::all_tasks
-    @completed_tasks = @tasks.where(completed_at: nil)
-    @uncompleted_tasks = @tasks.where.not(completed_at: nil)
+    @completed_tasks = Task::completed_tasks
+    @uncompleted_tasks = Task::uncompleted_tasks
 
   end
 

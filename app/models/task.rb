@@ -13,4 +13,13 @@ class Task < ActiveRecord::Base
   def status
      self.completed_at != nil ? STATUS[:is_complete] : STATUS[:not_complete]
   end
+
+  def self.uncompleted_tasks
+    Task.where.not(completed_at: nil)
+  end
+
+  def self.completed_tasks
+    Task.where(completed_at: nil)
+  end
+
 end
