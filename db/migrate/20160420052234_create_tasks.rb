@@ -6,6 +6,7 @@ class CreateTasks < ActiveRecord::Migration
     	t.string :priority
     	t.string :completed_at
 
+
       t.timestamps null: false
     end
   end

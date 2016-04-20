@@ -8,6 +8,7 @@
 				<span class="task-title"><%= task.id %>. <%= task.name.capitalize %></span><br>
 				<span class="task-desc"><%= task.description %></span><br>
 	 			<span class="completion"><span class="bold-text">Completed On:</span> <%= task.completed_at %></span>
+	 			<span class="detail-view"><%= link_to "Show detail view", "/#{task.id}" %>
 			</li>
 			<% else %>
 
