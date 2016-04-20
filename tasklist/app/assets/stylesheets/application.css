@@ -27,18 +27,30 @@ body {
   height: 100%;
 }
 
-.add_button {
-  background-color: #2073e2;
+.add_button, .home {
   border: none;
+  border-radius: 12px;
+  bottom: 0.5rem;
   color: white;
-  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-variant: small-caps;
   text-align: center;
   text-decoration: none;
-  font-size: 1.2rem;
   margin: 0.5rem;
   position: fixed;
-  top: 0.5rem;
+  z-index: 2;
+}
+
+.add_button {
+  background-color: rgba(153,0,153,0.6);
   right: 0.5rem;
+  padding: 1rem 2rem;
+}
+
+.home {
+  background-color: rgba(0,0,0,0.3);
+  left: 0.5rem;
+  padding: 1rem 3rem;
 }
 
 .WHOOT {
@@ -124,9 +136,11 @@ th {
 }
 
 .edit_delete {
-  font-size: 20px;
+  font-size: 1rem;
   display: inline-block; /*the Edit/Delete link will never have strikethrough*/
   text-decoration: none;
+  font-variant: small-caps;
+  font-family: Arial;
 }
 
 ::-webkit-scrollbar {
@@ -147,8 +161,7 @@ th {
 }
 
 
-
-form {
+/*form {
   text-align: center;
 }
 
@@ -184,11 +197,34 @@ textarea, input {
   margin-top: 1rem;
   margin-bottom: 4rem;
   cursor: pointer;
-}
+}*/
+
+/***********FOOTER**********/
 
 
-.add_task {
+footer {
+  position: absolute;
+  padding-top: 3rem;
+  bottom: 0;
+  left: 0;
+  width: 97%;
+  height: 30px;
   text-align: center;
-  margin-top: 5%;
+  font-size: 1rem;
+  clear: both;
 }
+
+span.copyright {
+  padding-right: 2rem;
+  letter-spacing: 0.1rem;
+}
+
+span.small-heart {
+  font-size: 0.4rem;
+}
+
+footer a {
+  color: #005266;
+}
+
 
