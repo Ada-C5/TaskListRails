@@ -58,8 +58,6 @@ p {
 }
 
 a {
-  width: 10rem;
-  height: 10rem;
   display: block;
   text-decoration: none;
   font-size: 2rem;
@@ -95,15 +93,15 @@ a:hover {
   border-color: #f2b632;
   border-width: thick;
   border-style: solid;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .single-task {
-display:inline-block;
-max-width: 10rem;
 max-height: 10rem;
-word-wrap: break-word;
-/*wrap the link so it doesn't overflow - need to play with elipse more*/
-/*white-space: nowrap;*/
+white-space: nowrap;
 overflow:hidden;
 text-overflow: ellipsis;
 }
