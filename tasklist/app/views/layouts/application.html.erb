@@ -2,13 +2,13 @@
 <html>
 <head>
   <title>Tasklist</title>
-  <%= stylesheet_link_tag    'application', 'https://fonts.googleapis.com/css?family=Reenie+Beanie',  media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', 'https://fonts.googleapis.com/css?family=Give+You+Glory',  media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <%= link_to "Home", "/", class: "home" %>
-<%= link_to "Add a task", "/new", class: "add_button" %>
+<%= link_to "Add a task", "/tasks/new", class: "add_button" %>
 
 <%= yield %>
 
