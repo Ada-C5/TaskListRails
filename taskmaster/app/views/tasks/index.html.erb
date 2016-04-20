@@ -1,12 +1,14 @@
 <h1> Get these things done, you slacker!</h1>
 
-<!-- <ul> -->
+<div class= "container">
+  <% @tasks = @tasks.all.order(:completed) %>
   <% @tasks.each do |task| %>
-  <div>
-    <!-- <li> -->
-      <%= link_to task.name, "/#{task.name}"%>: <%= task.description %>
-
-    <!-- </li> -->
+  <div class = "task <%= task.completed.nil? ? 'completed' : 'notdone' %>">
+      <span><%= link_to task.name, "/show/#{task.id}"%><br></span>
+       <%= task.description %><br>
+       <% if !task.completed.nil? %>
+          Completed: <%= task.completed %>
+       <% end %>
   </div>
     <% end %>
-<!-- </ul> -->
+</div>

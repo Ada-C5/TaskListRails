@@ -4,19 +4,27 @@ class TasksController < ApplicationController
     @tasks = Task.all
   end
 
+  def show
+    @tasks = Task.where(id: params[:id])
+    render :show
+  end
+
   def by_name
     @tasks = Task.where(name: params[:name])
     render :index
   end
 
   def new
-    @new_task = Task.new
-
+    @task = Task.new
   end
 
   def create
-    Task.create(name: params[:task][:name], description: params[:task][:description])
-    redirect_to "/"
+    @task = Task.new(task_create_params[:task])
+    if @task.save
+      redirect_to root_path  #ensures that they user can't repost the form
+    else
+      render :new
+    end
   end
 
   def update
@@ -24,6 +32,13 @@ class TasksController < ApplicationController
 
   def delete
   end
+
+  private
+
+  def task_create_params
+    params.permit(task: [:name, :description])
+  end
+
 
 
 end

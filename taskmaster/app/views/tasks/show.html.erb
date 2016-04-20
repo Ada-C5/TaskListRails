@@ -1,0 +1,12 @@
+<h1>GET TO WORK!</h1>
+
+
+  <% @tasks.each do |task| %>
+  <div class = "task show <%= task.completed.nil? ? 'completed' : 'notdone' %>">
+      <span><%= link_to task.name, "/tasks/#{task.id}"%><br></span>
+       <%= task.description %><br>
+       <% if !task.completed.nil? %>
+          Completed: <%= task.completed %>
+       <% end %>
+  </div>
+    <% end %>

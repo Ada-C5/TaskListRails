@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   root "tasks#index"
 
   get "/tasks/new" => "tasks#new"
-  get "/:name" => "tasks#by_name"
-  post "/task" => "tasks#create"
+  post "/tasks" => "tasks#create" , as: 'tasks'
+  get "/show/:id" => 'tasks#show'
+  # get "/:name" => "tasks#by_name"
+  # get "/tasks/:id" => "tasks#show"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

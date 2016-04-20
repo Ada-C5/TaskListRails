@@ -13,13 +13,21 @@
 //   // padding: 20px;
 // }
 
+
 body {
   text-align: center;
   font-family: fantasy;
   margin: 3rem auto;
-  width: 80%;
+  width: 90%;
   background: linear-gradient(to bottom, rgba(181,189,200,1) 0%,rgba(130,140,149,1) 25%,rgba(40,52,59,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   min-height:800px;
+}
+
+div.container {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 p.bottom {
@@ -33,4 +41,65 @@ div.bottom {
   width: 50%;
   margin-left: auto;
   margin-right: auto;
+  background-color: purple ;
+  color:gray;
+}
+
+div.task {
+  border: 2px black solid;
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 20px;
+  // margin-left: 5%;
+  box-shadow: 5px 5px 2px rgb(59, 59, 58);
+  max-width: 30%;
+}
+
+div.completed {
+  background-color: rgb(111, 131, 244);
+}
+
+div.notdone {
+  background-color: rgb(179, 209, 237);
+}
+
+a:visited,  a:link{
+  color:navy;
+}
+
+a:hover{
+  color:navy;
+  font-style: italic;
+  text-shadow: rgb(134, 159, 191);
+}
+
+.task span{
+  font-size: 1.5rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+div.task.show {
+  min-height: 200px;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 2rem;
+  padding-left: 3rem;
+}
+
+input {
+  font-size: 1.2rem;
+  padding: .2rem;
+}
+
+.button {
+background-color: rgb(111, 131, 244);
+color:white;
 }
