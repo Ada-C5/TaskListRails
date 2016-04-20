@@ -75,10 +75,13 @@ a:hover {
   list-style: none;
   padding: 0;
   display: flex;
-  /*display newest additions first!*/
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.task-details {
+  list-style: none;
 }
 
 .task-tile {
@@ -103,5 +106,4 @@ word-wrap: break-word;
 /*white-space: nowrap;*/
 overflow:hidden;
 text-overflow: ellipsis;
-}
 }
