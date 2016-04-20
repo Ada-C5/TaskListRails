@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
   root 'home#index'
-  get '/:title' => 'home#single_task'
-
+  get '/:title' => 'home#single_task', :constraints => { :title => /[^\/]+/ }
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
