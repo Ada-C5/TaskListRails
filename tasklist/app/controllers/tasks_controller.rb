@@ -4,7 +4,6 @@ class TasksController < ApplicationController
   end
 
   def by_task
-    @tasks = Task.where(id: params[:id])
-    render :index
+    @task = Task.where(id: params[:id]).first
   end
 end
