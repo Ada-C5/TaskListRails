@@ -1,23 +1,27 @@
 <p>Find me in app/views/tasks/show.html.erb</p>
 
-<ul>
+<ul class="list-tasks">
 
-<% @tasks.each do |task| %>
-  <li>
-    Title: <%= task.title%>
-    <ul>
+<%# display details (when NOT NIL) about the single task we are showing (based on ID) %>
+  <li class="task-tile">
+    <%= "Title:  #{@single_task.title}" unless @single_task.title.nil? %>
+
+<%# make the details list manaully BUT may want to turn this into an array or hash for looping incase we require more details down the road. For now, three is quick! %>
+
+    <ul class="task-details">
+
       <li>
-        Description: <%= task.description%>
+        <%= "Description:  #{@single_task.description}" unless @single_task.description.empty? %>
       </li>
+
       <li>
-        Added at: <%= task.added_at%>
+        <%= "Added at:  #{@single_task.added_at}" unless @single_task.added_at.nil? %>
       </li>
+
       <li>
-        Completed at: <%= task.completed_at%>
+        <%= "Completed at:  #{@single_task.completed_at}" unless @single_task.completed_at.nil? %>
       </li>
     </ul>
   </li>
-
-<% end %>
 
 </ul>
