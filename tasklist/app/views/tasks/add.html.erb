@@ -1,6 +1,7 @@
 <section class="add-center">
   <div class="add-floating">
-    <form action="/add" method="post" accept-charset="utf-8">
+    <form action="/create" method="post" accept-charset="utf-8">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
       <div class ="item-task">
         <label class="add-task" for="task">Task</label>
         <input type="text" name="task" value="" id="task"/>
@@ -21,9 +22,7 @@
         <label for="comments">Comments</label>
         <input type="text" name="comments" value="" id="comments"/>
       </div>
-      <form action="/add" method "post">
         <input type="submit" value="Add Task">
-      </form>
     </form>
   </div>
 </section>

@@ -3,7 +3,7 @@
     <form action="/update" method="post" accept-charset="utf-8">
       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
       <div class ="item-task">
-        <input type="hidden" name="task_id" value="<%= @find_task.id %>"/>
+        <input type="hidden" name="id" value="<%= @find_task.id %>"/>
         <label for="task">Task</label>
         <input type="text" name="task" value="<%= @find_task.task %>" id="task"/>
       </div>
