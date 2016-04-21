@@ -10,7 +10,7 @@
       <div class="floating <%= task.status == 'Completed' ? 'completed' : '' %>">
         <!-- <%= image_tag "checkmark.png", alt: "Checkbox to mark task completed", class: "checkmark" %> -->
         <section class="card-head">
-          <strong> <h3 class="link"><%= link_to task.task, "/by_task/#{task.id}" %></h3></strong>
+          <strong> <h3 class="link"><%= link_to task.task, task_path(task.id) %></h3></strong>
         </section>
         <div>
           <strong>Priority</strong> : <div class="<%= task.priority %>"><%= task.priority %></div>
@@ -40,7 +40,7 @@
             <!-- <input type="hidden" name= 'id' value="<%= task.id%>"> -->
           <!-- </form> -->
 
-          <%= form_tag('/delete/'+task.id.to_s, method: "delete", data: {confirm: "Are you sure?"}) do %>
+          <%= form_tag(task_path(task.id), method: "delete", data: {confirm: "Are you sure?"}) do %>
             <%= submit_tag "Delete", class: "btn"  %>
           <% end %>
 

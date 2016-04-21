@@ -36,15 +36,15 @@ class TasksController < ApplicationController
     redirect_to action: "index"
   end
 
-  def delete
+  def destroy
     task = Task.find(params[:id]).destroy
 
     redirect_to action: "index"
   end
 
-  def by_task
-    @task = Task.where(id: params[:id]).first
-    # render :index
+  def show
+    @task = Task.find(params[:id])
+    # render :show
   end
 end
 
