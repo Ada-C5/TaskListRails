@@ -1,0 +1,45 @@
+
+
+<h1>Tasks List</h1>
+
+<%= link_to '/tasks/new', class: 'btn btn-success' do %>
+<i class="glyphicon glyphicon-plus"></i> add Task
+<% end %>
+
+
+
+ <!-- The classes that can be used are: .active, .success, .info, .warning, and .danger           -->
+ <div class="container">
+   <table class="table table-striped" class="table table-hover">
+     <thead>
+       <tr>
+         <th class="headings" colspan=7>TASK LIST </tr>
+       </tr>
+       <tr class="headings">
+         <th></th>
+         <th>No.</th>
+         <th>Task Name</th>
+         <th>Description</th>
+         <th>Status</th>
+         <th>Complete By</th>
+         <th>Created</td>
+         <th>Delete</td>
+       </tr>
+     </thead>
+     <tbody>
+       <% index = 1 %>
+       <% @tasks.each do |task| %>
+       <tr class="row">
+         <td><%= index %></td>
+         <td><%= link_to task.name, "/#{task.id}" %></td>
+         <td><%= task.description %></td>
+         <td><%= task.completion_status %></td>
+         <td><%= task.completed_at %></td>
+         <td><%= task.created_at%></td>
+         <td>delete</td>
+         <% index += 1 %>
+       </tr>
+      <% end %>
+     </tbody>
+   </table>
+ </div>
