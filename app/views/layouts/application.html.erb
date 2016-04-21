@@ -15,9 +15,9 @@
 
 <nav>
 <ul>
-  <li><%= link_to 'home', '/', class: "nav-links" %></li>
+  <li><%= link_to 'home', root_path, class: "nav-links" %></li>
   <span>|</span>
-  <li><%= link_to 'add a new task', 'tasks/new', class: "nav-links" %></li>
+  <li><%= link_to 'add a new task', '/tasks/new', class: "nav-links" %></li>
   <span>|</span>
   <li><%= link_to 'completed tasks', '/completed', class: "nav-links" %></li>
 </ul>
