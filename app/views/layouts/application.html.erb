@@ -11,6 +11,17 @@
 <div class="header-wrapper">
 <header>
 <%= image_tag "sailboat.png", alt: "sailboat in ocean during sunset" %>
+<h1>Travel Checklist</h1>
+
+<nav>
+<ul>
+  <li><%= link_to 'home', '/', class: "nav-links" %></li>
+  <span>|</span>
+  <li><%= link_to 'add a new task', 'tasks/new', class: "nav-links" %></li>
+  <span>|</span>
+  <li><%= link_to 'completed tasks', '/completed', class: "nav-links" %></li>
+</ul>
+</nav>
 	</header>
 	</div>
 <body>

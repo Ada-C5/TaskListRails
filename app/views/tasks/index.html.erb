@@ -1,25 +1,22 @@
 <header>
-<h1>Travel Checklist</h1>
 </header>
-<div class="container">
 	<table>
     <tr class="header-row">
 
-      <th><h2>Title</h2></th>
-      <th><h2>Description</h2></th>
-      <th><h2>Mark Complete</h2></th>
-      <th><h2>Edit</h2></th>
-      <th><h2>Delete</h2></th>
+      <th><h3>Title</h3></th>
+      <th><h3>Description</h3></th>
+      <th><h3>Complete</h3></th>
+      <th><h3>Edit</h3></th>
+      <th><h3>Delete</h3></th>
 
     </tr>
     <tr class="table-row"><% @task_list.each do |task| %></tr>
-    <td><p class="link-background"><%=link_to task.title, "/#{task.title}", class: "links" %></p></td>
+    <td><p><%=link_to task.title, "/#{task.title}", class: "links" %></p></td>
     <td><p><%=task.description %></p></td>
-    <td class="delete-edit"><p><i class="fa fa-square-o" aria-hidden="true"></i><%=task.completed_at %></p></td>
-    <td class="delete-edit"><i class="fa fa-pencil" aria-hidden="true"></i>
+    <td class="completed"><p><i class="fa fa-check-square-o" aria-hidden="true"></i><%=task.completed_at %></p></td>
+    <td class="edit"><i class="fa fa-pencil" aria-hidden="true"></i>
     </td>
-    <td class="delete-edit"><i class="fa fa-trash" aria-hidden="true"></i></td>
+    <td class="delete"><i class="fa fa-trash" aria-hidden="true"></i></td>
     <% end %>
   </table>
 
-  </div>

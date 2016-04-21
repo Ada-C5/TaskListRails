@@ -7,4 +7,19 @@ class TasksController < ApplicationController
 		@task_list = Task.where(title: params[:title])
 		render :index
 	end
+
+	def new
+		@task = Task.new
+	end
+
+	def create
+		@task = Task.create(task_create_params[:task])
+		redirect_to '/'
+	end
+
+	private
+
+	def task_create_params
+		params.permit(task: [:title, :description])
+	end
 end
