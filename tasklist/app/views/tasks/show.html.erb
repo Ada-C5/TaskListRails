@@ -1,18 +1,12 @@
-<p>Find me in app/views/tasks/show.html.erb</p>
+<h2><%= "Title:  #{@single_task.title}" unless @single_task.title.nil? %></h2>
+<p>
+<%= link_to "EDIT", edit_path(@single_task.id) %></p>
 
 <ul class="list-tasks">
   <div class="task-tile detailed">
 <%# display details (when NOT NIL) about the single task we are showing (based on ID) %>
-  <li>
-    <%= "Title:  #{@single_task.title}" unless @single_task.title.nil? %></li>
-
-  <li>
-    <%= link_to "EDIT", edit_path(@single_task.id) %>
-  </li>
 
 <%# make the details list manaully BUT may want to turn this into an array or hash for looping incase we require more details down the road. For now, three is quick! %>
-
-    <ul class="task-details">
 
       <li>
         <%= "Description:  #{@single_task.description}" unless @single_task.description.empty? %>
@@ -27,4 +21,3 @@
       </li>
     </ul>
   </div>
-</ul>
