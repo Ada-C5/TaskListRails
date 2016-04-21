@@ -10,11 +10,15 @@ Rails.application.routes.draw do
 
 
   root 'tasks#index'
+
   get '/edit/:id' => 'tasks#edit'
-  get '/by_task/:id' => 'tasks#by_task'
-  get '/add' => 'tasks#add'
   post '/update' => 'tasks#update'
-  post '/create' => 'tasks#create'
+
+  get '/by_task/:id' => 'tasks#by_task'
+
+  get '/add' => 'tasks#add'
+  post '/create' => 'tasks#create', as :tasks
+
   post '/delete' => 'tasks#delete'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

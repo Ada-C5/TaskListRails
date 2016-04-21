@@ -7,6 +7,8 @@ class TasksController < ApplicationController
 
   def add
     @task = Task.new
+
+    render :add
   end
 
   def create
