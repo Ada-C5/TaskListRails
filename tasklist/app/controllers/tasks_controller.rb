@@ -25,19 +25,16 @@ class TasksController < ApplicationController
 
   def edit
     @single_task = Task.find(params[:id])
-
-    render :new
-
   end
 
-  # update a specific task (to complete per wave 2)
+  # update a specific task (both for complete and generic edit)
   def update
     @single_task = Task.update(params[:id], task_edit_params[:task])
 
     if @single_task.save
       redirect_to root_path
     else
-      render :new # not sure what this will render - would like to change
+      render :edit
     end
 
   end
