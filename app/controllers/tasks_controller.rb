@@ -1,7 +1,5 @@
 class TasksController < ApplicationController
   def index
-    #hooking up the db
-    # @albums = Album.order(artist: :asc)
     @tasks = Task.order(id: :desc)
   end
 
@@ -24,12 +22,14 @@ class TasksController < ApplicationController
 
   end
 
-  # def destroy
-  #   Task.where(id: params[:id]).destroy_all
-  # end
+  def destroy
+    @task = Task.where(id: params[:id])
+    @task.destroy_all
+    redirect_to root_path
+  end
 
     private
-#tells us what parameters we want to use when we create an album
+  #tells us what parameters we want to use when we create an album
   def task_create_params
     params.permit(task: [:name, :description])
   end
