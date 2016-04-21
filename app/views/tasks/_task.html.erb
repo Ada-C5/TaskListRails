@@ -21,9 +21,11 @@
     </a>
 
     <div class = "task-edits">
-      <a href='/create-task/<%= task.id %>'><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> <%#ADD NUMBER SPECIFICTY in iteration%>
+      <%= link_to "/tasks/#{task.id}/edit" do %>
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+      <% end %>
       <%= button_to "/tasks/#{task.id}", class: "task-edits-buttons", method: :delete do %>
-        <i class="fa fa-trash" aria-hidden="true"></i></a> <%#ADD NUMBER SPECIFICTY in iteration%>
+        <i class="fa fa-trash" aria-hidden="true"></i>
       <% end %>
     </div>
   </div>
