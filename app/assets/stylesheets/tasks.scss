@@ -7,7 +7,7 @@
 
 body {
   font-size: 16px;
-  font-family: 'Calibri', Arial, sans-serif;
+  font-family: 'Times New Roman', serif;
 }
 
 header {
@@ -22,6 +22,7 @@ h1 {
 }
 
 h2 {
+  font-size: 2rem;
   text-align: center;
 }
 
@@ -73,8 +74,24 @@ form {
 
 /***** SHOW TASK *****/
 
-.info_item {
-  margin-top: 0.25rem;
+.task_info {
+  padding: 0;
+  list-style-type: none;
+}
+
+.task_info li {
+  width: 30%;
+  background-color: pink;
+  padding: 1rem;
+  margin: 1rem auto;
+  border-radius: 15%;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.task_info h3 {
+  margin: 0.25rem;
+  font-family: 'Coming Soon', cursive;
   font-weight: bold;
   font-size: 1.5rem;
 }
