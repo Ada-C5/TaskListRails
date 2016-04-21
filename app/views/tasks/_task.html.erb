@@ -1,3 +1,6 @@
+
+<%= params %>
+
 <% task ||= @tasks %>
 <% task.each do |task|%>
   <% @status = task.status %>
@@ -18,8 +21,10 @@
     </a>
 
     <div class = "task-edits">
-      <a href='/create-task/<%=task.id%>'><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> <%#ADD NUMBER SPECIFICTY in iteration%>
-      <a href='/delete-task/<%=task.id%>'><i class="fa fa-trash" aria-hidden="true"></i></a> <%#ADD NUMBER SPECIFICTY in iteration%>
+      <a href='/create-task/<%= task.id %>'><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> <%#ADD NUMBER SPECIFICTY in iteration%>
+      <%= button_to "/tasks/#{task.id}", class: "task-edits-buttons", method: :delete do %>
+        <i class="fa fa-trash" aria-hidden="true"></i></a> <%#ADD NUMBER SPECIFICTY in iteration%>
+      <% end %>
     </div>
   </div>
 
