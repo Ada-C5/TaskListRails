@@ -6,7 +6,7 @@ class TasksController < ApplicationController
   end
 
   def add
-
+    @task = Task.new
   end
 
   def create
@@ -32,7 +32,7 @@ class TasksController < ApplicationController
 
   def delete
     task = Task.find(params[:id]).destroy
-    
+
     redirect_to action: "index"
   end
 
