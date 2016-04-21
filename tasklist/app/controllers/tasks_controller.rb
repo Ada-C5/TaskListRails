@@ -8,13 +8,17 @@ class TasksController < ApplicationController
   def add
     @task = Task.new
 
-    render :add
+    render "add"
   end
 
   def create
-    task = Task.create(task: params[:task], priority: params[:priority], status: params[:status], due_date: params[:due_date], comments: params[:comments], date_completed: params[:date_completed])
+    @task = Task.new(task: params[:task], priority: params[:priority], status: params[:status], due_date: params[:due_date], comments: params[:comments], date_completed: params[:date_completed])
 
-    redirect_to action: "index"
+    if @task.save
+      redirect_to root_path
+    else
+      redirect_to action: "index"
+    end
   end
 
   def edit
