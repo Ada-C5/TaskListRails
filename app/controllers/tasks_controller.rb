@@ -2,7 +2,6 @@ class TasksController < ApplicationController
   def home
     # display all tasks
     @page_title = "Task List"
-    @show_all = ::Task.all
   end
 
   def index
@@ -11,25 +10,37 @@ class TasksController < ApplicationController
     @show_all = ::Task.all
   end
 
-  def create
+  def new
     # show form to create new task
-		@page_title = "New Task"
-    @new_task_title = params[:title]
-    @new_task_description = params[:description]
-    if @new_task_title
-      redirect_to '/'
-    end
+    @task = Task.new
+  end
+
+  def create
+    @task = Task.new(task_new_params[:task])
+      if @task.save
+        redirect_to root_path
+      else
+        render :index
+      end
   end
 
   def show
     # look up a task
-    @lookup = ::Task.where(title: params[:title]).first
+    @lookup = ::Task.find_by title: params[:title]
   end
 
-  # def show
-  # @album = Album.find(params[:id])
-  # end
+  def edit
+  end
 
+  def update
+  end
+
+  def destroy
+  end
+
+  def task_new_params
+  params.permit(task: [:title, :description])
+end
 end
 
 

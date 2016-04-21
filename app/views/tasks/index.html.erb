@@ -8,8 +8,10 @@
       <h1>show all
 
         <%@show_all.each do |entry| %>
-          <%= link_to entry.title, "/task/#{entry.title}" %>: <%= entry.title %>
+          <%= link_to entry.title, "/task/#{entry.title}" %>: <%= entry.title %><br>
         <%end%>
+
+        <%=params%>
 
         </h1>
 

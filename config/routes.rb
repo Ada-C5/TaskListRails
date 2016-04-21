@@ -58,16 +58,20 @@ Rails.application.routes.draw do
   get '/tasks' => "tasks#index"
   # display all tasks
 
-	get '/tasks/new' => "tasks#create"
+  get 'tasks/new' => 'tasks#new'
   # return html form to create new task
 
-	post '/tasks/new' => "tasks#create"
+  post '/tasks' => "tasks#create"
   # create a new task
 
-  get '/task/:title' => "tasks#show"
+  get '/tasks/:title' => "tasks#show"
   # display one specific task
 
-  post '/task/:title' => "tasks#show"
+  get '/tasks/:title/edit' => "tasks#edit"
+
+  put '/tasks/:title' => "tasks#update"
+
+  delete 'tasks/:title' => "tasks#destroy"
 
   # get '/tasks/:id/edit' => "tasks#edit"
   # return html form to edit a task

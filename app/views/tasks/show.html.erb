@@ -6,29 +6,11 @@
   Complete? <%= %>
 
   <%else%>
-  <%= form_for @lookup do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+  <%= form_tag("/task/:title") do %>
+    <%= text_field_tag :title %>
 
-    <%= f.label :description %>
-    <%= f.text_field :description %>
+    <%= text_field_tag :description %>
 
-    <%= f.submit %>
+    <%= submit_tag "Find" %>
   <% end %>
 <%end%>
-
-<!-- <fieldset>
-  <legend></legend>
-  <form action="/task/:title" method="post" accept-charset="utf-8">
-    <h3>Task:</h3>
-    <label for="title"></label>
-    <input class="input_area" type="text" name="title" value="" id="title">
-
-    <h3>Description:</h3>
-    <label for="description"></label>
-    <input class="input_area" type="text" name="description" value="" id="description">
-
-    <br>
-    <input id= "add" class="button" type="submit" value="Find">
-  </form>
-</fieldset> -->
