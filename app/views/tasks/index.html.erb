@@ -19,7 +19,7 @@
 		<td><%= task.completed_at %> </td>
 		
 
-		<td><%= button_to "Edit", "/tasks/#{task.id}", :method => :delete %>
+		<td><%= button_to "Edit", "/tasks/#{task.id}/edit", :method => :edit %>
  		</td>
  		<td><%= button_to "Delete", "/tasks/#{task.id}", :method => :delete,  data: { confirm: "Are you sure?" } %>
  		</td>

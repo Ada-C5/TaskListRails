@@ -13,13 +13,11 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_create_params[:task])
-
     if @task.save
       redirect_to root_path
     else
     render :new
     end
-
   end
 
   def destroy
@@ -28,7 +26,12 @@ class TasksController < ApplicationController
     redirect_to root_path
   end
 
-    private
+  def edit
+    @task = Task.where(id: params[:id])
+
+  end
+
+  private
   #tells us what parameters we want to use when we create an album
   def task_create_params
     params.permit(task: [:name, :description])
