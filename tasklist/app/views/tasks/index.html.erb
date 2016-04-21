@@ -31,7 +31,7 @@
           <strong>Date Completed</strong> : <%= task.date_completed %>
         </div>
 
-        <%= button_to "Edit", "/edit/#{task.id}", :class => "btn", :method => :get %>
+        <%= button_to "Edit", "/task/#{task.id}/edit", :class => "btn", :method => :get %>
 
         <!-- <a href="/edit/<%= task.id %>" class="btn">Edit</a> -->
         <!-- Instead of a button, added a ahref above <section class="action-buttons">

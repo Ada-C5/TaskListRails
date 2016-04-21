@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
 
   root 'tasks#index'
-  get '/edit/:id' => 'tasks#edit'
+  get '/task/:id/edit' => 'tasks#edit'
 
   get '/by_task/:id' => 'tasks#by_task'
 
