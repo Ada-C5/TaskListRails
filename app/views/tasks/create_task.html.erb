@@ -1,0 +1,20 @@
+
+<!-- params is a hash. Its keys are each of the "name" fields below. -->
+
+<%= form_for @task do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %><br>
+
+  <%= f.label :completed_at %>
+  <%= f.text_field :completed_at %><br>
+
+  <%= f.label :priority %>
+  <%= f.text_field :priority %><br>
+
+  <%= f.submit %>
+
+<% end %>

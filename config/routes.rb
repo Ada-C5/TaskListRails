@@ -11,12 +11,13 @@ Rails.application.routes.draw do
   # set root routing
   root 'tasks#index'
 
-  # individual task management routes
-  get '/:id' => 'tasks#show'
-
-  # group task management routes
-
-
+  get  '/tasks' => 'tasks#index', as: 'tasks' # display a list of all tasks
+  get '/tasks/new' => 'tasks#new'  # return an HTML form for creating a new task
+  post  '/tasks' => 'tasks#create' # create a new task
+  get '/tasks/:id' => 'tasks#show' # display a specific task
+  get '/tasks/:id/edit' => 'tasks#edit' # return an HTML form for editing a task
+  put '/tasks/:id' => 'tasks#update' # update a specific task
+  delete  '/tasks/:id' => 'tasks#destroy'  # delete a specific task
 
 
 
