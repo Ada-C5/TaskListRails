@@ -64,8 +64,10 @@ Rails.application.routes.draw do
 	post '/tasks/new' => "tasks#create"
   # create a new task
 
-  get '/task/:id' => "tasks#show"
+  get '/task/:title' => "tasks#show"
   # display one specific task
+
+  post '/task/:title' => "tasks#show"
 
   # get '/tasks/:id/edit' => "tasks#edit"
   # return html form to edit a task

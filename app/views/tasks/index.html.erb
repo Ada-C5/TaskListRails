@@ -6,10 +6,14 @@
       <li>Description</li>
       <li>Date Added</li>
       <h1>show all
+
         <%@show_all.each do |entry| %>
-          <%=entry.title%><br>
+          <%= link_to entry.title, "/task/#{entry.title}" %>: <%= entry.title %>
         <%end%>
+
         </h1>
+
+</ul>
     </ul>
   </div>
 </div>

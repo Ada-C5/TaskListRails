@@ -14,11 +14,21 @@ class TasksController < ApplicationController
   def create
     # show form to create new task
 		@page_title = "New Task"
+    @new_task_title = params[:title]
+    @new_task_description = params[:description]
+    if @new_task_title
+      redirect_to '/'
+    end
   end
 
   def show
     # look up a task
+    @lookup = ::Task.where(title: params[:title]).first
   end
+
+  # def show
+  # @album = Album.find(params[:id])
+  # end
 
 end
 
