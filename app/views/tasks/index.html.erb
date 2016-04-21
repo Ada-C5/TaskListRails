@@ -8,10 +8,9 @@
       <h1>show all
 
         <%@show_all.each do |entry| %>
-          <%= link_to entry.title, "/task/#{entry.title}" %>: <%= entry.title %><br>
+          <%= link_to entry.title, "/task/#{entry.title}" %>: <%= entry.title %>
+          <%= button_to "Delete task", delete_path(entry.id), method: :delete, data: {confirm: "Are you sure?"}%> <br>
         <%end%>
-
-        <%=params%>
 
         </h1>
 

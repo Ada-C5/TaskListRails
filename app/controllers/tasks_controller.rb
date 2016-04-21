@@ -16,18 +16,15 @@ class TasksController < ApplicationController
   end
 
   def create
+    # actually make & save a new task
     @task = Task.new(task_new_params[:task])
       if @task.save
-        redirect_to root_path
+        redirect_to :tasks_controller => 'index'
       else
-        render :index
+        render :new
       end
   end
 
-  def show
-    # look up a task
-    @lookup = ::Task.find_by title: params[:title]
-  end
 
   def edit
   end
@@ -36,11 +33,24 @@ class TasksController < ApplicationController
   end
 
   def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+
+    redirect_to tasks_path
   end
 
   def task_new_params
   params.permit(task: [:title, :description])
 end
+# def show
+#   # look up form for a task
+#   @lookup = Task.new
+# end
+#
+# def return
+#   #return requested task
+#   @lookup = ::Task.find_by title: params[:title]
+# end
 end
 
 

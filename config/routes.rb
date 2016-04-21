@@ -55,7 +55,7 @@ Rails.application.routes.draw do
   #   end
   root 'tasks#home'
 
-  get '/tasks' => "tasks#index"
+  get '/tasks' => "tasks#index" 
   # display all tasks
 
   get 'tasks/new' => 'tasks#new'
@@ -64,18 +64,17 @@ Rails.application.routes.draw do
   post '/tasks' => "tasks#create"
   # create a new task
 
-  get '/tasks/:title' => "tasks#show"
-  # display one specific task
+  get '/tasks/:id/edit' => "tasks#edit"
 
-  get '/tasks/:title/edit' => "tasks#edit"
+  put '/tasks/:id' => "tasks#update"
 
-  put '/tasks/:title' => "tasks#update"
-
-  delete 'tasks/:title' => "tasks#destroy"
+  delete 'tasks/:id' => "tasks#destroy", as: "delete"
 
   # get '/tasks/:id/edit' => "tasks#edit"
   # return html form to edit a task
 
   # delete /tasks/:id
+  # get '/tasks/show' => "tasks#show"
+  # # return html form to find a task
 
 end
