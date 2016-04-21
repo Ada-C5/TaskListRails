@@ -1,23 +1,30 @@
 <section class="add-center">
   <div class="add-floating">
 
-    <%= form_for @task do |f| %>
+    <%= form_for @task, :html => {:class => "item-task"} do |f| %>
       <%= f.label :task %>
-      <%= f.text_field :task %>
+      <%= f.text_field :task %><br />
 
-      <%= f.label :priority %>
+      <%= f.label :priority, :class => 'add-task' %>
       <%= f.radio_button :priority, 'urgent' %>
+      <%= label :priority, 'urgent' %>
       <%= f.radio_button :priority, 'medium' %>
+      <%= label :priority, 'medium' %>
       <%= f.radio_button :priority, 'low' %>
+      <%= label :priority, 'low' %> <br />
 
       <%= f.label :due_date %>
-      <%= f.text_field :due_date %>
+      <%= f.text_field :due_date %> <br />
 
       <%= f.label :comments %>
-      <%= f.text_field :comments%>
+      <%= f.text_field :comments%> <br />
 
-      <%=f.submit %>
+      <%=f.submit 'Add Task', :class => 'btn'%>
     <% end %>
+  </div>
+</section>
+
+
 
     <!-- <form action="/create" method="post" accept-charset="utf-8">
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
@@ -43,6 +50,3 @@
 </div>
 <input type="submit" value="Add Task">
 </form> -->
-
-  </div>
-</section>
