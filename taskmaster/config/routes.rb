@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "/tasks/new" => "tasks#new"
   post "/tasks" => "tasks#create" , as: 'tasks'
   get "/show/:id" => 'tasks#show'
+  delete "/tasks/:id" => 'tasks#delete', as: 'delete'
   # get "/:name" => "tasks#by_name"
   # get "/tasks/:id" => "tasks#show"
 

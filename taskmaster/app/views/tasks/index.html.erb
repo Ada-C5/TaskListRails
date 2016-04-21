@@ -3,12 +3,18 @@
 <div class= "container">
   <% @tasks = @tasks.all.order(:completed) %>
   <% @tasks.each do |task| %>
+
   <div class = "task <%= task.completed.nil? ? 'completed' : 'notdone' %>">
+    <% if !task.completed.nil? %>
+    <%= image_tag "check2.png" %>
+    <% end %>
       <span><%= link_to task.name, "/show/#{task.id}"%><br></span>
        <%= task.description %><br>
        <% if !task.completed.nil? %>
           Completed: <%= task.completed %>
        <% end %>
+       <%= button_to "Delete Task", "/tasks/#{task.id}",
+           method: :delete , :data => {:confirm => 'Are you sure?'}%>
   </div>
     <% end %>
 </div>

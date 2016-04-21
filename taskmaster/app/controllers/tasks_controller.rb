@@ -31,6 +31,10 @@ class TasksController < ApplicationController
   end
 
   def delete
+    @task = Task.where(id: params[:id])
+    @task.first.destroy
+    redirect_to root_path
+
   end
 
   private

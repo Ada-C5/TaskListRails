@@ -52,7 +52,7 @@ div.task {
   margin-bottom: 20px;
   // margin-left: 5%;
   box-shadow: 5px 5px 2px rgb(59, 59, 58);
-  max-width: 30%;
+  width: 25%;
 }
 
 div.completed {
@@ -94,12 +94,20 @@ label {
   padding-left: 3rem;
 }
 
-input {
+input , textarea{
   font-size: 1.2rem;
   padding: .2rem;
 }
+div.label {
+  vertical-align: text-top;
+}
+
 
 .button {
 background-color: rgb(111, 131, 244);
 color:white;
+}
+
+input.desc {
+  height: 5rem;
 }
