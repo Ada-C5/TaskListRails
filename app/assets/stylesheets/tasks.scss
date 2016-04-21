@@ -111,20 +111,12 @@ button {
 
 /********** ADD/EDIT FORM **********/
 
-.task-add {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-
-fieldset {
-	display: flex;
+.new_task {
 	background-color: #e6ccff;
 	border: 5px double #cc99ff;
 	max-width: 80%;
 	width: auto;
-	
+	margin: 0 auto;
 }
 
 .go-back {
