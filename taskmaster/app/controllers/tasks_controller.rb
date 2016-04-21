@@ -27,7 +27,18 @@ class TasksController < ApplicationController
     end
   end
 
+  def edit
+    @task = Task.find(params[:id])
+    render :new
+  end
+
   def update
+    @task = Task.find(params[:id])
+    # if !(params[task: [:completed]]).nil?
+    #   params[task: [:completed]] = Chronic.parse(params[task: [:completed]])
+    # end
+    @task.update(task_update_params[:task])
+    redirect_to root_path
   end
 
   def delete
@@ -40,7 +51,12 @@ class TasksController < ApplicationController
   private
 
   def task_create_params
-    params.permit(task: [:name, :description])
+    params.permit(task: [:name, :description, :priority])
+  end
+
+  def task_update_params
+
+    params.permit(task: [:name, :description, :priority, :completed])
   end
 
 

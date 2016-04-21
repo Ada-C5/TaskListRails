@@ -3,8 +3,11 @@
 
   <% @tasks.each do |task| %>
   <div class = "task show <%= task.completed.nil? ? 'completed' : 'notdone' %>">
-      <span><%= link_to task.name, "/tasks/#{task.id}"%><br></span>
-       <%= task.description %><br>
+      <span>Task:<%= task.name %><br></span>
+       Description:<%= task.description %><br>
+       <% if !task.priority.nil? %>
+          Priority: <%= task.priority %>
+       <% end %>
        <% if !task.completed.nil? %>
           Completed: <%= task.completed %>
        <% end %>

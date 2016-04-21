@@ -9,12 +9,15 @@
     <%= image_tag "check2.png" %>
     <% end %>
       <span><%= link_to task.name, "/show/#{task.id}"%><br></span>
-       <%= task.description %><br>
-       <% if !task.completed.nil? %>
+       <!-- <%= task.description %><br> -->
+       <!-- <%= task.priority %><br> -->
+       <!-- <% if !task.completed.nil? %>
           Completed: <%= task.completed %>
-       <% end %>
-       <%= button_to "Delete Task", "/tasks/#{task.id}",
+       <% end %> -->
+       <%= button_to "Delete", "/tasks/#{task.id}",
            method: :delete , :data => {:confirm => 'Are you sure?'}%>
+       <%= button_to "Edit", "/tasks/#{task.id}/edit",
+           method: :get, class: 'edit' %>
   </div>
     <% end %>
 </div>
