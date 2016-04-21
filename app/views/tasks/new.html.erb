@@ -1,0 +1,10 @@
+
+<%= form_for @task do |f| %>
+  <%= f.label :task do %>
+    <%= f.text_field :task, placeholder: "PUPPIES" %>
+    <%end%>
+    <%= f.label :description do %>
+      <%= f.text_area :description, placeholder: "Description" %>
+      <%end%>
+  <%= f.submit %>
+<% end %>

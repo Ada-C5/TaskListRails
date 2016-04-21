@@ -1,0 +1,7 @@
+<h1>Do: <%= @task.task %></h1>
+<div class = "description">
+  <h2><%= @task.description %></h2>
+  <p>
+    <%= (@task.completed != nil) ? "completed: #{@task.completed}" : "incomplete" %>
+  </p>
+</div>

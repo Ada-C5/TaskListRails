@@ -1,0 +1,22 @@
+<header>
+
+<h1 class = "title">Do This Shit:</h1>
+</header>
+
+<%= link_to "New Task", tasks_new_path %>
+
+<% @tasks.each do |task| %>
+  <div class = task-box>
+    <%= link_to task.task, "/tasks/#{task.id}" %>: <%= task.description %>
+    <% if task.completed == nil %>
+      <%= button_to "Mark Complete", "/tasks/complete/#{task.id}" %>
+      <!-- -->
+      <% else %>
+      <%= button_to "Mark Uncomplete", "/tasks/uncomplete/#{task.id}" %>
+    <%end%>
+    <div class = task-edits>
+      <%= link_to "Edit", "/tasks/edit/#{task.id}" %>
+      <%= button_to "Delete", "/tasks/delete/#{task.id}", method: :delete %>
+    </div>
+  </div>
+  <%end%>
