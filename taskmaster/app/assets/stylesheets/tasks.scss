@@ -65,17 +65,20 @@ div.notdone {
 
 a:visited,  a:link{
   color:navy;
+  text-decoration: none;
 }
 
 a:hover{
   color:navy;
   font-style: italic;
   text-shadow: rgb(134, 159, 191);
+  text-decoration: none;
 }
 
 .task span{
   font-size: 1.5rem;
 }
+
 
 h1 {
   font-size: 3rem;
@@ -113,4 +116,11 @@ color:white;
 
 input.desc {
   height: 5rem;
+}
+
+div.butts {
+  display: inline-block;
+}
+.button_to input:hover {
+  background-color: yellow;
 }

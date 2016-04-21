@@ -34,9 +34,6 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-    # if !(params[task: [:completed]]).nil?
-    #   params[task: [:completed]] = Chronic.parse(params[task: [:completed]])
-    # end
     @task.update(task_update_params[:task])
     redirect_to root_path
   end
@@ -55,10 +52,8 @@ class TasksController < ApplicationController
   end
 
   def task_update_params
-
     params.permit(task: [:name, :description, :priority, :completed])
   end
-
 
 
 end
