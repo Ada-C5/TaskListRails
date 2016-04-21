@@ -1,0 +1,13 @@
+<h2>oh wow cool A TASK</h2>
+
+<ul>
+<li><h3 class="info_item">Name:</h3> <%= @shown_task.name %></li>
+<li><h3 class="info_item">Description:</h3> <%= @shown_task.description %></li>
+<li><h3 class="info_item">Completed At:</h3>
+<% if @shown_task.completed_at == nil %>
+  Still Incomplete
+<% else %>
+  <%= @shown_task.completed_at %>
+<% end %>
+</li>
+</ul>

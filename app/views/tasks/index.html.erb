@@ -1,0 +1,17 @@
+<span class="add_link"><%= link_to " » Add New Task « ", tasks_new_path %></span>
+
+<ul class="tasklist">
+<% @all_tasks.each do |task|  %>
+  <li>
+    <%= link_to task.name, task_path(task.id) %><br>
+    <ul class="options">
+      <li class="complete">DONE!</li>
+      <li class="edit">Edit</li>
+      <li class="delete">
+        <%= link_to "Delete", delete_path(task.id), method: :delete,
+        data: { confirm: 'Are you sure you want to delete this task?' } %>
+      </li>
+    </ul>
+  </li>
+<% end %>
+</ul>
