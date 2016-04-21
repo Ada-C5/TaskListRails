@@ -1,0 +1,23 @@
+<%= params %>
+<section class="create-task">
+  <h2>Create New Task</h2>
+  <form action="<%= @edit_task ? "/#{@edit_task[0]}" : "/" %>" method="post">
+    <label>Title<input name="title" value="<%= @edit_task[1] if @edit_task %>" type="text" placeholder="Buy a dozen puppies" /></label>
+    <label>Description<textarea name="description" rows="10" cols="50" placeholder="An optional description of the task"><%= @edit_task[2] if @edit_task %></textarea></label>
+   <input type="submit" value="CREATE" />
+  </form>
+
+  <%= form_for @task do |f| %>
+    <%= f.label :title do %>
+      <%= f.text_field :title, placeholder: "Buy a dozen puppies"  %>
+    <% end %>
+
+    <%= f.label :description do %>
+      <%= f.text_area :description, placeholder: "An optional description of the task", rows: "10", cols: "50" %>
+    <% end %>
+
+    <%= f.submit %>
+  <% end %>
+
+
+</section>
