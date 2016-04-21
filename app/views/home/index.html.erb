@@ -1,0 +1,10 @@
+<h1>Here's a list of tasks!</h1>
+<ul>
+  <% @tasks.each do |task| %>
+    <li>
+      <%= link_to task.name, "/#{task.id}" %>
+    </li>
+  <%end%>
+</ul>
+
+<%= link_to "Home", root_path%>

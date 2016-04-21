@@ -1,0 +1,10 @@
+<h1>Here's your task!</h1>
+<ul>
+    <li><%= "Name: " + @task[0].name %></li>
+    <li><%= "Description: " + @task[0].description%>
+    </li>
+    <li><%= "Status: " + @task[0].description%></li>
+    <li>Completed at: <%= @task[0].completed_at%></li>
+</ul>
+
+<%= link_to "Home", root_path%>
