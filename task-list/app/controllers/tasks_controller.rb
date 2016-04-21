@@ -1,7 +1,11 @@
 class TasksController < ApplicationController
 
   def index
-    @all_tasks = Task.all
+    @all_tasks = Task.all.where('completed_at IS NULL')
+  end
+
+  def completed
+    @all_tasks = Task.all.where('completed_at IS NOT NULL')
   end
 
   def show
@@ -28,6 +32,13 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
+    redirect_to root_path
+  end
+
+  def update
+    @task = Task.find(params[:id])
+    @task.completed_at = Time.now
+    @task.save
     redirect_to root_path
   end
 
