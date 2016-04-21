@@ -38,8 +38,8 @@
             <!-- <input type="hidden" name= 'id' value="<%= task.id%>"> -->
           <!-- </form> -->
 
-          <%= form_tag('/delete/'+task.id.to_s, method: "delete") do %>
-            <%= submit_tag "Delete", class: "btn" %>
+          <%= form_tag('/delete/'+task.id.to_s, method: "delete", data: {confirm: "Are you sure?"}) do %>
+            <%= submit_tag "Delete", class: "btn"  %>
           <% end %>
 
         </section>
