@@ -73,7 +73,7 @@
  }
 
 
- .completed {
+ .complete {
    font-style: italic;
    background-color: rgb(50, 77, 100);
    background-color: rgba(50, 77, 100, .7);
@@ -105,7 +105,7 @@
    background-image: url('/apps/assets/images/check.png');
    opacity: 0.6;}
 
- .completed .checkbox  {
+ .complete .checkbox  {
    background-image: url('/apps/assets/images/creepysmile.png');
    z-index: 1;
    opacity: .8;
@@ -175,7 +175,7 @@
    text-align: center;
  }
 
- .completed:nth-child(2n+1)  {
+ .complete:nth-child(2n+1)  {
    float: right;
  }
 

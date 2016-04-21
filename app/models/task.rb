@@ -1,6 +1,6 @@
 class Task < ActiveRecord::Base
 
-  STATUS = {is_complete: ["uncomplete", "completed"], not_complete: ["completed", "uncompleted"]}
+  STATUS = {is_complete: ["uncomplete"], not_complete: ["complete"]}
 
   def self.all_tasks
     Task.all

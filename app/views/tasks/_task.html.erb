@@ -1,6 +1,4 @@
 
-<%= params %>
-
 <% task ||= @tasks %>
 <% task.each do |task|%>
   <% @status = task.status %>
@@ -16,9 +14,9 @@
       <%= task.completed_at %>
     </div>
 
-    <a href= '/<%= @status[1] %>/<%=task.id%>'>
+    <%= link_to "tasks/#{task.id}/#{@status[0]}", method: :patch do %>
       <div class = "checkbox"></div>
-    </a>
+    <% end %>
 
     <div class = "task-edits">
       <%= link_to "/tasks/#{task.id}/edit" do %>

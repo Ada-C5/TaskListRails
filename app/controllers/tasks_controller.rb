@@ -41,6 +41,18 @@ class TasksController < ApplicationController
     end
   end
 
+  def complete
+    @task = Task.find(params[:id])
+    @task.update(completed_at: DateTime.now)
+    redirect_to root_path
+  end
+
+  def uncomplete
+    @task = Task.find(params[:id])
+    @task.update(completed_at: nil)
+    redirect_to root_path
+  end
+
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
@@ -53,5 +65,6 @@ class TasksController < ApplicationController
     # at the key :title, but in the params hash it's not an array
     params.permit(task: [:title, :description])
   end
+
 
 end
