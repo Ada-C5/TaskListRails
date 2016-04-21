@@ -78,10 +78,6 @@ a:hover {
   justify-content: center;
 }
 
-/*.list-tasks .detailed {
-  flex-direction: column;
-}*/
-
 .task-tile {
   z-index: 0;
   width: 10rem;
@@ -99,6 +95,10 @@ a:hover {
   justify-content: center;
 }
 
+.list-tasks .detailed {
+  flex-direction: column;
+}
+
 .detailed {
   width: 50%;
   flex-direction: column;
@@ -107,7 +107,6 @@ a:hover {
 .task-details {
   list-style: none;
 }
-
 
 .single-task {
 max-height: 10rem;
