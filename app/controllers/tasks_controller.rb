@@ -5,11 +5,6 @@ class TasksController < ApplicationController
 		render :index
 	end
 
-	def show
-		@task = Task.find(params[:id])
-		render :detail_view
-	end
-
 	def new
 		@task = Task.new
 		render :create_task
@@ -20,14 +15,25 @@ class TasksController < ApplicationController
 		redirect_to index
 	end
 
-	def delete
+	def show
+		@task = Task.find(params[:id])
+		render :detail_view
 	end
 
 	def edit
 	end
 
-	  def task_create_params
+	def update
+	end
+
+	def destroy
+	end
+
+	private
+
+  def task_create_params
     params.permit(task: [:name, :description, :completed_at, :priority])
   end
 
 end
+
