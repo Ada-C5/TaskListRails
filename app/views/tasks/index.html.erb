@@ -10,6 +10,7 @@
 		<th>Completed</th>
 		<th>Edit</th>
 		<th>Delete</th>
+		<th>Completed</th>
 	</tr>
 	<% @tasks.each do |task|%>
 	<tr>
@@ -19,10 +20,18 @@
 		<td><%= task.completed_at %> </td>
 		
 
-		<td><%= button_to "Edit", "/tasks/#{task.id}/edit", :method => :edit %>
+		<td><%= button_to "Edit", "/tasks/#{task.id}/edit", :method => :get %>
  		</td>
  		<td><%= button_to "Delete", "/tasks/#{task.id}", :method => :delete,  data: { confirm: "Are you sure?" } %>
  		</td>
+
+
+ 		 <td><% if task.completed_at == nil %>
+      		<%= button_to "Completed", "/tasks/#{task.id}/completed", :method => :patch %>
+      		<% end %>
+ 		</td>
+
+
 	</tr>
 	<% end %>
 </table>

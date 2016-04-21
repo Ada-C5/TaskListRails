@@ -1,11 +1,15 @@
 <h1> Test!</h1>
-
+<pre><%= params %><pre>
 <%= @task %>
+<%= @task.class %>
 
-<%= form_for @task do |f| %>
+<%= form_for @task, method: :patch, url: task_update_path(@task)  do |f| %>
 	<%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, :placeholder => "#{@task.name}" %>
   	<%= f.label :description %>
   <%= f.text_field :description %>
   <%= f.submit %>
 <% end %>
+
+
+
