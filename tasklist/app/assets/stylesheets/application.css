@@ -10,9 +10,9 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require font-awesome
  *= require_tree .
  *= require_self
- *= require font-awesome
  */
 
 html {
@@ -29,30 +29,24 @@ body {
   height: 100%;
 }
 
-.add_button, .home {
+.fa-plus, .fa-home {
   border: none;
   border-radius: 12px;
   bottom: 0.5rem;
-  color: white;
-  font-size: 1.2rem;
-  font-variant: small-caps;
-  text-align: center;
-  text-decoration: none;
-  margin: 0.5rem;
+  color: rgb(153,0,153);
+  font-size: 4rem;
+  text-shadow: 2px 2px 5px #000;
+  margin: 1rem 2rem;
   position: fixed;
   z-index: 2;
 }
 
-.add_button {
-  background-color: rgba(153,0,153,0.6);
+.fa-plus {
   right: 0.5rem;
-  padding: 1rem 2rem;
 }
 
-.home {
-  background-color: rgba(0,0,0,0.3);
+.fa-home {
   left: 0.5rem;
-  padding: 1rem 3rem;
 }
 
 .WHOOT {
@@ -66,7 +60,7 @@ body {
 
 h1 {
   text-align: center;
-  margin-top: 5%;
+  margin-top: 6%;
  }
 
 h2 {
@@ -142,13 +136,13 @@ th {
 .completed {
   text-decoration: line-through;
 }
-
+/*
 .edit {
   font-family: Copperplate;
   font-size: 1.2rem;
   text-decoration: none;
   width: 5%;
-}
+}*/
 
 ::-webkit-scrollbar {
    -webkit-appearance: none;
@@ -195,8 +189,13 @@ label {
   color: #c00;
 }
 
-.delete-button {
-  width: 5%;
+.fa-pencil {
+  font-size: 1.3rem;
+}
+
+.fa-times-circle {
+  color: #c00;
+  font-size: 1.5rem;
 }
 
 

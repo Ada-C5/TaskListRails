@@ -4,8 +4,8 @@ class TasksController < ApplicationController
     @tasks = Task.order(title: :asc)
   end
 
-  def by_task
-    @task = Task.where(id: params[:id]).first
+  def show
+    @task = Task.find(params[:id])
   end
 
   def new
@@ -26,8 +26,6 @@ class TasksController < ApplicationController
   end
 
   def update
-    # @task = Task.where(id: params[:id])
-    # @task.update_all(tasks_create_params[:task])
     Task.update(params[:id], tasks_create_params[:task])
     redirect_to root_path
   end

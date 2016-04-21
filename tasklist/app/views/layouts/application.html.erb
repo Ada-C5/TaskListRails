@@ -6,9 +6,14 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
-<%= link_to "Home", "/", class: "home" %>
-<%= link_to "Add a task", "/tasks/new", class: "add_button" %>
+<%= link_to root_path do %>
+  <i class="fa fa-home"></i>
+<% end %>
+<%= link_to tasks_new_path do %>
+  <i class="fa fa-plus"></i>
+<% end %>
 
 <%= yield %>
 
