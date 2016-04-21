@@ -22,7 +22,7 @@
       <%= link_to "/tasks/#{task.id}/edit" do %>
         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
       <% end %>
-      <%= button_to "/tasks/#{task.id}", class: "task-edits-buttons", method: :delete do %>
+      <%= button_to "/tasks/#{task.id}", class: "task-edits-buttons", data: {confirm: "Are you sure you want to delete permanently?"}, method: :delete do %>
         <i class="fa fa-trash" aria-hidden="true"></i>
       <% end %>
     </div>
