@@ -178,7 +178,8 @@ form {
 input, textarea {
   font-family: "Give You Glory", cursive;
   font-size: 2rem;
-  margin-bottom: 2%;
+  margin-bottom: 1.5%;
+  text-align: center;
 }
 
 label {

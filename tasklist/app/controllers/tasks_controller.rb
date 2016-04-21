@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+
   def index
     @tasks = Task.order(title: :asc)
   end
@@ -18,6 +19,23 @@ class TasksController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @task = Task.where(id: params[:id]).first
+  end
+
+  def update
+    # @task = Task.where(id: params[:id])
+    # @task.update_all(tasks_create_params[:task])
+    Task.update(params[:id], tasks_create_params[:task])
+    redirect_to root_path
+  end
+
+  def delete
+    @task = Task.where(id: params[:id]).first
+    @task.destroy
+    redirect_to root_path
   end
 
   private
