@@ -8,6 +8,7 @@
     <% @all_tasks.each do |task| %>
     <section>
       <div class="floating <%= task.status == 'Completed' ? 'completed' : '' %>">
+        <!-- <%= image_tag "checkmark.png", alt: "Checkbox to mark task completed", class: "checkmark" %> -->
         <section class="card-head">
           <strong> <h3 class="link"><%= link_to task.task, "/by_task/#{task.id}" %></h3></strong>
         </section>
@@ -18,7 +19,7 @@
           <strong>Status</strong> : <%= task.status %> <br/>
         </div>
         <div>
-          <strong>Date Created</strong> : <%= task.date_created %> <br/>
+          <strong>Date Created</strong> : <%= task.created_at %> <br/>
         </div>
         <div>
           <strong>Due Date</strong> : <%= task.due_date %> <br/>

@@ -4,7 +4,7 @@
       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
       <div class ="item-task">
         <label class="add-task" for="task">Task</label>
-        <input type="text" name="task" value="" id="task"/>
+        <input type="text" name="task" value="" id="task" maxlength="16"/>
       </div>
       <div class="item">
         <label class="add-priority" for="priority">Priority</label>
@@ -20,7 +20,7 @@
       </div>
       <div class="item">
         <label for="comments">Comments</label>
-        <input type="text" name="comments" value="" id="comments"/>
+        <input type="text" name="comments" value="" id="comments" maxlength="105"/>
       </div>
         <input type="submit" value="Add Task">
     </form>

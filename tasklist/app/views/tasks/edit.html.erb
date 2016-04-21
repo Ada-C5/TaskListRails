@@ -5,7 +5,7 @@
       <div class ="item-task">
         <input type="hidden" name="id" value="<%= @find_task.id %>"/>
         <label for="task">Task</label>
-        <input type="text" name="task" value="<%= @find_task.task %>" id="task"/>
+        <input type="text" name="task" value="<%= @find_task.task %>" id="task" maxlength="16"/>
       </div>
       <div class="item">
         <label for="priority">Priority</label>
@@ -29,7 +29,7 @@
       </div>
       <div class="item">
         <label for="comments">Comments</label>
-        <input type="text" name="comments" value="<%= @find_task.comments %>" id="comments"/>
+        <input type="text" name="comments" value="<%= @find_task.comments %>" id="comments" maxlength="105"/>
       </div>
         <input class="btn" type="submit" value="Edit Task">
     </form>
