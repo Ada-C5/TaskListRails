@@ -4,14 +4,20 @@
 <ul>
   <%@tasklist.each do |task|%>
 <li>
- <%= link_to task.title, "#{task.title}"%> 
+ <%= link_to task.title, "tasklist/#{task.title}"%>
 </li>
 
+<li>
+  <%= link_to 'Delete', "tasklist/#{task.id}",
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+</li>
+<li>
+  <%= link_to "edit task", edit_tasklist_path(task.id)%>
+</li>
 <%end%>
 </ul>
+<%= link_to "Add new Task", tasklist_new_path%>
+
 
 <%= link_to "home", root_path%>
-
-<!-- t.string :title
-t.string :description
-t.string :completed_at -->
