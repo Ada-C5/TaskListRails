@@ -23,14 +23,16 @@ class TasksController < ApplicationController
 
   end
 
-  # update a specific task (to complete per wave 2)
-  def update
+  def edit
     @single_task = Task.find(params[:id])
 
-    @single_task.completed_at = DateTime.now
-    @single_task.complete = true
-    @single_task.updated_at = DateTime.now
-    # method or need a private method?
+    render :new
+
+  end
+
+  # update a specific task (to complete per wave 2)
+  def update
+    @single_task = Task.update(params[:id], task_edit_params[:task])
 
     if @single_task.save
       redirect_to root_path
@@ -50,6 +52,10 @@ class TasksController < ApplicationController
 
   def task_create_params
     params.permit(task: [:title, :description])
+  end
+
+  def task_edit_params
+    params.permit(task: [:title, :description, :completed_at, :complete, :updated_at])
   end
 
   # def task_destroy_params

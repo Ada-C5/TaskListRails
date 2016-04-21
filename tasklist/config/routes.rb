@@ -17,8 +17,11 @@ Rails.application.routes.draw do
   # display a specific task -- needs to go below or else the new doesn't work. stupid smart computer.
   get '/tasks/:id' => 'tasks#show', as: 'task'
 
-  # update a specific task by marking complete
-  put '/tasks/:id' => 'tasks#update'
+  # edit the fields of a specific task and update
+  get '/task/:id/edit' => 'tasks#edit', as: 'edit'
+
+  # update a specific task by marking complete. why does put not work?
+  patch '/tasks/:id' => 'tasks#update'
 
   # delete a specific photo
   delete '/tasks/:id' => 'tasks#destroy'

@@ -1,0 +1,18 @@
+<p>Find me in app/views/tasks/update.html.erb</p>
+
+<pre>
+  <%= params %>
+</pre>
+
+    <%= form_for @single_task do |f| %>
+    <!-- use the instance to give form_for all the information they need to know about tasks! -->
+      <%= field_set_tag 'Edit Task' do %>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+        <%= f.label :description %>
+        <%= f.text_field :description %>
+
+        <%= f.submit %>
+
+      <% end %>
+    <% end %>
