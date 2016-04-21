@@ -12,16 +12,18 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
 
 html {
-  font-size: 14px;
+  font-size: 12px;
   /*height: 100%;*/
   background: url(../assets/pen-paper-light.jpg) no-repeat center center fixed;
   background-size: cover;
 }
 
 body {
+  /*overflow: hidden;*/
   color: black;
   font-size: 1.5rem;
   height: 100%;
@@ -54,7 +56,7 @@ body {
 }
 
 .WHOOT {
-  font-family: 'Reenie Beanie', cursive;
+  font-family: "Give You Glory", cursive;
   font-size: 3.3vw;
   text-shadow: 1px 1px 1px white;
   position: static;
@@ -67,9 +69,13 @@ h1 {
   margin-top: 5%;
  }
 
+h2 {
+  font-family: Copperplate, sans-serif;
+}
+
 .single-task-title {
-  font-family: 'Reenie Beanie', cursive;
-  font-variant: small-caps;
+  font-family: "Give You Glory", cursive;
+  /*font-variant: small-caps;*/
   font-size: 5rem;
 }
 
@@ -83,7 +89,7 @@ h1 {
 }
 
 .one-view-all p {
-  font-family: 'Reenie Beanie', cursive;
+  font-family: "Give You Glory", cursive;
   font-size: 3rem;
 }
 
@@ -95,12 +101,12 @@ a {
 section.table {
   font-size: 1.5rem;
   text-align: center;
-  height: 63%;
-  width: 57%;
+  height: 57%;
+  width: 62%;
   position: fixed;
   overflow-y: scroll;
-  bottom: 15%;
-  left: 23%;
+  bottom: 16%;
+  left: 20%;
   margin: 0rem;
 }
 
@@ -109,6 +115,7 @@ table {
   border-spacing: 3rem 0.5rem;
   border-collapse: collapse;
   margin: 0rem auto;
+  table-layout: fixed;
 }
 
 table tr {
@@ -120,9 +127,10 @@ table tr:nth-child(even) {
 }
 
 td, th {
-  font-family: 'Reenie Beanie', cursive;
+  font-family: "Give You Glory", cursive;
+  font-size: 1.2rem;
   border-bottom: black;
-  width: 25%;
+  width: 31%;
   padding: 1rem;
 }
 
@@ -135,12 +143,11 @@ th {
   text-decoration: line-through;
 }
 
-.edit_delete {
-  font-size: 1rem;
-  display: inline-block; /*the Edit/Delete link will never have strikethrough*/
+.edit {
+  font-family: Copperplate;
+  font-size: 1.2rem;
   text-decoration: none;
-  font-variant: small-caps;
-  font-family: Arial;
+  width: 5%;
 }
 
 ::-webkit-scrollbar {
@@ -161,43 +168,36 @@ th {
 }
 
 
-/*form {
+form {
   text-align: center;
+  margin-top: 5%;
+  font-family: Copperplate;
+  font-size: 2.5rem;
 }
 
-button {
-  background-color: #fff;
-  border-radius: 8px;
-  border: none;
-  color: green;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 1rem;
-  cursor: pointer;
-}
-
-textarea, input {
-  font-family: 'Reenie Beanie', cursive;
+input, textarea {
+  font-family: "Give You Glory", cursive;
   font-size: 2rem;
+  margin-bottom: 2%;
+}
+
+label {
+  vertical-align: top;
+  display: block;
 }
 
 .alert {
-  background-color: #fff;
-  border-radius: 8px;
   border: none;
-  color: red;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin-top: 1rem;
-  margin-bottom: 4rem;
-  cursor: pointer;
-}*/
+  background-color: rgba(0,0,0,0);
+  font-size: 1.2rem;
+  padding: 0;
+  color: #c00;
+}
+
+.delete-button {
+  width: 5%;
+}
+
 
 /***********FOOTER**********/
 
