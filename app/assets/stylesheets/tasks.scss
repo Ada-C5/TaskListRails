@@ -8,6 +8,7 @@
 body {
   font-size: 16px;
   font-family: 'Times New Roman', serif;
+  margin: 0;
 }
 
 header {
@@ -50,7 +51,7 @@ form {
   list-style-type: none;
 }
 
-.tasklist > li {
+.incomplete {
   width: 30%;
   background-color: pink;
   padding: 1rem;
@@ -72,6 +73,22 @@ form {
   display: inline;
 }
 
+.options form {
+  margin: 0;
+  display: inline;
+}
+
+.complete {
+  width: 30%;
+  background-color: yellow;
+  padding: 1rem;
+  margin: 1rem auto;
+  border-radius: 15%;
+  font-family: 'Coming Soon', cursive;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
 /***** SHOW TASK *****/
 
 .task_info {
@@ -85,7 +102,6 @@ form {
   padding: 1rem;
   margin: 1rem auto;
   border-radius: 15%;
-  font-weight: bold;
   font-size: 1rem;
 }
 

@@ -28,19 +28,33 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-    
+
     redirect_to tasks_path
   end
+
+  def complete
+    @task = Task.find(params[:id])
+    @task.update(completed_at: Time.now)
+
+    redirect_to tasks_path
+  end
+
+  # def update
+  #   @task = Task.find(params[:id])
+  #   @task.update(task_update_params[:task])
+  #
+  #   redirect_to tasks_path
+  # end
 
   private
 
   def task_create_params
     params.permit(task: [:name, :description, :completed_at])
   end
-
-  ## do I need this? I'm deleting the whole task, no chance to touch individual params I think
-  # def task_delete_params
-  #   params_permit(task: [:name, :description, :completed_at])
+  #
+  # def task_update_params
+  #   params.permit(task: [:name, :description, :completed_at])
   # end
 
+  # do I need one for delete? I'm deleting the whole task, no chance to touch individual params I think
 end

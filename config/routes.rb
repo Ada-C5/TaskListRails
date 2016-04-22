@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get '/tasks/:id' => 'tasks#show', as: 'task'
 
+  put '/tasks/:id' => 'tasks#complete', as: 'complete'
+
   delete '/tasks/:id' => 'tasks#destroy', as: 'delete'
 
   # Example of regular route:
