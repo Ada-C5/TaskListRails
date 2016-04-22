@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'tasks#index'
 
+  #### TASKS ####
+
   get '/tasks' => 'tasks#index'
 
   get '/tasks/new' => 'tasks#new'
@@ -18,6 +20,10 @@ Rails.application.routes.draw do
   patch '/tasks/:id' => 'tasks#update'
 
   delete '/tasks/:id' => 'tasks#destroy'
+
+  #### PEOPLE ####
+
+  get '/people' => 'people#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
