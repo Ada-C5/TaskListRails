@@ -32,6 +32,13 @@ class TasksController < ApplicationController
     render :new
   end
 
+  def complete
+    @task = Task.find(params[:id])
+    @task.update(completed: Time.now)
+    redirect_to root_path
+  end
+
+
   def update
     @task = Task.find(params[:id])
     @task.update(task_update_params[:task])

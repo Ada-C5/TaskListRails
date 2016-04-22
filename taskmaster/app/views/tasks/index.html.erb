@@ -10,6 +10,11 @@
     <% end %>
       <span><%= link_to task.name, "/show/#{task.id}"%><br></span>
       <div class = "butts">
+
+        <%= link_to "/tasks/#{task.id}/complete", method: :patch, :action =>"complete" do %>
+        <i class="fa fa-check-square-o" aria-hidden="true"></i>
+
+        <% end %>
         <%= link_to "/tasks/#{task.id}/edit", method: :get, class: 'edit' do  %>
         <i class="fa fa-pencil" aria-hidden="true"></i>
         <% end %>

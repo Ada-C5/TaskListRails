@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get "/tasks/:id/edit" => "tasks#edit"
   patch '/tasks/:id/edit' => 'tasks#update', as: "task"
   delete "/tasks/:id" => 'tasks#delete', as: 'delete'
+  patch '/tasks/:id/complete' => 'tasks#complete'
   # get "/:name" => "tasks#by_name"
   # get "/tasks/:id" => "tasks#show"
 
