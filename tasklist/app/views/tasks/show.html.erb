@@ -13,6 +13,10 @@
       </li>
 
       <li>
+        <%= "Person:  #{Person.find(@single_task.person_id).name}"%>
+      </li>
+
+      <li>
         <%= "Added at:  #{@single_task.added_at}" unless @single_task.added_at.nil? %>
       </li>
 

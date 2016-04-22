@@ -23,6 +23,14 @@ tasks = [
   { title: "Nap.", description: "", completed_at: random_time }
 ]
 
-tasks.each do |task|
-  Task.create task
+people = [{name: "Sarah"}, {name: "Gil"}, {name: "Nemesh"}]
+
+
+people.each do |person| # associate each person with their own tasks (happens to be all the tasks)
+  new_person = Person.find_or_create_by(person)
+
+  tasks.each do |task|
+    new_task = Task.create task
+    new_person.tasks << new_task
+  end
 end
