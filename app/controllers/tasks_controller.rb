@@ -6,6 +6,7 @@ class TasksController < ApplicationController
 
   def new
     @task = Task.new #empty task
+    @all_people = Person.all
     render :task_editor
   end
 
@@ -63,7 +64,7 @@ class TasksController < ApplicationController
   private
 
   def task_create_params
-    params.permit(task: [:name, :description, :completed_at])
+    params.permit(task: [:name, :description, :completed_at, :person_id])
   end
 
   def task_update_params
