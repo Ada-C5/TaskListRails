@@ -11,12 +11,13 @@ class TasksController < ApplicationController
 
   def new
     @task = Task.new
+    @people = Person.by_name
   end
 
   def create
     @task = Task.new(tasks_create_params[:task])
     if @task.save
-      redirect_to root_path
+      redirect_to tasks_path
     else
       render :new
     end
@@ -24,23 +25,24 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.where(id: params[:id]).first
+    @people = Person.by_name
   end
 
   def update
     Task.update(params[:id], tasks_create_params[:task])
-    redirect_to root_path
+    redirect_to tasks_path
   end
 
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-    redirect_to root_path
+    redirect_to tasks_path
   end
 
   private
 
   def tasks_create_params
-    params.permit(task: [:title, :description, :completed_at])
+    params.permit(task: [:title, :description, :completed_at, :person_id])
   end
 
 
