@@ -18,8 +18,8 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(create_task_params[:task])
+    assign_person
     if @task.save
-      # redirect_to task_path(@task.id)
       redirect_to root_path
     else
       render '#'
@@ -33,6 +33,7 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
+    assign_person
     @task.update(create_task_params[:task])
     if @task.save
       redirect_to root_path
@@ -63,7 +64,11 @@ class TasksController < ApplicationController
   def create_task_params
     # I don't get the syntax for the next line, it looks like an array as the value
     # at the key :title, but in the params hash it's not an array
-    params.permit(task: [:title, :description])
+    params.permit(task: [:title, :description], person: [:person_id])
+  end
+
+  def assign_person
+    @task.person= Person.find(create_task_params[:person][:person_id]) if @task.person
   end
 
 
