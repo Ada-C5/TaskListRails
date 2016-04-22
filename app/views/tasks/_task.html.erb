@@ -8,6 +8,7 @@
       <%= link_to "/tasks/#{task.id}" do %>
         <h2 class="title"><%=task.title%></h2>
       <% end %>
+      <p><%= task.person.name if task.person %></p>
       <p class="description">
         <%= task.description %>
       </p>
