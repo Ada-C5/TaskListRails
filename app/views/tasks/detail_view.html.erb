@@ -4,3 +4,5 @@
 
 <p class="task-footer">Priority: <%= @task.priority %><br>
 	Completed at: <%= @task.completed_at %></p>
+
+<p> <%= link_to "Edit This Task?", task_path(@task.id) %></p>
