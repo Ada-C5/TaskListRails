@@ -3,7 +3,7 @@
 <% task.each do |task|%>
   <% @status = task.status %>
 
-  <div class = "<%= @status[0] %> task-box">
+  <div class = "<%= @status[1] %> task-box">
     <div class = "task-info">
       <%= link_to "/tasks/#{task.id}" do %>
         <h2 class="title"><%=task.title%></h2>
