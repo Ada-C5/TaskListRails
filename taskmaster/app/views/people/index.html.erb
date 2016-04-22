@@ -1,0 +1,10 @@
+<h1>These are the people in your taskmaster, in your taskmaster, in your taskmaster....</h1>
+<% @people = @people.all.order(:name) %>
+<ul>
+  <% @people.each do |person| %>
+  <li>
+    <span class="name"><%= link_to person.name , "/people/#{person.id}"%></span>
+    Tasks left: <%= person.tasks.where(completed: nil).count %>
+    </li>
+    <% end %>
+</ul>

@@ -14,6 +14,12 @@ Rails.application.routes.draw do
   patch '/tasks/:id/edit' => 'tasks#update', as: "task"
   delete "/tasks/:id" => 'tasks#delete', as: 'delete'
   patch '/tasks/:id/complete' => 'tasks#complete'
+
+  get "/people" => "people#index" , as: 'people'
+  get "/people/:id" => "people#show"
+
+
+
   # get "/:name" => "tasks#by_name"
   # get "/tasks/:id" => "tasks#show"
 
