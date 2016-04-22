@@ -29,6 +29,7 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.find(params[:id])
+    @all_people = Person.all
     render :task_editor
   end
 
@@ -66,7 +67,7 @@ class TasksController < ApplicationController
   end
 
   def task_update_params
-    params.permit(task: [:name, :description, :completed_at])
+    params.permit(task: [:name, :description, :completed_at, :person_id])
   end
 
   # do I need one for delete? I'm deleting the whole task, no chance to touch individual params I think
