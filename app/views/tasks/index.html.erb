@@ -8,6 +8,11 @@
     <li class="incomplete">
   <% end %>
       <%= link_to task.name, task_path(task.id) %><br>
+
+      <span class="person_name">
+        <%= @all_people.find(task.person_id).name %>
+      </span>
+
       <ul class="options">
         <% # so that the DONE! button only shows up if it's still incomplete %>
         <% if task.completed_at.nil? %>

@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   def index
     @all_tasks = Task.all
+    @all_people = Person.all
   end
 
   def new
