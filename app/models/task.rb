@@ -1,5 +1,7 @@
 class Task < ActiveRecord::Base
 
+  belongs_to :person
+
   STATUS = {is_complete: ["uncomplete"], not_complete: ["complete"]}
 
   def self.all_tasks

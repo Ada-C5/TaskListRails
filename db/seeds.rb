@@ -24,13 +24,13 @@ end
 
 tasks = [
   { title: "The First Task", description: "", completed_at: random_time },
-  { title: "Go to Brunch", description: "" },
+  { title: "Go to Brunch", description: "", person_id: 1 },
   { title: "Go to Lunch", description: "", completed_at: random_time },
   { title: "Go to Second Lunch", description: "" },
-  { title: "Play Video Games", description: "", completed_at: random_time },
+  { title: "Play Video Games", description: "", completed_at: random_time, person_id: 1 },
   { title: "High Five Somebody You Don't Know", description: "", completed_at: random_time },
   { title: "Plant Flowers", description: "", completed_at: random_time },
-  { title: "Call Mom", description: "" },
+  { title: "Call Mom", description: "", person_id: 2 },
   { title: "She worries, you know.", description: "" },
   { title: "Nap.", description: "", completed_at: random_time }
 ]
@@ -39,4 +39,15 @@ tasks.each do |task|
   Task.create task
 end
 
+people = [
+  { name: "Yokes" },
+  { name: "Marla" },
+  { name: "Apes" }
+]
+
+people.each do |person|
+  Person.create person
+end
+
 puts "There are now #{Task.count} tasks in the DB"
+puts "There are now #{Person.count} people in the DB"
