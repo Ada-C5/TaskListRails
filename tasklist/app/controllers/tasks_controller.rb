@@ -27,7 +27,7 @@ class TasksController < ApplicationController
     end 
   end 
 
-  def delete
+  def destroy
     Task.destroy(params[:id])
     if params[:id] = true 
       redirect_to root_path

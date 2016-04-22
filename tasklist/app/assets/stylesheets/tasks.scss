@@ -1,7 +1,5 @@
-// Place all the styles related to the tasks controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-@import url(http://fonts.googleapis.com/css?family=Oswald:400,300);
+
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,300);
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -52,7 +50,7 @@ table {
   border-spacing: 0;
 }
 
-// Begin CSS Styling
+// Begin CSS Styling that is not reset template
 
 
 .top-bar {
@@ -63,9 +61,6 @@ table {
   width: 100%;
 }
 
-.top-bar ul {
-  list-style: none;
-}
 
 .top-bar ul li {
   display: inline;
@@ -86,8 +81,8 @@ table {
 }
 
 .task-container {
-  background-color: rgba(244,244,244,.7);
-  border-radius: 15px;
+  background-color: rgba(255,255,255,.7);
+  border-radius: 5px;
   color:#4D434F;
   display: -webkit-flex;
   display: flex;
@@ -98,7 +93,7 @@ table {
   margin-bottom: 1%;
   overflow: auto;
   padding: 2%;
-  width: 800px;
+  width: 777px;
 
 }
 
@@ -127,11 +122,6 @@ table {
   color: #360361
 }
 
-.task-description {
-  padding: 1rem;
-  line-height: 1.5rem;
-}
-
 
 input[type=submit] {
   background-color: #1B6FC7;
@@ -139,24 +129,20 @@ input[type=submit] {
   border-radius: 5px;
   color: white;
   cursor: pointer;
-  font-family: 'Oswald', sans-serif;
   font-size: 14px;
   margin-top: 5px;
-  margin-left: 5px;
-  padding:5px 10px 5px 10px;
 }
 
 input[type=text] {
-    border-radius: 5px;
-    color:#3F1A08;
-    cursor:pointer;
-    display: inline-block;
-    font-family: 'Oswald', sans-serif;
-    font-size: 16px;
-    margin-top: 5px;
-    margin-left: 10px;
-    padding:5px 15px;
-    width: 500px;
+  border-radius: 5px;
+  color:#3F1A08;
+  cursor:pointer;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 5px;
+  margin-left: 10px;
+  padding:5px 15px;
+  width: 500px;
 }
 
 

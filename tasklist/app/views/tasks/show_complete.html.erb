@@ -2,17 +2,17 @@
   <% @tasks.each do |task| %>
   <% if task.task_completion != nil %>
       <div class="task-item">
-        <%= link_to task.task_name, task_path(task.id) %>  <br/>
-        <p class="task-description">
-          <%= task.task_description %>
-        </p>
+        <%= link_to task.task_name, task_path(task.id) %>  <br/><br/>
+        <%= task.task_description %> <br/><br/>
         <%= task.task_completion %> 
-        <%= button_to "edit", 
-          {:controller => :tasks, :action => 'edit', :id => task.id }, 
-          :method => :get %> 
-        <%= button_to "delete", 
-          {:controller => :tasks, :action => 'delete', :id => task.id }, 
-          :method => :delete, data: { confirm: "Are you sure?" } %>
+          <div class="buttons">
+          <%= button_to "edit", 
+            {:controller => :tasks, :action => 'edit', :id => task.id }, 
+            :method => :get %> 
+          <%= button_to "delete", 
+            {:controller => :tasks, :action => 'destroy', :id => task.id }, 
+            :method => :delete, data: { confirm: "Are you sure?" } %>
+        </div>
       </div>
   <% end %> 
 <% end %>

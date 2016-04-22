@@ -1,21 +1,16 @@
 Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
   
   root 'tasks#index'
 
-  get 'tasks/new' => 'tasks#new', as: 'tasks' 
+  get '/tasks/new' => 'tasks#new', as: 'tasks' 
   post '/tasks/new' => 'tasks#create'
   
   get '/show/:id' => 'tasks#show', as: 'task' 
-  get '/:task' => 'tasks#by_task' 
 
   get '/tasks/:id/edit' => 'tasks#edit', as: 'edit' 
   patch '/show/:id' => 'tasks#update'
 
-  delete 'tasks/:id' => 'tasks#delete', as: 'delete'
+  delete 'tasks/:id' => 'tasks#destroy', as: 'delete'
   
   get 'tasks/complete' => 'tasks#show_complete', as: 'show_complete'  
   post '/complete' => 'tasks#complete' 

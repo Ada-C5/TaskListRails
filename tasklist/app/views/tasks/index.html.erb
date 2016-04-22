@@ -2,16 +2,16 @@
 	<% @tasks.each do |task| %>
     <% if task.task_completion == nil %>
       <div class="task-item">
-        <%= link_to task.task_name, task_path(task.id) %>  <br/>
+        <%= link_to task.task_name, task_path(task.id) %>  <br/><br/>
         <p class="task-description">
-          <%= task.task_description %>
+          <%= task.task_description %><br/><br/>
         </p>
         <%= task.task_completion %>  
         <%= button_to "edit", 
           {:controller => :tasks, :action => 'edit', :id => task.id }, 
           :method => :get %>
         <%= button_to "delete", 
-          {:controller => :tasks, :action => 'delete', :id => task.id }, 
+          {:controller => :tasks, :action => 'destroy', :id => task.id }, 
           :method => :delete, data: { confirm: "Are you sure?" } %>
         <%= button_to "complete", 
           {:controller => :tasks, :action => 'complete', :id => task.id }, 
