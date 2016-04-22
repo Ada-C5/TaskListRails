@@ -1,34 +1,46 @@
-// Place all the styles related to the tasks controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 html {
 	font-family: sans-serif;
 }
 
 body {
 	text-align: center;
-	background-color: #D4C29B;
+}
+
+th {
+	background-color: #008080;
+	padding: 5px;
+	color: #ffffff;
 }
 
 h1 {
-	color: #D4C29B;
-	background-color: black;
-	height: 75px;
+	color: #008080;
+	background-color:  #e0ebeb;
+	height: 40px;
 	font-weight:normal;
-	padding-top: 25px;
+	padding-top: 10px;
 }
 
 .task_button {
 	text-decoration: none;
-	background-color: black;
-	color: #D4C29B;
-	padding: 4px;
-	border-radius: 7px;
-
+	background-color: #008080;
+	color: #ffffff;
+	padding: 5px;
+	border-radius: 6px;
+	float: left;
+	margin-bottom: 15px;
+	margin-right: 5px;
 }
-ul {
-	list-style-type: none;
-	// text-align: center;
+
+.task_button:hover {
+	background-color: #004d4d;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+   border: 1px solid #e6ffff;
 }
 
 table {
@@ -36,26 +48,17 @@ table {
 }
 
 td {
-
 	padding: 5px;
-
 }
 
 tr {
-	// padding: 5px;
-	background-color: #D49BCA;
-	// text-align: center;
+	background-color:  #ffffff;
+}
+
+tr:nth-child(odd) {
+	background-color: #e0ebeb;
 }
 
 tr:hover {
-	background-color: #755780;
+	background-color:  #004d4d;
 }
-
-// li:nth-child(odd) {
-// 	background-color: #D49BC9F;
-// }
-
-// a {
-// 	font-decoration: none;
-// 	font-color: black;
-// }

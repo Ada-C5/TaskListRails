@@ -1,12 +1,13 @@
-<pre><%= params %><pre>
 <h1> Let's make a new task</h1>
 
+<table class="new_task">
 <%= form_for @task do |f| %>
-	<%= f.label :name %>
-  <%= f.text_field :name %>
-  	<%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.label :owner %>
-  <%= f.collection_select :person_id, Person.all, :id, :name %>
-  <%= f.submit %>
+	<td><%= f.label :name %>
+  <%= f.text_field :name %></td>
+  <td><%= f.label :description %>
+  <%= f.text_field :description %></td>
+  <td><%= f.label :owner %>
+  <%= f.collection_select :person_id, Person.all, :id, :name %></td>
+  <td><%= f.submit %></td>
 <% end %>
+</table>
