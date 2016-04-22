@@ -49,6 +49,7 @@ class TasksController < ApplicationController
     # end
   end
 
+
   private
   #tells us what parameters we want to use when we create an album
   def task_create_params

@@ -15,16 +15,9 @@
 		<td><%= @task.description %> </td>
 		<td><%= @task.completed_at %> </td>
 		
-
-		<td><form method="post" action="">
-     	<input type="hidden" name="" value="">
-     	<input type='submit' value='Update!'>
- 		  </form>
+		<td><%= button_to "Edit", "/tasks/#{@task.id}/edit", :method => :get %>
  		</td>
- 		<td><form method="delete" action="">
-     	<input type="hidden" name="" value="">
-     	<input type='submit' value='Delete!'>
- 		  </form>
+ 		<td><%= button_to "Delete", "/tasks/#{@task.id}", :method => :delete,  data: { confirm: "Are you sure?" } %>
  		</td>
 	</tr>
 </table>
