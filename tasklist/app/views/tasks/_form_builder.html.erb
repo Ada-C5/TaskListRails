@@ -1,0 +1,16 @@
+      <%= f.label :task %>
+      <%= f.text_field :task, :maxlength => 15 %><br /><br />
+
+      <%= f.label :priority, :class => 'add-task' %>
+      <%= f.radio_button :priority, 'urgent' %>
+      <%= label :priority, 'urgent', :class => 'radio' %>
+      <%= f.radio_button :priority, 'medium' %>
+      <%= label :priority, 'medium', :class => 'radio' %>
+      <%= f.radio_button :priority, 'low' %>
+      <%= label :priority, 'low', :class => 'radio' %> <br /><br />
+
+      <%= f.label :due_date %>
+      <%= f.text_field :due_date %> <br /><br />
+
+      <%= f.label :comments %>
+      <%= f.text_field :comments, :maxlength => 105 %> <br /><br />

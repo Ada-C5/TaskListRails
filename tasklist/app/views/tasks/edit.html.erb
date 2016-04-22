@@ -2,16 +2,8 @@
   <div class="edit-floating">
 
     <%= form_for @find_task, :html => {:class => "item-task"} do |f| %>
-      <%= f.label :task %>
-      <%= f.text_field :task, :maxlength => 15 %><br /><br />
 
-      <%= f.label :priority, :class => 'add-task' %>
-      <%= f.radio_button :priority, 'urgent' %>
-      <%= label :priority, 'urgent', :class => 'radio' %>
-      <%= f.radio_button :priority, 'medium' %>
-      <%= label :priority, 'medium', :class => 'radio' %>
-      <%= f.radio_button :priority, 'low' %>
-      <%= label :priority, 'low', :class => 'radio' %> <br /><br />
+      <%= render partial: "tasks/form_builder", locals: {f: f} %>
 
       <%= f.label :status, :class => 'add-task' %>
       <%= f.radio_button :status, 'Not Started' %>
@@ -20,15 +12,6 @@
       <%= label :status, 'In Progress', :class => 'radio' %><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <%= f.radio_button :status, 'Completed' %>
       <%= label :status, 'Completed', :class => 'radio' %> <br />
-
-      <!-- <%= f.label :status, :class => 'add-task' %>
-      <%= f.select("status", ["Not Started", "In Progress", "Completed"], {}, { index: nil })  %><br /><br /> -->
-
-      <%= f.label :due_date %>
-      <%= f.text_field :due_date %> <br /><br />
-
-      <%= f.label :comments %>
-      <%= f.text_field :comments, :maxlength => 105 %> <br /><br />
 
       <%= f.submit 'Edit Task', :class => 'add-btn' %>
     <% end %>

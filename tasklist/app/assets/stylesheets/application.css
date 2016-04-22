@@ -166,23 +166,6 @@ input.button {
   display: inline;
 }
 
-td.jeremy {
-  background-image : url("../images/creepy.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-td.rosa {
-  color: rgb(212, 70, 81);
-  text-shadow: 2px 2px 2px yellow;
-  font-size: 3rem
-}
-
-td.cat {
-  background-color: tan;
-}
-
 footer {
   display: block;
   margin: auto;
