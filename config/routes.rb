@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     #I can remove this path - somehow?
     patch 'tasks/:id/completed' => 'tasks#complete'
 
+    get '/people'     => 'people#index', as: 'people' 
     get '/people/:id' => 'people#show',  as: 'person'
 
     #examples

@@ -1,0 +1,11 @@
+<h1>All Task Owners</h1>
+<table>
+	<tr>
+		<th>All Task Owners</th>
+	</tr>
+	<% @people.each do |person|%>
+		<tr>
+			<td><%= link_to person.name, "/people/#{person.id}" %></td>
+		<% end %>
+	</tr>
+</table>

@@ -1,6 +1,7 @@
 <h1>Your Task List</h1>
 
 <h2><a class='task_button' href='/tasks/new'>Add a Task</a></h2>
+<h2><a class='task_button' href='/people'>All Task Owners</a></h2>
 
 
 <table>
@@ -15,40 +16,33 @@
 	</tr>
 	<% @tasks.each do |task|%>
 	<tr>
-
 		<td><%= link_to task.name, "/tasks/#{task.id}" %></td>
 		<td><%= task.description %> </td>
 		<td><%= task.completed_at %> </td>
 		<td><%= Person.find(task.person_id).name %> </td>
-		
-
 		<td><%= button_to "Edit", "/tasks/#{task.id}/edit", :method => :get %>
  		</td>
  		<td><%= button_to "Delete", "/tasks/#{task.id}", :method => :delete,  data: { confirm: "Are you sure?" } %>
  		</td>
-
-
  		 <td><% if task.completed_at == nil %>
-      		<%= button_to "Completed", "/tasks/#{task.id}/completed", :method => :patch %>
-      			<% else %>
-      			Done
+      			<%= button_to "Completed", "/tasks/#{task.id}/completed", :method => :patch %>
+      		<% else %>
+      				Done
       		<% end %>
- 		</td>
-
-
-	</tr>
+ 			</td>
+		</tr>
 	<% end %>
 </table>
 
+<br>
 
 <table>
 	<tr>
-		<th>Task Owners</th>
+		<th>All Task Owners</th>
 	</tr>
-
 	<% @people.each do |person|%>
 		<tr>
-		<td><%= link_to person.name, "/people/#{person.id}" %></td>
-	<% end %>
-</tr>
+			<td><%= link_to person.name, "/people/#{person.id}" %></td>
+		<% end %>
+	</tr>
 </table>
