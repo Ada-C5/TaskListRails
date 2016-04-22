@@ -14,5 +14,10 @@
   <%= f.text_field :completed_at, class: 'form-completed' %>
   </p>
 
+  <p class="form-person">
+  <%= f.label :person %>
+  <%= f.select :person_id, options_from_collection_for_select( @people , :id, :name), include_blank: true %>
+  </p>
+
   <%= f.submit %>
 <% end %>
