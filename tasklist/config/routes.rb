@@ -9,14 +9,15 @@ Rails.application.routes.draw do
   patch '/show/:id' => 'tasks#update'
 
   get '/:task' => 'tasks#by_task' 
-  get '/show/:id' => 'tasks#show', as: 'task' # another named route! 
+  get '/show/:id' => 'tasks#show', as: 'task' 
 
-  get 'tasks/new' => 'tasks#new', as: 'tasks' #named route
+  get 'tasks/new' => 'tasks#new', as: 'tasks' 
   post '/tasks/new' => 'tasks#create'
 
   delete 'tasks/:id' => 'tasks#delete', as: 'delete'
   
-  get '/complete' => 'tasks#complete' 
+  get 'tasks/complete' => 'tasks#show_complete', as: 'show_complete'  
+  post '/complete' => 'tasks#complete' 
 
 
   # Example of regular route:

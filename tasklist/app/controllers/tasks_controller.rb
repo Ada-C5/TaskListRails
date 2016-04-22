@@ -45,7 +45,15 @@ class TasksController < ApplicationController
   end 
 
   def complete
-    render :complete # do I need this? Maybe route to complete since it is not a post
+    @task = Task.find(params[:id])
+    completed = Time.now 
+    @task.update_column(:task_completion, completed)
+    redirect_to root_path
+
+  end 
+
+  def show_complete
+    @tasks = Task.all
   end 
 
   private
@@ -55,6 +63,6 @@ class TasksController < ApplicationController
   end
 
   def update_params
-    params.permit(task: [:task_name, :task_description])
+    params.permit(task: [:task_name, :task_description, :task_completion])
   end
 end

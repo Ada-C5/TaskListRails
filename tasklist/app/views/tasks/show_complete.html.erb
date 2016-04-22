@@ -1,0 +1,16 @@
+<div class="task-container">
+  <% @tasks.each do |task| %>
+  <% if task.task_completion != nil %>
+      <div class="task-item">
+        <%= link_to task.task_name, task_path(task.id) %>  <br/>
+        <p class="task-description">
+          <%= task.task_description %>
+        </p>
+        <%= task.task_completion %>  
+        <%= button_to "delete", 
+          {:controller => :tasks, :action => 'delete', :id => task.id }, 
+          :method => :delete, data: { confirm: "Are you sure?" } %>
+      </div>
+  <% end %> 
+<% end %>
+</div>

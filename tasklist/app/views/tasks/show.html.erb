@@ -1,8 +1,17 @@
-<h1 class="top-bar">omfg here is your task</h1>
 <div class="task-container">
-  <p class="task-item">
+  <div class="task-item">
     <%= @tasks.task_name %><br/>
     <%= @tasks.task_description %><br/>
     <%= @tasks.task_completion %><br/>
-  </p>
+    <%= button_to "edit", 
+      {:controller => :tasks, :action => 'edit', :id => @tasks.id }, 
+      :method => :get %>
+    <%= button_to "delete", 
+      {:controller => :tasks, :action => 'delete', :id => @tasks.id }, 
+      :method => :delete, data: { confirm: "Are you sure?" } %>
+    <%= button_to "complete", 
+      {:controller => :tasks, :action => 'complete', :id => @tasks.id }, 
+      :method => :post, data: { confirm: "Are you sure?" } %>
+  </div>
 </div>
+
