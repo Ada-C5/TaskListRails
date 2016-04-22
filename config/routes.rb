@@ -55,14 +55,14 @@ Rails.application.routes.draw do
   #   end
   # root 'tasks#home'
 
-  get '/tasks' => "tasks#index"
   # display all tasks
+  get '/tasks' => "tasks#index"
 
-  get 'tasks/new' => 'tasks#new'
   # return html form to create new task
+  get 'tasks/new' => 'tasks#new'
 
-  post '/tasks' => "tasks#create"
   # create a new task
+  post '/tasks' => "tasks#create"
 
   get '/tasks/:id/edit' => "tasks#edit"
 
@@ -72,10 +72,9 @@ Rails.application.routes.draw do
 
   patch 'tasks/:id' => "tasks#mark_complete", as: "complete"
 
-  # get '/tasks/:id/edit' => "tasks#edit"
+  # get '/tasks/:id/edit' => "tasks#edit" as: 'edit_task'
   # return html form to edit a task
 
-  # delete /tasks/:id
   # get '/tasks/show' => "tasks#show"
   # # return html form to find a task
 

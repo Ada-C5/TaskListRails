@@ -7,7 +7,7 @@ class TasksController < ApplicationController
   def index
     # display all tasks
     @page_title = "Task List"
-    @show_all = ::Task.where(completed: nil)
+    @show_all = Task.all
   end
 
   def new
