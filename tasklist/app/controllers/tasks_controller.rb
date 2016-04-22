@@ -5,10 +5,10 @@ class TasksController < ApplicationController
     @all_tasks = Task.all
   end
 
-  def add
+  def new
     @task = Task.new
 
-    render "add"
+    render "new"
   end
 
   def create

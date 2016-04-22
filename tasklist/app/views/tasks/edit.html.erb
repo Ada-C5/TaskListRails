@@ -24,7 +24,6 @@
       <!-- <%= f.label :status, :class => 'add-task' %>
       <%= f.select("status", ["Not Started", "In Progress", "Completed"], {}, { index: nil })  %><br /><br /> -->
 
-
       <%= f.label :due_date %>
       <%= f.text_field :due_date %> <br /><br />
 
@@ -32,7 +31,6 @@
       <%= f.text_field :comments, :maxlength => 105 %> <br /><br />
 
       <%= f.submit 'Edit Task', :class => 'add-btn' %>
-      <!-- #<%= button_to "Edit Task", task_path(@find_task.id), :class => "add-btn", :method => :patch %> -->
     <% end %>
 
   </div>

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get     '/tasks'         => 'tasks#index', as: 'tasks'
 
   post    '/tasks'          => 'tasks#create'
-  get     '/tasks/add'      => 'tasks#add'
+  get     '/tasks/new'      => 'tasks#new'
 
   get     '/tasks/:id'      => 'tasks#show', as: 'task'
 
