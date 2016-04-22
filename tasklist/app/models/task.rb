@@ -1,4 +1,5 @@
 class Task < ActiveRecord::Base
+  belongs_to :person
 
   def self.search(search)
     if search
@@ -7,6 +8,11 @@ class Task < ActiveRecord::Base
     else
       order(completed_at: :asc)
     end
+  end
+
+
+  def self.incomplete_tasks(id)
+    where(person_id: id).where(completed_at: nil).count
   end
 
 end

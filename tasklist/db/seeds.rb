@@ -11,18 +11,29 @@ def random_time
 end
 
 tasks = [
-  { title: "The First Task", description: "", completed_at: random_time },
-  { title: "Go to Brunch", description: "" },
-  { title: "Go to Lunch", description: "", completed_at: random_time },
-  { title: "Go to Second Lunch", description: "" },
-  { title: "Play Video Games", description: "", completed_at: random_time },
-  { title: "High Five Somebody You Don't Know", description: "", completed_at: random_time },
-  { title: "Plant Flowers", description: "", completed_at: random_time },
-  { title: "Call Mom", description: "" },
+  { title: "The First Task", description: "", completed_at: random_time, person_id: 1 },
+  { title: "Go to Brunch", description: "", person_id: 2 },
+  { title: "Go to Lunch", description: "", completed_at: random_time, person_id: 3 },
+  { title: "Go to Second Lunch", description: "yum", person_id: 3 },
+  { title: "Play Video Games", description: "all day, all day, all DAY", completed_at: random_time, person_id: 4 },
+  { title: "High Five Somebody You Don't Know", description: "but not on the bus", completed_at: random_time, person_id: 1 },
+  { title: "Plant Flowers", description: "all over the neighbor's yard", completed_at: random_time },
+  { title: "Call Mom", description: "", person_id: 2 },
   { title: "She worries, you know.", description: "" },
   { title: "Nap.", description: "", completed_at: random_time }
 ]
 
+people = [
+  { name: "Lisa" },
+  { name: "Chris" },
+  { name: "Renji" },
+  { name: "Jas" }
+]
+
 tasks.each do |task|
   Task.create task
+end
+
+people.each do |person|
+  Person.create person
 end
