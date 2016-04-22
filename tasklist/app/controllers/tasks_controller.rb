@@ -12,26 +12,32 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(task: params[:task], priority: params[:priority], status: params[:status], due_date: params[:due_date], comments: params[:comments], date_completed: params[:date_completed])
+    @task = Task.new(tasks_create_params[:task])
 
     if @task.save
       redirect_to root_path
     else
-      redirect_to action: "index"
+      redirect_to action: "add"
     end
   end
 
   def edit
-    @find_task = Task.where(id: params[:id]).first
+    # @find_task = Task.where(id: params[:id]).first
+    @find_task = Task.find(params[:id])
     # if @find_task.due_date != nil
     #   @find_task.due_date = "#{Chronic.parse((@find_task.due_date).to_s).strftime("%m/%d/%Y at %I:%M%p")}"
     # end
   end
 
   def update
-    task = Task.find(params[:id])
-    task.update(task: params[:task], priority: params[:priority], status: params[:status], due_date: params[:due_date], comments: params[:comments], date_completed: params[:date_completed])
-    task.save
+    @task = Task.find(params[:id])
+    @task.update(tasks_update_params[:task])
+    if params[:task][:status] == "Completed"
+      @task.date_completed = Time.now
+    else
+      @task.date_completed = ""
+    end
+    @task.save
     # @all_tasks = Queries.new.display_tasks
     redirect_to action: "index"
   end
@@ -45,6 +51,14 @@ class TasksController < ApplicationController
   def show
     @task = Task.find(params[:id])
     # render :show
+  end
+
+  def tasks_create_params
+    params.permit(task: [:task, :priority, :due_date, :comments])
+  end
+
+  def tasks_update_params
+    params.permit(task: [:task, :priority, :status, :due_date, :comments])
   end
 end
 

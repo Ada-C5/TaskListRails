@@ -1,43 +1,80 @@
 <section>
   <div class="edit-floating">
-    <form action="/update" method="post" accept-charset="utf-8">
-      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-      <div class ="item-task">
-        <input type="hidden" name="id" value="<%= @find_task.id %>"/>
-        <label for="task">Task</label>
-        <input type="text" name="task" value="<%= @find_task.task %>" id="task" maxlength="16"/>
-      </div>
-      <div class="item">
-        <label for="priority">Priority</label>
-        <fieldset>
-          <label class = "radio"><input type="radio" name="priority" value="urgent" <%= @find_task.priority == "urgent" ? "checked" : "" %>/>Urgent</label>
-          <label class = "radio"><input type="radio" name="priority" value="medium" <%= @find_task.priority == "medium" ? "checked" : "" %>/>Medium</label>
-          <label class = "radio"><input type="radio" name="priority" value="low" <%= @find_task.priority == "low" ? "checked" : "" %>/>Low</label>
-        </fieldset>
-      </div>
-      <div class="item">
-        <label for="status">Status</label>
-        <select name="status">
-          <option <%= @find_task.status == "Not Started" ? "selected" : "" %>>Not Started</option>
-          <option <%= @find_task.status == "In Progress" ? "selected" : "" %>>In Progress</option>
-          <option <%= @find_task.status == "Completed" ? "selected" : "" %>>Completed</option>
-        </select>
-      </div>
-      <div class="item">
-        <label for="due_date">Due Date</label>
-        <input type="text" name="due_date" value="<%= @find_task.due_date %>" id="due_date"/>
-      </div>
-      <div class="item">
-        <label for="comments">Comments</label>
-        <input type="text" name="comments" value="<%= @find_task.comments %>" id="comments" maxlength="105"/>
-      </div>
-        <input class="btn" type="submit" value="Edit Task">
-    </form>
+
+    <%= form_for @find_task, :html => {:class => "item-task"} do |f| %>
+      <%= f.label :task %>
+      <%= f.text_field :task, :maxlength => 16 %><br /><br />
+
+      <%= f.label :priority, :class => 'add-task' %>
+      <%= f.radio_button :priority, 'urgent' %>
+      <%= label :priority, 'urgent', :class => 'radio' %>
+      <%= f.radio_button :priority, 'medium' %>
+      <%= label :priority, 'medium', :class => 'radio' %>
+      <%= f.radio_button :priority, 'low' %>
+      <%= label :priority, 'low', :class => 'radio' %> <br /><br />
+
+      <%= f.label :status, :class => 'add-task' %>
+      <%= f.radio_button :status, 'Not Started' %>
+      <%= label :status, 'Not Started', :class => 'radio' %>
+      <%= f.radio_button :status, 'In Progress' %>
+      <%= label :status, 'In Progress', :class => 'radio' %><br />
+      <%= f.radio_button :status, 'Completed' %>
+      <%= label :status, 'Completed', :class => 'radio' %> <br />
+
+      <!-- <%= f.label :status, :class => 'add-task' %>
+      <%= f.select("status", ["Not Started", "In Progress", "Completed"], {}, { index: nil })  %><br /><br /> -->
+
+
+      <%= f.label :due_date %>
+      <%= f.text_field :due_date %> <br /><br />
+
+      <%= f.label :comments %>
+      <%= f.text_field :comments, :maxlength => 105 %> <br /><br />
+
+      <%= f.submit 'Edit Task', :class => 'add-btn' %>
+      <!-- #<%= button_to "Edit Task", task_path(@find_task.id), :class => "add-btn", :method => :patch %> -->
+    <% end %>
+
   </div>
-</form>
 </section>
 
 
 <!-- <div class="params">
 <#%= params %>
 </div> -->
+
+
+<!-- <form action="/update" method="post" accept-charset="utf-8">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <div class ="item-task">
+    <input type="hidden" name="id" value="<%= @find_task.id %>"/>
+    <label for="task">Task</label>
+    <input type="text" name="task" value="<%= @find_task.task %>" id="task" maxlength="16"/>
+  </div>
+  <div class="item">
+    <label for="priority">Priority</label>
+    <fieldset>
+      <label class = "radio"><input type="radio" name="priority" value="urgent" <%= @find_task.priority == "urgent" ? "checked" : "" %>/>Urgent</label>
+      <label class = "radio"><input type="radio" name="priority" value="medium" <%= @find_task.priority == "medium" ? "checked" : "" %>/>Medium</label>
+      <label class = "radio"><input type="radio" name="priority" value="low" <%= @find_task.priority == "low" ? "checked" : "" %>/>Low</label>
+    </fieldset>
+  </div>
+  <div class="item">
+    <label for="status">Status</label>
+    <select name="status">
+      <option <%= @find_task.status == "Not Started" ? "selected" : "" %>>Not Started</option>
+      <option <%= @find_task.status == "In Progress" ? "selected" : "" %>>In Progress</option>
+      <option <%= @find_task.status == "Completed" ? "selected" : "" %>>Completed</option>
+    </select>
+  </div>
+  <div class="item">
+    <label for="due_date">Due Date</label>
+    <input type="text" name="due_date" value="<%= @find_task.due_date %>" id="due_date"/>
+  </div>
+  <div class="item">
+    <label for="comments">Comments</label>
+    <input type="text" name="comments" value="<%= @find_task.comments %>" id="comments" maxlength="105"/>
+  </div>
+  <input class="btn" type="submit" value="Edit Task">
+</form>
+</form> -->

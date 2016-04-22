@@ -1,4 +1,6 @@
-<a href="/add">Add a new task</a>
+<%= link_to "Add a New Task", task_path("add") %>
+
+<!-- <a href="/task/add">Add a new task</a> -->
 <a href="/priority/DESC">Sort by Priority</a>
 <a href="/status/DESC">Sort by Status</a>
 <a href="/due_date/ASC">Sort by Due Date</a>
@@ -8,7 +10,12 @@
     <% @all_tasks.each do |task| %>
     <section>
       <div class="floating <%= task.status == 'Completed' ? 'completed' : '' %>">
-        <!-- <%= image_tag "checkmark.png", alt: "Checkbox to mark task completed", class: "checkmark" %> -->
+
+        <%= form_tag(task_path(task.id), method: "patch") do %>
+          <%= image_submit_tag "checkmark.png", alt: "Checkbox to mark task completed", class: "checkmark" %>
+          <%= hidden_field(:task, :status, :value => "Completed") %>
+        <% end %>
+
         <section class="card-head">
           <strong> <h3 class="link"><%= link_to task.task, task_path(task.id) %></h3></strong>
         </section>
@@ -31,7 +38,7 @@
           <strong>Date Completed</strong> : <%= task.date_completed %>
         </div>
 
-        <%= button_to "Edit", "/task/#{task.id}/edit", :class => "btn", :method => :get %>
+        <%= button_to "Edit", task_path(task.id)+"/edit", :class => "btn", :method => :get %>
 
         <!-- <a href="/edit/<%= task.id %>" class="btn">Edit</a> -->
         <!-- Instead of a button, added a ahref above <section class="action-buttons">
@@ -41,7 +48,7 @@
           <!-- </form> -->
 
           <%= form_tag(task_path(task.id), method: "delete", data: {confirm: "Are you sure?"}) do %>
-            <%= submit_tag "Delete", class: "btn"  %>
+            <%= submit_tag "Delete", class: "btn" %>
           <% end %>
 
         </section>
