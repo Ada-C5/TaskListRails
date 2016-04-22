@@ -39,11 +39,19 @@ class TasksController < ApplicationController
     redirect_to root_path
   end
 
-  def update #make this more general... somehow...
-    @task = Task.find(params[:id])
-    @task.completed_at = Time.now
-    @task.save
-    redirect_to root_path
+  def update_edit
+    if(params.has_key?(:task) || params.has_key?(:description))
+      @task = Task.find(params[:id])
+      @task.title = params[:task][:title]
+      @task.description = params[:task][:description]
+      @task.save
+      redirect_to root_path
+    else
+      @task = Task.find(params[:id])
+      @task.completed_at = Time.now
+      @task.save
+      redirect_to root_path
+    end
   end
 
   private

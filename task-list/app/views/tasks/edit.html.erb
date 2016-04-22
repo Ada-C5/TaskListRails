@@ -1,3 +1,15 @@
-<h1>at least display the right task plz</h1>
+<h2>Edit Task</h2>
 
-<%= @selected_task.title %>
+<%= form_for @selected_task do |t| %>
+  <%= t.label :title %>
+  <br>
+  <%= t.text_field :title %>
+  <br><br>
+  <%= t.label :description %>
+  <br>
+  <%= t.text_field :description %>
+  <br><br>
+  <%= t.submit %>
+<% end %>
+
+<%= params %>

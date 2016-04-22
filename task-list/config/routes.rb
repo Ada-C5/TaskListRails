@@ -12,13 +12,11 @@ Rails.application.routes.draw do
   get '/tasks/:id/edit' => 'tasks#edit', as: 'edit_tasks' #mess around with the as some more.
   get '/tasks/:id' => 'tasks#show', as: 'task'
   delete '/tasks/:id' => 'tasks#destroy'
-  patch '/tasks/:id' => 'tasks#update'
+  # patch '/tasks/:id' => 'tasks#update'
   #update shoudl work for completed and edit form_for tied to active record model...
   #have them both submit the same params... or something...
-
+  patch '/tasks/:id' => 'tasks#update_edit'
   ###work on this
-  get '/tasks/:id/edit' => 'tasks#edit'
-  #this should be a form... when you hit the button then it goes to... vvvv
-  patch 'tasks/:id' => 'tasks#update'
+
 
 end
