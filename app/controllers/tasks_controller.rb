@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
 	def index
-		@task_list = Task.order(:completed_at)
+		@task_list = Task.where(completed_at: nil)
 	end
 
 	def by_title
@@ -10,6 +10,11 @@ class TasksController < ApplicationController
 
 	def new
 		@task = Task.new
+	end
+
+	def show
+		@task_list = Task.where.not(completed_at: nil)
+		render :show
 	end
 
 	def create
@@ -28,6 +33,14 @@ class TasksController < ApplicationController
 		redirect_to root_path
 	end
 
+	def completed
+		@task = Task.find(params[:id])
+		@task.completed_at = DateTime.now
+		@task.save
+		show
+	end
+
+
 	def delete
 	Task.find(params[:id]).destroy
    redirect_to root_path
@@ -42,6 +55,7 @@ class TasksController < ApplicationController
 	def task_update_params
 		params.permit(task: [:title, :description])
 	end
+
 
 end
 

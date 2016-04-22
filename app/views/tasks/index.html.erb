@@ -1,4 +1,6 @@
-	<table>
+	  <pre><%=params%></pre>
+
+  <table>
     <tr class="header-row">
 
       <th><h3>Title</h3></th>
@@ -14,7 +16,9 @@
 
 
     <td class="completed">
+    <%= link_to update_path(task.id) do %>
         <i class="fa fa-check-square-o" aria-hidden="true"></i>
+    <% end %>
     </td>
 
     <td class="edit">
