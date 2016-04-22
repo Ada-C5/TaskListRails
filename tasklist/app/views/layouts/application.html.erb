@@ -1,28 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Tasklist</title>
-  <%= stylesheet_link_tag    'application', 'https://fonts.googleapis.com/css?family=Give+You+Glory', 'chronic',  media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
+<%= render 'html_header', title: "Task List" %>
 
 <body>
-<%= link_to root_path do %>
-  <i class="fa fa-home"></i>
+<%= link_to tasks_path do %>
+  <i class="fa fa-home fun-icons" aria-hidden="true"></i>
+<% end %>
+<%= link_to people_path do %>
+  <i class="fa fa-user fun-icons" aria-hidden="true"></i>
 <% end %>
 <%= link_to tasks_new_path do %>
-  <i class="fa fa-plus"></i>
+  <i class="fa fa-plus fun-icons" aria-hidden="true"></i>
 <% end %>
 
 <%= yield %>
 
 
-  <footer>
-    <span class="copyright">© 2016 lisa<span class="small-heart">❤︎</span>sano</span>
-    <%= link_to "mailto:lisa.sano@gmail.com?Subject=Hey%20Lisa" do %>
-      <i class="fa fa-envelope-o"> Contact me!</i>
-    <% end %>
-  </footer>
+  <%= render 'footer' %>
 </body>
 </html>
+
