@@ -9,8 +9,11 @@
   <% end %>
       <%= link_to task.name, task_path(task.id) %><br>
       <ul class="options">
-        <% # this button's name attribute is so I can identify when the request is coming from the DONE! button as opposed to the edit form  %>
-        <li><%= button_to "DONE!", task_path(task.id), method: :patch, name: "done" %></li>
+        <% # so that the DONE! button only shows up if it's still incomplete %>
+        <% if task.completed_at.nil? %>
+          <% # this button's name attribute is so I can identify when the request is coming from the DONE! button as opposed to the edit form  %>
+          <li><%= button_to "DONE!", task_path(task.id), method: :patch, name: "done" %></li>
+        <% end %>
         <li><%= link_to "Edit", edit_task_path(task.id) %></li>
         <li>
           <%= link_to "Delete", task_path(task.id), method: :delete,
