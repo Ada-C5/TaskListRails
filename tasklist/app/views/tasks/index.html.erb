@@ -14,7 +14,8 @@
       <%# i have no freaking idea how this works, but I wanted to use the update action to mark the task completed instead of making a new action and this got the information I wanted to update into my params hash %>
           <%= f.hidden_field :completed_at, value: DateTime.now %>
           <%= f.hidden_field :complete, value: true %>
-          <%= f.submit "COMPLETE"%>
+          <%# okay to not have an f.submit? %>
+          <%= f.submit "COMPLETE", data: { confirm: "Good job! Task completed :)." } %>
       <% end %>
 
     <% else %>
