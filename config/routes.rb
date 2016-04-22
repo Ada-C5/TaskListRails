@@ -14,6 +14,11 @@ Rails.application.routes.draw do
   get '/tasks/:id/edit'         => 'tasks#edit', as: 'edit_task'
   patch '/tasks/:id/complete'   => 'tasks#complete', as: 'complete_task'
   patch '/tasks/:id/uncomplete' => 'tasks#uncomplete', as: 'uncomplete_task'
+
+  get '/people' => 'people#index'
+  get '/people/:id'              => 'people#show', as: 'person'
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
