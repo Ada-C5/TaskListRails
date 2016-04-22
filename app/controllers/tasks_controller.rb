@@ -13,6 +13,7 @@ class TasksController < ApplicationController
   def new
     # show form to create new task
     @task = Task.new
+    @all_people = Person.all
   end
 
   def create
@@ -29,6 +30,7 @@ class TasksController < ApplicationController
   def edit
     #show form
     @task = Task.find(params[:id])
+    @all_people = Person.all
     render :edit
   end
 
@@ -57,7 +59,7 @@ class TasksController < ApplicationController
   end
 
   def task_new_params
-    params.permit(task: [:title, :description])
+    params.permit(task: [:title, :description, :person_id])
   end
 
   def show
