@@ -5,16 +5,21 @@
       <li>Tasks</li>
       <li>Description</li>
       <li>Date Added</li>
-      <h1>show all
-
+      <h1>Show all</h1><br>
+    </ul>
+  </div>
+  <div class="tasks_to_do">
+    <ul>
         <%@show_all.each do |entry| %>
-          <%= link_to entry.title, "/task/#{entry.title}" %>: <%= entry.title %>
-          <%= button_to "Delete task", delete_path(entry.id), method: :delete, data: {confirm: "Are you sure?"}%> <br>
+          <li>
+          <%= link_to entry.title, "/task/#{entry.title}" %><br>
+          <%="description: #{entry.description}"%><br>
+          <%="completed at: #{entry.completed}" %><br>
+          <%= button_to "Delete task", delete_path(entry.id), method: :delete, data: {confirm: "Are you sure?"} %>
+          <%= button_to "Mark complete", "/tasks/#{entry.id}", method: :patch %>
+          </li>
+          <br>
         <%end%>
-
-        </h1>
-
-</ul>
     </ul>
   </div>
 </div>
@@ -30,6 +35,11 @@
       <li>Tasks</li>
       <li>Description</li>
       <li>Date Added</li>
+      <div class="completed_tasks"
+      <ul>
+        <li><%=%></li>
+      </ul>
+    </div>
     </ul>
   </div>
 </div>

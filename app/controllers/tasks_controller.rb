@@ -7,7 +7,7 @@ class TasksController < ApplicationController
   def index
     # display all tasks
     @page_title = "Task List"
-    @show_all = ::Task.all
+    @show_all = ::Task.where(completed: nil)
   end
 
   def new
@@ -35,32 +35,18 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
+    redirect_to tasks_path
+  end
 
+  def mark_complete
+    @task = ::Task.find(params[:id])
+    @task.update(completed: DateTime.now.to_s)
+    # redefine new group of tasks that don't have nil for completed
+    # reroute to new view for completed tasks.
     redirect_to tasks_path
   end
 
   def task_new_params
-  params.permit(task: [:title, :description])
+    params.permit(task: [:title, :description])
+  end
 end
-# def show
-#   # look up form for a task
-#   @lookup = Task.new
-# end
-#
-# def return
-#   #return requested task
-#   @lookup = ::Task.find_by title: params[:title]
-# end
-end
-
-
-
-# class AlbumsController < ApplicationController
-#   def index
-#     @albums = Album.order(artist: :asc)
-#   end
-#
-#   def by_artist
-#     @albums = Album.where(artist: params[:artist]).order(title: :asc)
-#     render :index
-#   end

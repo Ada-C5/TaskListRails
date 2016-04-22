@@ -53,9 +53,9 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  root 'tasks#home'
+  # root 'tasks#home'
 
-  get '/tasks' => "tasks#index" 
+  get '/tasks' => "tasks#index"
   # display all tasks
 
   get 'tasks/new' => 'tasks#new'
@@ -69,6 +69,8 @@ Rails.application.routes.draw do
   put '/tasks/:id' => "tasks#update"
 
   delete 'tasks/:id' => "tasks#destroy", as: "delete"
+
+  patch 'tasks/:id' => "tasks#mark_complete", as: "complete"
 
   # get '/tasks/:id/edit' => "tasks#edit"
   # return html form to edit a task

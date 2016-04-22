@@ -1,0 +1,10 @@
+def self.print_complete
+  @completed_tasks = Task.where.not(completed: nil)
+  if @completed_tasks
+    @print_tasks = @completed_tasks.each do |entry|
+      link_to entry.title, "/task/#{entry.title}"
+      "description: #{entry.description}"
+      "completed at: #{entry.completed}"
+      button_to "Delete task", delete_path(entry.id), method: :delete, data: {confirm: "Are you sure?"}
+  end
+end
