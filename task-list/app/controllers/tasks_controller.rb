@@ -17,7 +17,7 @@ class TasksController < ApplicationController
   end
 
   def add
-    @task = Task.new
+    @selected_task = Task.new
   end
 
   def new

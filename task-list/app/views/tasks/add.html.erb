@@ -1,13 +1,3 @@
 <h2>New Task</h2>
 
-<%= form_for @task do |t| %>
-  <%= t.label :title %>
-  <br>
-  <%= t.text_field :title %>
-  <br><br>
-  <%= t.label :description %>
-  <br>
-  <%= t.text_field :description %>
-  <br><br>
-  <%= t.submit %>
-<% end %>
+<%= render 'input' %>

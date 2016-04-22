@@ -1,0 +1,11 @@
+<%= form_for @selected_task do |t| %>
+  <%= t.label :title %>
+  <br>
+  <%= t.text_field :title %>
+  <br><br>
+  <%= t.label :description %>
+  <br>
+  <%= t.text_field :description %>
+  <br><br>
+  <%= t.submit %>
+<% end %>
