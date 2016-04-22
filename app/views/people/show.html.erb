@@ -1,4 +1,5 @@
 <h1>Hi <%= @person.name %>, here are your tasks!</h1>
+<h2>You have <%=@uncompleted%> uncompleted tasks</h1>
 
 <table>
 	<tr>
@@ -7,21 +8,22 @@
 		<th>Completed</th>
 		<th>Edit</th>
 		<th>Delete</th>
+		<th>Complete</th>
 	</tr>
 
-	
-
-		<% @tasks.each do |task| %>
+	<% @tasks.each do |task| %>
 		<tr>
 			<td><%= task.name %> </td>
 			<td><%= task.description %> </td>
 			<td><%= task.completed_at %> </td>
-
-		<td><%= button_to "Edit", "/tasks/#{task.id}/edit", :method => :get %>
- 		</td>
- 		<td><%= button_to "Delete", "/tasks/#{task.id}", :method => :delete,  data: { confirm: "Are you sure?" } %>
- 		</td>
- 						</tr>
-			<% end %>
-
+			<td><%= button_to "Edit", "/tasks/#{task.id}/edit", :method => :get %></td>
+ 			<td><%= button_to "Delete", "/tasks/#{task.id}", :method => :delete,  data: { confirm: "Are you sure?" } %></td>
+ 			<td><% if task.completed_at == nil %>
+      		<%= button_to "Completed", "/tasks/#{task.id}/completed", :method => :patch %>
+      			<% else %>
+      			Done
+      		<% end %>
+ 			</td>
+ 		</tr>
+	<% end %>
 </table>
