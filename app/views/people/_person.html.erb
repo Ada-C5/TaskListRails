@@ -1,5 +1,6 @@
+<% person ||= @person %>
 <section class="person">
-  <%= link_to person_path do %>
+  <%= link_to "/people/#{person.id}" do %>
     <h2><%= person.name %></h2>
   <% end %>
   <p><%= person.uncompleted_tasks %>
