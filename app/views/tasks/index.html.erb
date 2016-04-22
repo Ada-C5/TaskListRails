@@ -1,0 +1,42 @@
+<h1> Welcome to your to-do list! Your tasks are: </h1>
+
+<div class = "tasklist">
+  <% @task_list.each do |task| %>
+  <% if @task_list == nil %>
+  <%= puts "You have no tasks to list." %>
+  <% end %>
+  <% end %>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Due Date</th>
+        <th>Completed on</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @task_list.each do |task| %>
+      <tr>
+        <td><%= link_to task.task_name, "/tasks/#{task.id}" %></td>
+        <td><% if task[:task_name] == "Tik Tok" %>
+          <%= link_to task.description, "https://www.youtube.com/watch?v=7ZWaWrvJ7nA"%>
+          <% else %>
+          <%= task[:description] %>
+          <% end %></td>
+          <td><%= task[:status] %></td>
+          <td><%= task[:due_date].to_date.strftime("%B %-d, %Y") %></td>
+          <td><%= task[:completed_on] %></td>
+          <td><%= link_to "Edit", edit_path(task.id) %> / <%= link_to "Delete", url_for(action: :destroy, id: task.id), method: :delete, data: {confirm: "Are you sure you'd like to delete this task?"} %> / <%= link_to "Mark Completed", task_mark_completed_path(task.id), method: :patch, data: {confirm: "Are you sure you'd like to mark this task as completed?"} %></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+  </tbody>
+
+  <div class = "call_to_action">
+    Would you like to add a new task? <%= link_to "Click Here", new_path %>
+  </div>

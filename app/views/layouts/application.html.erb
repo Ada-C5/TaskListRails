@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tasklistrails</title>
+  <%= stylesheet_link_tag    'application.css', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+  <section class="container">
+    <img class="tack" src = "assets/tack.jpg">
+    <%= yield %>
+  </section>
+</body>
+</html>
