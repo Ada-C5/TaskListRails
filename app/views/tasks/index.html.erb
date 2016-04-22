@@ -4,9 +4,10 @@
         <%@show_all.each do |entry| %>
           <%if entry.completed == nil%>
           <li>
-            <%= link_to entry.title, "/task/#{entry.title}" %><br>
+            <%= link_to entry.title, "/tasks/#{entry.id}" %><br>
             <%="description: #{entry.description}"%><br>
             <%="completed at: #{entry.completed}" %><br>
+            <%="owner: #{Person.find(entry.person_id).first_name}" %><br>
             <%= button_to "Delete task", delete_path(entry.id), method: :delete, data: {confirm: "Are you sure?"} %>
             <%= button_to "Mark complete", "/tasks/#{entry.id}/complete", method: :patch %>
             <%= button_to "Edit", "/tasks/#{entry.id}/edit", method: :get %>
@@ -27,9 +28,10 @@
         <%@show_all.each do |entry|%>
           <%if entry.completed != nil%>
           <li>
-            <%=link_to entry.title, "/task/#{entry.title}"%><br>
+            <%=link_to entry.title, "/tasks/#{entry.id}"%><br>
             <%="description: #{entry.description}"%><br>
             <%="completed at: #{entry.completed}"%><br>
+            <%="owner: #{Person.find(entry.person_id).first_name}" %><br>
             <%=button_to "Delete task", delete_path(entry.id), method: :delete, data: {confirm: "Are you sure?"}%>
             <%= button_to "Edit", "/tasks/#{entry.id}/edit", method: :get %>
           <%end%>

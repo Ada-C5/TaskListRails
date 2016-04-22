@@ -65,7 +65,8 @@ Rails.application.routes.draw do
 
   delete '/tasks/:id' => "tasks#destroy", as: "delete"
 
-  patch '/tasks/:id/complete' => "tasks#mark_complete", as: "complete"
+  get '/tasks/:id' => "tasks#show"
+
 
   # return html form to edit a task
   get '/tasks/:id/edit' => "tasks#edit", as: "edit"
