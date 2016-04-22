@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   patch "/tasks/:id" => "home#update"
   delete "/tasks/:id" => "home#destroy"
 
-  get "tasks/:id/edit" => "albums#edit"
+  get "tasks/:id/edit" => "home#edit"
+
+  post "/tasks/:id/complete" => "home#complete"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

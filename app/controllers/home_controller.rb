@@ -25,6 +25,10 @@ class HomeController < ApplicationController
     params.permit(task: [:name, :description])
   end
 
+  def task_edit_params
+    params.permit(task: [:name, :description])
+  end
+
   def show
     @task = Task.find(params[:id])
   end
@@ -34,5 +38,22 @@ class HomeController < ApplicationController
     @task.destroy
     @tasks = Task.order(id: :asc)
     render :index
+  end
+
+  def edit
+    @task = Task.find(params[:id])
+  end
+
+  def update
+    @task = Task.find(params[:id])
+    @task.update(task_edit_params[:task])
+    render :show
+  end
+
+  def complete
+    @task = Task.find(params[:id])
+    @task.completed_at = Time.now
+    @task.save
+    redirect_to root_path
   end
 end

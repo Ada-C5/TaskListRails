@@ -1,8 +1,8 @@
 require 'test_helper'
 
-class TaskTest < ActiveSupport::TestCase
+class PersonTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
-  belongs_to :person
+  has_many :tasks
 end

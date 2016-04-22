@@ -11,10 +11,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<%= link_to "Home", root_path %>
+<%= link_to "New Task", tasks_new_path %>
 
 <%= yield %>
 
-<%= link_to "Home", root_path %>
-<%= link_to "New Task", tasks_new_path %>
 </body>
 </html>
