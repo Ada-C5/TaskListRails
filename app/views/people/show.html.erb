@@ -1,0 +1,3 @@
+<%="name: #{@person.first_name} #{@person.last_name}"%><br>
+<%="favorite color: #{@person.fav_color}" %><br>
+<%="uncompleted tasks: #{Task.where(person_id: @person.id).count}" %><br>

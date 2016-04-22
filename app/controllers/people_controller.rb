@@ -11,6 +11,6 @@ class PeopleController < ApplicationController
   end
 
   def show
-    @task = Task.find(params[:id])
+    @person = Person.find(params[:id])
   end
 end
