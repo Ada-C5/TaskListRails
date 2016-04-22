@@ -54,12 +54,6 @@ table {
 
 // Begin CSS Styling
 
-h1 {
-  // font-weight: 400;
-  text-align: center;
-  margin-top: 15px;
-}
-
 
 .top-bar {
   font-size: 16px;
@@ -109,21 +103,23 @@ h1 {
 }
 
 .task-item {
-  background-color: rgba(111,174,215,.9);
-  border-radius: 5px;
-  box-shadow: 5px 5px 2px #7691A3;
+  background-image: url("../assets/pink-post-it.png");
+  background-position: center;
+  background-repeat: no-repeat;
   display: inline-block;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 300;
-  margin: .8rem;
-  padding: .5rem;
+  margin: .5rem;
+  padding: 1rem;
   text-align: left;
-  width: 210px;
+  width: 205px;
+  overflow: auto; 
 }
 
 .task-item a {
   text-decoration: none;
   color:#1B6FC7;
+  font-weight: 400; 
 
 }
 
@@ -133,26 +129,21 @@ h1 {
 
 .task-description {
   padding: 1rem;
-  line-height: 2.2rem;
+  line-height: 1.5rem;
 }
 
-.submit-button{
-  color:white;
-  margin-top: 5px;
-  padding: 10px;
-}
 
 input[type=submit] {
-  background-color: rgb(6,104,165);
+  background-color: #1B6FC7;
+  border: 1px solid black; 
   border-radius: 5px;
-  color:white;
-  cursor:pointer;
-  display: inline-block;
+  color: white;
+  cursor: pointer;
   font-family: 'Oswald', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   margin-top: 5px;
-  margin-left: 10px;
-  padding:5px 15px 5px 15px;
+  margin-left: 5px;
+  padding:5px 10px 5px 10px;
 }
 
 input[type=text] {

@@ -9,9 +9,11 @@
     <%= button_to "delete", 
       {:controller => :tasks, :action => 'delete', :id => @tasks.id }, 
       :method => :delete, data: { confirm: "Are you sure?" } %>
-    <%= button_to "complete", 
-      {:controller => :tasks, :action => 'complete', :id => @tasks.id }, 
-      :method => :post, data: { confirm: "Are you sure?" } %>
+    <% if @tasks.task_completion == nil %>
+      <%= button_to "complete", 
+        {:controller => :tasks, :action => 'complete', :id => @tasks.id }, 
+        :method => :post, data: { confirm: "Are you sure?" } %>
+    <% end %> 
   </div>
 </div>
 
