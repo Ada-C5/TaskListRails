@@ -13,3 +13,5 @@
     <td><%= @selected_task.completed_at %></td>
   </tr>
 </table>
+
+<%= link_to "Edit", edit_tasks_path(@selected_task.id) %>
