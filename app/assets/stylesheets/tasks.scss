@@ -20,6 +20,10 @@ h1 {
 	padding-top: 10px;
 }
 
+h2 {
+	color: #008080;
+}
+
 .task_button {
 	text-decoration: none;
 	background-color: #008080;
@@ -59,6 +63,6 @@ tr:nth-child(odd) {
 	background-color: #e0ebeb;
 }
 
-tr:hover {
-	background-color:  #004d4d;
-}
+// tr:hover {
+// 	background-color:  #004d4d;
+// }

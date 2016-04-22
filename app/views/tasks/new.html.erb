@@ -1,4 +1,6 @@
 <h1> Let's make a new task</h1>
+<h2><a class='task_button' href='/tasks'>Home</a></h2>
+<h2><a class='task_button' href='/people'>All Task Owners</a></h2>
 
 <table class="new_task">
 <%= form_for @task do |f| %>
@@ -7,7 +9,7 @@
   <td><%= f.label :description %>
   <%= f.text_field :description %></td>
   <td><%= f.label :owner %>
-  <%= f.collection_select :person_id, Person.all, :id, :name %></td>
+  <%= f.collection_select :person_id, Person.all, :id, :name, include_blank: true %></td>
   <td><%= f.submit %></td>
 <% end %>
 </table>
