@@ -16,7 +16,7 @@
 
 
 * {
-	font-family: 'Lato', sans-serif;
+	font-family: 'Karla', sans-serif;
 }
 
 a {
@@ -30,13 +30,13 @@ header img{
   left: 0;
   width: 100%;
   height: 30%;
-  opacity : 0.6;
 	z-index: -1;
 }
 
+
  h1 {
  	margin-top: 8%;
- 	font-size: 60px;
+ 	font-size: 65px;
  	text-align: left;
   padding-left: 4%;
   text-shadow: 5px 5px 10px #000000;
@@ -52,6 +52,7 @@ ul {
   text-align: center;
   padding-top: 2%;
   padding-bottom: 2%;
+  font-size: 30px;
 }
 
  li {
@@ -87,11 +88,12 @@ td.edit {
 }
 
 td.edit i.fa-pencil:hover {
-  color: #002db3;
+  color: #1a1aff;
 }
 
 td.delete {
   font-size: 25px;
+
 }
 
 td.delete i.fa-trash:hover {
@@ -103,11 +105,11 @@ td.completed {
   color: rgba(74, 104, 120, 0.3);
 }
 
-td.completed:hover {
+td.completed i.fa-check-square-o:hover {
   color: #800080;
 }
 
- th, td {
+th, td {
   text-align: center;
   font-weight: bold;
   font-size: 20px;
@@ -122,7 +124,7 @@ td.completed:hover {
   color: #999999;
 }
 
-.new_task {
+.new_task, .edit_task {
   font-size: 25px;
   display: block;
   text-align: center;
@@ -130,6 +132,7 @@ td.completed:hover {
 
 input[type='text'] {
   line-height: 40px;
+  color: #007acc;
   width: 30%;
 }
 
@@ -147,5 +150,12 @@ input[type='submit'] {
   text-align: center;
   margin-top: 1%;
   margin-bottom: 2%;
+}
+
+h2.forms {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 2%;
+
 }
 

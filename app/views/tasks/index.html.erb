@@ -1,5 +1,3 @@
-	  <pre><%=params%></pre>
-
   <table>
     <tr class="header-row">
 
@@ -11,7 +9,7 @@
 
     </tr>
     <tr class="table-row"><% @task_list.each do |task| %></tr>
-    <td><p><%=link_to task.title, "/#{task.title}", class: "links" %></p></td>
+    <td><%=link_to task.title, "/#{task.title}", class: "links" %></td>
     <td><p><%=task.description %></p></td>
 
 
