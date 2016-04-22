@@ -3,18 +3,8 @@ class TasksController < ApplicationController
     @all_tasks = Task.all
   end
 
-  def show
-    @shown_task = Task.find(params[:id])
-    render :show_task
-  end
-
   def new
     @task = Task.new #empty task
-    render :add_task
-  end
-
-  def edit
-    @task = Task.find(params[:id])
     render :add_task
   end
 
@@ -30,6 +20,28 @@ class TasksController < ApplicationController
     # render :index
   end
 
+  def show
+    @shown_task = Task.find(params[:id])
+    render :show_task
+  end
+
+  def edit
+    @task = Task.find(params[:id])
+    render :add_task
+  end
+
+  def update
+    @task = Task.find(params[:id])
+
+    if params[:done]
+      @task.update(completed_at: Time.now)
+    else
+      @task.update(task_update_params[:task])
+    end
+
+    redirect_to tasks_path
+  end
+
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
@@ -37,29 +49,23 @@ class TasksController < ApplicationController
     redirect_to tasks_path
   end
 
-  def complete
-    @task = Task.find(params[:id])
-    @task.update(completed_at: Time.now)
-
-    redirect_to tasks_path
-  end
-
-  # def update
+  # def complete
   #   @task = Task.find(params[:id])
-  #   @task.update(task_update_params[:task])
+  #   @task.update(completed_at: Time.now)
   #
   #   redirect_to tasks_path
   # end
+
 
   private
 
   def task_create_params
     params.permit(task: [:name, :description, :completed_at])
   end
-  #
-  # def task_update_params
-  #   params.permit(task: [:name, :description, :completed_at])
-  # end
+
+  def task_update_params
+    params.permit(task: [:name, :description, :completed_at])
+  end
 
   # do I need one for delete? I'm deleting the whole task, no chance to touch individual params I think
 end
