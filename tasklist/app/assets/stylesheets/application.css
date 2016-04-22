@@ -240,7 +240,7 @@ footer {
 .big-card {
   display: inline-block;
   width: 35rem;
-  height: 35rem;
+  height: 38rem;
   margin-top: 1rem;
   margin-left: auto;
   margin-right: auto;
@@ -265,6 +265,20 @@ strong h3 {
 form.item-task input[type=text] {
   width: 16rem;
 }
+
+.checkmark {
+  width: 1rem;
+  height: 1rem;
+}
+
+.invisible {
+  display: none;
+  /*width: 0rem;
+  height: 0rem;*/
+  float: right;
+}
+
+
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

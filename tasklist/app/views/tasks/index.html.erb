@@ -10,10 +10,13 @@
     <% @all_tasks.each do |task| %>
     <section>
       <div class="floating <%= task.status == 'Completed' ? 'completed' : '' %>">
-
+        <!-- if task.complete != null (or like that) show else take out checkbox -->
         <%= form_tag(task_path(task.id), method: "patch") do %>
-          <%= image_submit_tag "checkmark.png", alt: "Checkbox to mark task completed", class: "checkmark" %>
+          <%= image_submit_tag "checkmark.png", alt: "Checkbox to mark task completed", class: (task.status != "Completed" ? "checkmark" : "invisible") %>
           <%= hidden_field(:task, :status, :value => "Completed") %>
+        <% end %>
+        <% if task.status == "Completed" %>
+          <%  %>
         <% end %>
 
         <section class="card-head">

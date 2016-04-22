@@ -13,6 +13,9 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(tasks_create_params[:task])
+    # defaults = {:status => "Not Started"}
+    # params = defaults.merge(params)
+    # @task = params[:status]
 
     if @task.save
       redirect_to root_path
@@ -52,6 +55,8 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     # render :show
   end
+
+  private
 
   def tasks_create_params
     params.permit(task: [:task, :priority, :due_date, :comments])

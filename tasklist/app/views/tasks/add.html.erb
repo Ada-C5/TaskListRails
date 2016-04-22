@@ -3,7 +3,7 @@
 
     <%= form_for @task, :html => {:class => "item-task"} do |f| %>
       <%= f.label :task %>
-      <%= f.text_field :task, :maxlength => 16 %><br /><br />
+      <%= f.text_field :task, :maxlength => 15 %><br /><br />
 
       <%= f.label :priority, :class => 'add-task' %>
       <%= f.radio_button :priority, 'urgent' %>

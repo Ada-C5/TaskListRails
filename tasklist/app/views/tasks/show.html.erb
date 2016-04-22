@@ -29,18 +29,15 @@
         </div>
         <section class="action-buttons">
 
-          <a href="/edit/<%= @task.id %>" class="btn">Edit</a>
+          <%= button_to "Edit", task_path(@task.id)+"/edit", :class => "btn", :method => :get %>
 
           <!-- <form action="/edit/<%= @task.id %>" method "get">
             <input type="submit" value = "edit"> -->
             <!-- <input type="hidden" name= 'id' value="<%= @task.id%>"> -->
           <!-- </form> -->
-          <form action="/delete" method="post">
-            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-
-            <input class="btn" type="submit" value="Delete" onclick="return confirm('Are you sure?')"/>
-            <input type="hidden" name="id" value="<%= @task.id %>"/>
-          </form>
+          <%= form_tag(task_path(@task.id), method: "delete", data: {confirm: "Are you sure?"}) do %>
+            <%= submit_tag "Delete", class: "btn" %>
+          <% end %>
 
           <!-- <form action="/delete" method="post">
             <input type="submit" value="Delete" onclick="return confirm('Are you sure?')"/>

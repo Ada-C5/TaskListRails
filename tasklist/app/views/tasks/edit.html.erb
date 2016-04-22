@@ -3,7 +3,7 @@
 
     <%= form_for @find_task, :html => {:class => "item-task"} do |f| %>
       <%= f.label :task %>
-      <%= f.text_field :task, :maxlength => 16 %><br /><br />
+      <%= f.text_field :task, :maxlength => 15 %><br /><br />
 
       <%= f.label :priority, :class => 'add-task' %>
       <%= f.radio_button :priority, 'urgent' %>
@@ -17,7 +17,7 @@
       <%= f.radio_button :status, 'Not Started' %>
       <%= label :status, 'Not Started', :class => 'radio' %>
       <%= f.radio_button :status, 'In Progress' %>
-      <%= label :status, 'In Progress', :class => 'radio' %><br />
+      <%= label :status, 'In Progress', :class => 'radio' %><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <%= f.radio_button :status, 'Completed' %>
       <%= label :status, 'Completed', :class => 'radio' %> <br />
 
