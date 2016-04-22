@@ -73,6 +73,9 @@ Rails.application.routes.draw do
   get '/tasks/:id/edit' => "tasks#edit", as: "edit"
   patch '/tasks/:id' => "tasks#update", as: "task"
 
+  get '/people' => "people#index"
+  get '/people/:id' => "people#show"
+
   # get '/tasks/show' => "tasks#show"
   # # return html form to find a task
 

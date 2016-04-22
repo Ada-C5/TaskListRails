@@ -4,6 +4,6 @@
   <%= f.label :description %>
   <%= f.text_field :description %><br/>
   <%= f.label :Person %>
-  <%= f.select "person_id", options_from_collection_for_select( @all_people, "id", "first_name", "last_name") %><br>
+  <%= f.select "person_id", options_from_collection_for_select( @all_people, "id", "first_name", @task.person_id) %><br>
   <%= f.submit %>
 <% end %>

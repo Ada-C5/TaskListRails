@@ -1,0 +1,17 @@
+<h3>TaskMasters</h3>
+  <div class="people">
+    <ul>
+        <%@show_all.each do |person| %>
+          <li>
+            <%= link_to person.first_name, "/people/#{person.id}" %><br>
+            <%="name: #{person.first_name} #{person.last_name}"%><br>
+            <%="favorite color: #{person.fav_color}" %><br>
+        </li>
+        <%end%>
+    </ul>
+  </div>
+
+
+<span class="spacer">
+  <br></br>
+</span>
