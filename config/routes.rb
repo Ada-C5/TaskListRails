@@ -59,21 +59,17 @@ Rails.application.routes.draw do
   get '/tasks' => "tasks#index"
 
   # return html form to create new task
-  get 'tasks/new' => 'tasks#new'
-
+  get '/tasks/new' => 'tasks#new'
   # create a new task
   post '/tasks' => "tasks#create"
 
-  get '/tasks/:id/edit' => "tasks#edit"
+  delete '/tasks/:id' => "tasks#destroy", as: "delete"
 
-  put '/tasks/:id' => "tasks#update"
+  patch '/tasks/:id/complete' => "tasks#mark_complete", as: "complete"
 
-  delete 'tasks/:id' => "tasks#destroy", as: "delete"
-
-  patch 'tasks/:id' => "tasks#mark_complete", as: "complete"
-
-  # get '/tasks/:id/edit' => "tasks#edit" as: 'edit_task'
   # return html form to edit a task
+  get '/tasks/:id/edit' => "tasks#edit", as: "edit"
+  patch '/tasks/:id' => "tasks#update", as: "task"
 
   # get '/tasks/show' => "tasks#show"
   # # return html form to find a task

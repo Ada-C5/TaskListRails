@@ -1,55 +1,39 @@
 <h3>Tasks To Do</h3>
-<div class="tasks">
-  <div class="list_headers">
-    <ul>
-      <li>Tasks</li>
-      <li>Description</li>
-      <li>Date Added</li>
-      <h1>Show all</h1><br>
-    </ul>
-  </div>
   <div class="tasks_to_do">
     <ul>
+        <%@show_all.each do |entry| %>
+          <%if entry.completed == nil%>
           <li>
-            <%@show_all.each do |entry| %>
-              <%if entry.completed == nil%>
-                <%= link_to entry.title, "/task/#{entry.title}" %><br>
-                <%="description: #{entry.description}"%><br>
-                <%="completed at: #{entry.completed}" %><br>
-                <%= button_to "Delete task", delete_path(entry.id), method: :delete, data: {confirm: "Are you sure?"} %>
-                <%= button_to "Mark complete", "/tasks/#{entry.id}", method: :patch %>
-              <%end%>
-            <%end%>
-      </li>
+            <%= link_to entry.title, "/task/#{entry.title}" %><br>
+            <%="description: #{entry.description}"%><br>
+            <%="completed at: #{entry.completed}" %><br>
+            <%= button_to "Delete task", delete_path(entry.id), method: :delete, data: {confirm: "Are you sure?"} %>
+            <%= button_to "Mark complete", "/tasks/#{entry.id}/complete", method: :patch %>
+            <%= button_to "Edit", "/tasks/#{entry.id}/edit", method: :get %>
+          <%end%>
+        </li>
+        <%end%>
     </ul>
   </div>
-</div>
+
 
 <span class="spacer">
   <br></br>
 </span>
 
 <h3>Completed Tasks</h3>
-<div class="tasks">
-  <div class="list_headers">
-    <ul>
-      <li>Tasks</li>
-      <li>Description</li>
-      <li>Date Added</li>
-    </ul>
   <div class="completed_tasks">
     <ul>
-      <li>
         <%@show_all.each do |entry|%>
           <%if entry.completed != nil%>
-            <%=link_to entry.title, "/task/#{entry.title}"%>
-            <%="description: #{entry.description}"%>
-            <%="completed at: #{entry.completed}"%>
+          <li>
+            <%=link_to entry.title, "/task/#{entry.title}"%><br>
+            <%="description: #{entry.description}"%><br>
+            <%="completed at: #{entry.completed}"%><br>
             <%=button_to "Delete task", delete_path(entry.id), method: :delete, data: {confirm: "Are you sure?"}%>
+            <%= button_to "Edit", "/tasks/#{entry.id}/edit", method: :get %>
           <%end%>
+        </li>
         <%end%>
-      </li>
     </ul>
   </div>
-</div>
-</div>

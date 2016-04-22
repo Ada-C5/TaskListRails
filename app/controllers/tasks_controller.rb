@@ -27,9 +27,19 @@ class TasksController < ApplicationController
 
 
   def edit
+    #show form
+    @task = Task.find(params[:id])
+    render :edit
   end
 
   def update
+    #save changes
+    @task = Task.find(params[:id])
+    if @task.update(task_new_params[:task])
+      redirect_to tasks_path
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -39,7 +49,7 @@ class TasksController < ApplicationController
   end
 
   def mark_complete
-    @task = ::Task.find(params[:id])
+    @task = Task.find(params[:id])
     @task.update(completed: DateTime.now.to_s)
     # redefine new group of tasks that don't have nil for completed
     # reroute to new view for completed tasks.
