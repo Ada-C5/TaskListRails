@@ -61,6 +61,7 @@ div.completed {
 
 div.notdone {
   background-color: rgb(179, 209, 237);
+  opacity: 0.2;
 }
 
 a:visited,  a:link{
@@ -78,7 +79,6 @@ a:hover{
 .task span{
   font-size: 1.5rem;
 }
-
 
 h1 {
   font-size: 3rem;
@@ -120,6 +120,7 @@ input.desc {
 
 div.butts {
   display: inline-block;
+  font-size: 1.5rem;
 }
 .button_to input:hover {
   background-color: yellow;
