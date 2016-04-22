@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get    '/tasklist/:id' => 'tasklist#show', as: 'rails_task_list'
   get    '/tasklist/:id/edit' => 'tasklist#edit', as: 'edit_tasklist'
   put    '/tasklist/:id' => 'tasklist#update'
+  patch  '/tasklist/:id/done' => 'tasklist#finished', as: "done_task_list"
   patch  '/tasklist/:id' => 'tasklist#update'
   delete '/tasklist/:id' => 'tasklist#delete'
 

@@ -1,10 +1,12 @@
 <h1>Task List</h1>
 
+<section class = "index">
+
 
 <ul>
-  <%@tasklist.each do |task|%>
+  <%@all_tasklist.each do |task|%>
 <li>
- <%= link_to task.title, "tasklist/#{task.title}"%>
+ <%= link_to task.title, "tasklist/#{task.id}"%>
 </li>
 
 <li>
@@ -12,12 +14,25 @@
               method: :delete,
               data: { confirm: 'Are you sure?' } %>
 </li>
+
 <li>
   <%= link_to "edit task", edit_tasklist_path(task.id)%>
 </li>
-<%end%>
+<li>
+  <%=task.description%>
+</li>
+
+<li>
+<%=task.completed_at%>
+
+</li>
+
+<%=link_to "Done!",done_task_list_path(task.id),method: :patch%>
+<% end %>
+
+
 </ul>
+
 <%= link_to "Add new Task", tasklist_new_path%>
-
-
 <%= link_to "home", root_path%>
+</section>

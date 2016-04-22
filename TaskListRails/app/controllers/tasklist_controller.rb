@@ -1,6 +1,6 @@
 class TasklistController < ApplicationController
   def index
-      @tasklist = RailsTaskList.all
+      @all_tasklist = RailsTaskList.all
   end
 
 
@@ -10,6 +10,12 @@ class TasklistController < ApplicationController
 
     def new
       @tasklist = RailsTaskList.new
+    end
+
+    def finished
+      @tasklist = RailsTaskList.find(params[:id])
+      @tasklist.update(completion_status: "done")
+      redirect_to root_path
     end
 
     def edit
@@ -22,6 +28,7 @@ class TasklistController < ApplicationController
       if @tasklist.update(edit_params[:rails_task_list])
         redirect_to tasklist_path(@tasklist.id)
       else
+
         render :new
       end
     end
@@ -29,7 +36,7 @@ class TasklistController < ApplicationController
 
 
     def show
-      @tasklist = RailsTaskList.where(id: params[:id])
+      @all_tasklist = RailsTaskList.find(params[:id])
     end
 
     def create
@@ -55,11 +62,15 @@ class TasklistController < ApplicationController
     private
 
     def tasklist_params
-      params.permit(rails_task_list: [:title])
+      params.permit(rails_task_list: [:title, :description,])
     end
 
     def edit_params
-        params.permit(rails_task_list: [:title, :description])
+        params.permit(rails_task_list: [:title, :description, :completion_status, :completed_at, :created_at, :updated_at])
+    end
+
+    def done_params
+        params.permit(done_task_list: [:completion_status])
     end
 
 end

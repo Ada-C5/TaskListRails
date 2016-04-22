@@ -1,26 +1,24 @@
-<h1> class = "Bytitle">Task List</h1>
-
-<section class="section">
+<h1 class = "Bytitle">Task List</h1>
 
 
-<ul class = "by_title">
-  <%@tasklist.each do |task|%>
-<li>
- <%= link_to task.title, "/tasklist/#{task.id}"%>
-   <li>
-     <%=task.description%>
-   </li>
-
-   <li>
-     <%=task.completed_at %>
-   </li>
-  
 </li>
 
+ <li>
+   <%=@all_tasklist.title%>
+ </li>
+   <li>
+     <%=@all_tasklist.description%>
+   </li>
 
-<%end%>
+   <li>
+     <%=@all_tasklist.completed_at%>
+   </li>
+
+</li>
+
+<%# I didn't need the each because it only returned one thing and wasn't an array"%>
+
+
 </ul>
 
-
-</section>
 <%= link_to "home", root_path%>

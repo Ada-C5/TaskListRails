@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20160419202627) do
   create_table "rails_task_lists", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
-    t.string   "completion_status" 
+    t.string   "completion_status"
     t.string   "completed_at"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
