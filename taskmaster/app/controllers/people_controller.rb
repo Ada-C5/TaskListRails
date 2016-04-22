@@ -9,4 +9,8 @@ class PeopleController < ApplicationController
     render :show
   end
 
+  def tasks
+    @person = Person.find(params[:id])
+  end
+
 end
