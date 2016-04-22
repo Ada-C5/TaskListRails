@@ -1,3 +1,8 @@
+<%= form_tag root_path, method: 'get', class: "search-bar" do %>
+  <%= text_field_tag :search, params[:search], class: "search-field" %>
+  <%= submit_tag "Search" %>
+<% end %>
+
 <% if @tasks %>
 <h1 class="WHOOT">Tasks</h1>
   <section class="table">
@@ -17,8 +22,8 @@
       <% @tasks.each do |task| %>
         <tr class="<%= 'completed' if task.completed_at %>">
           <td class: "completed-check">
-          <%= button_to "❍", task, method: "patch", params: {id: task.id, "task[completed_at]" => Time.now}, class: "done-button" if task.completed_at.nil? %>
-          <%= button_to "✓", task, method: "patch", params: {id: task.id, "task[completed_at]" => nil}, class: "done-button" if task.completed_at %>
+          <%= button_to "◎", task, method: "patch", params: {id: task.id, "task[completed_at]" => Time.now}, class: "done-button" if task.completed_at.nil? %>
+          <%= button_to "◉", task, method: "patch", params: {id: task.id, "task[completed_at]" => nil}, class: "done-button" if task.completed_at %>
           </td>
           <td><%= link_to task.title, task_path(task.id) %></td>
           <td><%= task.description %></td>
