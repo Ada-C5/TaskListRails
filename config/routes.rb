@@ -11,13 +11,13 @@ Rails.application.routes.draw do
 
   get '/tasks/:id/edit' => 'tasks#edit'
 
-  post '/tasks' => 'tasks#create'
-
   get '/tasks/:id' => 'tasks#show', as: 'task'
 
-  put '/tasks/:id' => 'tasks#complete', as: 'complete'
+  post '/tasks' => 'tasks#create'
 
-  delete '/tasks/:id' => 'tasks#destroy', as: 'delete'
+  put '/tasks/:id' => 'tasks#complete'
+
+  delete '/tasks/:id' => 'tasks#destroy'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

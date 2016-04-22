@@ -9,10 +9,10 @@
   <% end %>
       <%= link_to task.name, task_path(task.id) %><br>
       <ul class="options">
-        <li><%= button_to "DONE!", complete_path(task.id), method: :put %></li>
+        <li><%= button_to "DONE!", task_path(task.id), method: :put %></li>
         <li>Edit</li>
         <li>
-          <%= link_to "Delete", delete_path(task.id), method: :delete,
+          <%= link_to "Delete", task_path(task.id), method: :delete,
           data: { confirm: 'Are you sure you want to delete this task?' } %>
         </li>
       </ul>
