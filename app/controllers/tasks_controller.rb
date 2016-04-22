@@ -5,7 +5,7 @@ class TasksController < ApplicationController
 
   def new
     @task = Task.new #empty task
-    render :add_task
+    render :task_editor
   end
 
   def create
@@ -27,7 +27,7 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.find(params[:id])
-    render :add_task
+    render :task_editor
   end
 
   def update
