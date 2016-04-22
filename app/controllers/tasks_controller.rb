@@ -15,9 +15,13 @@ class TasksController < ApplicationController
   end
 
   def create #NEEDS MODEL TO ALTER
-    @task = Task.create(create_task_params[:task])
-    @tasks = Task.order(completed: :asc)
-    render :index
+    @task = Task.new(create_task_params[:task])
+    if @task.save
+      @tasks = Task.order(completed: :asc)
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def show

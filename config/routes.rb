@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'index/show'
+
   root 'tasks#index'
 
   get '/tasks' => 'tasks#index', as: 'tasks'

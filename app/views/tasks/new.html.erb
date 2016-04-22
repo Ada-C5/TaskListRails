@@ -5,6 +5,13 @@
     <%end%>
     <%= f.label :description do %>
       <%= f.text_area :description, placeholder: "Description" %>
-      <%end%>
+    <%end%>
+    Owner of task:
+    <form>
+      <input type="radio" name="person" value="Finn" checked> Finn<br>
+      <input type="radio" name="person" value="Jake"> Jake<br>
+      <input type="radio" name="person" value="PB"> PB<br>
+      <input type="radio" name="person" value="BMO"> BMO
+    </form>
   <%= f.submit %>
 <% end %>
