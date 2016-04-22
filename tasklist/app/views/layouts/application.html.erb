@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Tasklist</title>
-  <%= stylesheet_link_tag    'application', 'https://fonts.googleapis.com/css?family=Give+You+Glory',  media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', 'https://fonts.googleapis.com/css?family=Give+You+Glory', 'chronic',  media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -20,7 +20,9 @@
 
   <footer>
     <span class="copyright">© 2016 lisa<span class="small-heart">❤︎</span>sano</span>
-    <%= link_to "Contact me!", "mailto:lisa.sano@gmail.com?Subject=Hey%20Lisa" %>
+    <%= link_to "mailto:lisa.sano@gmail.com?Subject=Hey%20Lisa" do %>
+      <i class="fa fa-envelope-o"> Contact me!</i>
+    <% end %>
   </footer>
 </body>
 </html>

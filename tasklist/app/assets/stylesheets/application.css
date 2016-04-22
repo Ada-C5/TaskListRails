@@ -124,7 +124,7 @@ td, th {
   font-family: "Give You Glory", cursive;
   font-size: 1.2rem;
   border-bottom: black;
-  width: 31%;
+  width: auto;
   padding: 1rem;
 }
 
@@ -136,13 +136,10 @@ th {
 .completed {
   text-decoration: line-through;
 }
-/*
-.edit {
-  font-family: Copperplate;
-  font-size: 1.2rem;
-  text-decoration: none;
-  width: 5%;
-}*/
+
+.completed-check {
+  border: 1px solid lime;
+}
 
 ::-webkit-scrollbar {
    -webkit-appearance: none;
@@ -198,6 +195,14 @@ label {
   font-size: 1.5rem;
 }
 
+.show-to-edit {
+  font-size: 2rem;
+}
+
+.done-button {
+  border: none;
+  background-color: rgba(0,0,0,0);
+}
 
 /***********FOOTER**********/
 

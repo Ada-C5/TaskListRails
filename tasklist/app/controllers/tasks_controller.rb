@@ -1,7 +1,11 @@
+require 'chronic'
+
 class TasksController < ApplicationController
 
   def index
     @tasks = Task.order(title: :asc)
+
+    # mystring = params[:search].gsub(/[^A-Za-z0-9]/, '')
   end
 
   def show
@@ -31,7 +35,7 @@ class TasksController < ApplicationController
   end
 
   def delete
-    @task = Task.where(id: params[:id]).first
+    @task = Task.find(params[:id])
     @task.destroy
     redirect_to root_path
   end
@@ -41,4 +45,6 @@ class TasksController < ApplicationController
   def tasks_create_params
     params.permit(task: [:title, :description, :completed_at])
   end
+
+
 end

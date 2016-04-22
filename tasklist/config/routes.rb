@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   post '/tasks' => 'tasks#create', as: 'tasks'
   get 'tasks/:id' => 'tasks#show', as: 'task'
   get '/tasks/:id/edit' => 'tasks#edit', as: 'task_edit'
-  put '/tasks/:id' => 'tasks#update'
+  patch '/tasks/:id' => 'tasks#update'
   delete '/tasks/:id' => 'tasks#delete', as: 'task_delete'
 
   # Example of regular route:

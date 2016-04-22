@@ -1,4 +1,9 @@
-<h1 class="single-task-title"><%= @task[:title] %></h1>
+<h1 class="single-task-title">
+<%= @task[:title] %>
+<%= link_to task_edit_path(@task[:id]) do %>
+  <i class="fa fa-pencil show-to-edit"></i>
+<% end %>
+</h1>
 
 <section class="one-view-all">
   <h2>Description:</h2>
