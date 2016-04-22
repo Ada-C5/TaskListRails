@@ -13,8 +13,11 @@ Rails.application.routes.draw do
     #I can remove this path - somehow?
     patch 'tasks/:id/completed' => 'tasks#complete'
 
+    get '/people/:id' => 'people#show',  as: 'person'
+
     #examples
     #get 'albums/by_year/:year' => 'albums#by_year'
     #get 'artist/:id/albums' => 'artist#albums'
+    #resources sets up the big 7 routes
     #resources :albums, only: [:index, :show]
 end

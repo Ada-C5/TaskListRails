@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   def index
     @tasks = Task.order(id: :desc)
+    @people = Person.all
   end
 
   def show
@@ -9,6 +10,7 @@ class TasksController < ApplicationController
 
   def new
     @task = Task.new
+    # @people = Person.all
   end
 
   def create
@@ -53,10 +55,10 @@ class TasksController < ApplicationController
   private
   #tells us what parameters we want to use when we create an album
   def task_create_params
-    params.permit(task: [:name, :description])
+    params.permit(task: [:name, :description, :person_id])
   end
 
   def task_update_params
-    params.permit(task: [:name, :description])
+    params.permit(task: [:name, :description, :person_id])
   end
 end
