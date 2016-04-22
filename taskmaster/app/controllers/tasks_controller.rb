@@ -16,6 +16,7 @@ class TasksController < ApplicationController
 
   def new
     @task = Task.new
+    @all_people = Person.all
   end
 
   def create
@@ -29,6 +30,7 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.find(params[:id])
+    @all_people = Person.all
     render :new
   end
 
@@ -55,11 +57,11 @@ class TasksController < ApplicationController
   private
 
   def task_create_params
-    params.permit(task: [:name, :description, :priority])
+    params.permit(task: [:name, :description, :priority, :person_id])
   end
 
   def task_update_params
-    params.permit(task: [:name, :description, :priority, :completed])
+    params.permit(task: [:name, :description, :priority, :completed, :person_id])
   end
 
 

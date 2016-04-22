@@ -9,10 +9,15 @@
     <%= image_tag "check2.png" %>
     <% end %>
       <span><%= link_to task.name, "/show/#{task.id}"%><br></span>
-      <div class = "butts">
+      <% if !task.person.nil? %>
+        Person:<%= task.person.name %><br>
+      <% end %>
 
-        <%= link_to "/tasks/#{task.id}/complete", method: :patch, :action =>"complete" do %>
-        <i class="fa fa-check-square-o" aria-hidden="true"></i>
+
+        <% if task.completed.nil? %>
+          <%= link_to "/tasks/#{task.id}/complete", method: :patch, :action =>"complete" do %>
+          <i class="fa fa-check-square-o" aria-hidden="true"></i>
+        <% end %>
 
         <% end %>
         <%= link_to "/tasks/#{task.id}/edit", method: :get, class: 'edit' do  %>
@@ -21,9 +26,6 @@
        <%= link_to delete_path(task.id), method: :delete , :data => {:confirm => 'Are you sure?'} do %>
        <i class="fa fa-trash" aria-hidden="true"></i>
        <% end %>
-
-
-      </div>
   </div>
     <% end %>
 </div>

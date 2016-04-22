@@ -93,6 +93,8 @@ div.task.show {
 
 form {
   margin-bottom: 20px;
+  text-align:left;
+  margin-left: 20%;
 }
 
 label {
@@ -124,4 +126,11 @@ div.butts {
 }
 .button_to input:hover {
   background-color: yellow;
+}
+select {
+  font-size: 3rem;
+}
+
+input.button {
+  margin-left: 30%;
 }

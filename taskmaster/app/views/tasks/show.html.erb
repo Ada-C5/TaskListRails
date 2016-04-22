@@ -5,6 +5,9 @@
   <div class = "task show <%= task.completed.nil? ? 'completed' : 'notdone' %>">
       <span>Task:<%= task.name %><br></span>
        Description:<%= task.description %><br>
+       <% if !task.person.nil? %>
+         Person:<%= task.person.name %><br>
+       <% end %>
        <% if !task.priority.nil? %>
           Priority: <%= task.priority %>
        <% end %>
