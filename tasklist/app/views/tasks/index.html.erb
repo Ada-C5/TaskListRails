@@ -7,6 +7,7 @@
   <li class="task-tile <%= "complete" if task.complete == true %>">
 
     <%= link_to task.title, task_path(task.id), class: "single-task"%>
+    <%= "#{Person.find(task.person_id).name}" unless task.person_id.nil? %>
 
     <% if task.complete != true %>
     <%# if the task is not complete, we give the option to mark complete %>

@@ -48,11 +48,11 @@ class TasksController < ApplicationController
   private
 
   def task_create_params
-    params.permit(task: [:title, :description])
+    params.permit(task: [:title, :description, :person_id])
   end
 
   def task_edit_params
-    params.permit(task: [:title, :description, :completed_at, :complete, :updated_at])
+    params.permit(task: [:title, :description, :completed_at, :complete, :updated_at, :person_id])
   end
 
   # def task_destroy_params
