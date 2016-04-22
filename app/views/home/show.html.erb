@@ -1,6 +1,6 @@
 <h1><%= @task.name %></h1>
 <ul>
   <li>Description: <%= @task.description %></li>
-  <li>Status: <%= @task.completed_at %></li>
+  <li>Status: <%= "Completed" if @task.completed_at != nil%></li>
   <li>Completed on: <%= @task.completed_at %></li>
 </ul>

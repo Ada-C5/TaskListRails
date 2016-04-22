@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  get"/tasks/new" => "home#new"
-  post "/tasks" => "home#create", as: "tasks"
+  get "/tasks" => "home#index", as: "tasks"
+  post "/tasks" => "home#create"
+
+  get "/tasks/new" => "home#new"
+
   get "/tasks/:id" => "home#show", as: "task"
+  patch "/tasks/:id" => "home#update"
+  delete "/tasks/:id" => "home#destroy"
+
+  get "tasks/:id/edit" => "albums#edit"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -15,7 +15,7 @@ class HomeController < ApplicationController
   def create
     @task = Task.new(task_create_params[:task])
     if (@task.save)
-      redirect_to task_path(@task.id)
+      redirect_to root_path
     else
       render :new
     end
@@ -27,5 +27,12 @@ class HomeController < ApplicationController
 
   def show
     @task = Task.find(params[:id])
+  end
+
+  def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+    @tasks = Task.order(id: :asc)
+    render :index
   end
 end
