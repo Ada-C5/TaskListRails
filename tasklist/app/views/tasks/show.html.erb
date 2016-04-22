@@ -1,6 +1,6 @@
 <h2><%= "Title:  #{@single_task.title}" unless @single_task.title.nil? %></h2>
 <p>
-<%= link_to "EDIT", edit_path(@single_task.id) %></p>
+<%= link_to "EDIT", edit_task_path(@single_task.id) %></p>
 
 <ul class="list-tasks">
   <div class="task-tile detailed">
@@ -19,5 +19,10 @@
       <li>
         <%= "Completed at:  #{@single_task.completed_at}" unless @single_task.completed_at.nil? %>
       </li>
+
+      <li>
+        <%= "Updated at:  #{@single_task.updated_at}" unless @single_task.updated_at.nil? %>
+      </li>
+
     </ul>
   </div>

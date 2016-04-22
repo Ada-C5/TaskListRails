@@ -18,9 +18,9 @@ Rails.application.routes.draw do
   get '/tasks/:id' => 'tasks#show', as: 'task'
 
   # edit the fields of a specific task and update
-  get '/task/:id/edit' => 'tasks#edit', as: 'edit'
+  get '/task/:id/edit' => 'tasks#edit', as: 'edit_task'
 
-  # update a specific task by marking complete. why does put not work?
+  # update a specific task by marking complete or making other changes from get/edit page
   patch '/tasks/:id' => 'tasks#update'
 
   # delete a specific photo
