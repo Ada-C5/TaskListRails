@@ -11,9 +11,21 @@ body {
 }
 
 h1 {
-	color: #9BADD4;
+	color: #D4C29B;
+	background-color: black;
+	height: 75px;
+	font-weight:normal;
+	padding-top: 25px;
 }
 
+.task_button {
+	text-decoration: none;
+	background-color: black;
+	color: #D4C29B;
+	padding: 4px;
+	border-radius: 7px;
+
+}
 ul {
 	list-style-type: none;
 	// text-align: center;
@@ -23,10 +35,14 @@ table {
 	width: 100%;
 }
 
-tr {
+td {
+
 	padding: 5px;
-	border-radius: 10px;
-	margin: 5px;
+
+}
+
+tr {
+	// padding: 5px;
 	background-color: #D49BCA;
 	// text-align: center;
 }
