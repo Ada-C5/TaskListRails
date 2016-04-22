@@ -12,6 +12,10 @@ class TasksController < ApplicationController
     @selected_task = Task.find(params[:id])
   end
 
+  def edit
+    @selected_task = Task.find(params[:id])
+  end
+
   def add
     @task = Task.new
   end
@@ -35,7 +39,7 @@ class TasksController < ApplicationController
     redirect_to root_path
   end
 
-  def update
+  def update #make this more general... somehow...
     @task = Task.find(params[:id])
     @task.completed_at = Time.now
     @task.save
@@ -47,4 +51,5 @@ class TasksController < ApplicationController
   def task_create_params
     params.permit(task: [:title, :description])
   end
+
 end

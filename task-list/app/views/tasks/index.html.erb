@@ -1,15 +1,21 @@
+<h2>In-Progress Tasks</h2>
+
 <table class = "all-tasks">
 
 	<tr>
 		<th>To-Do</th>
 		<th class="center">Delete</th>
 		<th class="center">Completed</th>
+		<th class="center">Edit</th>
+
 
 	</tr>
 
 	<% @all_tasks.each do |task| %>
 	  <tr>
-      <td><%= link_to task.title, task_path(task.id) %></td>
+      <td>
+				<%= link_to task.title, task_path(task.id) %>
+			</td>
 			<td class="center">
 				<%= button_to "Delete", task_path(task.id),
 				method: :delete,
@@ -18,6 +24,9 @@
 			<td class="center">
 				<%= button_to "Just Did It!", task_path(task.id),
 				method: :patch %>
+			</td>
+			<td>
+				<%= link_to "Edit", edit_tasks_path(task.id) %>
 			</td>
     </tr>
 	<% end %>
