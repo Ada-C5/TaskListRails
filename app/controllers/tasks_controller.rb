@@ -18,7 +18,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(create_task_params[:task])
-    assign_person
+    assign_person(@task)
     if @task.save
       redirect_to root_path
     else
@@ -33,8 +33,9 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-    assign_person
     @task.update(create_task_params[:task])
+    assign_person(@task)
+    # raise
     if @task.save
       redirect_to root_path
     else
@@ -67,8 +68,12 @@ class TasksController < ApplicationController
     params.permit(task: [:title, :description], person: [:person_id])
   end
 
-  def assign_person
-    @task.person= Person.find(create_task_params[:person][:person_id]) if @task.person
+  def assign_person(task)
+    unless create_task_params[:person][:person_id].empty?
+      task.person= Person.find(create_task_params[:person][:person_id])
+    else
+      task.person= nil
+    end
   end
 
 
