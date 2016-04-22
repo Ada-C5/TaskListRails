@@ -11,9 +11,9 @@ Rails.application.routes.draw do
   get '/tasks/:id'              => 'tasks#show', as: 'task'
   delete '/tasks/:id'           => 'tasks#destroy'
   patch '/tasks/:id'            => 'tasks#update'
-  get '/tasks/:id/edit'         => 'tasks#edit', as: 'task_edit'
-  patch '/tasks/:id/complete'   => 'tasks#complete', as: 'task_complete'
-  patch '/tasks/:id/uncomplete' => 'tasks#uncomplete'
+  get '/tasks/:id/edit'         => 'tasks#edit', as: 'edit_task'
+  patch '/tasks/:id/complete'   => 'tasks#complete', as: 'complete_task'
+  patch '/tasks/:id/uncomplete' => 'tasks#uncomplete', as: 'uncomplete_task'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
