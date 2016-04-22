@@ -23,6 +23,7 @@ class TasksController < ApplicationController
 
   def show
     @shown_task = Task.find(params[:id])
+    @task_owner = Person.find(@shown_task.person_id)
     render :show_task
   end
 

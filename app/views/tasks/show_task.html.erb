@@ -1,6 +1,7 @@
 <h2><%= @shown_task.name %></h2>
 
 <ul class="task_info">
+  <li><h3>Owner:</h3> <%= @task_owner.name %></li>
   <li><h3>Description:</h3> <%= @shown_task.description %></li>
   <li><h3>Completed At:</h3>
   <% if @shown_task.completed_at == nil %>
