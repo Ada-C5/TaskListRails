@@ -16,7 +16,7 @@
 
   <p class="form-person">
   <%= f.label :person %>
-  <%= f.select :person_id, options_from_collection_for_select( @people , :id, :name), include_blank: true %>
+  <%= f.select :person_id, options_from_collection_for_select( @people , :id, :name, @task.person_id ), include_blank: true %>
   </p>
 
   <%= f.submit %>
