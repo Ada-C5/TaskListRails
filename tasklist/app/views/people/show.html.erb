@@ -2,6 +2,9 @@
   <h2>Person:</h2>
   <p><%= @person[:name] %></p>
 
+  <h2>Completed Tasks:</h2>
+  <p><%= Task.where(person_id: @person[:id]).where.not(completed_at: nil).count %></p>
+
   <h2>Incomplete Tasks:</h2>
   <p><%= Task.incomplete_tasks(@person[:id]) %></p>
 </section>
