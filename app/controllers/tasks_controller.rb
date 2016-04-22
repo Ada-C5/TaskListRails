@@ -13,6 +13,11 @@ class TasksController < ApplicationController
     render :add_task
   end
 
+  def edit
+    @task = Task.find(params[:id])
+    render :add_task
+  end
+
   def create
     @task = Task.create(task_create_params[:task]) #task with data
     # if you want a new request, you use redirect
