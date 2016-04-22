@@ -3,6 +3,7 @@ class CreateRailsTaskLists < ActiveRecord::Migration
     create_table :rails_task_lists do |t|
       t.string :title
       t.string :description
+      t.string :completion_status
       t.string :completed_at
 
       t.timestamps null: false

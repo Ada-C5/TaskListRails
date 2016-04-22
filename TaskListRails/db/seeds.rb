@@ -10,16 +10,16 @@ def random_time
 end
 
 list = [
-  { title: "The First Task", description: "", completed_at: random_time },
-  { title: "Go to Brunch", description: "" },
-  { title: "Go to Lunch", description: "", completed_at: random_time },
-  { title: "Go to Second Lunch", description: "" },
-  { title: "Play Video Games", description: "", completed_at: random_time },
-  { title: "High Five Somebody You Don't Know", description: "", completed_at: random_time },
-  { title: "Plant Flowers", description: "", completed_at: random_time },
-  { title: "Call Mom", description: "" },
-  { title: "She worries, you know.", description: "" },
-  { title: "Nap.", description: "", completed_at: random_time }
+  { title: "The First Task", description: "Get up and dress", completion_status:"almost done", completed_at: random_time },
+  { title: "Go to Brunch", description: "With friends",completion_status: "almost done" },
+  { title: "Go to Lunch", description: "With Family",completion_status: "almost done", completed_at: random_time },
+  { title: "Go to Second Lunch", description: "With friends",completion_status: "almost done" },
+  { title: "Play Video Games", description: "with friends",completion_status: "almost done", completed_at: random_time },
+  { title: "High Five Somebody You Don't Know", description: " Or not", completion_status: "almost done", completed_at: random_time },
+  { title: "Plant Flowers", description: "In neighbors back yard", completed_at: random_time },
+  { title: "Call Mom", description: "Or else",completion_status: "almost done" },
+  { title: "She worries, you know", description: "Or else",completion_status: "almost done" },
+  { title: "Nap", description: "Yesss!",completion_status: "almost done", completed_at: random_time }
 ]
 
 list.each do |task|

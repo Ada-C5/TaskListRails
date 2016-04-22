@@ -1,4 +1,38 @@
 Rails.application.routes.draw do
+
+  root   'tasklist#index'
+# rails_task_list_index GET    /rails_task_list(.:format)          rails_task_list#index
+#                       POST   /rails_task_list(.:format)          rails_task_list#create
+#   new_rails_task_list GET    /rails_task_list/new(.:format)      rails_task_list#new
+#  edit_rails_task_list GET    /rails_task_list/:id/edit(.:format) rails_task_list#edit
+#       rails_task_list GET    /rails_task_list/:id(.:format)      rails_task_list#show
+#                       PATCH  /rails_task_list/:id(.:format)      rails_task_list#update
+#                       PUT    /rails_task_list/:id(.:format)      rails_task_list#update
+#                       DELETE /rails_task_list/:id(.:format)      rails_task_list#destroy
+
+  get    '/tasklist' => 'tasklist#index', as: 'rails_task_lists'
+  get    '/tasklist/new' => 'tasklist#new', as: 'tasklist_new'
+  post   '/tasklist' => 'tasklist#create'
+  get    '/tasklist/:id' => 'tasklist#show', as: 'rails_task_list'
+  get    '/tasklist/:id/edit' => 'tasklist#edit', as: 'edit_tasklist'
+  put    '/tasklist/:id' => 'tasklist#update'
+  patch  '/tasklist/:id' => 'tasklist#update'
+  delete '/tasklist/:id' => 'tasklist#delete'
+
+
+
+
+
+
+  # root "tasklist#index"
+  # get '/tasklist' => 'tasklist#index', as: 'tasklists'
+  # get '/tasklist/new' => 'tasklist#new'
+  # post'/tasklist' => 'tasklist#create', as: 'rails_task_lists'
+  # get '/:title' => 'tasklist#by_title'
+  # get '/:id'=> 'tasklist#show'
+  # delete '/tasklist/:id' => 'tasklist#delete'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

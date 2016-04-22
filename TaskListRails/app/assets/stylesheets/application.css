@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+
+.by_title {
+  text-align: center;
+  font-family: "american typewriter";
+  list-style-type: none;
+  background-color: gray;
+  border-radius: 10px;
+  height:300px;
+  width:200px;
+  margin: 0 auto;
+
+
+}
+
+.title {
+  text-align: center;
+}
