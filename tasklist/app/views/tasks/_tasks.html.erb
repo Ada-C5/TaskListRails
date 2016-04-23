@@ -1,6 +1,9 @@
 <section class="card-head">
   <strong> <h3 class="link"><%= link_to task.task, task_path(task.id) %></h3></strong>
 </section>
+<div>
+  <strong>Belongs To</strong> : <%= task.person.name %>
+</div>
 <div class="pad-text">
   <strong>Priority</strong> : <div class="<%= task.priority %>"><%= task.priority %></div>
 </div>
