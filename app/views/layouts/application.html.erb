@@ -10,9 +10,10 @@
 </head>
 <body>
   <header class = "title">
-    <a href='/'><h1>SUPER AWESOME TO-DO LIST</h1></a>
+    <%= link_to root_path do %>
+      <h1>SUPER AWESOME TO-DO LIST</h1></a>
+    <% end %>
   </header>
-
 
 <%= yield %>
 

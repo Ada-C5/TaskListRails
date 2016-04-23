@@ -8,7 +8,11 @@
       <%= link_to task_path(task.id) do %>
         <h2 class="title"><%=task.title%></h2>
       <% end %>
-      <p><%= task.person.name if task.person %></p>
+      <% if task.person %>
+        <%= link_to person_path(task.person_id) do %>
+          <%= task.person.name %>
+        <% end %>
+      <% end %>
       <p class="description">
         <%= task.description %>
       </p>

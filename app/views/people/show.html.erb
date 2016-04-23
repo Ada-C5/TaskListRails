@@ -1,2 +1,2 @@
 <%= render partial: 'person', object: @person %>
-<%= link_to "See All Tasks For #{@person.name}", person_tasks(@person.id) %>
+<%= link_to "See All Tasks For #{@person.name}", person_tasks_path(@person.id) %>
