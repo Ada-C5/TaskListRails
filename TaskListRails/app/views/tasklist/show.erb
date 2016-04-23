@@ -1,9 +1,8 @@
 <h1 class = "Bytitle">Task List</h1>
 
 
-</li>
+<section class="more_info"
 
- <li>
    <%=@all_tasklist.title%>
  </li>
    <li>
@@ -14,11 +13,18 @@
      <%=@all_tasklist.completed_at%>
    </li>
 
+   <li>
+     <%if @all_tasklist.person != nil%>
+     <%=@all_tasklist.person.name%>
+     <%end%>
+
+   </li>
+   <li>
+     <%= link_to "home", root_path%>
+   </li>
 </li>
 
 <%# I didn't need the each because it only returned one thing and wasn't an array"%>
 
-
 </ul>
-
-<%= link_to "home", root_path%>
+</section>

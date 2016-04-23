@@ -15,21 +15,25 @@
  */
 
 
-.by_title {
-  text-align: center;
-  font-family: "american typewriter";
+.task_description{
+  background-color: green;
+  font-family: american type writer;
+  margin: 2rem;
+  width: 15%;
+  display: inline-block;
   list-style-type: none;
-  background-color: gray;
-  border-radius: 10px;
-  height:300px;
-  width:200px;
-  margin: 0 auto;
-
-
 }
 
-.title {
+.more_info{
+  background-color: gray;
   text-align: center;
+  text-decoration: none;
+  list-style-type: none;
+  width: 35%;
+  height: 500px;
+  border-radius: 50px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .index {

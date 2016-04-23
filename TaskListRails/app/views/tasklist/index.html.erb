@@ -3,36 +3,47 @@
 <section class = "index">
 
 
-<ul>
-  <%@all_tasklist.each do |task|%>
-<li>
- <%= link_to task.title, "tasklist/#{task.id}"%>
-</li>
+    <%@all_tasklist.each do |task|%>
+    <ul class = "task_description">
+      <li>
+        <%= link_to task.title, rails_task_list_path(task.id)%>
+      </li>
 
-<li>
-  <%= link_to 'Delete', "tasklist/#{task.id}",
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %>
-</li>
+      <li>
+        <%= link_to 'Delete',delete_path(task.id),
 
-<li>
-  <%= link_to "edit task", edit_tasklist_path(task.id)%>
-</li>
-<li>
-  <%=task.description%>
-</li>
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %>
+      </li>
 
-<li>
-<%=task.completed_at%>
-
-</li>
-
-<%=link_to "Done!",done_task_list_path(task.id),method: :patch%>
-<% end %>
+      <li>
+        <%= link_to "edit task", edit_tasklist_path(task.id)%>
+      </li>
+      <li>
+        <%="Description"%>
+        <%=task.description%>
+      </li>
 
 
-</ul>
+      <li>
+        <%if task.person != nil%>
+        <%=task.person.name%>
+        <%end%>
 
-<%= link_to "Add new Task", tasklist_new_path%>
-<%= link_to "home", root_path%>
+      </li>
+      <li>
+        <%=task.completed_at%>
+
+      </li>
+
+
+
+      <%=link_to "Done!",done_task_list_path(task.id),method: :patch%>
+  </ul>
+    <% end %>
+
+
+
+  <%= link_to "Add new Task", tasklist_new_path%>
+  <%= link_to "home", root_path%>
 </section>

@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   put    '/tasklist/:id' => 'tasklist#update'
   patch  '/tasklist/:id/done' => 'tasklist#finished', as: "done_task_list"
   patch  '/tasklist/:id' => 'tasklist#update'
-  delete '/tasklist/:id' => 'tasklist#delete'
+  delete '/tasklist/:id' => 'tasklist#delete', as: 'delete'
 
 
 

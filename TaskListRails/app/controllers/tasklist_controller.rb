@@ -10,6 +10,7 @@ class TasklistController < ApplicationController
 
     def new
       @tasklist = RailsTaskList.new
+      @all_people = Person.all
     end
 
     def finished
@@ -20,6 +21,8 @@ class TasklistController < ApplicationController
 
     def edit
       @tasklist = RailsTaskList.find(params[:id])
+      @all_people = Person.all
+
       render :new
     end
 
@@ -66,7 +69,7 @@ class TasklistController < ApplicationController
     end
 
     def edit_params
-        params.permit(rails_task_list: [:title, :description, :completion_status, :completed_at, :created_at, :updated_at])
+        params.permit(rails_task_list: [:title, :description, :completion_status, :person_id, :completed_at, :created_at, :updated_at])
     end
 
     def done_params

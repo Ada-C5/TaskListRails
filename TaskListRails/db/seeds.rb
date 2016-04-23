@@ -25,3 +25,7 @@ list = [
 list.each do |task|
   RailsTaskList.create task
 end
+
+Person.create(name: 'Honoure Afflect', description: "" )
+Person.create(name: 'William Adolphus', description: "" )
+Person.create(name: 'Edith Teisilian Ethelena', description:"" )
