@@ -1,10 +1,11 @@
 <section class="create-task">
-  <h2>Create New Task</h2>
+  <% task_type = @task.title.nil? ? "Create New" : "Update" %>
+  <h2><%= task_type %> Task</h2>
 
 
   <%= form_for @task do |f| %>
     <%= f.label :title do %>
-      <%= f.text_field :title, placeholder: "Buy a dozen puppies"  %>
+      <%= f.text_field :title, placeholder: "Buy a dozen puppies", required: true  %>
     <% end %>
 
     <%= f.label :description do %>
