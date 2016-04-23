@@ -5,7 +5,7 @@
 
   <div class = "<%= @status[1] %> task-box">
     <div class = "task-info">
-      <%= link_to "/tasks/#{task.id}" do %>
+      <%= link_to task_path(task.id) do %>
         <h2 class="title"><%=task.title%></h2>
       <% end %>
       <p><%= task.person.name if task.person %></p>
@@ -15,15 +15,16 @@
       <%= task.completed_at %>
     </div>
 
-    <%= link_to "tasks/#{task.id}/#{@status[0]}", method: :patch do %>
+    <% path = @status[0] == "complete" ? complete_task_path(task.id) : uncomplete_task_path(task.id) %>
+    <%= link_to path, method: :patch do %>
       <div class = "checkbox"></div>
     <% end %>
 
     <div class = "task-edits">
-      <%= link_to "/tasks/#{task.id}/edit" do %>
+      <%= link_to edit_task_path(task.id) do %>
         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
       <% end %>
-      <%= button_to "/tasks/#{task.id}", class: "task-edits-buttons", data: {confirm: "Are you sure you want to delete permanently?"}, method: :delete do %>
+      <%= button_to task_path(task.id), class: "task-edits-buttons", data: {confirm: "Are you sure you want to delete permanently?"}, method: :delete do %>
         <i class="fa fa-trash" aria-hidden="true"></i>
       <% end %>
     </div>
