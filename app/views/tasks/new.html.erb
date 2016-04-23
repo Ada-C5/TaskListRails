@@ -8,14 +8,14 @@
     <% end %>
 
     <%= f.label :description do %>
-      <%= f.text_area :description, placeholder: "An optional description of the task", rows: "10", cols: "50" %>
+      <%= f.text_area :description, placeholder: "An optional description of the task", rows: "12" %>
     <% end %>
 
     <%= f.label :person do %>
       <%= collection_select(:person, :person_id, Person.all, :id, :name, {include_blank: "Assign Task"}) %>
     <% end %>
 
-    <%= f.submit %>
+    <%= f.submit class: "button" %>
   <% end %>
 
 

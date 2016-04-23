@@ -21,6 +21,7 @@
    font-size: 16px;
    font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
  }
+
  body {
    background-color: #19334d;
    color: #ecf2f9;
@@ -46,7 +47,47 @@
    font-size: 1.25rem;
  }
 
-   /*INDEX*/
+ /** Index **/
+
+ .button {
+   width: 17rem;
+   height: 3.5rem;
+   margin: 3% auto;
+   padding: 1rem;
+   background: #E4C158;
+   border: none;
+   border-radius: .25rem;
+   font-size: 1.45rem;
+   text-align: center;
+   color: white;
+   cursor: pointer;
+ }
+
+ .button:hover {
+   background: #E3B429;
+ }
+
+ .button p {
+   margin: 0;
+   padding: 0;
+ }
+
+ .float-left {
+   float: left;
+ }
+
+ .float-right {
+   float: right;
+ }
+
+ .column-title{
+   display: inline-block;
+   clear: both;
+   width: 100%;
+   text-align: center;
+ }
+
+   /** Task **/
  .task-info {
    display: inline-block;
    width: 75%;
@@ -56,13 +97,12 @@
  }
 
  .task-info p {
-   margin: 0;
+   margin: .2rem 0 0 0;
    padding-left: .6rem;
    color: #CDD2D7;
  }
 
  .task-box {
-   /*background-color: rgb(62, 98, 134);*/
    background-color: #54789B;
    width: 45%;
    border: .1rem solid #18314e;
@@ -71,7 +111,6 @@
    margin: 2% 2.5%;
    float: left;
  }
-
 
  .complete {
    font-style: italic;
@@ -106,16 +145,15 @@
    opacity: 0.6;}
 
  .complete .checkbox  {
-   background-image: url(<%= asset_path 'creepysmile.png' %>);
+   background-image: url(<%= asset_path 'check.png' %>);
    z-index: 1;
-   opacity: .8;
+   opacity: 1;
    background-repeat: no-repeat;
    background-size: cover;
  }
 
  .task-edits {
    float: right;
-   /*display: block;*/
    width: 5%;
    margin: 1% 0.5% 1% 1%;
    font-size: 1rem;
@@ -139,42 +177,6 @@
    color: white;
  }
 
- .new-task {
-   width: 25%;
-   height: 3.5rem;
-   margin: 3% auto;
-   padding: 1rem;
-   background: #E4C158;
-   border-radius: .25rem;
-   font-size: 1.5rem;
-   text-align: center;
-   cursor: pointer;
- }
-
- .new-task:hover {
-   background: #E3B429;
- }
-
- .new-task p {
-   margin: 0;
-   padding: 0;
- }
-
- .float-left {
-   float: left;
- }
-
- .float-right {
-   float: right;
- }
-
- .column-title{
-   display: inline-block;
-   clear: both;
-   width: 100%;
-   text-align: center;
- }
-
  .complete:nth-child(2n+1)  {
    float: right;
  }
@@ -187,7 +189,7 @@
    margin: auto;
  }
 
- .create-task form * {
+ .create-task form > * {
    display: block;
    margin: auto;
    padding: .2rem;
@@ -199,9 +201,25 @@
 
  .create-task form textarea,
  .create-task form input[type=text] {
+   width: 100%;
    margin-top: 2%;
+   padding: .5rem;
+   background-color: #EDEDED;
+   border-radius: .25rem;
+   font-size: 1.3rem;
  }
 
+ .create-task form textarea:focus,
+ .create-task form input[type=text]:focus {
+   background-color: white;
+}
+
+.create-task select {
+  width: 17rem;
+  height: 3rem;
+  background-color: white;
+  font-size: 1.3rem;
+}
 
 
 
