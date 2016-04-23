@@ -3,15 +3,13 @@
 
     <%= form_for @task, :html => {:class => "item-task"} do |f| %>
 
-      <%= render partial: "tasks/form_builder", locals: {f: f}  %>
+      <%= render partial: "tasks/form_builder", locals: {f: f, show_status: false}  %>
 
       <%=f.submit 'Add Task', :class => 'add-btn'%>
     <% end %>
 
   </div>
 </section>
-
-
 
     <!-- <form action="/create" method="post" accept-charset="utf-8">
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>

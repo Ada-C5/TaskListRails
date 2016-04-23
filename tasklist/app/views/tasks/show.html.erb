@@ -6,44 +6,15 @@
   <article>
     <section>
       <div class="big-card">
-        <section class="card-head">
-          <strong> <h3><%= @task.task %></h3></strong>
-        </section>
-        <div class="pad-text">
-          <strong>Priority</strong> : <div class="<%= @task.priority %>"><%= @task.priority %></div>
-        </div>
-        <div class="pad-text">
-          <strong>Status</strong> : <%= @task.status %> <br/>
-        </div>
-        <div class="pad-text">
-          <strong>Date Created</strong> : <%= @task.created_at %> <br/>
-        </div>
-        <div class="pad-text">
-          <strong>Due Date</strong> : <%= @task.due_date %> <br/>
-        </div>
-        <div class="pad-text">
-          <strong>Comments</strong> : <%= @task.comments %> <br/>
-        </div>
-        <div class="pad-text">
-          <strong>Date Completed</strong> : <%= @task.date_completed %>
-        </div>
-        <section class="action-buttons">
 
-          <%= button_to "Edit", task_path(@task.id)+"/edit", :class => "btn", :method => :get %>
+        <%= render partial: "tasks/tasks", locals: {task: @task} %>
 
-          <!-- <form action="/edit/<%= @task.id %>" method "get">
-            <input type="submit" value = "edit"> -->
-            <!-- <input type="hidden" name= 'id' value="<%= @task.id%>"> -->
-          <!-- </form> -->
-          <%= form_tag(task_path(@task.id), method: "delete", data: {confirm: "Are you sure?"}) do %>
-            <%= submit_tag "Delete", class: "btn" %>
-          <% end %>
-
-          <!-- <form action="/delete" method="post">
-            <input type="submit" value="Delete" onclick="return confirm('Are you sure?')"/>
-            <input type="hidden" name="id" value="<%= @task.id %>"/>
-          </form> -->
-        </section>
       </div>
     </section>
   </article>
+
+  <!-- <form action="/delete" method="post">
+  <input type="submit" value="Delete" onclick="return confirm('Are you sure?')"/>
+  <input type="hidden" name="id" value="<%= @task.id %>"/>
+</form> -->
+<!-- </section> -->

@@ -9,6 +9,16 @@
       <%= f.radio_button :priority, 'low' %>
       <%= label :priority, 'low', :class => 'radio' %> <br /><br />
 
+      <% if show_status == true %>
+        <%= f.label :status, :class => 'add-task' %>
+        <%= f.radio_button :status, 'Not Started' %>
+        <%= label :status, 'Not Started', :class => 'radio' %>
+        <%= f.radio_button :status, 'In Progress' %>
+        <%= label :status, 'In Progress', :class => 'radio' %>
+        <%= f.radio_button :status, 'Completed' %>
+        <%= label :status, 'Completed', :class => 'radio' %> <br /><br />
+      <% end %>
+
       <%= f.label :due_date %>
       <%= f.text_field :due_date %> <br /><br />
 

@@ -29,7 +29,7 @@ h1 {
 .floating {
   display: inline-block;
   width: 20rem;
-  height: 24rem;
+  height: 30rem;
   margin: 1rem;
   border: 3px solid black;
   padding: .5rem;
@@ -65,7 +65,7 @@ h1 {
 
 .edit-floating {
   display: inline-block;
-  width: 35rem;
+  width: 37rem;
   height: 41rem;
   margin: auto 1rem;
   border: 3px solid black;

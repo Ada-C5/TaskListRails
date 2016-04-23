@@ -3,15 +3,7 @@
 
     <%= form_for @find_task, :html => {:class => "item-task"} do |f| %>
 
-      <%= render partial: "tasks/form_builder", locals: {f: f} %>
-
-      <%= f.label :status, :class => 'add-task' %>
-      <%= f.radio_button :status, 'Not Started' %>
-      <%= label :status, 'Not Started', :class => 'radio' %>
-      <%= f.radio_button :status, 'In Progress' %>
-      <%= label :status, 'In Progress', :class => 'radio' %><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <%= f.radio_button :status, 'Completed' %>
-      <%= label :status, 'Completed', :class => 'radio' %> <br />
+      <%= render partial: "tasks/form_builder", locals: {f: f, show_status: true} %>
 
       <%= f.submit 'Edit Task', :class => 'add-btn' %>
     <% end %>
@@ -19,11 +11,9 @@
   </div>
 </section>
 
-
 <!-- <div class="params">
 <#%= params %>
 </div> -->
-
 
 <!-- <form action="/update" method="post" accept-charset="utf-8">
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
