@@ -1,0 +1,5 @@
+<h1><%= Person.find(params[:id]).name %>'s Tasks!</h1>
+
+<%= render 'show_table', :tasks => @complete_tasks, :title => "Completed" %>
+
+<%= render 'show_table', :tasks => @incomplete_tasks, :title => "Incomplete" %>
