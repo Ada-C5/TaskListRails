@@ -2,11 +2,12 @@ require 'chronic'
 
 class TasksController < ApplicationController
   def index #homepage
-    @all_tasks = Task.all
+    @all_tasks = Task.all.order(:date_completed)
   end
 
   def new
     @task = Task.new
+    @people = Person.all
 
     render "new"
   end
@@ -16,6 +17,8 @@ class TasksController < ApplicationController
     # defaults = {:status => "Not Started"}
     # params = defaults.merge(params)
     # @task = params[:status]
+    person = Person.find(params[:people])
+    person.tasks << @task
 
     if @task.save
       redirect_to root_path
@@ -25,8 +28,9 @@ class TasksController < ApplicationController
   end
 
   def edit
-    # @find_task = Task.where(id: params[:id]).first
     @find_task = Task.find(params[:id])
+    @people = Person.all
+    # @find_task = Task.where(id: params[:id]).first
     # if @find_task.due_date != nil
     #   @find_task.due_date = "#{Chronic.parse((@find_task.due_date).to_s).strftime("%m/%d/%Y at %I:%M%p")}"
     # end
@@ -35,12 +39,16 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     @task.update(tasks_update_params[:task])
+
     if params[:task][:status] == "Completed"
       @task.date_completed = Time.now
     else
       @task.date_completed = ""
     end
     @task.save
+
+    person = Person.find(params[:people])
+    person.tasks << @task
     # @all_tasks = Queries.new.display_tasks
     redirect_to action: "index"
   end

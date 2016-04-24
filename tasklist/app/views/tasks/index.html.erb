@@ -8,7 +8,6 @@
   <article>
 
     <% if @all_tasks %>
-    <% @all_tasks = @all_tasks.all.order(:date_completed) %>
     <% @all_tasks.each do |task| %>
     <section>
       <div class="floating <%= task.status == 'Completed' ? 'completed' : '' %>">

@@ -3,7 +3,7 @@
 
     <%= form_for @task, :html => {:class => "item-task"} do |f| %>
 
-      <%= render partial: "tasks/form_builder", locals: {f: f, show_status: false}  %>
+      <%= render partial: "tasks/form_builder", locals: {f: f, show_status: false, people: @people}  %>
 
       <%=f.submit 'Add Task', :class => 'add-btn'%>
     <% end %>
