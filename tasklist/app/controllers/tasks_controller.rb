@@ -1,8 +1,11 @@
 class TasksController < ApplicationController
 
   def index
-    # @tasks = Task.order(completed_at: :asc)
-    @tasks = Task.search(params[:search])
+    if params[:search] 
+      @tasks = Task.search(params[:search])
+    else
+      @tasks = Task.order(completed_at: :asc)
+    end
   end
 
   def show
@@ -44,6 +47,4 @@ class TasksController < ApplicationController
   def tasks_create_params
     params.permit(task: [:title, :description, :completed_at, :person_id])
   end
-
-
 end
