@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'tasks#index'
+  root 'tasks#index'
 
   get    '/tasks' => 'tasks#index', as: 'tasks'
   post   '/tasks' => 'tasks#create'
