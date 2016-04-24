@@ -261,6 +261,40 @@ form.item-task input[type=text] {
   float: right;
 }
 
+.people-floating {
+  display: inline-block;
+  width: 13rem;
+  /*height: 4rem;*/
+  margin: 1rem;
+  border: 3px solid black;
+  padding: 1.5rem;
+  float: left;
+  background-color: whitesmoke;
+  font-size: 3rem;
+}
+
+.person-pad-text {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.person-big-card {
+  display: inline-block;
+  width: 35rem;
+  height: 35rem;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  border: 3px solid black;
+  padding: .7rem;
+  background-color: whitesmoke;
+  font-size: 1.7rem;
+}
+
+.people-index {
+  font-size: 1rem;
+}
+
 
 
 /*
