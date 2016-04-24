@@ -8,4 +8,9 @@ class PeopleController < ApplicationController
     @person = Person.find(params[:id])
   end
 
+  def show_tasks
+    @complete_tasks = Task.complete_tasks(params[:id])
+    @incomplete_tasks = Task.incomplete_tasks(params[:id])
+  end
+
 end
