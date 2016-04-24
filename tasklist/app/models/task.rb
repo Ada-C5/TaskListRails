@@ -12,7 +12,11 @@ class Task < ActiveRecord::Base
 
 
   def self.incomplete_tasks(id)
-    where(person_id: id).where(completed_at: nil).count
+    where(person_id: id).where(completed_at: nil)
+  end
+
+  def self.complete_tasks(id)
+    where(person_id: id).where.not(completed_at: nil)
   end
 
 end
