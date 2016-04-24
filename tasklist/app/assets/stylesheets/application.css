@@ -45,11 +45,11 @@ body {
   right: 0.5rem;
 }
 
-.fa-home {
+.fa-list {
   left: 0.5rem;
 }
 
-.fa-user, .fa-list {
+.fa-user {
   left: 6rem;
 }
 
@@ -67,10 +67,14 @@ h1 {
   text-align: center;
   margin-top: 6%;
   clear: right;
+  font-family: Copperplate;
+  font-size: 4rem;
  }
 
 h2 {
   font-family: Copperplate, sans-serif;
+  text-align: center;
+  margin-top: 6%;
 }
 
 .single-task-title {
@@ -236,6 +240,28 @@ label {
   font-size: 1rem;  
   width: 10rem;
 }
+
+.persons-tasks {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  height: 45%;
+  overflow-y: scroll;
+}
+
+.persons-tasks-table {
+  table-layout: fixed;
+}
+
+.persons-tasks-table td {
+  width: 50%;
+}
+
+.see-my-tasks {
+  font-family: Copperplate;
+  color: #0099e6;
+}
+
 
 /***********FOOTER**********/
 
