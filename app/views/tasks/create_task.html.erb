@@ -15,6 +15,9 @@
   <%= f.label :priority %>
   <%= f.text_field :priority %><br>
 
+  <%= f.label :person_id %><br>
+  <%= f.select :person_id, ['1', '2', '3', '4']%>
+
   <%= f.submit %>
 
 <% end %>

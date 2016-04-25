@@ -1,11 +1,19 @@
 <h1 class="person"><%= @person.name %></h1>
+<h2>Incomplete Tasks: <%= %></h2>
 
 <% tasks = Task.where(person_id: @person.id) %>
 <% tasks.each do |task| %>
-
+	<% if task.completed_at.nil? %>
 			<li class="even-task">
 				<span class="task-title"><%= task.id %>. <%= task.name.capitalize %></span><br>
 				<span class="task-desc"><%= task.description %></span><br>
-	 			<span class="completion"><span class="bold-text">Completed On:</span> <%= task.completed_at %></span><br>
 			</li>
+
+	<% else %>
+		<li class="completed-task">
+				<span class="task-title"><%= task.id %>. <%= task.name.capitalize %></span><br>
+				<span class="task-desc"><%= task.description %></span><br>
+	 			<span class="completion"><span class="bold-text">Completed On:</span> <%= task.completed_at %></span><br>
+		</li>
 <% end %>
+<%end%>

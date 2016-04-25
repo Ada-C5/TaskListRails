@@ -6,7 +6,7 @@ class PeopleController < ApplicationController
 
   def show
     @person = Person.find(params[:id])
-    @tasks = Task.new
+    @icnomplete_tasks = Task.order(completed_at: :desc)
     render :detail_view
   end
 

@@ -70,6 +70,15 @@ ul.displayed_list {
 	box-shadow: 10px 10px 5px #888888;
 }
 
+.completed-task {
+	background-color: #999;
+	padding: 1rem;
+	margin: 1rem;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 10px 10px 5px #888888;
+}
+
 .task-title {
 	font-weight: bolder;
 	font-variant: small-caps;
@@ -131,5 +140,9 @@ button {
 	width: auto;
 	border: 5px double #2d862d;
 }
+
+/********** PEOPLE **********/
+
+
 
 /********** FOOTER **********/
