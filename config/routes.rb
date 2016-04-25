@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'tasks#index'
   get '/tasks/new' =>'tasks#new'
   post '/tasks' => 'tasks#create', as: 'tasks'
+  get '/tasks/travelers' => 'tasks#travelers'
 
   get '/tasks/completed' => 'tasks#show_completed'
   get '/tasks/completed/:id' => 'tasks#completed', as: 'update'

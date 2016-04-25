@@ -3,14 +3,16 @@ class TasksController < ApplicationController
 		@task_list = Task.where(completed_at: nil)
 	end
 
+# clicking on title shows all tasks with that title, even ones that are completed. Fix this.
 	def show
+		# @task_list = Task.where.not(completed_at: nil)
 		@task_list = Task.where(title: params[:title])
-		# @people_list = Person.where(name: params[:name])
 		render :index
 	end
 
 	def new
 		@task = Task.new
+		@person = Person.new
 	end
 
 	def show_completed
@@ -18,23 +20,21 @@ class TasksController < ApplicationController
 		render :show
 	end
 
+	def travelers
+	end
+
 	def create
 		@task = Task.create(task_create_params[:task])
-		@person = Person.create(people_create_params[:people])
 		redirect_to root_path
 	end
 
 	def edit
 		@edit = Task.find(params[:id])
-		@person = Person.all
-
 	end
 
 	def update
 		@task = Task.find(params[:id])
-		@person = Person.find(params[:id])
 		@task.update_attributes(task_update_params[:task])
-		@person.update_attributes(people_create_params[:person])
 		redirect_to root_path
 	end
 
@@ -54,11 +54,11 @@ class TasksController < ApplicationController
 	private
 
 	def task_create_params
-		params.permit(task: [:title, :description])
+		params.permit(task: [:title, :description, :person_id])
 	end
 
 	def task_update_params
-		params.permit(task: [:title, :description])
+		params.permit(task: [:title, :description, :person_id])
 	end
 
 	def people_create_params

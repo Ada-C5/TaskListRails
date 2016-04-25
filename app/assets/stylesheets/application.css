@@ -158,3 +158,13 @@ h2.forms {
 
 }
 
+select#task_person_id {
+  height: 5%;
+  width: 20%;
+  color: #007acc;
+
+
+}
+
+
+
