@@ -14,15 +14,14 @@ class TasksController < ApplicationController
 
   def edit
     @selected_task = Task.find(params[:id])
+    @all_people = Person.all
   end
 
   def add
     @selected_task = Task.new
+    @all_people = Person.all
   end
 
-  def new
-    @album = Album.new
-  end
 
   def create
     @task = Task.new(task_create_params[:task])
@@ -44,6 +43,7 @@ class TasksController < ApplicationController
       @task = Task.find(params[:id])
       @task.title = params[:task][:title]
       @task.description = params[:task][:description]
+      @task.person_id = params[:task][:person_id]
       @task.save
       redirect_to root_path
     else
@@ -57,7 +57,7 @@ class TasksController < ApplicationController
   private
 
   def task_create_params
-    params.permit(task: [:title, :description])
+    params.permit(task: [:title, :description, :person_id])
   end
 
 end

@@ -4,6 +4,7 @@
 
 	<tr>
 		<th>To-Do</th>
+		<th>Person</th>
 		<th class="center">Delete</th>
 		<th class="center">Completed</th>
 		<th class="center">Edit</th>
@@ -15,6 +16,12 @@
 	  <tr>
       <td>
 				<%= link_to task.title, task_path(task.id) %>
+			</td>
+			<td>
+				<% if task.person_id != nil %>
+				<% num = task.person_id %>
+				<%= Person.find(num).name %>
+				<% end %>
 			</td>
 			<td class="center">
 				<%= button_to "Delete", task_path(task.id),

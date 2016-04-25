@@ -4,12 +4,19 @@
 	<tr>
 		<th>Title</th>
 		<th>Description</th>
+		<th>Person</th>
 		<th>Completed At</th>
 	</tr>
 
   <tr>
     <td><%= @selected_task.title %></td>
     <td><%= @selected_task.description %></td>
+		<td>
+			<% if @selected_task.person_id != nil %>
+			<% num = @selected_task.person_id %>
+			<%= Person.find(num).name %>
+			<% end %>
+		</td>
     <td><%= @selected_task.completed_at %></td>
   </tr>
 </table>
