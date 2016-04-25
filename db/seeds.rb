@@ -8,7 +8,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 def random_time
-  Time.at(rand * Time.now.to_i)
+  DateTime.strptime('%d-%m-%Y %I:%M:%S %p')
 end
 
 persons = [

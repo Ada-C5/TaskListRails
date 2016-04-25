@@ -66,25 +66,24 @@ header li a:hover{
  color:#4D434F;
  display: flex;
  flex-wrap: wrap;
- // flex-direction: wrap;
  // margin: auto;
  overflow: auto;
  // padding: 2%;
  border-style: dotted;
  border-color: red;
- width: 777px;
+ width: 100%;
 
 }
 
 .task-item {
- // background-image: url("../assets/pink-post-it.png");
+ background-image: url("../assets/chalkboard.png");
  background-position: center;
  background-repeat: no-repeat;
  display: inline-block;
  font-size: 20px;
  font-weight: 300;
  margin: .5rem;
- padding: 1rem;
+ padding: 0rem;
  text-align: left;
  width: 205px;
  overflow: auto;
