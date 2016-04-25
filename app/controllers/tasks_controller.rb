@@ -65,7 +65,7 @@ class TasksController < ApplicationController
   end
 
   def show
-    @page_title = "#{@task.title}"
     @task = Task.find(params[:id])
+    @page_title = "#{@task.title}"
   end
 end
