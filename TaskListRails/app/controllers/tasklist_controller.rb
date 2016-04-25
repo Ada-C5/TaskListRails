@@ -62,6 +62,10 @@ class TasklistController < ApplicationController
         end
     end
 
+    def people
+      
+    end
+
     private
 
     def tasklist_params
