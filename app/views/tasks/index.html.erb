@@ -1,7 +1,7 @@
 <h1> Get these things done, you slacker!</h1>
 
 <div class= "container">
-  <% @tasks = @tasks.all.order(:completed) %>
+  <% @tasks = @tasks.all.order(completed: :desc) %>
   <% @tasks.each do |task| %>
 
   <div class = "task <%= task.completed.nil? ? 'completed' : 'notdone' %>">

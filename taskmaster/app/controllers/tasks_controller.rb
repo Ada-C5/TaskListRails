@@ -17,6 +17,8 @@ class TasksController < ApplicationController
   def new
     @task = Task.new
     @all_people = Person.all
+    if !@task.person_id
+      @
   end
 
   def create
@@ -31,11 +33,6 @@ class TasksController < ApplicationController
   def edit
     @task = Task.find(params[:id])
     @all_people = Person.all
-    if @task.person
-      @current_user = @task.person.id
-    else
-      @@current_user = nil
-    end
     render :new
   end
 
