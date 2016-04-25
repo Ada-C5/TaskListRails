@@ -6,6 +6,32 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+def random_time
+  Time.at(rand * Time.now.to_i)
+end
+
+tasks = [
+  { task_name: "", description: "", status: "", due_date: "", completed_at: random_time, peep_id: ""},
+  { task_name: "", description: "", status: "", due_date: "", completed_at: random_time, peep_id: ""},
+  { task_name: "", description: "", status: "", due_date: "", completed_at: random_time, peep_id: ""},
+  { task_name: "", description: "", status: "", due_date: "", completed_at: random_time, peep_id: ""},
+  { task_name: "", description: "", status: "", due_date: "", completed_at: random_time, peep_id: ""},
+  { task_name: "", description: "", status: "", due_date: "", completed_at: random_time, peep_id: ""},
+  { task_name: "", description: "", status: "", due_date: "", completed_at: random_time, peep_id: ""},
+  { task_name: "", description: "", status: "", due_date: "", completed_at: random_time, peep_id: ""},
+  { task_name: "", description: "", status: "", due_date: "", completed_at: random_time, peep_id: ""},
+  { task_name: "", description: "", status: "", due_date: "", completed_at: random_time, peep_id: ""},
+  { task_name: "", description: "", status: "", due_date: "", completed_at: random_time, peep_id: ""},
+  { task_name: "", description: "", status: "", due_date: "", completed_at: random_time, peep_id: ""},
+  { task_name: "", description: "", status: "", due_date: "", completed_at: random_time, peep_id: ""},
+  { task_name: "", description: "", status: "", due_date: "", completed_at: random_time, peep_id: ""},
+  { task_name: "", description: "", status: "", due_date: "", completed_at: random_time, peep_id: ""}
+  ]
+
+tasks.each do |task|
+  Task.create task
+end
+
 people = [
   { name: "Jillian", age: 31, occupation: "Awesome Person" },
   { name: "Jake", age: 32, occupation: "Radical Person" },
