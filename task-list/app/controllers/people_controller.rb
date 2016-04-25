@@ -8,4 +8,8 @@ class PeopleController < ApplicationController
     @selected_person = Person.find(params[:id])
   end
 
+  def tasks
+    @selected_person = Person.find(params[:id])
+  end
+
 end

@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   ###work on this
   get '/people' => 'people#index', as: 'people'
   get '/people/:id' => 'people#show', as: 'person'
+  get '/people/:id/tasks' => 'people#tasks', as: 'all_tasks'
+
 end

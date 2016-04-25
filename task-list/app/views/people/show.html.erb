@@ -12,7 +12,9 @@
 
   <tr>
     <td><%= @selected_person.name %></td>
-    <td><%= tasks_to_do.length %></td>
-    <td><%= done_tasks.length %></td>
+    <td><%= tasks_to_do.name %></td>
+    <td><%= done_tasks.name %></td>
   </tr>
 </table>
+
+<%= link_to "Full Task List", all_tasks_path(@selected_person.id) %>
