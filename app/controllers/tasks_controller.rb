@@ -2,6 +2,7 @@ class TasksController < ApplicationController
 
 	def index
 		@tasks = Task.order(id: :asc)
+		@person = Person.new
 		render :index
 	end
 
@@ -22,6 +23,7 @@ class TasksController < ApplicationController
 
 	def edit
 		@task = Task.find(params[:id])
+		@person = Person.new
 		render :edit
 	end
 
@@ -41,11 +43,11 @@ class TasksController < ApplicationController
 	private
 
   def task_create_params
-    params.permit(task: [:name, :description, :completed_at, :priority])
+    params.permit(task: [:name, :description, :completed_at, :priority, :person_id])
   end
 
   def task_update_params
-    params.permit(task: [:name, :description, :completed_at, :priority])
+    params.permit(task: [:name, :description, :completed_at, :priority, :person_id])
   end
 
 end

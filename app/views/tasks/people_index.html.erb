@@ -1,0 +1,10 @@
+<%= link_to "Add A Task", tasks_new_path %>
+
+<% @people.each do |person| %>
+
+			<li class="person">
+				<%= link_to person.name, person_path(person.id) %>
+		 	</li>
+		<% end %>
+
+<% end %>
