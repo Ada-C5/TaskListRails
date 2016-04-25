@@ -9,8 +9,27 @@
   <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,600' rel='stylesheet' type='text/css'>
 </head>
 <body>
+  <header>
+    <h1 class=title>A Mathematical List of <br />Adventures to Complete</h1>
+    <nav>
+      <ul>
+        <li>
+          <%= link_to "Tasks", tasks_path %>
+        </li>
+        <li class="newt">
+          <%= link_to "New Task", tasks_new_path %>
+        </li>
+        <li>
+          <%= link_to "Individuals", people_path %>
+        </li>
+      </ul>
+
+    </nav>
+  </header>
+<main>
 
 <%= yield %>
+</main>
 
 </body>
 </html>

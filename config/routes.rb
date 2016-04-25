@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'index/show'
 
   root 'tasks#index'
 
@@ -11,6 +10,10 @@ Rails.application.routes.draw do
   get '/tasks/:id' => 'tasks#show', as: 'task'
 
   get '/tasks/edit/:id' => 'tasks#edit'
+
+  get 'people/index' => 'people#index', as: 'people'
+
+  get 'people/:id' => 'people#show', as: 'person'
 
   post '/tasks' => 'tasks#create'
   #

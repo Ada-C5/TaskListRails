@@ -16,6 +16,7 @@ class TasksController < ApplicationController
 
   def create #NEEDS MODEL TO ALTER
     @task = Task.new(create_task_params[:task])
+    @task.person = Person.find(create_person_param[:person_id])
     if @task.save
       @tasks = Task.order(completed: :asc)
       redirect_to root_path
@@ -64,6 +65,10 @@ class TasksController < ApplicationController
 
   private
   def create_task_params
-    params.permit(task: [:task, :description])
+    params.permit(task: [:task, :description], person: :person_id)
+  end
+
+  def create_person_param
+    params.permit(:person_id)
   end
 end

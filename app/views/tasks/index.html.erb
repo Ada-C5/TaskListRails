@@ -1,12 +1,7 @@
-<header>
 
-<h1 class = "title">Do This Shit:</h1>
-</header>
-
-<%= link_to "New Task", tasks_new_path %>
 
 <section class = "not-complete">
-  <h2>Do:</h2>
+  <h2>Adventures to be had:</h2>
 
 <% @tasks.each do |task| %>
   <div class = "task-box uncomplete" >
@@ -16,7 +11,7 @@
           <i class="fa fa-check-square" aria-hidden="true"></i>
         <%end%>
         <div class = "owner">
-          Belongs to: <%=task.person%>
+          Belongs to: <%=task.person.name %>
         </div>
       <div class = task-edits>
         <%= link_to "/tasks/edit/#{task.id}" do%>
@@ -41,6 +36,9 @@
     <%=button_to "/tasks/uncomplete/#{task.id}" do%>
       <i class="fa fa-check-square" aria-hidden="true"></i>
     <%end%>
+    <div class = "owner">
+      Belongs to: <%=task.person.name %>
+    </div>
   <div class = task-edits>
     <%= link_to "/tasks/edit/#{task.id}" do%>
     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
