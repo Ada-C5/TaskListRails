@@ -11,9 +11,15 @@
   <% done_tasks = @selected_person.tasks.where("tasks.completed_at IS NOT NULL") %>
 
   <tr>
-    <td><%= @selected_person.name %></td>
-    <td><%= tasks_to_do.name %></td>
-    <td><%= done_tasks.name %></td>
+    <td>
+			<%= @selected_person.name %>
+		</td>
+    <td>
+			<%= tasks_to_do.length %>
+		</td>
+    <td>
+			<%= done_tasks.length %>
+		</td>
   </tr>
 </table>
 

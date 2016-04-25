@@ -16,7 +16,11 @@
   </tr>
     <% tasks_to_do = @selected_person.tasks.where("tasks.completed_at IS NULL") %>
     <% tasks_to_do.each do |task| %>
-      <tr><td><%= task.title %></td></tr>
+      <tr>
+				<td>
+					<%= task.title %>
+				</td>
+			</tr>
     <% end %>
 </table>
 

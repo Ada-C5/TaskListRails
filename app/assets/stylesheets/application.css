@@ -45,11 +45,10 @@ table.all-tasks {
 	background-color: rgba(255, 255, 255, 0.35);
 	border: .2rem solid #03577B;
 	// border-radius: 5rem;
-	width:40%;
-	margin-left:30%;
-	margin-right:30%;
+	width:50%;
+	margin-left:25%;
+	margin-right:25%;
   border-spacing: 0rem;
-
 }
 
 .center {
@@ -91,16 +90,17 @@ input[type=text] {
 		border: .2rem solid #03577B;
 		border-radius: 2.5rem;
 		width:20%;
-    // margin: 8px 0;
+    margin: 8px 0;
 }
 
-// input[type=button], input[type=submit], input[type=reset] {
-// 		background-color: lightblue;
-//     border: .2rem solid #03577B;
-// 		font-size: .75rem;
-//     color: navy;
-//     padding: 16px 32px;
-//     text-decoration: none;
-//     margin: 4px 2px;
-//     cursor: pointer;
-// }
+ input[type=button], input[type=submit], input[type=reset] {
+  background-color: white;
+  border: .2rem solid #03577B;
+  border-radius: 2.5rem;
+  font-size: .75rem;
+  color: black;
+  padding: 10px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
