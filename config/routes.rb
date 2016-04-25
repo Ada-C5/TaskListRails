@@ -1,18 +1,18 @@
 Rails.application.routes.draw do
-  root 'home#index'
+  root 'tasks#index'
 
-  get "/tasks" => "home#index", as: "tasks"
-  post "/tasks" => "home#create"
+  get "/tasks" => "tasks#index", as: "tasks"
+  post "/tasks" => "tasks#create"
 
-  get "/tasks/new" => "home#new"
+  get "/tasks/new" => "tasks#new"
 
-  get "/tasks/:id" => "home#show", as: "task"
-  patch "/tasks/:id" => "home#update"
-  delete "/tasks/:id" => "home#destroy"
+  get "/tasks/:id" => "tasks#show", as: "task"
+  patch "/tasks/:id" => "tasks#update"
+  delete "/tasks/:id" => "tasks#destroy"
 
-  get "tasks/:id/edit" => "home#edit"
+  get "/tasks/:id/edit" => "tasks#edit"
 
-  post "/tasks/:id/complete" => "home#complete"
+  post "/tasks/:id/complete" => "tasks#complete"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
