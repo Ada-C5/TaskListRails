@@ -7,9 +7,7 @@
 			<li class="even-task">
 				<span class="task-title"><%= task.id %>. <%= task.name.capitalize %></span><br>
 				<span class="task-desc"><%= task.description %></span><br>
-				<span class="bold-text">Belongs to: <%= Person.find(task.person_id).name %></span><br>
-	 			<span class="completion"><span class="bold-text">Completed On:</span> <%= task.completed_at %></span><br>
-	 			<%= link_to "Show Details?", show_path(task.id) %><br>
+			<span class="completion"><span class="bold-text">Completed On:</span> <%= task.completed_at %></span><br>
 	 			<%= button_to "details", 
 	 				{:controller => :tasks, :action => 'show', :id => task.id},
 	 				:method => :get %>
@@ -27,9 +25,7 @@
 			<li class="odd-task">
 				<span class="task-title"><%= task.id %>. <%= task.name.capitalize %></span><br>
 				<span class="task-desc"><%= task.description %></span><br>
-				<span class="bold-text">Belongs to: <%= Person.find(task.person_id).name %></span><br>
-	 			<span class="completion"><span class="bold-text">Completed On:</span> <%= task.completed_at %></span><br>
-	 			<%= link_to "Show Details?", show_path(task.id) %><br>
+ 			<span class="completion"><span class="bold-text">Completed On:</span> <%= task.completed_at %></span><br>
 	 			<%= button_to "details", 
 	 				{:controller => :tasks, :action => 'show', :id => task.id},
 	 				:method => :get %>
