@@ -24,7 +24,9 @@
  body {
    background-color: #19334d;
    color: #ecf2f9;
-   padding: 4rem;
+ }
+ main {
+      padding: 4rem;
  }
 
  h1 {
