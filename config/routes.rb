@@ -25,6 +25,8 @@ Rails.application.routes.draw do
 
   get '/people' => 'people#index'
 
+  get '/people/:id' => 'people#show', as: 'person'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
