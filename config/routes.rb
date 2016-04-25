@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   root 'tasks#index'
   get '/tasks/new' =>'tasks#new'
   post '/tasks' => 'tasks#create', as: 'tasks'
-  get '/tasks/travelers' => 'tasks#travelers'
 
   get '/tasks/completed' => 'tasks#show_completed'
   get '/tasks/completed/:id' => 'tasks#completed', as: 'update'
@@ -15,8 +14,11 @@ Rails.application.routes.draw do
 
   delete '/tasks/:id' => 'tasks#delete', as: 'delete'
 
+  get '/people' => 'people#index'
+  get '/people/:name' => 'people#show'
 
   get '/:title' => 'tasks#show'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

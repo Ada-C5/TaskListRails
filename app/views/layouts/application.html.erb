@@ -3,7 +3,9 @@
 <head>
   <title>Travel Checklist</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <link href='https://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
+
+  <link href='https://fonts.googleapis.com/css?family=Sofia|Oswald|Calligraffitti|Karla|Marck+Script' rel='stylesheet' type='text/css'>
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -21,7 +23,7 @@
   <span>|</span>
   <li><%= link_to 'completed tasks', '/tasks/completed', class: "nav-links" %></li>
     <span>|</span>
-  <li><%= link_to 'travelers', '/tasks/travelers', class: "nav-links" %></li>
+  <li><%= link_to 'travelers', '/people', class: "nav-links" %></li>
 </ul>
 </nav>
 	</header>

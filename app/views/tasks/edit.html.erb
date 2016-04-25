@@ -12,7 +12,7 @@
 	<%= f.label :'Reassign to:' %>
 	<br>
  <%= f.select(:person_id) do %>
- 	<%= options_from_collection_for_select(Person.all, :id, :name) %>
+ 	<%= options_from_collection_for_select(Person.all, :id, :name, @current_user) %>
 <% end %>
 <br>
 			<%= f.submit %>

@@ -13,7 +13,7 @@
 <%= f.label :'Assign to:' %>
 <br>
  <%= f.select(:person_id) do %>
- 	<%= options_from_collection_for_select(Person.all) %>
+ 	<%= options_from_collection_for_select(Person.all, :id, :name) %>
 <% end %>
  <br>
 	<%= f.submit %>

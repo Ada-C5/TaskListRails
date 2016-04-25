@@ -114,12 +114,12 @@ th, td {
   font-size: 20px;
 }
 
-.links {
+.links, .travelers {
   text-decoration: none;
   color:  #3d0099;
 }
 
-.links:hover, .nav-links:hover {
+.links:hover, .nav-links:hover, .travelers:hover {
   color: #999999;
 }
 
@@ -162,9 +162,14 @@ select#task_person_id {
   height: 5%;
   width: 20%;
   color: #007acc;
-
-
 }
 
+ul.traveler-list {
+  margin-top: 5%;
+}
 
+.travelers {
+  font-weight: bold;
+  font-size: 30px;
+}
 

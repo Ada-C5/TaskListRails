@@ -5,8 +5,9 @@ class TasksController < ApplicationController
 
 # clicking on title shows all tasks with that title, even ones that are completed. Fix this.
 	def show
-		# @task_list = Task.where.not(completed_at: nil)
-		@task_list = Task.where(title: params[:title])
+		@incomplete = Task.where(completed_at: nil)
+		@task_list = @incomplete.where(title: params[:title])
+		@people = Person.where(name: params[:name])
 		render :index
 	end
 
@@ -20,9 +21,6 @@ class TasksController < ApplicationController
 		render :show
 	end
 
-	def travelers
-	end
-
 	def create
 		@task = Task.create(task_create_params[:task])
 		redirect_to root_path
@@ -30,6 +28,9 @@ class TasksController < ApplicationController
 
 	def edit
 		@edit = Task.find(params[:id])
+		if @edit.id
+			@current_user = @edit.person.id
+		end
 	end
 
 	def update
@@ -60,12 +61,6 @@ class TasksController < ApplicationController
 	def task_update_params
 		params.permit(task: [:title, :description, :person_id])
 	end
-
-	def people_create_params
-		params.permit(person: [:name])
-		
-	end
-
 
 end
 
