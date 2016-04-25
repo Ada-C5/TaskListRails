@@ -22,16 +22,16 @@ people.each do |person|
 end
 
 tasks = [
-  { task: "The First Task", comments: "" },
-  { task: "Go to Brunch", comments: "" },
-  { task: "Go to Lunch", comments: "" },
-  { task: "Go to 2nd Lunch", comments: "" },
-  { task: "Play Games", comments: "" },
-  { task: "High 5 Somebody", comments: "" },
-  { task: "Plant Flowers", comments: "" },
-  { task: "Call Mom", comments: "" },
-  { task: "She worries.", comments: "" },
-  { task: "Nap", comments: "" }
+  { task: "The First Task", comments: "", person_id: 1 },
+  { task: "Go to Brunch", comments: "", person_id: 1 },
+  { task: "Go to Lunch", comments: "", person_id: 1 },
+  { task: "Go to 2nd Lunch", comments: "", person_id: 1 },
+  { task: "Play Games", comments: "", person_id: 1 },
+  { task: "High 5 Somebody", comments: "", person_id: 1 },
+  { task: "Plant Flowers", comments: "", person_id: 1 },
+  { task: "Call Mom", comments: "", person_id: 1 },
+  { task: "She worries.", comments: "", person_id: 1 },
+  { task: "Nap", comments: "", person_id: 1 }
 ]
 
 tasks.each do |task|
