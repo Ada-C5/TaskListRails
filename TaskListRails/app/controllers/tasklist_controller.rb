@@ -62,9 +62,6 @@ class TasklistController < ApplicationController
         end
     end
 
-    def people
-      
-    end
 
     private
 
