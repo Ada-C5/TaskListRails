@@ -40,6 +40,14 @@ class TasksController < ApplicationController
    end 
 	end
 
+
+def complete
+   @task = Task.find(params[:id])
+   completed = Time.now 
+   @task.update_column(:completed_at, completed)
+   redirect_to root_path
+ end
+
 	private
 
   def task_create_params

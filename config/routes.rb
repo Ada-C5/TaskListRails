@@ -11,16 +11,20 @@ Rails.application.routes.draw do
   # set root routing
   root 'tasks#index'
 
-  get '/tasks'          => 'tasks#index', as: 'tasks' # display a list of all tasks
-  get '/tasks/new'      => 'tasks#new'  # return an HTML form for creating a new task
-  post '/tasks'         => 'tasks#create' # create a new task
-  get '/tasks/:id'      => 'tasks#show', as: 'show' # display a specific task
-  get '/tasks/:id/edit' => 'tasks#edit', as: 'task' # return an HTML form for editing a task
-  patch '/tasks/:id/edit'    => 'tasks#update' # update a specific task
-  delete '/tasks/:id'   => 'tasks#delete', as: 'delete'  # delete a specific task
+  # set Task routes
+  get '/tasks'              => 'tasks#index', as: 'tasks' # display a list of all tasks
+  get '/tasks/new'          => 'tasks#new'  # return an HTML form for creating a new task
+  post '/tasks'             => 'tasks#create' # create a new task
+  get '/tasks/:id'          => 'tasks#show', as: 'show' # display a specific task
+  get '/tasks/:id/edit'     => 'tasks#edit', as: 'task' # return an HTML form for editing a task
+  patch '/tasks/:id/edit'   => 'tasks#update' # update a specific task
+  delete '/tasks/:id'       => 'tasks#delete', as: 'delete'  # delete a specific task
+  post 'tasks/:id/'         => 'tasks#complete'
 
-  get '/people' => 'people#index', as: 'people'
-  get 'person/:id' => 'people#show', as: 'person'
+
+  # set People Routes
+  get '/people'             => 'people#index', as: 'people'
+  get '/person/:id/tasks'    => 'people#show', as: 'person_detail'
 
 
 
