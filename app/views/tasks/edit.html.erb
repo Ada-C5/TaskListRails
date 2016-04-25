@@ -3,8 +3,8 @@
 <h2><a class='task_button' href='/tasks/new'>Add a Task</a></h2>
 <h2><a class='task_button' href='/people'>All Task Owners</a></h2>
 
-<table>
 <%= form_for @task, method: :patch, url: task_update_path(@task)  do |f| %>
+<table>
 	<td><%= f.label :name %>
   <%= f.text_field :name, :placeholder => "#{@task.name}" %></td>
   <td><%= f.label :description %>
