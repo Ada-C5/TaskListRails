@@ -1,0 +1,5 @@
+<h1><%= @person.name %></h1>
+<ul>
+  <li>Description: <%= @person.email %></li>
+  <li>Unfinished Tasks: <%=Task.where(person_id: @person.id, completed_at: nil).length%></li>
+</ul>

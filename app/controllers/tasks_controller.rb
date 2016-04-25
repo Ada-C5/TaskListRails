@@ -22,11 +22,11 @@ class TasksController < ApplicationController
   end
 
   def task_create_params
-    params.permit(task: [:name, :description])
+    params.permit(task: [:name, :description, :person_id])
   end
 
   def task_edit_params
-    params.permit(task: [:name, :description])
+    params.permit(task: [:name, :description, :person_id])
   end
 
   def show

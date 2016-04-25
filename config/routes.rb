@@ -14,6 +14,10 @@ Rails.application.routes.draw do
 
   post "/tasks/:id/complete" => "tasks#complete"
 
+  get "/people" => "people#index", as: "people"
+
+  get "/people/:id" => "people#show", as: "person"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

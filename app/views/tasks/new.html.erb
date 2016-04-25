@@ -2,10 +2,14 @@
 
 <pre><%=params%></pre>
 
+<ul>
 <%= form_for @task do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name%>
-  <%= f.label :description %>
-  <%= f.text_field :description%>
-  <%= f.submit %>
+  <li><%= f.label :name %>
+  <%= f.text_field :name%></li>
+  <li><%= f.label :description %>
+  <%= f.text_field :description%></li>
+  <li><%= f.label :person_id %>
+  <%= f.collection_select(:person_id, Person.all, :id, :name) %></li>
+  <li><%= f.submit %></li>
 <%end%>
+</ul>
