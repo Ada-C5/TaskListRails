@@ -5,7 +5,7 @@
 <ul>
 <% @person.tasks.where.not(completed: nil).each do |task| %>
   <li>
-    <%= link_to task.name , "/tasks/#{task.id}" %>
+    <%= link_to task.name , "/show/#{task.id}" %>
   </li>
   <% end %>
 </ul>
@@ -14,7 +14,7 @@
 <ul>
 <% @person.tasks.where(completed: nil).each do |task| %>
   <li>
-    <%= link_to task.name , "/tasks/#{task.id}" %>
+    <%= link_to task.name , "/show/#{task.id}" %>
   </li>
   <% end %>
 </ul>

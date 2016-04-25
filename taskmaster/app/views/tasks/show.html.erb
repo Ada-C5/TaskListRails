@@ -6,7 +6,7 @@
       <span>Task:<%= task.name %><br></span>
        Description:<%= task.description %><br>
        <% if !task.person.nil? %>
-         Person:<%= task.person.name %><br>
+         Person:<%= link_to task.person.name, "/people/#{task.person_id}" %><br>
        <% end %>
        <% if !task.priority.nil? %>
           Priority: <%= task.priority %>
