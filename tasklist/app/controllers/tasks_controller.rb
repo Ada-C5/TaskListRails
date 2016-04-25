@@ -14,6 +14,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(tasks_create_params[:task])
+    @task.due_date = Time.parse(params[:due_date])
     # @task.due_date = Chronic.parse(params[:due_date])
     # defaults = {:status => "Not Started"}
     # params = defaults.merge(params)
@@ -39,6 +40,7 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
+    @task.due_date == nil ? "" : @task.due_date = Time.parse(params[:due_date])
     @task.update(tasks_update_params[:task])
 
     if params[:task][:status] == "Completed"
