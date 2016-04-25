@@ -45842,3 +45842,132 @@ Started GET "/assets/people.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde4
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-04-24 18:54:11 -0700
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "people" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "completed_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "completion_status" varchar, "person_id" integer) 
+  [1m[36m (1.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160424193942')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160419211249')
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160420022311')[0m
+  [1m[35m (1.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160422002807')
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160424193152')[0m
+  [1m[35m (1.4ms)[0m  CREATE TABLE "people" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "completed_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "completion_status" varchar, "person_id" integer) [0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160424193942')
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160419211249')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160420022311')
+  [1m[36m (1.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160422002807')[0m
+  [1m[35m (4.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160424193152')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "people" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "risha"], ["created_at", "2016-04-25 18:24:51.367985"], ["updated_at", "2016-04-25 18:24:51.367985"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "andre"], ["created_at", "2016-04-25 18:24:51.375890"], ["updated_at", "2016-04-25 18:24:51.375890"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "jordan"], ["created_at", "2016-04-25 18:24:51.378700"], ["updated_at", "2016-04-25 18:24:51.378700"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "tasks" ("name", "description", "completed_at", "completion_status", "person_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["name", "The First Task"], ["description", ""], ["completed_at", "2002-05-09 08:51:20.892761"], ["completion_status", "done"], ["person_id", 1], ["created_at", "2016-04-25 18:24:51.397004"], ["updated_at", "2016-04-25 18:24:51.397004"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "tasks" ("name", "description", "completion_status", "person_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Go to Brunch"], ["description", ""], ["completion_status", "done"], ["person_id", 2], ["created_at", "2016-04-25 18:24:51.400300"], ["updated_at", "2016-04-25 18:24:51.400300"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "tasks" ("name", "description", "completed_at", "completion_status", "person_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["name", "Go to Lunch"], ["description", ""], ["completed_at", "2000-10-21 15:03:12.979200"], ["completion_status", "done"], ["person_id", 2], ["created_at", "2016-04-25 18:24:51.405714"], ["updated_at", "2016-04-25 18:24:51.405714"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tasks" ("name", "description", "completion_status", "person_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Go to Second Lunch"], ["description", ""], ["completion_status", "done"], ["person_id", 2], ["created_at", "2016-04-25 18:24:51.409400"], ["updated_at", "2016-04-25 18:24:51.409400"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tasks" ("name", "description", "completed_at", "completion_status", "person_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["name", "Play Video Games"], ["description", ""], ["completed_at", "1980-05-21 19:59:34.871189"], ["completion_status", "done"], ["person_id", 2], ["created_at", "2016-04-25 18:24:51.412535"], ["updated_at", "2016-04-25 18:24:51.412535"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tasks" ("name", "description", "completed_at", "completion_status", "person_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "High Five Somebody You Don't Know"], ["description", ""], ["completed_at", "2003-11-09 22:38:16.169159"], ["completion_status", "done"], ["person_id", 2], ["created_at", "2016-04-25 18:24:51.415685"], ["updated_at", "2016-04-25 18:24:51.415685"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "tasks" ("name", "description", "completed_at", "completion_status", "person_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["name", "Plant Flowers"], ["description", ""], ["completed_at", "2000-10-09 15:40:07.095655"], ["completion_status", "done"], ["person_id", 2], ["created_at", "2016-04-25 18:24:51.419077"], ["updated_at", "2016-04-25 18:24:51.419077"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tasks" ("name", "description", "completion_status", "person_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Call Mom"], ["description", ""], ["completion_status", "done"], ["person_id", 3], ["created_at", "2016-04-25 18:24:51.422853"], ["updated_at", "2016-04-25 18:24:51.422853"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "tasks" ("name", "description", "completion_status", "person_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "She worries, you know."], ["description", ""], ["completion_status", "done"], ["person_id", 3], ["created_at", "2016-04-25 18:24:51.425819"], ["updated_at", "2016-04-25 18:24:51.425819"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tasks" ("name", "description", "completed_at", "completion_status", "person_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Nap."], ["description", ""], ["completed_at", "1971-03-09 03:12:39.060501"], ["completion_status", "done"], ["person_id", 3], ["created_at", "2016-04-25 18:24:51.429274"], ["updated_at", "2016-04-25 18:24:51.429274"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (101.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (2.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateTasks (20160419211249)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "completed_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160419211249"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Migrating to AddCompletionStatus (20160420022311)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "tasks" ADD "completion_status" varchar
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160420022311"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Migrating to CreatePeople (20160422002807)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "people" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160422002807"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to AddPersonIdTasks (20160424193152)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "tasks" ADD "person_id" integer
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160424193152"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "people" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "risha"], ["created_at", "2016-04-25 18:26:48.431085"], ["updated_at", "2016-04-25 18:26:48.431085"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "andre"], ["created_at", "2016-04-25 18:26:48.436831"], ["updated_at", "2016-04-25 18:26:48.436831"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "jordan"], ["created_at", "2016-04-25 18:26:48.440238"], ["updated_at", "2016-04-25 18:26:48.440238"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "tasks" ("name", "description", "completed_at", "completion_status", "person_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["name", "The First Task"], ["description", ""], ["completed_at", "1983-09-17 22:07:55.529277"], ["completion_status", "done"], ["person_id", 1], ["created_at", "2016-04-25 18:26:48.459724"], ["updated_at", "2016-04-25 18:26:48.459724"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "tasks" ("name", "description", "completion_status", "person_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Go to Brunch"], ["description", ""], ["completion_status", "done"], ["person_id", 2], ["created_at", "2016-04-25 18:26:48.465167"], ["updated_at", "2016-04-25 18:26:48.465167"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "tasks" ("name", "description", "completed_at", "completion_status", "person_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["name", "Go to Lunch"], ["description", ""], ["completed_at", "1971-09-18 22:34:22.547927"], ["completion_status", "done"], ["person_id", 2], ["created_at", "2016-04-25 18:26:48.468651"], ["updated_at", "2016-04-25 18:26:48.468651"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "tasks" ("name", "description", "completion_status", "person_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Go to Second Lunch"], ["description", ""], ["completion_status", "done"], ["person_id", 2], ["created_at", "2016-04-25 18:26:48.472655"], ["updated_at", "2016-04-25 18:26:48.472655"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "tasks" ("name", "description", "completed_at", "completion_status", "person_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["name", "Play Video Games"], ["description", ""], ["completed_at", "1973-05-05 14:28:15.876823"], ["completion_status", "done"], ["person_id", 2], ["created_at", "2016-04-25 18:26:48.476641"], ["updated_at", "2016-04-25 18:26:48.476641"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "tasks" ("name", "description", "completed_at", "completion_status", "person_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "High Five Somebody You Don't Know"], ["description", ""], ["completed_at", "2005-08-07 04:36:07.269750"], ["completion_status", "done"], ["person_id", 2], ["created_at", "2016-04-25 18:26:48.480877"], ["updated_at", "2016-04-25 18:26:48.480877"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "tasks" ("name", "description", "completed_at", "completion_status", "person_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["name", "Plant Flowers"], ["description", ""], ["completed_at", "1980-02-08 03:06:22.081899"], ["completion_status", "done"], ["person_id", 2], ["created_at", "2016-04-25 18:26:48.485525"], ["updated_at", "2016-04-25 18:26:48.485525"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "tasks" ("name", "description", "completion_status", "person_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Call Mom"], ["description", ""], ["completion_status", "done"], ["person_id", 3], ["created_at", "2016-04-25 18:26:48.489034"], ["updated_at", "2016-04-25 18:26:48.489034"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "tasks" ("name", "description", "completion_status", "person_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "She worries, you know."], ["description", ""], ["completion_status", "done"], ["person_id", 3], ["created_at", "2016-04-25 18:26:48.494535"], ["updated_at", "2016-04-25 18:26:48.494535"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tasks" ("name", "description", "completed_at", "completion_status", "person_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Nap."], ["description", ""], ["completed_at", "1976-11-08 13:04:47.257831"], ["completion_status", "done"], ["person_id", 3], ["created_at", "2016-04-25 18:26:48.498747"], ["updated_at", "2016-04-25 18:26:48.498747"]]
+  [1m[35m (0.7ms)[0m  commit transaction
