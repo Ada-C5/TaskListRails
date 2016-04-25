@@ -55,7 +55,7 @@ def complete
   end
 
   def task_update_params
-    params.permit(task: [:name, :description, :completed_at, :priority, :person_id])
+    params.permit(task: [:name, :description, :priority, :person_id])
   end
 
 end
