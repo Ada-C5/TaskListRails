@@ -1,0 +1,11 @@
+<div class='name-container'>
+  <% @people.each do |person| %>
+    <div class='name-item'>
+      <br/>
+      <%= link_to person.name, person_path(person.id) %>
+      <div class='name-description'>
+        Tasks to complete: <%= Task.where(person_id: person.id, task_completion: nil).length %>
+      </div>
+    </div>
+  <% end %>
+</div>

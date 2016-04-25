@@ -1,0 +1,66 @@
+// Place all the styles related to the people controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.name-container {
+  background-color: rgba(255,255,255,.7);
+  border-radius: 5px;
+  color:#4D434F;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto; 
+  overflow: auto;
+  padding: 2%;
+  width: 777px;
+
+}
+
+.name-container a {
+  text-decoration: none;
+  color:#1B6FC7;
+  font-weight: 400; 
+}
+
+.name-container a:hover {
+  color: #360361
+}
+
+
+.name-item {
+  background-image: url("../assets/name-tag.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 300;
+  margin: 2%;
+  padding: 5%;
+  text-align: center;
+  width: 150px;
+  overflow: auto;
+  border-radius: 5px; 
+}
+
+.name-item a {
+  text-decoration: none;
+  color:#1B6FC7;
+  font-weight: 400; 
+
+}
+
+.name-item a:hover {
+  color: #360361
+}
+.name-description {
+  font-size: 16px; 
+  line-height: 2rem;
+}
+
+p.top-bar {
+  color:#1B6FC7;
+  text-align: center;
+  width: 100%;
+  font-size: 24px;
+}

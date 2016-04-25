@@ -1,0 +1,36 @@
+<p class='top-bar'>
+  Not Complete
+</p>
+
+<% @not_complete = Task.where(person_id: @people.id, task_completion: nil)%>
+
+<div class='task-container'>
+  <% @not_complete.each do |task| %> 
+    <div class='task-item'>
+      <%= task.task_name %> <br/><br/>
+      <div class="task-description">
+        <%= task.task_description %><br/><br/>
+      </div>
+    </div>
+  <% end %> 
+</div> 
+
+<br/><br/>
+
+<p class='top-bar'>
+  Complete
+</p>
+
+<% @complete = Task.where(person_id: @people.id).where.not(task_completion: nil)%>
+
+<div class='task-container'>
+  <% @complete.each do |task| %> 
+    <div class='task-item'>
+      <%= task.task_name %> <br/><br/>
+      <div class="task-description">
+        <%= task.task_description %> <br/><br/>
+        <%= task.task_completion %><br/><br/>
+      </div>
+    </div>
+ <% end %>  
+</div>

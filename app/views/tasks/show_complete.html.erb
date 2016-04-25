@@ -1,0 +1,26 @@
+<div class="task-container">
+  <% @tasks.each do |task| %>
+  <% if task.task_completion != nil %>
+    <div class="task-item">
+      <%= link_to task.task_name, task_path(task.id) %>
+      <div class="task-description">
+        <%= task.task_description %><br/>
+        <%= task.task_completion %> 
+      </div>
+        <% if !task.person.nil? %>
+        <div class="task-assignment">
+          Assigned to: <%= task.person.name %> 
+        </div>
+        <% end %> 
+        <div class="buttons">
+          <%= button_to "edit", 
+            {:controller => :tasks, :action => 'edit', :id => task.id }, 
+             :method => :get %> 
+          <%= button_to "delete", 
+            {:controller => :tasks, :action => 'destroy', :id => task.id }, 
+            :method => :delete, data: { confirm: "Are you sure?" } %>
+        </div>
+      </div>
+  <% end %> 
+<% end %>
+</div>

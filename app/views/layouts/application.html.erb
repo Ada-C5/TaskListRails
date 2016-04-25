@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tasklist</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+    <meta charset="UTF-8">
+    <!-- for FF, Chrome, Opera -->
+    <link rel="icon" type="image/png" href="../assets/check-icon.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="../assets/check-icon.png" sizes="32x32">
+    <!-- for IE -->
+    <link rel="icon" type="image/x-icon" href="../assets/check-icon.png" >
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/check-icon.png"/> 
+</head>
+  <body>
+    <header>
+      <h1>
+        <nav class="top-bar">
+          <ul>
+            <li><%= link_to "All Tasks", root_path %></li>
+            <li><%= link_to "New Task", tasks_path %></li>
+            <li><%= link_to "Completed Tasks", show_complete_path %></li>
+            <li><%= link_to "People", people_path %></li>
+          </ul>
+        </nav>
+      </h1>
+    </header>
+    <main>
+      <article>
+        <%= yield %>
+      </article>
+    </main>
+  </body>
+</html>

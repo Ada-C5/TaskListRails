@@ -1,24 +1,31 @@
-def random_time
-  Time.at(rand * Time.now.to_i)
-end
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+#
+# Examples:
+#
+#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+#   Mayor.create(name: 'Emanuel', city: cities.first)
 
-tasks = [
-  { name: "The First Task", description: "", completed_at: random_time },
-  { name: "Go to Brunch", description: "" },
-  { name: "Go to Lunch", description: "", completed_at: random_time },
-  { name: "Go to Second Lunch", description: "" },
-  { name: "Play Video Games", description: "", completed_at: random_time },
-  { name: "High Five Somebody You Don't Know", description: "", completed_at: random_time },
-  { name: "Plant Flowers", description: "", completed_at: random_time },
-  { name: "Call Mom", description: "" },
-  { name: "She worries, you know.", description: "" },
-  { name: "Nap.", description: "", completed_at: random_time }
-]
+# def random_time
+#   Time.at(rand * Time.now.to_i)
+# end
 
-tasks.each do |task|
-  Task.create task
-end
+# tasks = [
+#   { task_name: "The First Task", task_description: "Zomg tasks", task_completion: random_time },
+#   { task_name: "Go to Brunch", task_description: "Nom nom nom", task_completion: ""},
+#   { task_name: "Go to Lunch", task_description: "More noms less eggs", task_completion: random_time },
+#   { task_name: "Go to Second Lunch", task_description: "We are hobbitses now", task_completion: ""},
+#   { task_name: "Play Video Games", task_description: "pew pew pew", task_completion: random_time },
+#   { task_name: "High Five Somebody You Don't Know", task_description: "omg germs", task_completion: random_time },
+#   { task_name: "Plant Flowers", task_description: "yay pretty flowers", task_completion: random_time },
+#   { task_name: "Call Mom", task_description: "blah blah blah", task_completion: "" },
+#   { task_name: "She worries, you know.", task_description: "", task_completion: "" },
+#   { task_name: "Nap.", task_description: "ZzzzzzzZZ", task_completion: random_time }
+# ]
 
+# tasks.each do |task|
+#   Task.create task
+# end
 
 people = [
   { name: "Adriana Cannon", hobby: "3D printing", catchphrase: "HEEEEEEEEEEEEEEEEEEEEEEEEEERE'S JOHNNY!" },
@@ -47,4 +54,8 @@ people = [
   { name: "Yordanos Dirar", hobby: "Billiards", catchphrase: "I'll be back" }
 ]
 
-people.each { |person| person.create person }
+people.each do |people| 
+  Person.create(people)
+end
+
+

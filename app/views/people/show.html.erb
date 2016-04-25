@@ -1,0 +1,22 @@
+<div class='name-container'>
+Name: <%= @people.name %> <br/><br/>
+Hobby: <%= @people.hobby %><br/><br/>
+Catchphrase: <%= @people.catchphrase %><br/><br/>
+</div>
+<br/><br/>
+<div class='name-container'>
+Tasks Not Complete: <%= Task.where(person_id: @people.id, task_completion: nil).length %><br/><br/>
+Tasks Completed: <%= Task.where(person_id: @people.id).where.not(task_completion: nil).length %><br/><br/>
+</div>
+<br/><br/>
+<div class='name-container'>
+<%= link_to "Tasks", ptasks_path %>
+</div>
+<footer>
+  <br/><br/>
+  <div class='name-container'>
+  <p>
+    All <%= link_to "Hobbies", 'https://en.wikipedia.org/wiki/List_of_hobbies' %> and <%= link_to "Catchphrases", 'https://en.wikipedia.org/wiki/List_of_catchphrases' %> shamelessly stolen from Wikipedia. Any resemblence to the real <%= @people.name %> is purely coincidental. 
+  </p>
+</div>
+</footer>
