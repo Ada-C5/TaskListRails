@@ -12,6 +12,7 @@ class TasksController < ApplicationController
 
   def new
     # show form to create new task
+    @page_title = "New Task"
     @task = Task.new
     @all_people = Person.all
   end
@@ -29,6 +30,7 @@ class TasksController < ApplicationController
 
   def edit
     #show form
+    @page_title = "Edit"
     @task = Task.find(params[:id])
     @all_people = Person.all
     render :edit
@@ -63,6 +65,7 @@ class TasksController < ApplicationController
   end
 
   def show
+    @page_title = "#{@task.title}"
     @task = Task.find(params[:id])
   end
 end

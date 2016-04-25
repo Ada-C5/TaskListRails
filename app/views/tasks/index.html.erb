@@ -1,9 +1,9 @@
-<h3>Tasks To Do</h3>
-  <div class="tasks_to_do">
+<div class="tasks_to_do">
     <ul>
+      <li>
+        <h3>Tasks To Do</h3>
         <%@show_all.each do |entry| %>
           <%if entry.completed == nil%>
-          <li>
             <%= link_to entry.title, "/tasks/#{entry.id}" %><br>
             <%="description: #{entry.description}"%><br>
             <%="completed at: #{entry.completed}" %><br>
@@ -11,31 +11,32 @@
             <%= button_to "Delete task", delete_path(entry.id), method: :delete, data: {confirm: "Are you sure?"} %>
             <%= button_to "Mark complete", "/tasks/#{entry.id}/complete", method: :patch %>
             <%= button_to "Edit", "/tasks/#{entry.id}/edit", method: :get %>
+            <br>
           <%end%>
-        </li>
         <%end%>
+      </li>
     </ul>
-  </div>
-
+</div>
 
 <span class="spacer">
   <br></br>
 </span>
 
-<h3>Completed Tasks</h3>
-  <div class="completed_tasks">
-    <ul>
+<div class="completed_tasks">
+  <ul>
+    <li>
+      <h3>Completed Tasks</h3>
         <%@show_all.each do |entry|%>
           <%if entry.completed != nil%>
-          <li>
             <%=link_to entry.title, "/tasks/#{entry.id}"%><br>
             <%="description: #{entry.description}"%><br>
             <%="completed at: #{entry.completed}"%><br>
             <%="owner: #{Person.find(entry.person_id).first_name}" %><br>
             <%=button_to "Delete task", delete_path(entry.id), method: :delete, data: {confirm: "Are you sure?"}%>
             <%= button_to "Edit", "/tasks/#{entry.id}/edit", method: :get %>
+            <br>
           <%end%>
-        </li>
         <%end%>
-    </ul>
-  </div>
+    </li>
+  </ul>
+</div>

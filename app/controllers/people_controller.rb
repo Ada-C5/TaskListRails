@@ -12,5 +12,12 @@ class PeopleController < ApplicationController
 
   def show
     @person = Person.find(params[:id])
+    @page_title = "#{@person.first_name}"
+  end
+
+  def tasks
+    @person = Person.find(params[:id])
+    @page_title = "#{@person.first_name}'s Tasks"
+    @tasks = Task.where(person_id: @person.id)
   end
 end

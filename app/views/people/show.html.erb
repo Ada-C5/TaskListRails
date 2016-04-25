@@ -1,3 +1,10 @@
-<%="name: #{@person.first_name} #{@person.last_name}"%><br>
-<%="favorite color: #{@person.fav_color}" %><br>
-<%="uncompleted tasks: #{Task.where(person_id: @person.id).count}" %><br>
+<div class="tasks_to_do">
+  <ul>
+    <li>
+      <%="name: #{@person.first_name} #{@person.last_name}"%><br>
+      <%="favorite color: #{@person.fav_color}" %><br>
+      <%="uncompleted tasks: #{Task.where(person_id: @person.id).count}" %><br>
+      <%= link_to "Tasks", "/people/#{@person.id}/tasks" %>
+    </li>
+  </ul>
+</div>

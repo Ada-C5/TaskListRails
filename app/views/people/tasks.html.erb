@@ -1,0 +1,18 @@
+<div class="tasks_to_do">
+  <ul>
+    <li>
+      <%="name: #{@person.first_name} #{@person.last_name}"%><br>
+      <%="favorite color: #{@person.fav_color}" %><br>
+      <%@tasks.each do |task|%>
+        <%if task.completed != nil%>
+          <%=link_to task.title, "/tasks/#{task.id}"%><br>
+          <%="description: #{task.description}"%><br>
+          <%="completed at: #{task.completed}"%><br>
+          <%="owner: #{Person.find(task.person_id).first_name}" %><br>
+          <%=button_to "Delete task", delete_path(task.id), method: :delete, data: {confirm: "Are you sure?"}%>
+          <%= button_to "Edit", "/tasks/#{task.id}/edit", method: :get %>
+        <%end%>
+      <%end%>
+    </li>
+  </ul>
+</div>

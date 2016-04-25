@@ -1,0 +1,246 @@
+html {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-size: 1rem;
+	width: 80rem;
+	font-family: Roboto;
+}
+
+body{
+	background: url(../images/boiling-clouds.jpg) no-repeat;
+	background-size: cover;
+}
+h1 {
+	font-size: 2.5rem;
+	text-align: center;
+	margin: 1rem;
+}
+
+.nav_bar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+  float: left;
+}
+.nav_bar li {
+	display: inline-block;
+	padding: 1rem;
+	width: 23%;
+}
+
+.nav_bar a {
+	font-size: 1.5rem;
+	color:gray;
+	background-color: white;
+	padding: 1rem;
+	border-radius: .9rem;
+	text-decoration: none;
+}
+
+.nav_bar a:hover {
+	background-color: gray;
+	color: white;
+}
+
+.list_headers li {
+	display: inline-block;
+	width: 19%;
+	font-size: 1.3rem;
+}
+
+.list {
+	display: inline-block;
+	width: 23%;
+	font-size: 1.2rem;
+}
+
+.list_items {
+	background-color: rgba(240,248,255,0.8);
+}
+
+.list_items li {
+	display: inline-block;
+	width: 19%;
+	height: 2rem;
+}
+
+.list_items .button button, #add {
+	display: inline-block;
+	width: 9rem;
+	height: 100%;
+	border-radius: .9rem;
+	padding: .5rem;
+	text-align: center;
+	margin: .5rem;
+}
+#add{
+	font-size: 1.3rem;
+}
+.spacer {
+	height: 9rem;
+}
+
+h3 {
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+}
+
+fieldset{
+	border: none;
+	text-align: center;
+}
+
+legend {
+	display: none;
+}
+
+.input_area {
+	width: 30rem;
+	padding: 1rem 1rem;
+	border-radius: .5rem;
+	margin-bottom: 1rem;
+}
+/* line 4, /Users/justinewinnie/Desktop/c5/projects/TaskListRails/app/assets/stylesheets/tasks.scss */
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  width: 80rem;
+  font-family: Roboto;
+}
+
+/* line 13, /Users/justinewinnie/Desktop/c5/projects/TaskListRails/app/assets/stylesheets/tasks.scss */
+body {
+  background-image: "/assets/boiling-clouds-d9d7389f28249786f8ea3d8217d5daeef16a4748c47a059132fc1eb82b6b8325.jpg";
+  background-size: cover;
+}
+
+/* line 17, /Users/justinewinnie/Desktop/c5/projects/TaskListRails/app/assets/stylesheets/tasks.scss */
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 1rem;
+}
+
+/* line 23, /Users/justinewinnie/Desktop/c5/projects/TaskListRails/app/assets/stylesheets/tasks.scss */
+.nav_bar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+  float: left;
+}
+
+/* line 30, /Users/justinewinnie/Desktop/c5/projects/TaskListRails/app/assets/stylesheets/tasks.scss */
+.nav_bar li {
+  display: inline-block;
+  padding: 1rem;
+  width: 23%;
+}
+
+/* line 36, /Users/justinewinnie/Desktop/c5/projects/TaskListRails/app/assets/stylesheets/tasks.scss */
+.nav_bar a {
+  font-size: 1.5rem;
+  color: gray;
+  background-color: white;
+  padding: 1rem;
+  border-radius: .9rem;
+  text-decoration: none;
+}
+
+/* line 45, /Users/justinewinnie/Desktop/c5/projects/TaskListRails/app/assets/stylesheets/tasks.scss */
+.nav_bar a:hover {
+  background-color: gray;
+  color: white;
+}
+
+/* line 50, /Users/justinewinnie/Desktop/c5/projects/TaskListRails/app/assets/stylesheets/tasks.scss */
+.list_headers li {
+  display: inline-block;
+  width: 19%;
+  font-size: 1.3rem;
+}
+
+/* line 56, /Users/justinewinnie/Desktop/c5/projects/TaskListRails/app/assets/stylesheets/tasks.scss */
+.list {
+  display: inline-block;
+  width: 23%;
+  font-size: 1.2rem;
+}
+
+/* line 62, /Users/justinewinnie/Desktop/c5/projects/TaskListRails/app/assets/stylesheets/tasks.scss */
+.list_items {
+  background-color: rgba(240, 248, 255, 0.8);
+}
+
+/* line 66, /Users/justinewinnie/Desktop/c5/projects/TaskListRails/app/assets/stylesheets/tasks.scss */
+.list_items li {
+  display: inline-block;
+  width: 19%;
+  height: 2rem;
+}
+
+/* line 72, /Users/justinewinnie/Desktop/c5/projects/TaskListRails/app/assets/stylesheets/tasks.scss */
+.list_items .button button, #add {
+  display: inline-block;
+  width: 9rem;
+  height: 100%;
+  border-radius: .9rem;
+  padding: .5rem;
+  text-align: center;
+  margin: .5rem;
+}
+
+/* line 81, /Users/justinewinnie/Desktop/c5/projects/TaskListRails/app/assets/stylesheets/tasks.scss */
+#add {
+  font-size: 1.3rem;
+}
+
+/* line 84, /Users/justinewinnie/Desktop/c5/projects/TaskListRails/app/assets/stylesheets/tasks.scss */
+.spacer {
+  height: 9rem;
+}
+
+/* line 88, /Users/justinewinnie/Desktop/c5/projects/TaskListRails/app/assets/stylesheets/tasks.scss */
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* line 93, /Users/justinewinnie/Desktop/c5/projects/TaskListRails/app/assets/stylesheets/tasks.scss */
+fieldset {
+  border: none;
+  text-align: center;
+}
+
+/* line 98, /Users/justinewinnie/Desktop/c5/projects/TaskListRails/app/assets/stylesheets/tasks.scss */
+legend {
+  display: none;
+}
+
+/* line 102, /Users/justinewinnie/Desktop/c5/projects/TaskListRails/app/assets/stylesheets/tasks.scss */
+.input_area {
+  width: 30rem;
+  padding: 1rem 1rem;
+  border-radius: .5rem;
+  margin-bottom: 1rem;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+

@@ -3,7 +3,6 @@
 <head>
   <title>TaskListRails</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -20,8 +19,9 @@
     <title>Task List</title>
     <meta charset="UTF-8">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    <!-- <link rel="stylesheet" type="css" href="app/assets/stylesheets/styles.css"> -->
-    <!-- <%= stylesheet_link_tag("styles.css") %> -->
+    <!-- <link rel="stylesheet" type="css" href="app/assets/stylesheets/tasks.scss"> -->
+    <%= stylesheet_link_tag("styles.css") %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
 </head>
 

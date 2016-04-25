@@ -53,7 +53,7 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  # root 'tasks#home'
+  get '/' => 'tasks#home'
 
   # display all tasks
   get '/tasks' => "tasks#index"
@@ -75,6 +75,8 @@ Rails.application.routes.draw do
 
   get '/people' => "people#index"
   get '/people/:id' => "people#show"
+
+  get '/people/:id/tasks' => 'people#tasks'
 
   # get '/tasks/show' => "tasks#show"
   # # return html form to find a task
