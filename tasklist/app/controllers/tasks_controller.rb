@@ -7,14 +7,15 @@ class TasksController < ApplicationController
 
   def new
     @task = Task.new
-    @people = Person.all
+    # @people = Person.all
+    # @find_task = Task.find(params[:id])
 
     render "new"
   end
 
   def create
     @task = Task.new(tasks_create_params[:task])
-    @task.due_date = Time.parse(params[:due_date])
+    # @task.due_date == nil ? "" : @task.due_date = Time.parse(params[:due_date])
     # @task.due_date = Chronic.parse(params[:due_date])
     # defaults = {:status => "Not Started"}
     # params = defaults.merge(params)
@@ -34,13 +35,13 @@ class TasksController < ApplicationController
     @people = Person.all
     # @find_task = Task.where(id: params[:id]).first
     # if @find_task.due_date != nil
-    #   @find_task.due_date = "#{Chronic.parse((@find_task.due_date).to_s).strftime("%m/%d/%Y at %I:%M%p")}"
+    # @find_task.due_date = "#{Chronic.parse((@find_task.due_date).to_s).strftime("%m/%d/%Y at %I:%M%p")}"
     # end
   end
 
   def update
     @task = Task.find(params[:id])
-    @task.due_date == nil ? "" : @task.due_date = Time.parse(params[:due_date])
+    # @task.due_date == nil ? "" : @task.due_date = Time.parse(params[:due_date])
     @task.update(tasks_update_params[:task])
 
     if params[:task][:status] == "Completed"
