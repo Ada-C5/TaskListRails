@@ -1,10 +1,10 @@
       <%= f.label :task %>
       <%= f.text_field :task, :maxlength => 15 %><br /><br />
 
-      <% if show_person == true %>
+
         <%= label_tag "person", nil, :class => "add-task" %>
-        <%= select_tag "people", options_from_collection_for_select(people, "id", "name", @find_task.person.id), :class => "radio" %> <br /><br />
-      <% end %>
+        <%= select_tag "people", options_from_collection_for_select(people, "id", "name", @task.person.nil? ? nil : @task.person.id), :class => "radio" %> <br /><br />
+
 
       <%= f.label :priority, :class => 'add-task' %>
       <%= f.radio_button :priority, 'urgent' %>

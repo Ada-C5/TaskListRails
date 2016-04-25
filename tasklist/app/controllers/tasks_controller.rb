@@ -7,8 +7,8 @@ class TasksController < ApplicationController
 
   def new
     @task = Task.new
-    # @people = Person.all
-    # @find_task = Task.find(params[:id])
+    @people = Person.all
+    # @task = Task.find(params[:id])
 
     render "new"
   end
@@ -31,11 +31,11 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @find_task = Task.find(params[:id])
+    @task = Task.find(params[:id])
     @people = Person.all
-    # @find_task = Task.where(id: params[:id]).first
-    # if @find_task.due_date != nil
-    # @find_task.due_date = "#{Chronic.parse((@find_task.due_date).to_s).strftime("%m/%d/%Y at %I:%M%p")}"
+    # @task = Task.where(id: params[:id]).first
+    # if @task.due_date != nil
+    # @task.due_date = "#{Chronic.parse((@task.due_date).to_s).strftime("%m/%d/%Y at %I:%M%p")}"
     # end
   end
 
@@ -71,7 +71,7 @@ class TasksController < ApplicationController
   private
 
   def tasks_create_params
-    params.permit(task: [:task, :priority, :due_date, :comments])
+    params.permit(task: [:task, :priority, :due_date, :comments, :person_id])
   end
 
   def tasks_update_params

@@ -1,9 +1,9 @@
 <section>
   <div class="edit-floating">
 
-    <%= form_for @find_task, :html => {:class => "item-task"} do |f| %>
+    <%= form_for @task, :html => {:class => "item-task"} do |f| %>
 
-      <%= render partial: "tasks/form_builder", locals: {f: f, show_status: true, people: @people, show_person: true} %>
+      <%= render partial: "tasks/form_builder", locals: {f: f, show_status: true, people: @people} %>
 
       <%= f.submit 'Edit Task', :class => 'add-btn' %>
     <% end %>
@@ -18,33 +18,33 @@
 <!-- <form action="/update" method="post" accept-charset="utf-8">
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   <div class ="item-task">
-    <input type="hidden" name="id" value="<%= @find_task.id %>"/>
+    <input type="hidden" name="id" value="<%= @task.id %>"/>
     <label for="task">Task</label>
-    <input type="text" name="task" value="<%= @find_task.task %>" id="task" maxlength="16"/>
+    <input type="text" name="task" value="<%= @task.task %>" id="task" maxlength="16"/>
   </div>
   <div class="item">
     <label for="priority">Priority</label>
     <fieldset>
-      <label class = "radio"><input type="radio" name="priority" value="urgent" <%= @find_task.priority == "urgent" ? "checked" : "" %>/>Urgent</label>
-      <label class = "radio"><input type="radio" name="priority" value="medium" <%= @find_task.priority == "medium" ? "checked" : "" %>/>Medium</label>
-      <label class = "radio"><input type="radio" name="priority" value="low" <%= @find_task.priority == "low" ? "checked" : "" %>/>Low</label>
+      <label class = "radio"><input type="radio" name="priority" value="urgent" <%= @task.priority == "urgent" ? "checked" : "" %>/>Urgent</label>
+      <label class = "radio"><input type="radio" name="priority" value="medium" <%= @task.priority == "medium" ? "checked" : "" %>/>Medium</label>
+      <label class = "radio"><input type="radio" name="priority" value="low" <%= @task.priority == "low" ? "checked" : "" %>/>Low</label>
     </fieldset>
   </div>
   <div class="item">
     <label for="status">Status</label>
     <select name="status">
-      <option <%= @find_task.status == "Not Started" ? "selected" : "" %>>Not Started</option>
-      <option <%= @find_task.status == "In Progress" ? "selected" : "" %>>In Progress</option>
-      <option <%= @find_task.status == "Completed" ? "selected" : "" %>>Completed</option>
+      <option <%= @task.status == "Not Started" ? "selected" : "" %>>Not Started</option>
+      <option <%= @task.status == "In Progress" ? "selected" : "" %>>In Progress</option>
+      <option <%= @task.status == "Completed" ? "selected" : "" %>>Completed</option>
     </select>
   </div>
   <div class="item">
     <label for="due_date">Due Date</label>
-    <input type="text" name="due_date" value="<%= @find_task.due_date %>" id="due_date"/>
+    <input type="text" name="due_date" value="<%= @task.due_date %>" id="due_date"/>
   </div>
   <div class="item">
     <label for="comments">Comments</label>
-    <input type="text" name="comments" value="<%= @find_task.comments %>" id="comments" maxlength="105"/>
+    <input type="text" name="comments" value="<%= @task.comments %>" id="comments" maxlength="105"/>
   </div>
   <input class="btn" type="submit" value="Edit Task">
 </form>
