@@ -2,8 +2,8 @@
 <h2><a class='task_button' href='/tasks'>Home</a></h2>
 <h2><a class='task_button' href='/people'>All Task Owners</a></h2>
 
-<table class="new_task">
 <%= form_for @task do |f| %>
+<table class="new_task">
 	<td><%= f.label :name %>
   <%= f.text_field :name %></td>
   <td><%= f.label :description %>
