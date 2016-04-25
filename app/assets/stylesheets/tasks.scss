@@ -65,19 +65,19 @@ header li a:hover{
  // border-radius: 5px;
  color:#4D434F;
  display: flex;
- flex-wrap: row;
- flex-direction: wrap;
+ flex-wrap: wrap;
+ // flex-direction: wrap;
  // margin: auto;
- // overflow: auto;
+ overflow: auto;
  // padding: 2%;
  border-style: dotted;
  border-color: red;
- // width: 777px;
+ width: 777px;
 
 }
 
 .task-item {
- background-image: url("../assets/pink-post-it.png");
+ // background-image: url("../assets/pink-post-it.png");
  background-position: center;
  background-repeat: no-repeat;
  display: inline-block;
@@ -88,4 +88,6 @@ header li a:hover{
  text-align: left;
  width: 205px;
  overflow: auto;
+ border-style: dotted;
+ border-color: blue;
 }

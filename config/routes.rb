@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   get "people/:id"                => "people#show"
 
-  get "people/:id/all_tasks"          => "people#all_tasks"
+  get "people/:id/all_tasks"       => "people#all_tasks"
 
 
 
