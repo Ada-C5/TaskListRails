@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   
-  root 'tasks#index'
+  get '/people' => 'people#index', as: 'people'
+  get 'people/show/:id' => 'people#show', as: 'person'
+  get 'people/show/:id/tasks' => 'people#tasks', as: 'ptasks'
 
+### Everything below here works ###
+  root 'tasks#index'
+  
   get '/tasks/new' => 'tasks#new', as: 'tasks' 
   post '/tasks/new' => 'tasks#create'
   

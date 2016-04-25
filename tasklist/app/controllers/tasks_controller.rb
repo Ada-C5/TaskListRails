@@ -1,12 +1,8 @@
 class TasksController < ApplicationController
 	def index
 		@tasks = Task.all
-	end
-  
-  def by_task
-    @tasks = Task.where(task_name: params[:task])
-    render :index
-  end  
+    @people = Person.all
+	end 
 
   def show
     @tasks = Task.find(params[:id])
@@ -15,6 +11,7 @@ class TasksController < ApplicationController
 
   def new 
     @task = Task.new 
+    @people = Person.all 
   end 
 
   def create
@@ -36,6 +33,7 @@ class TasksController < ApplicationController
 
   def edit 
     @task = Task.find(params[:id])
+    @people = Person.all 
   end 
 
   def update
@@ -54,15 +52,16 @@ class TasksController < ApplicationController
 
   def show_complete
     @tasks = Task.all
-  end 
+  end
+
 
   private
 
   def new_params
-    params.permit(task: [:task_name, :task_description])
+    params.permit(task: [:task_name, :task_description, :person_id])
   end
 
   def update_params
-    params.permit(task: [:task_name, :task_description, :task_completion])
+    params.permit(task: [:task_name, :task_description, :task_completion, :person_id])
   end
 end

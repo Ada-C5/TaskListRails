@@ -1,8 +1,15 @@
 <div class="task-container">
   <div class="task-item">
     <%= @tasks.task_name %> <br/><br/>
-    <%= @tasks.task_description %> <br/><br/>
-    <%= @tasks.task_completion %>
+    <div class="task-description">
+      <%= @tasks.task_description %><br/><br/>
+      <% if !@tasks.person.nil? %>
+        <div class="task-assignment">
+          Assigned to: <%= @tasks.person.name %> 
+        </div>
+      <% end %>
+      <%= @tasks.task_completion %>
+    </div>
     <div class="buttons">
       <%= button_to "edit", 
         {:controller => :tasks, :action => 'edit', :id => @tasks.id }, 
