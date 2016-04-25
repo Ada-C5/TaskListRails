@@ -26,8 +26,8 @@ tasks.each do |task|
   Task.create task
 end
 
-Person.create(name: 'Lisa')
-Person.create(name: "Claire")
-Person.create(name: "Ryan")
-Person.create(name: "Baker")
-Person.create(name: "Deirdre")
+Person.create(name: 'Lisa', age: 15, catchphrase: "Meet me at mile 18.")
+Person.create(name: "Claire", age: 20, catchphrase: "You don't even know me.")
+Person.create(name: "Ryan", age: 1, catchphrase: "Ryan got dem legos.")
+Person.create(name: "Baker", age: 56, catchphrase: "Arf")
+Person.create(name: "Deirdre", age: 94, catchphrase: "What the damn hell.")
