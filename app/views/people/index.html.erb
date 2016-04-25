@@ -1,0 +1,10 @@
+<section class = "index_people">
+
+    <%@all_people.each do |task|%>
+    <li>
+      <%=link_to task.name, person_path(task.id)%>
+    </li>
+
+
+    <%end%>
+</section
