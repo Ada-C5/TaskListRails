@@ -1,3 +1,18 @@
 // Place all the styles related to the people controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+li {
+	border-radius: 27px;
+	max-width: 85%;
+	list-style: none;
+	border: 5px solid #FFF;
+	background-color: #FFF;
+	padding: 15px;
+	margin: 0rem 2rem 2rem 2rem;
+}
+
+li > a {
+	text-decoration: none;
+	font-weight: bolder;
+	color: blue;
+}
