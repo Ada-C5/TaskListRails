@@ -31,11 +31,11 @@ group :development do
   gem 'spring'
   gem 'better_errors'
   gem 'binding_of_caller'
+end   
 
 group :production do 
   gem 'pg'
   gem 'rails_12factor'
-end   
 
 end
 
