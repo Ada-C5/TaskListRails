@@ -1,0 +1,11 @@
+<!-- info about one task-->
+<section class="tasklist_show">
+  <h2>Name: <%= @tasks.person.name %></h2>
+    <h3>Description<%= @tasks.description %></h3>
+
+    <% if @tasks.completed_at %>
+    <h3>Completed?<%= @tasks.completed_at%></h3>
+    <% end %>
+
+    <h3>Completion<%= @tasks.completion_status %></h3>
+</section>

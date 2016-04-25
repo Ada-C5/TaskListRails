@@ -1,0 +1,16 @@
+<h1> Test </h1>
+
+<pre><%= params %></pre>
+
+<%= form_for @task do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<%= f.label :description %>
+<%= f.text_field :description %>
+
+<%= f.select :person_id, Person.all.map {|person| [person.name, person.id]} %>
+
+<%= f.submit %>
+
+<% end %>
