@@ -9,7 +9,7 @@ class PeopleController < ApplicationController
 
   def tasks
     @person = Person.find(params[:id])
-    @tasks = Task.where( person_id: @person.id )
+    @tasks = @person.tasks
 
   end
 

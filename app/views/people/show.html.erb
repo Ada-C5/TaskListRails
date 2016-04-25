@@ -1,7 +1,11 @@
 <h2><%= "Name:  #{@person.name}" %></h2>
 
-<ul class="list-tasks">
-  <li class="task-tile">
-    <%= link_to "SHOW ALL TASKS", show_tasks_path(@person.id) %>
-
+<ul class="list">
+  <li class="tile detailed">
+    We value your privacy and are currently not keeping any details about our helpers.  Please <%= mail_to('nahmisa@gmail.com', 'contact us') %> if you have any suggestions you'd like to see tracked!
   </li>
+</ul>
+
+<p>
+<%= link_to "SHOW ALL TASKS", show_tasks_path(@person.id) %>
+</p>
