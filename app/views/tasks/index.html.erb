@@ -28,7 +28,7 @@
           <%= task[:description] %>
           <% end %></td>
           <td><%= task[:status] %></td>
-          <td><%= task[:due_date].to_date.strftime("%B %-d, %Y") %></td>
+          <td><%= task[:due_date] %></td>
           <td><%= task[:completed_on] %></td>
           <td><%= link_to "Edit", edit_path(task.id) %> / <%= link_to "Delete", url_for(action: :destroy, id: task.id), method: :delete, data: {confirm: "Are you sure you'd like to delete this task?"} %> / <%= link_to "Mark Completed", task_mark_completed_path(task.id), method: :patch, data: {confirm: "Are you sure you'd like to mark this task as completed?"} %></td>
         </tr>
