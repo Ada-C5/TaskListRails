@@ -17,6 +17,6 @@ Rails.application.routes.draw do
   #have them both submit the same params... or something...
   patch '/tasks/:id' => 'tasks#update_edit'
   ###work on this
-
-
+  get '/people' => 'people#index', as: 'people'
+  get '/people/:id' => 'people#show', as: 'person'
 end

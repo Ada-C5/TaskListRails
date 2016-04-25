@@ -1,0 +1,22 @@
+<h2>All People</h2>
+
+<table class = "all-tasks">
+
+	<tr>
+		<th>Name</th>
+		<th>Number of Unfinished Tasks</th>
+	</tr>
+
+	<% @all_people.each do |person| %>
+	  <tr>
+      <td>
+				<%= link_to person.name, person_path(person.id) %>
+			</td>
+			<td>
+        <% tasks_to_do = person.tasks.where("tasks.completed_at IS NULL") %>
+        <%= tasks_to_do.length %>
+			</td>
+    </tr>
+	<% end %>
+
+</table>
