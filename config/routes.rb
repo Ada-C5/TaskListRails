@@ -27,6 +27,8 @@ Rails.application.routes.draw do
 
   get '/people/:id' => 'people#show', as: 'person'
 
+  get '/people/:id/tasks' => 'people#all', as: 'all_tasks'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

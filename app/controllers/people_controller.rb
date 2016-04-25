@@ -10,4 +10,11 @@ class PeopleController < ApplicationController
     @tasks = @person.tasks.where(completed_at: nil)
     render :show_person
   end
+
+  def all
+    @person = Person.find(params[:id])
+    @incomplete_tasks = @person.tasks.where(completed_at: nil)
+    @complete_tasks = @person.tasks.where.not(completed_at: nil)
+    render :all_tasks
+  end
 end
