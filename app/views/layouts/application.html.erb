@@ -3,7 +3,6 @@
 <head>
   <title>Tasklist</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%# font-awesome for icons instead of images %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -11,16 +10,14 @@
 <body>
   <header>
 
-    <h1>My Tasklist!</h1>
+    <h1>Tasklist!</h1>
     <nav class="user-choice">
-      <%= link_to "See All Tasks", root_path, class: "link" %>
-      <%= link_to "Add Task", "/tasks/new", class: "link" %>
-      <%= link_to "See All Helpers", "/people", class: "link" %>
-
+      <%= link_to "See All Tasks", root_path %>
+      <%= link_to "Add Task", "/tasks/new" %>
+      <%= link_to "See All Helpers", "/people" %>
 
     </nav>
   </header>
-
 
 <%= yield %>
 

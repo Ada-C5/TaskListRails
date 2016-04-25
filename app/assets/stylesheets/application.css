@@ -1,7 +1,3 @@
-/*
- *= require font-awesome
- */
- 
 html {
   font-size: 16px;
   font-family: monospace;
@@ -37,6 +33,19 @@ p {
   margin: 0;
 }
 
+a {
+  display: block;
+  text-decoration: none;
+  font-size: 1rem;
+  color: #b5b5b7;
+}
+
+a:hover {
+  color:#f2b632;
+}
+
+/*navigation bar on all pages */
+
 .user-choice {
   display: flex;
   flex-direction: row;
@@ -44,17 +53,17 @@ p {
   justify-content: center;
 }
 
-a {
-  display: block;
-  text-decoration: none;
+.user-choice > a {
   font-size: 2rem;
-  color: #b5b5b7;;
+  margin: 1rem;
+  padding: .5rem;
+  border-radius: 1rem;
+  border-color: #f2b632;
+  border-width: medium;
+  border-style: solid;
 }
 
-a:hover {
-  color:#f2b632;
-}
-
+/*style lists of people (helpers) and tasks*/
 
 .list-tasks {
   list-style: none;
