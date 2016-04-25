@@ -14,6 +14,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(tasks_create_params[:task])
+    # @task.due_date = Chronic.parse(params[:due_date])
     # defaults = {:status => "Not Started"}
     # params = defaults.merge(params)
     # @task = params[:status]

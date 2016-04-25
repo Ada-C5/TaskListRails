@@ -5,7 +5,7 @@
         <div class="people-floating">
           <strong> <h3 class="link"><%= link_to person.name, person_path(person.id) %></h3></strong>
           <section class="people-index">
-            <strong>Uncompleted Tasks</strong> : <%= Task.where(person_id: person.id, status: "Not Started").count %>
+            <strong>Uncompleted Tasks</strong> : <%= Task.where("person_id = ? AND (status = ? OR status = ?)", person.id, "Not Started", "In Progress").count %>
           </section>
         </div>
       </section>

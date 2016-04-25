@@ -9,6 +9,6 @@ class PeopleController < ApplicationController
 
   def by_task
     @person = Person.find(params[:id])
-    @tasks = Person.find(params[:id]).tasks
+    @tasks = Person.find(params[:id]).tasks.order(:date_completed)
   end
 end

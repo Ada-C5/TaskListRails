@@ -11,16 +11,16 @@
   <strong>Status</strong> : <%= task.status %> <br/>
 </div>
 <div class="pad-text">
-  <strong>Date Created</strong> : <%= task.created_at %> <br/>
+  <strong>Date Created</strong> : <%= task.created_at.strftime("%m-%e-%y %H:%M") %> <br/>
 </div>
 <div class="pad-text">
-  <strong>Due Date</strong> : <%= task.due_date %> <br/>
+  <strong>Due Date</strong> : <%= task.due_date == nil ? "" : task.due_date.strftime("%m-%e-%y %H:%M") %> <br/>
 </div>
 <div class="pad-text">
   <strong>Comments</strong> : <%= task.comments %> <br/>
 </div>
 <div class="pad-text">
-  <strong>Date Completed</strong> : <%= task.date_completed %>
+  <strong>Date Completed</strong> : <%= task.date_completed == nil ? "" : task.date_completed.strftime("%m-%e-%y %H:%M")  %>
 </div>
 
 <%= button_to "Edit", task_path(task.id)+"/edit", :class => "btn", :method => :get %>
