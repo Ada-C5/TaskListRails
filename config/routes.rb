@@ -12,12 +12,12 @@ Rails.application.routes.draw do
   get "/tasks/new" => "tasks#new", as: "new"
   post "/tasks/" => "tasks#create"
 
-  patch "/tasks/:id" => "tasks#mark_completed", as: "task_mark_completed"
 
   get "/tasks/:id" => "tasks#show"
 
   get "/tasks/:id/edit" => "tasks#edit", as: "edit"
-  patch "/tasks/:id" => "tasks#update", as: "task_update"
+  patch "/tasks/:id/update" => "tasks#update", as: "task_update"
+  patch "/tasks/:id/complete" => "tasks#mark_completed", as: "task_mark_completed"
 
   delete "/tasks/:id" => "tasks#destroy"
 
