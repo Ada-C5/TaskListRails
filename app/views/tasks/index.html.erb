@@ -15,6 +15,7 @@
         <th>Status</th>
         <th>Due Date</th>
         <th>Completed on</th>
+        <th>Task Owner</th>
         <th>Action</th>
       </tr>
     </thead>
@@ -30,6 +31,7 @@
           <td><%= task[:status] %></td>
           <td><%= task[:due_date] %></td>
           <td><%= task[:completed_on] %></td>
+          <td><%= link_to Peep.find(task.peep_id).name, "/peeps/#{task.peep_id}" %></td>
           <td><%= link_to "Edit", edit_path(task.id) %> / <%= link_to "Delete", url_for(action: :destroy, id: task.id), method: :delete, data: {confirm: "Are you sure you'd like to delete this task?"} %> / <%= link_to "Mark Completed", task_mark_completed_path(task.id), method: :patch, data: {confirm: "Are you sure you'd like to mark this task as completed?"} %></td>
         </tr>
         <% end %>

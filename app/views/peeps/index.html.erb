@@ -1,0 +1,29 @@
+<h1> Task Owner(s)! </h1>
+
+<div class = "peeplist">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Occupation</th>
+        <th>Number of Incomplete Tasks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @peep_list.each do |peep| %>
+      <% task_count = Task.where(peep_id: peep.id).length %>
+      <tr>
+        <td><%= link_to peep.name, "/peeps/#{peep.id}" %></td>
+        <td><%= peep[:age] %></td>
+        <td><%= peep[:occupation] %></td>
+        <td><%= task_count %></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+  </tbody>
+
+  <div class = "call_to_action">
+    Would you like to add a new task? <%= link_to "Click Here", new_path %>
+  </div>
