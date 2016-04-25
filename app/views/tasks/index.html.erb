@@ -1,7 +1,7 @@
 <h1> Get these things done, you slacker!</h1>
 
 <div class= "container">
-  <% @tasks = @tasks.all.order(completed: :desc) %>
+  <% @tasks = @tasks.all.order(completed: :asc) %>
   <% @tasks.each do |task| %>
 
   <div class = "task <%= task.completed.nil? ? 'completed' : 'notdone' %>">
@@ -16,11 +16,11 @@
 
         <% if task.completed.nil? %>
           <%= link_to "/tasks/#{task.id}/complete", method: :patch, :action =>"complete" do %>
-          <i class="fa fa-check-square-o" aria-hidden="true"></i>
+          <i class="fa fa-square-o" aria-hidden="true"></i>
           <% end %>
         <% else %>
           <%= link_to "/tasks/#{task.id}/incomplete", method: :patch, :action =>"incomplete" do %>
-          <i class="fa fa-square-o" aria-hidden="true"></i>
+          <i class="fa fa-check-square-o" aria-hidden="true"></i>
 
         <% end %>
 

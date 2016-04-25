@@ -34,7 +34,7 @@ class TasksController < ApplicationController
     if @task.person
       @current_user = @task.person.id
     else
-      @@current_user = nil
+      @current_user = nil
     end
     render :new
   end

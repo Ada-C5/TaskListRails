@@ -4,7 +4,9 @@
   <% @tasks.each do |task| %>
   <div class = "task show <%= task.completed.nil? ? 'completed' : 'notdone' %>">
       <span>Task:<%= task.name %><br></span>
+      <% if !task.description.nil? %>
        Description:<%= task.description %><br>
+       <% end %>
        <% if !task.person.nil? %>
          Person:<%= link_to task.person.name, "/people/#{task.person_id}" %><br>
        <% end %>
