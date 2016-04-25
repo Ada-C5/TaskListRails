@@ -34015,3 +34015,41 @@ Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.3ms)
   [1m[35m (0.7ms)[0m  commit transaction
   [1m[36mTask Load (1.8ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
   [1m[35mPerson Load (0.2ms)[0m  SELECT "people".* FROM "people"
+
+
+Started GET "/people/5" for ::1 at 2016-04-25 16:20:58 -0700
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPerson Load (0.1ms)[0m  SELECT  "people".* FROM "people" WHERE "people"."id" = ?  ORDER BY "people"."id" ASC LIMIT 1  [["id", 5]]
+  Rendered people/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-25 16:20:58 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-04-25 16:20:58 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-25 16:20:58 -0700
+
+
+Started GET "/assets/people.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-25 16:20:58 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-04-25 16:20:58 -0700
+
+
+Started GET "/assets/tasks.self-c94ee64ac854fd5110984510f4e63edd780773c8b2f14e9fe3e1d4df60d98cb2.css?body=1" for ::1 at 2016-04-25 16:20:58 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-25 16:20:58 -0700
+
+
+Started GET "/assets/people.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-25 16:20:58 -0700
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-25 16:20:58 -0700
+
+
+Started GET "/assets/check2-b55093a19c8f6d85e00827c9678c9550574595b2fa95252acc2a123d4f943185.png" for ::1 at 2016-04-25 16:20:58 -0700
