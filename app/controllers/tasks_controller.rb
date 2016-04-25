@@ -43,7 +43,7 @@ class TasksController < ApplicationController
 
   def mark_completed
     @task = Task.find(params[:id])
-    @task.update_attribute(:completed_on, Time.now.strftime("%B %-d, %Y"))
+    @task.update(completed_on: Time.now.strftime("%B %-d, %Y"))
     redirect_to root_path
   end
 
@@ -51,11 +51,5 @@ class TasksController < ApplicationController
 
   def task_create_params
     params.permit(task: [:task_name, :description, :status, :due_date]) #you must permit parameters when you want to allow access to the user to create new data using the params. The user is ONLY permitted to access these specified parameters.
-  end
-
-  def date_is_valid
-    if Chronic.parse.nil?
-      errors.add("Date is invalid")
-    end
   end
 end

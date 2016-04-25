@@ -17877,3 +17877,866 @@ Migrations are pending. To resolve this issue, run:
 
 
 Started POST "/__better_errors/5bfe3d3494f36991/variables" for ::1 at 2016-04-22 16:07:26 -0700
+
+
+Started GET "/" for ::1 at 2016-04-22 16:09:14 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActiveRecord::PendingMigrationError - 
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+:
+  activerecord (4.2.6) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.6) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/jillianboshart/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/jillianboshart/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/jillianboshart/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/a9cbae591ed6798c/variables" for ::1 at 2016-04-22 16:09:15 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePeople (20160422225623)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "people" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160422225623"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for ::1 at 2016-04-22 16:09:43 -0700
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"  ORDER BY "tasks"."id" ASC[0m
+  Rendered tasks/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 275ms (Views: 264.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/tack.jpg" for ::1 at 2016-04-22 16:09:43 -0700
+
+
+Started GET "/assets/corkboard.jpg" for ::1 at 2016-04-22 16:09:44 -0700
+
+
+Started GET "/tasks/15/edit" for ::1 at 2016-04-22 16:12:39 -0700
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 15]]
+  Rendered tasks/edit.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 51ms (Views: 40.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks/15/assets/tack.jpg" for ::1 at 2016-04-22 16:12:39 -0700
+
+ActionController::RoutingError (No route matches [GET] "/tasks/15/assets/tack.jpg"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/jillianboshart/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/jillianboshart/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/jillianboshart/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.1ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (86.4ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (46.8ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (100.6ms)
+
+
+Started PATCH "/tasks/15" for ::1 at 2016-04-22 16:12:45 -0700
+Processing by TasksController#mark_completed as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/QTLD936Uhdzd4IuUIdMbwtW5pgFSfVyATf8rMBfnfo7adbXvTiBbS6zuYz0CryLduMjqSMs5t7q3kquFHnrkw==", "task"=>{"task_name"=>"Tik Tok", "description"=>"Important.", "status"=>"", "due_date"=>"1994-02-04 15:10:21 -0800"}, "commit"=>"Update Task", "id"=>"15"}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 15]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "tasks" SET "completed_on" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["completed_on", "April 22, 2016"], ["updated_at", "2016-04-22 23:12:45.468378"], ["id", 15]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2016-04-22 16:12:45 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"  ORDER BY "tasks"."id" ASC[0m
+  Rendered tasks/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/tack.jpg" for ::1 at 2016-04-22 16:12:45 -0700
+
+
+Started GET "/tasks/15/edit" for ::1 at 2016-04-22 16:14:33 -0700
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[35mTask Load (0.5ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 15]]
+  Rendered tasks/edit.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 29ms (Views: 20.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/tasks/15/assets/tack.jpg" for ::1 at 2016-04-22 16:14:33 -0700
+
+ActionController::RoutingError (No route matches [GET] "/tasks/15/assets/tack.jpg"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/jillianboshart/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/jillianboshart/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/jillianboshart/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (68.8ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (43.3ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (92.4ms)
+
+
+Started PATCH "/tasks/15" for ::1 at 2016-04-22 16:14:37 -0700
+Processing by TasksController#mark_completed as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jUDM4YGzv8wXi7vO8BreIaViWJdv3SkgkwHBh1DPO+9LLdE54XFstkpPgGxUly7F2Nedpkm4Oox46HeFhOlNhg==", "task"=>{"task_name"=>"Tik Tok", "description"=>"Important.", "status"=>"", "due_date"=>"1994-02-04 15:10:21 -0800"}, "commit"=>"Update Task", "id"=>"15"}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 15]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms)
+
+ArgumentError - wrong number of arguments (given 2, expected 1):
+  activerecord (4.2.6) lib/active_record/persistence.rb:247:in `update'
+  app/controllers/tasks_controller.rb:46:in `mark_completed'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/jillianboshart/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/jillianboshart/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/jillianboshart/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/9be0369e64698232/variables" for ::1 at 2016-04-22 16:14:37 -0700
+
+
+Started GET "/tasks" for ::1 at 2016-04-22 16:14:57 -0700
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks"  ORDER BY "tasks"."id" ASC
+  Rendered tasks/index.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 40ms (Views: 37.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/tack.jpg" for ::1 at 2016-04-22 16:14:57 -0700
+
+
+Started GET "/assets/corkboard.jpg" for ::1 at 2016-04-22 16:14:57 -0700
+
+
+Started GET "/" for ::1 at 2016-04-22 16:14:58 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks"  ORDER BY "tasks"."id" ASC[0m
+  Rendered tasks/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 36ms (Views: 34.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tack.jpg" for ::1 at 2016-04-22 16:14:59 -0700
+
+
+Started GET "/assets/corkboard.jpg" for ::1 at 2016-04-22 16:14:59 -0700
+
+
+Started GET "/tasks/15/edit" for ::1 at 2016-04-22 16:15:01 -0700
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 15]]
+  Rendered tasks/edit.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 23ms (Views: 20.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks/15/assets/tack.jpg" for ::1 at 2016-04-22 16:15:01 -0700
+
+ActionController::RoutingError (No route matches [GET] "/tasks/15/assets/tack.jpg"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/jillianboshart/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/jillianboshart/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/jillianboshart/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.4ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (67.9ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (43.0ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (99.9ms)
+
+
+Started PATCH "/tasks/15" for ::1 at 2016-04-22 16:15:04 -0700
+Processing by TasksController#mark_completed as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lDLLh0VB8z6McGuGbrwj5BzK/wUDZbmKoMC83EqAD69SX9ZfJYMgRNG0UCTKMdMAYX86NCUAqiZLKQrenqZ5xg==", "task"=>{"task_name"=>"Tik Tok", "description"=>"Important.", "status"=>"", "due_date"=>"1994-02-04 15:10:21 -0800"}, "commit"=>"Update Task", "id"=>"15"}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 15]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-04-22 16:15:04 -0700
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks"  ORDER BY "tasks"."id" ASC
+  Rendered tasks/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/tack.jpg" for ::1 at 2016-04-22 16:15:05 -0700
+
+
+Started GET "/" for ::1 at 2016-04-23 20:54:46 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (3.5ms)[0m  [1mSELECT "tasks".* FROM "tasks"  ORDER BY "tasks"."id" ASC[0m
+  Rendered tasks/index.html.erb within layouts/application (63.3ms)
+Completed 200 OK in 169ms (Views: 154.2ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/assets/tack.jpg" for ::1 at 2016-04-23 20:54:47 -0700
+
+
+Started GET "/tasks/new" for ::1 at 2016-04-23 20:54:49 -0700
+Processing by TasksController#new as HTML
+  Rendered tasks/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 28ms (Views: 26.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/assets/tack.jpg" for ::1 at 2016-04-23 20:54:49 -0700
+
+ActionController::RoutingError (No route matches [GET] "/tasks/assets/tack.jpg"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/jillianboshart/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/jillianboshart/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/jillianboshart/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.8ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.9ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (133.4ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (53.2ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (117.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "people" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2016-04-25 02:13:30.335439"], ["updated_at", "2016-04-25 02:13:30.335439"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "people" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2016-04-25 02:15:49.359797"], ["updated_at", "2016-04-25 02:15:49.359797"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePeople (20160425022636)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "people" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "occupation" varchar) [0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePeople (20160425022636)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "people" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "occupation" varchar) [0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePeople (20160425022636)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "people" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "occupation" varchar) [0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePeople (20160425022636)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "people" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "occupation" varchar) [0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePeople (20160425022636)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "people" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "occupation" varchar) [0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "people" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2016-04-25 02:48:26.792116"], ["updated_at", "2016-04-25 02:48:26.792116"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePeople (20160425022636)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "people" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "occupation" varchar) [0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "people" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2016-04-25 02:53:32.426622"], ["updated_at", "2016-04-25 02:53:32.426622"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePeople (20160425022636)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "people" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "occupation" varchar) [0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePeople (20160425022636)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "people" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "occupation" varchar) [0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePeople (20160425022636)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "people" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "occupation" varchar) [0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePeople (20160425022636)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "people" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2016-04-25 02:59:46.470575"], ["updated_at", "2016-04-25 02:59:46.470575"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePeople (20160425030213)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "people" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "occupation" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePeeps (20160425030550)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "peeps" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "occupation" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160425030550"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "peeps" ("name", "age", "occupation", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jillian"], ["age", 31], ["occupation", "Awesome Person"], ["created_at", "2016-04-25 03:06:54.158039"], ["updated_at", "2016-04-25 03:06:54.158039"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "peeps" ("name", "age", "occupation", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Jake"], ["age", 32], ["occupation", "Radical Person"], ["created_at", "2016-04-25 03:06:54.163327"], ["updated_at", "2016-04-25 03:06:54.163327"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "peeps" ("name", "age", "occupation", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Indiana"], ["age", 5], ["occupation", "Super Dog-Person"], ["created_at", "2016-04-25 03:06:54.165450"], ["updated_at", "2016-04-25 03:06:54.165450"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "peeps" ("name", "age", "occupation", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Cream Cheese"], ["age", 4], ["occupation", "Excellent Dog-Person"], ["created_at", "2016-04-25 03:06:54.167602"], ["updated_at", "2016-04-25 03:06:54.167602"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[36mPeep Load (0.2ms)[0m  [1mSELECT  "peeps".* FROM "peeps" WHERE "peeps"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateAssocitionBetweenPeepsAndTasks (20160425031338)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateAssocitionBetweenPeepsAndTasks (20160425031338)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "tasks" ADD "peep_id" varchar[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160425031338"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mTask Load (0.5ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "tasks" SET "peep_id" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["peep_id", "1"], ["updated_at", "2016-04-25 03:19:59.893077"], ["id", 1]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "tasks" SET "peep_id" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["peep_id", "1"], ["updated_at", "2016-04-25 03:20:17.691550"], ["id", 2]]
+  [1m[35m (8.8ms)[0m  commit transaction
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "tasks" SET "peep_id" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["peep_id", "1"], ["updated_at", "2016-04-25 03:20:43.657391"], ["id", 3]]
+  [1m[35m (7.8ms)[0m  commit transaction
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "tasks" SET "peep_id" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["peep_id", "1"], ["updated_at", "2016-04-25 03:20:57.249479"], ["id", 4]]
+  [1m[35m (8.1ms)[0m  commit transaction
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "tasks" SET "peep_id" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["peep_id", "2"], ["updated_at", "2016-04-25 03:21:16.770926"], ["id", 5]]
+  [1m[35m (8.2ms)[0m  commit transaction
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "tasks" SET "peep_id" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["peep_id", "2"], ["updated_at", "2016-04-25 03:21:30.499654"], ["id", 6]]
+  [1m[35m (8.8ms)[0m  commit transaction
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "tasks" SET "peep_id" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["peep_id", "2"], ["updated_at", "2016-04-25 03:22:11.693147"], ["id", 7]]
+  [1m[35m (8.7ms)[0m  commit transaction
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "tasks" SET "peep_id" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["peep_id", "2"], ["updated_at", "2016-04-25 03:22:29.320979"], ["id", 8]]
+  [1m[35m (9.2ms)[0m  commit transaction
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "tasks" SET "peep_id" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["peep_id", "3"], ["updated_at", "2016-04-25 03:22:47.745863"], ["id", 9]]
+  [1m[35m (8.2ms)[0m  commit transaction
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "tasks" SET "peep_id" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["peep_id", "3"], ["updated_at", "2016-04-25 03:23:11.545976"], ["id", 10]]
+  [1m[35m (8.1ms)[0m  commit transaction
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "tasks" SET "peep_id" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["peep_id", "3"], ["updated_at", "2016-04-25 03:23:30.119972"], ["id", 11]]
+  [1m[35m (8.1ms)[0m  commit transaction
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "tasks" SET "peep_id" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["peep_id", "3"], ["updated_at", "2016-04-25 03:24:16.531459"], ["id", 12]]
+  [1m[35m (8.2ms)[0m  commit transaction
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "tasks" SET "peep_id" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["peep_id", "4"], ["updated_at", "2016-04-25 03:24:30.539899"], ["id", 13]]
+  [1m[35m (8.7ms)[0m  commit transaction
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 14]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "tasks" SET "peep_id" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["peep_id", "4"], ["updated_at", "2016-04-25 03:24:45.852443"], ["id", 14]]
+  [1m[35m (8.8ms)[0m  commit transaction
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 15]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "tasks" SET "peep_id" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["peep_id", "4"], ["updated_at", "2016-04-25 03:25:07.282241"], ["id", 15]]
+  [1m[35m (8.4ms)[0m  commit transaction
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+
+
+Started GET "/tasks/15/edit" for ::1 at 2016-04-24 20:31:03 -0700
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 15]]
+  Rendered tasks/edit.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 265ms (Views: 124.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tasks/15/assets/tack.jpg" for ::1 at 2016-04-24 20:31:04 -0700
+
+ActionController::RoutingError (No route matches [GET] "/tasks/15/assets/tack.jpg"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/jillianboshart/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/jillianboshart/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/jillianboshart/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (18.5ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.8ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.6ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (111.3ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.8ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (72.1ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.0ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (138.0ms)
+
+
+Started GET "/tasks/1/edit" for ::1 at 2016-04-25 09:03:00 -0700
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTask Load (2.5ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tasks/edit.html.erb within layouts/application (51.9ms)
+Completed 200 OK in 218ms (Views: 195.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/tasks/1/assets/tack.jpg" for ::1 at 2016-04-25 09:03:01 -0700
+
+ActionController::RoutingError (No route matches [GET] "/tasks/1/assets/tack.jpg"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/jillianboshart/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/jillianboshart/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/jillianboshart/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.9ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.4ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.0ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.6ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (107.4ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (2.2ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.9ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (58.0ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (2.0ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.9ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (131.2ms)
+
+
+Started GET "/tasks/1/edit" for ::1 at 2016-04-25 11:07:53 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTask Load (0.4ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tasks/edit.html.erb within layouts/application (32.7ms)
+Completed 200 OK in 377ms (Views: 333.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tasks/assets/tack.jpg" for ::1 at 2016-04-25 11:07:54 -0700
+
+ActionController::RoutingError (No route matches [GET] "/tasks/assets/tack.jpg"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/jillianboshart/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/jillianboshart/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/jillianboshart/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.5ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.5ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.5ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (132.2ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (73.6ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (158.0ms)
+
+
+Started GET "/tasks/1/edit" for ::1 at 2016-04-25 11:09:12 -0700
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tasks/edit.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 72ms (Views: 70.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/tasks/assets/tack.jpg" for ::1 at 2016-04-25 11:09:12 -0700
+
+ActionController::RoutingError (No route matches [GET] "/tasks/assets/tack.jpg"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/jillianboshart/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/jillianboshart/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/jillianboshart/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.2ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.3ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (114.1ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (77.0ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/jillianboshart/.rvm/gems/ruby-2.3.0@TaskListRails/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (193.5ms)
