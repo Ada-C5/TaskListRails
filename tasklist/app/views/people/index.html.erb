@@ -1,2 +1,20 @@
 <h1>People#index</h1>
 <p>Find me in app/views/people/index.html.erb</p>
+
+<h2>Helpers:</h2>
+
+<ul class="list-tasks">
+
+<%# loop through all people and display person titles %>
+<% @people.each do |person| %>
+  <li class="task-tile">
+
+    <%= link_to person.name, person_path(person.id), class: "single-task"%>
+    <p>
+      <%= "Uncomplete Tasks: #{Task.where( person_id: person.id, complete: false || nil ).count }" %>
+    </p>
+
+  </li>
+<% end %>
+
+</ul>

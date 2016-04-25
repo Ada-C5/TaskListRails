@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'people/index'
+  get 'people/' => 'people#index' #count of how many uncomplete tasks
+  get '/people/:id' => 'people#show', as: 'person'
+  get '/people/:id/tasks' => 'people#tasks', as: 'show_tasks'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -27,5 +29,6 @@ Rails.application.routes.draw do
 
   # delete a specific photo
   delete '/tasks/:id' => 'tasks#destroy'
+
 
 end

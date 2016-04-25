@@ -1,4 +1,4 @@
-<h2>To Do:</h2>
+<h2><%= "Name:  #{@person.name}" %></h2>
 
 <ul class="list-tasks">
 
@@ -7,8 +7,7 @@
   <li class="task-tile <%= "complete" if task.complete == true %>">
 
     <%= link_to task.title, task_path(task.id), class: "single-task"%>
-    <%= link_to Person.find(task.person_id).name, person_path(task.person.id) unless task.person_id.nil? %>
-
+  
     <% if task.complete != true %>
     <%# if the task is not complete, we give the option to mark complete %>
       <%= form_for task do |f| %>
