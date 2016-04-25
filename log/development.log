@@ -33943,3 +33943,75 @@ Processing by PeopleController#show as HTML
   [1m[36mPerson Load (0.3ms)[0m  [1mSELECT  "people".* FROM "people" WHERE "people"."id" = ?  ORDER BY "people"."id" ASC LIMIT 1[0m  [["id", 5]]
   Rendered people/show.html.erb within layouts/application (1.3ms)
 Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.3ms)
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "people" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "age" integer, "catchphrase" varchar) [0m
+  [1m[35m (1.2ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "completed" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "priority" varchar, "person_id" integer) 
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160422225333')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160419204655')
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160421175247')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160422195033')
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160422195234')[0m
+  [1m[35m (4.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160422200024')
+  [1m[36m (3.0ms)[0m  [1mCREATE TABLE "people" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "age" integer, "catchphrase" varchar) [0m
+  [1m[35m (1.2ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "completed" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "priority" varchar, "person_id" integer) 
+  [1m[36m (2.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160422225333')[0m
+  [1m[35m (3.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160419204655')
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160421175247')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160422195033')
+  [1m[36m (2.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160422195234')[0m
+  [1m[35m (2.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160422200024')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.5ms)[0m  [1mINSERT INTO "tasks" ("name", "description", "completed", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "The First Task"], ["description", "do this one first"], ["completed", "2008-06-02 21:12:18.866885"], ["created_at", "2016-04-25 22:40:45.727725"], ["updated_at", "2016-04-25 22:40:45.727725"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tasks" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Go to Brunch"], ["description", "food is yummy"], ["created_at", "2016-04-25 22:40:45.735996"], ["updated_at", "2016-04-25 22:40:45.735996"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tasks" ("name", "description", "completed", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Go to Lunch"], ["description", "eat more"], ["completed", "2009-06-08 02:26:02.778394"], ["created_at", "2016-04-25 22:40:45.738721"], ["updated_at", "2016-04-25 22:40:45.738721"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tasks" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Go to Second Lunch"], ["description", "so full"], ["created_at", "2016-04-25 22:40:45.741451"], ["updated_at", "2016-04-25 22:40:45.741451"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "tasks" ("name", "description", "completed", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Play Video Games"], ["description", "what does this button do?"], ["completed", "2015-10-22 02:35:43.945008"], ["created_at", "2016-04-25 22:40:45.744491"], ["updated_at", "2016-04-25 22:40:45.744491"]]
+  [1m[35m (2.5ms)[0m  commit transaction
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tasks" ("name", "description", "completed", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "High Five Somebody You Don't Know"], ["description", "good work"], ["completed", "1982-08-09 19:39:08.348188"], ["created_at", "2016-04-25 22:40:45.752232"], ["updated_at", "2016-04-25 22:40:45.752232"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tasks" ("name", "description", "completed", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Plant Flowers"], ["description", "learn to plant flowers"], ["completed", "2003-08-24 19:09:09.679101"], ["created_at", "2016-04-25 22:40:45.756528"], ["updated_at", "2016-04-25 22:40:45.756528"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tasks" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Call Mom"], ["description", "tonight"], ["created_at", "2016-04-25 22:40:45.759474"], ["updated_at", "2016-04-25 22:40:45.759474"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "tasks" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "She worries, you know."], ["description", "nah"], ["created_at", "2016-04-25 22:40:45.762026"], ["updated_at", "2016-04-25 22:40:45.762026"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tasks" ("name", "description", "completed", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Nap."], ["description", "zzzzz"], ["completed", "1997-11-30 23:40:07.637600"], ["created_at", "2016-04-25 22:40:45.766195"], ["updated_at", "2016-04-25 22:40:45.766195"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("name", "age", "catchphrase", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Lisa"], ["age", 15], ["catchphrase", "Meet me at mile 18."], ["created_at", "2016-04-25 22:40:45.776141"], ["updated_at", "2016-04-25 22:40:45.776141"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("name", "age", "catchphrase", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Claire"], ["age", 20], ["catchphrase", "You don't even know me."], ["created_at", "2016-04-25 22:40:45.778994"], ["updated_at", "2016-04-25 22:40:45.778994"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("name", "age", "catchphrase", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ryan"], ["age", 1], ["catchphrase", "Ryan got dem legos."], ["created_at", "2016-04-25 22:40:45.781839"], ["updated_at", "2016-04-25 22:40:45.781839"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "people" ("name", "age", "catchphrase", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Baker"], ["age", 56], ["catchphrase", "Arf"], ["created_at", "2016-04-25 22:40:45.784897"], ["updated_at", "2016-04-25 22:40:45.784897"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "people" ("name", "age", "catchphrase", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Deirdre"], ["age", 94], ["catchphrase", "What the damn hell."], ["created_at", "2016-04-25 22:40:45.787608"], ["updated_at", "2016-04-25 22:40:45.787608"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36mTask Load (1.8ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mPerson Load (0.2ms)[0m  SELECT "people".* FROM "people"
