@@ -22,7 +22,7 @@ class TasksController < ApplicationController
     if @task.save
       redirect_to root_path
     else
-      render '#'
+      render :new
     end
   end
 
