@@ -1,30 +1,27 @@
-<h1 class = "Bytitle">Task List</h1>
 
 
-<section class="more_info"
 
-   <%=@all_tasklist.title%>
- </li>
-   <li class= "description">
-     <%=@all_tasklist.description%>
-   </li>
+<section class="more_info">
 
-   <li>
-     <%=@all_tasklist.completed_at%>
-   </li>
+  <span>Name:
+    <%if @all_tasklist.person != nil%>
+    <%=@all_tasklist.person.name%>
+    <%end%>
 
-   <li>
-     <%if @all_tasklist.person != nil%>
-     <%=@all_tasklist.person.name%>
-     <%end%>
+  </span><br>
 
-   </li>
-   <li>
-     <%= link_to "home", root_path%>
-   </li>
-</li>
 
+   <span>Title: <%=@all_tasklist.title%></span><br>
+
+   <span>
+     Description: <%=@all_tasklist.description%>
+   </span><br>
+
+   <span>
+     Date Created: <%=@all_tasklist.completed_at%>
+   </span><br>
+
+<%= link_to "home", root_path%>
 <%# I didn't need the each because it only returned one thing and wasn't an array"%>
 
-</ul>
 </section>

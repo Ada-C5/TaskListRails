@@ -89,16 +89,10 @@
 
 .more_info{
   font-family: American Typewriter;
+  margin-top: 25%;
+  margin-left: 15%;
+  text-align: left;
 
-  background-repeat:no-repeat;
-  text-align: center;
-  text-decoration: none;
-  list-style-type: none;
-  width: 35%;
-  height: 500px;
-  border-radius: 500px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .nav {
