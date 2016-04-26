@@ -1,5 +1,14 @@
 <h1>list of tasks</h1>
-
+<h1>Not Done!</h1>
 <%@list.each do |task|%>
-<%= task.title%>
+<li>
+  <%= task.title%>
+</li>
+<%end%>
+
+<h1>Done</h1>
+<%@done_list.each do |task|%>
+<li>
+  <%=task.title%>
+</li>
 <%end%>
