@@ -1,0 +1,55 @@
+<br>
+
+<!-- <h1>Tasks List</h1> -->
+<%= link_to '/tasks/new', class: 'btn btn-success', action: 'new' do %>
+<i class="glyphicon glyphicon-plus"></i> add Task
+<% end %>
+<%= params %>
+<br>
+<br>
+
+ <!-- The classes that can be used are: .active, .success, .info, .warning, and .danger           -->
+ <div class="container">
+   <table class="table table-striped", class="table table-hover">
+     <thead>
+       <tr>
+         <th class="headings" colspan=9>TASK LIST </tr>
+       </tr>
+       <tr class="headings">
+         <th></th>
+         <th>Name</th>
+         <th>Status</th>
+         <th>Task Name</th>
+         <th>Description</th>
+         <th>Complete By</th>
+         <th>Created</th>
+         <th>edit</th>
+         <th>Delete</th>
+       </tr>
+     </thead>
+     <tbody>
+       <% @tasks.each do |task| %>
+       <% person = Person.find(task.person_id) %>
+       <tr class="row">
+         <td><%= link_to person.name, people_new_path(person.id) %>
+        </td>
+        <% if task.completion_status %>
+          <td><%= link_to image_tag('checked_box.jpg'), status_path(task.id), method: :patch %></td>
+        <% else %>
+        <td><%= link_to image_tag('check_box_faded.jpg'), status_path(task.id), method: :patch %></td>
+        <% end %>
+        <td><%= link_to task.name, "/tasks/#{task.id}" %></td>
+        <td><%= task.description %></td>
+        <td><%= task.completed_at %></td>
+        <td><%= task.created_at%></td>
+        <td><%= link_to edit_path(task.id), class: "btn btn-default" do %>
+            <i class="glyphicon glyphicon-edit">edit</i>
+        <% end %></td>
+        <td><%= link_to delete_path(task.id), class: "btn btn-default", method: :delete, data: {confirm: "Are you sure you  want to delete this task?"} do %>
+            <i class="glyphicon glyphicon-trash">task</i>
+        <% end %></td>
+       </tr>
+      <% end %>
+     </tbody>
+   </table>
+ </div>

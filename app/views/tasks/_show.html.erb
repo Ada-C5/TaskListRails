@@ -1,0 +1,33 @@
+
+<div class="container">
+  <table class="table table-striped" class="table table-hover">
+    <thead>
+      <tr>
+        <th class="headings" colspan=7>TASK</tr>
+      </tr>
+      <tr class="headings">
+        <th></th>
+        <th>Task Name</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Complete By</th>
+        <th>Created</td>
+        <th>Delete</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="row">
+        <td><%= @task.name%></td>
+        <td><%= @task.description %></td>
+        <td><%= @task.completion_status %></td>
+        <td><%= @task.completed_at %></td>
+        <td><%= @task.created_at%></td>
+        <td>delete</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+<%= link_to "Home", root_path, class: 'btn btn-success' %>

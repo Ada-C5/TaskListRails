@@ -1,0 +1,43 @@
+<br>
+
+<!-- <h1>Tasks List</h1> -->
+<%= link_to '/tasks/new', class: 'btn btn-success', action: 'new' do %>
+<i class="glyphicon glyphicon-plus"></i> add Task
+<% end %>
+<%= params %>
+<br>
+<br>
+
+
+ <!-- The classes that can be used are: .active, .success, .info, .warning, and .danger           -->
+ <div class="container">
+   <table class="table table-striped", class="table table-hover">
+     <thead>
+       <tr>
+         <th class="headings" colspan=3>USER INFO </th>
+       </tr>
+       <tr class="headings">
+         <th>Name</th>
+         <th>edit</th>
+         <th>Delete</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr class="row">
+         <td><%= link_to @person.name, "/people/#{@person.id}" %>
+        </td>
+        <td><%= link_to edit_path(@person.id), class: "btn btn-default" do %>
+            <i class="glyphicon glyphicon-edit">edit</i>
+        <% end %></td>
+        <td><%= link_to delete_path(@person.id), class: "btn btn-default", method: :delete, data: {confirm: "Are you sure you  want to delete this task?"} do %>
+            <i class="glyphicon glyphicon-trash">user</i>
+        <% end %></td>
+     </tr>
+  </tbody>
+</table>
+</div>
+<%= render 'shared/task_list' %>
+
+
+
+<%= link_to "Home", root_path, class: 'btn btn-success' %>
