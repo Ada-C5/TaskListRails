@@ -1,0 +1,294 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require font-awesome
+ *= require_tree .
+ *= require_self
+ */
+
+html {
+  font-size: 12px;
+  /*height: 100%;*/
+  background: url(../assets/pen-paper-light.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+body {
+  /*overflow: hidden;*/
+  color: black;
+  font-size: 1.5rem;
+  height: 100%;
+}
+
+.fun-icons {
+  border: none;
+  border-radius: 12px;
+  bottom: 0.5rem;
+  color: rgb(153,0,153);
+  font-size: 4rem;
+  text-shadow: 2px 2px 5px #000;
+  margin: 1rem 2rem;
+  position: fixed;
+  z-index: 2;
+}
+
+.fa-plus {
+  right: 0.5rem;
+}
+
+.fa-list {
+  left: 0.5rem;
+}
+
+.fa-user {
+  left: 6rem;
+}
+
+.WHOOT {
+  font-family: "Give You Glory", cursive;
+  font-size: 3.3vw;
+  text-shadow: 1px 1px 1px white;
+  position: static;
+  left: 45%;
+  /*top: 5%;*/
+}
+
+
+h1 {
+  text-align: center;
+  margin-top: 6%;
+  clear: right;
+  font-family: Copperplate;
+  font-size: 4rem;
+ }
+
+h2 {
+  font-family: Copperplate, sans-serif;
+  text-align: center;
+  margin-top: 6%;
+}
+
+.single-task-title {
+  font-family: "Give You Glory", cursive;
+  /*font-variant: small-caps;*/
+  font-size: 5rem;
+}
+
+.one-view-all {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.one-view-all h2 {
+  margin-top: 7rem;
+}
+
+.one-view-all p {
+  font-family: "Give You Glory", cursive;
+  font-size: 2.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: #231c82;
+}
+
+section.table {
+  font-size: 1.5rem;
+  text-align: center;
+  height: 57%;
+  width: 62%;
+  position: fixed;
+  overflow-y: scroll;
+  bottom: 16%;
+  left: 20%;
+  margin: 0rem;
+}
+
+table {
+  font-size: 1.5rem;
+  border-spacing: 3rem 0.5rem;
+  border-collapse: collapse;
+  margin: 0rem auto;
+  /*table-layout: fixed;*/
+  width: 100%;
+}
+
+table tr {
+  border-bottom: 1px double rgb(106, 108, 111);
+}
+
+table tr:nth-child(even) {
+ background-color: rgba(102,0,102, 0.04);
+}
+
+td, th {
+  font-family: "Give You Glory", cursive;
+  font-size: 1.2rem;
+  border-bottom: black;
+  width: auto;
+  padding: 0 1rem;
+}
+
+th {
+  font-size: 2rem;
+  font-variant: small-caps;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.completed-check {
+  border: 1px solid lime;
+  padding: 0;
+}
+
+.people-table td {
+  font-size: 2.5rem;
+}
+
+.people-table th {
+  font-size: 3rem;
+}
+
+::-webkit-scrollbar {
+   -webkit-appearance: none;
+   width: 7px;
+}
+::-webkit-scrollbar-thumb {
+   border-radius: 4px;
+   background-color: rgba(41, 102, 194, 0.2);
+   -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+
+form {
+  text-align: center;
+  margin-top: 5%;
+  font-family: Copperplate;
+  font-size: 2rem;
+}
+
+input, textarea {
+  font-family: "Give You Glory", cursive;
+  font-size: 1.7rem;
+  margin-bottom: 1.5%;
+  text-align: center;
+}
+
+label {
+  vertical-align: top;
+  display: block;
+}
+
+.alert {
+  border: none;
+  background-color: rgba(0,0,0,0);
+  font-size: 1.2rem;
+  padding: 0;
+  color: #c00;
+}
+
+.fa-pencil {
+  font-size: 1.3rem;
+}
+
+.edit-col {
+  padding-right: 0;
+}
+
+.fa-times-circle {
+  color: #c00;
+  font-size: 1.5rem;
+  padding-left: 0.5rem;
+}
+
+.show-to-edit {
+  font-size: 2rem;
+}
+
+.done-button {
+  border: none;
+  font-size: 1.5rem;
+  color: #47476b;
+  background-color: rgba(0,0,0,0);
+}
+
+.search-bar {
+  float: right;
+  margin-top: 0;
+}
+
+.search-field {
+  font-size: 1rem;  
+  width: 10rem;
+}
+
+.persons-tasks {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  height: 45%;
+  overflow-y: scroll;
+}
+
+.persons-tasks-table {
+  table-layout: fixed;
+}
+
+.persons-tasks-table td {
+  width: 50%;
+}
+
+.see-my-tasks {
+  font-family: Copperplate;
+  color: #0099e6;
+}
+
+
+/***********FOOTER**********/
+
+
+footer {
+  position: absolute;
+  padding-top: 3rem;
+  bottom: 0;
+  left: 0;
+  width: 97%;
+  height: 25px;
+  text-align: center;
+  font-size: 1rem;
+  clear: both;
+}
+
+span.copyright {
+  padding-right: 2rem;
+  letter-spacing: 0.1rem;
+}
+
+span.small-heart {
+  font-size: 0.4rem;
+}
+
+footer a {
+  color: #005266;
+}
+
+

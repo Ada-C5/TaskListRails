@@ -1,0 +1,27 @@
+<%= form_tag people_path, method: 'get', class: "search-bar" do %>
+  <%= text_field_tag :search, params[:search], class: "search-field" %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<% if @people %>
+<h1 class="WHOOT">People</h1>
+  <section class="table">
+    <table>
+      <thead>
+      <tr class="people-table">
+        <th>Name</th>
+        <th>Incomplete Tasks</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @people.each do |person| %>
+        <tr class="people-table">
+          <td><%= link_to person.name, person_path(person.id) %></td>
+          <td><%= Task.incomplete_tasks(person.id).count %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </section>
+<% end %>

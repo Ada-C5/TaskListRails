@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<%= render 'html_header', title: "Task List" %>
+
+<body>
+<%= link_to tasks_path do %>
+  <i class="fa fa-list fun-icons" aria-hidden="true"></i>
+<% end %>
+<%= link_to people_path do %>
+  <i class="fa fa-user fun-icons" aria-hidden="true"></i>
+<% end %>
+<%= link_to tasks_new_path do %>
+  <i class="fa fa-plus fun-icons" aria-hidden="true"></i>
+<% end %>
+
+<%= yield %>
+
+
+  <%= render 'footer' %>
+</body>
+</html>
+

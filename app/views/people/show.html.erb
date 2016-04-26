@@ -1,0 +1,12 @@
+<section class="one-view-all">
+  <h2>Person:</h2>
+  <p><%= @person[:name] %></p>
+
+  <h2>Completed Tasks:</h2>
+  <p><%= Task.complete_tasks(@person[:id]).count %></p>
+
+  <h2>Incomplete Tasks:</h2>
+  <p><%= Task.incomplete_tasks(@person[:id]).count %></p>
+
+  <%= link_to "See my tasks!", person_tasks_path(@person[:id]), class: "see-my-tasks" %>
+</section>
