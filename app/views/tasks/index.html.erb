@@ -1,0 +1,38 @@
+<%= link_to "Add a New Task", task_path("new") %>
+<%= link_to "People", people_path %>
+
+<!-- <a href="/task/add">Add a new task</a> -->
+<!-- <a href="/priority/DESC">Sort by Priority</a>
+<a href="/status/DESC">Sort by Status</a>
+<a href="/due_date/ASC">Sort by Due Date</a> -->
+
+  <article>
+
+    <% if @all_tasks %>
+    <% @all_tasks.each do |task| %>
+    <section>
+      <div class="floating <%= task.status == 'Completed' ? 'completed' : '' %>">
+        <!-- if task.complete != null (or like that) show else take out checkbox -->
+        <%= form_tag(task_path(task.id), method: "patch") do %>
+          <%= image_submit_tag "checkmark.png", alt: "Checkbox to mark task completed", class: (task.status != "Completed" ? "checkmark" : "invisible") %>
+          <%= hidden_field(:task, :status, :value => "Completed") %>
+        <% end %>
+        <% if task.status == "Completed" %>
+          <%  %>
+        <% end %>
+
+        <%= render partial: "tasks/tasks", locals: {task: task} %>
+
+        </section>
+      </div>
+    </section>
+    <% end %>
+    <% end %>
+  </article>
+
+  <!-- <a href="/edit/<%#= task.id %>" class="btn">Edit</a> -->
+  <!-- Instead of a button, added a ahref above <section class="action-buttons">
+  <form action="/edit/<%#= task.id %>" method "get">
+  <input type="submit" value = "edit"> -->
+  <!-- <input type="hidden" name= 'id' value="<%#= task.id%>"> -->
+  <!-- </form> -->

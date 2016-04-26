@@ -1,0 +1,20 @@
+<!-- <a href="/add">Add a new task</a>
+<a href="/priority/DESC">Sort by Priority</a>
+<a href="/status/DESC">Sort by Status</a>
+<a href="/due_date/ASC">Sort by Due Date</a> -->
+
+  <article>
+    <section>
+      <div class="big-card">
+
+        <%= render partial: "tasks/tasks", locals: {task: @task} %>
+
+      </div>
+    </section>
+  </article>
+
+  <!-- <form action="/delete" method="post">
+  <input type="submit" value="Delete" onclick="return confirm('Are you sure?')"/>
+  <input type="hidden" name="id" value="<%= @task.id %>"/>
+</form> -->
+<!-- </section> -->

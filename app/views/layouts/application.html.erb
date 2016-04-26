@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tasklist</title>
+  <%= stylesheet_link_tag    'application', "https://fonts.googleapis.com/css?family=Tangerine", media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <body>
+
+  <h1>Get It Done!</h1>
+
+  <header>
+    <%= link_to "Home", root_path %>
+  </header>
+
+  <main>
+    <%= yield %>
+  </main>
+
+  <footer>
+    Made by Adriana Cannon 2016
+  </footer>
+
+</body>
+</html>

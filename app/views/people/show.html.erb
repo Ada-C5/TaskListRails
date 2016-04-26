@@ -1,0 +1,22 @@
+<article>
+  <section>
+    <div class="person-big-card">
+      <section class="card-head">
+        <strong> <h3 class="link"><%= link_to @person.name, person_path(@person.id) %></h3></strong>
+      </section>
+      <section class="person-pad-text">
+        <strong>Uncompleted Tasks</strong> : <%= Task.where(person_id: @person.id, status: "Not Started").count %>
+      </section>
+      <section class="person-pad-text">
+        <strong>In Progress Tasks</strong> : <%= Task.where(person_id: @person.id, status: "In Progress").count %>
+      </section>
+      <section class="person-pad-text">
+        <strong>Completed Tasks</strong> : <%= Task.where(person_id: @person.id, status: "Completed").count %>
+      </section>
+      <section class="person-pad-text">
+        <strong>Email</strong> : <%= Person.find(@person.id).email %>
+      </section>
+      <%= button_to "View All", person_path(@person.id)+"/tasks", :class => "btn", :method => :get %>
+    </div>
+  </section>
+</article>

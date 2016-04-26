@@ -1,0 +1,31 @@
+      <%= f.label :task %>
+      <%= f.text_field :task, :maxlength => 15 %><br /><br />
+
+
+        <%= label_tag "person", nil, :class => "add-task" %>
+        <%= select_tag "people", options_from_collection_for_select(people, "id", "name", @task.person.nil? ? nil : @task.person.id), :class => "radio" %> <br /><br />
+
+
+      <%= f.label :priority, :class => 'add-task' %>
+      <%= f.radio_button :priority, 'urgent' %>
+      <%= label :priority, 'urgent', :class => 'radio' %>
+      <%= f.radio_button :priority, 'medium' %>
+      <%= label :priority, 'medium', :class => 'radio' %>
+      <%= f.radio_button :priority, 'low' %>
+      <%= label :priority, 'low', :class => 'radio' %> <br /><br />
+
+      <% if show_status == true %>
+        <%= f.label :status, :class => 'add-task' %>
+        <%= f.radio_button :status, 'Not Started' %>
+        <%= label :status, 'Not Started', :class => 'radio' %>
+        <%= f.radio_button :status, 'In Progress' %>
+        <%= label :status, 'In Progress', :class => 'radio' %>
+        <%= f.radio_button :status, 'Completed' %>
+        <%= label :status, 'Completed', :class => 'radio' %> <br /><br />
+      <% end %>
+
+      <%= f.label :due_date %>
+      <%= f.text_field :due_date %> <br /><br />
+
+      <%= f.label :comments %>
+      <%= f.text_field :comments, :maxlength => 105 %> <br /><br />

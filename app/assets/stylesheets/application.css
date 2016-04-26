@@ -1,0 +1,314 @@
+body {
+  text-align: center;
+  font-family: fantasy;
+  margin: 3rem auto;
+  width: 85%;
+  background: linear-gradient(to bottom, rgba(181,189,200,1)
+   0%,rgba(130,140,149,1) 25%,rgba(40,52,59,1) 100%);
+   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+strong {
+  font-size: 1.1
+}
+
+header {
+  margin: 1.5rem;
+  font-size: 1.5rem;
+}
+
+a {
+  margin: 1.5rem;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.floating {
+  display: inline-block;
+  width: 21rem;
+  height: 27rem;
+  margin: 1rem;
+  border: 3px solid black;
+  padding: .5rem;
+  float: left;
+  background-color: whitesmoke;
+}
+
+.card-head {
+  font-size: 1.3rem;
+  height: 4rem;
+  margin: .3rem;
+  margin-bottom: .7rem;
+  border-bottom: thick dotted black;
+}
+
+.pad-text {
+  margin: .5rem;
+}
+
+.action-buttons {
+  margin: .3rem;
+}
+
+.add-floating {
+  display: inline-block;
+  width: 35rem;
+  height: 38rem;
+  margin: auto 1rem;
+  border: 3px solid black;
+  padding: .5rem;
+  background-color: whitesmoke;
+}
+
+.edit-floating {
+  display: inline-block;
+  width: 37rem;
+  height: 45rem;
+  margin: auto 1rem;
+  border: 3px solid black;
+  padding: .5rem;
+  background-color: whitesmoke;
+}
+
+.add-priority {
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+.add-head {
+  padding: 2rem;
+  font-size: 1.3rem;
+  margin: 2rem;
+  border-bottom: thick dotted black;
+}
+
+.add-center {
+  margin: 0 auto;
+  width: 50%;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+  padding: .8rem;
+  margin: auto;
+}
+
+.tablerow {
+  display: block;
+  float: left;
+}
+
+form {
+  display: inline;
+  text-align: left;
+  font-size: 2rem;
+}
+
+fieldset {
+  display:inline-block;
+  width: 50%;
+  font-size: 1rem
+}
+
+div.item {
+  display: block;
+  padding: 1.2rem;
+}
+
+.item-task {
+  display: block;
+  height: 3rem;
+  padding: 1rem;
+  margin: 2rem;
+  border-bottom: thick dotted black;
+}
+
+.add-task {
+  font-size: 2rem;
+  /*margin: 2rem;*/
+  padding-right: 2rem;
+}
+
+input {
+  font-size: 1.5rem;
+  padding: .5rem;
+}
+
+/*label.radio {
+  padding: 0 60px;
+}*/
+
+input.button {
+  width: auto;
+  padding: 1rem;
+  margin: 1rem;
+  color:white;
+  border-radius: 3px;
+}
+
+.urgent {
+  color: red;
+  display: inline;
+}
+
+.medium {
+  color: orange;
+  display: inline;
+}
+
+.low {
+  color: purple;
+  display: inline;
+}
+
+footer {
+  display: block;
+  margin: auto;
+  clear: both;
+  padding: 4rem;
+}
+
+.completed {
+  opacity: 0.1;
+}
+
+.completed:hover {
+  opacity: 0.3;
+}
+
+.link a:link {color: black;}
+.link a:visited {color: black;}
+.link a:hover {color: black;}
+.link a:active {color: black;}
+
+.btn {
+  padding: 7px 15px 0px 15px;
+  background: whitesmoke;
+  color: #FFF;
+  text-decoration: none;
+  border-radius: 5px;
+  color: black;
+  border: .5px solid;
+  font-size: 1.1rem;
+  font-family: fantasy;
+  margin: 0.5rem .5rem;
+}
+
+.btn:hover {
+  background-color: #ccc;
+}
+
+.add-btn {
+  padding: 7px 15px 0px 15px;
+  background: whitesmoke;
+  color: #FFF;
+  text-decoration: none;
+  border-radius: 5px;
+  color: black;
+  border: .5px solid;
+  font-size: 1.1rem;
+  font-family: fantasy;
+  margin: 0.5rem 10.5rem;
+}
+
+.add-btn:hover {
+  background-color: #ccc;
+}
+
+.big-card {
+  display: inline-block;
+  width: 35rem;
+  height: 34rem;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  border: 3px solid black;
+  padding: .7rem;
+  background-color: whitesmoke;
+  font-size: 1.7rem;
+}
+
+strong h3 {
+  font-size: 2rem;
+}
+
+.checkmark {
+  float: right;
+}
+
+.radio {
+  font-size: 1rem;
+}
+
+form.item-task input[type=text] {
+  width: 16rem;
+}
+
+.checkmark {
+  width: 1rem;
+  height: 1rem;
+}
+
+.invisible {
+  display: none;
+  /*width: 0rem;
+  height: 0rem;*/
+  float: right;
+}
+
+.people-floating {
+  display: inline-block;
+  width: 13rem;
+  /*height: 4rem;*/
+  margin: 1rem;
+  border: 3px solid black;
+  padding: 1.5rem;
+  float: left;
+  background-color: whitesmoke;
+  font-size: 3rem;
+}
+
+.person-pad-text {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.person-big-card {
+  display: inline-block;
+  width: 35rem;
+  height: 35rem;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  border: 3px solid black;
+  padding: .7rem;
+  background-color: whitesmoke;
+  font-size: 1.7rem;
+}
+
+.people-index {
+  font-size: 1rem;
+}
+
+
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */

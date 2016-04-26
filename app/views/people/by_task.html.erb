@@ -1,0 +1,38 @@
+<h2><%= @person.name %>'s Tasks</h2>
+<article>
+  <% if @tasks %>
+    <% @tasks.each do |task| %>
+      <section class="floating <%= task.status == 'Completed' ? 'completed' : '' %>">
+        <section class="card-head">
+          <strong> <h3><%= task.task %></h3></strong>
+        </section>
+        <div class="pad-text">
+          <strong>Belongs To</strong> : <%= @person.name %>
+        </div>
+        <div class="pad-text">
+          <strong>Priority</strong> : <div class="<%= task.priority %>"><%= task.priority %></div>
+        </div>
+        <div class="pad-text">
+          <strong>Status</strong> : <%= task.status %> <br/>
+        </div>
+        <div class="pad-text">
+          <strong>Date Created</strong> : <%= task.created_at.strftime("%m-%e-%y %H:%M") %> <br/>
+        </div>
+        <div class="pad-text">
+          <strong>Due Date</strong> : <%= task.due_date %> <br/>
+        </div>
+        <div class="pad-text">
+          <strong>Comments</strong> : <%= task.comments %> <br/>
+        </div>
+        <div class="pad-text">
+          <strong>Date Completed</strong> : <%= task.date_completed == nil ? "" : task.date_completed.strftime("%m-%e-%y %H:%M") %>
+        </div>
+        <%= button_to "Edit", task_path(task.id)+"/edit", :class => "btn", :method => :get %>
+
+        <%= form_tag(task_path(task.id), method: "delete", data: {confirm: "Are you sure?"}) do %>
+          <%= submit_tag "Delete", class: "btn" %>
+        <% end %>
+      </section>
+    <% end %>
+  <% end %>
+</article>
