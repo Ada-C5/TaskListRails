@@ -4,7 +4,7 @@ class TasksController < ApplicationController
     if params[:search] 
       @tasks = Task.search(params[:search])
     else
-      @tasks = Task.order(completed_at: :desc)
+      @tasks = Task.order(completed_at: :desc, created_at: :asc)
     end
   end
 
