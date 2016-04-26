@@ -20,7 +20,7 @@ class TasksController < ApplicationController
     @task = Task.new(create_task_params[:task])
     assign_person(@task)
     if @task.save
-      redirect_to root_path
+      redirect_to tasks_path
     else
       render :new
     end
@@ -37,7 +37,7 @@ class TasksController < ApplicationController
     assign_person(@task)
     # raise
     if @task.save
-      redirect_to root_path
+      redirect_to tasks_path
     else
       render :new
     end
@@ -46,19 +46,19 @@ class TasksController < ApplicationController
   def complete
     @task = Task.find(params[:id])
     @task.update(completed_at: DateTime.now)
-    redirect_to root_path
+    redirect_to tasks_path
   end
 
   def uncomplete
     @task = Task.find(params[:id])
     @task.update(completed_at: nil)
-    redirect_to root_path
+    redirect_to tasks_path
   end
 
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-    redirect_to root_path
+    redirect_to tasks_path
   end
 
   private

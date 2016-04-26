@@ -31,7 +31,7 @@ tasks = [
   { title: "High Five Somebody You Don't Know", description: "", completed_at: random_time },
   { title: "Plant Flowers", description: "", completed_at: random_time },
   { title: "Call Mom", description: "", person_id: 2 },
-  { title: "She worries, you know.", description: "" },
+  { title: "Be the Best Teacher", description: "EVAAARRRRR", person_id: 3 },
   { title: "Nap.", description: "", completed_at: random_time }
 ]
 
@@ -40,9 +40,9 @@ tasks.each do |task|
 end
 
 people = [
-  { name: "Yokes" },
-  { name: "Marla" },
-  { name: "Apes" }
+  { name: "Yokes", email: "yokes@eggzactly.com" },
+  { name: "Marla", email: "marmar@vollyballlyfe.com" },
+  { name: "Apes", email: "dancing_dart@milkshakes.com" }
 ]
 
 people.each do |person|
