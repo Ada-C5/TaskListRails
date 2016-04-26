@@ -66,7 +66,7 @@ class TasklistController < ApplicationController
     private
 
     def tasklist_params
-      params.permit(rails_task_list: [:title, :description,])
+      params.permit(rails_task_list: [:title, :description, :person_id])
     end
 
     def edit_params

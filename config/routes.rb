@@ -10,17 +10,17 @@ Rails.application.routes.draw do
 #                       PUT    /rails_task_list/:id(.:format)      rails_task_list#update
 #                       DELETE /rails_task_list/:id(.:format)      rails_task_list#destroy
 
-  get    '/tasklist' => 'tasklist#index', as: 'rails_task_lists'
-  get    '/tasklist/new' => 'tasklist#new', as: 'tasklist_new'
-  post   '/tasklist' => 'tasklist#create'
-  get    '/tasklist/:id' => 'tasklist#show', as: 'rails_task_list'
-  get    '/tasklist/:id/edit' => 'tasklist#edit', as: 'edit_tasklist'
-  put    '/tasklist/:id' => 'tasklist#update'
-  patch  '/tasklist/:id/done' => 'tasklist#finished', as: "done_task_list"
-  patch  '/tasklist/:id' => 'tasklist#update'
-  delete '/tasklist/:id' => 'tasklist#delete', as: 'delete'
-  get    '/people'       => 'people#index'
-  get    '/person/:id'   => 'people#show', as: 'person'
+  get    '/tasklist'                 => 'tasklist#index',      as: 'rails_task_lists'
+  get    '/tasklist/new'             => 'tasklist#new',        as: 'tasklist_new'
+  post   '/tasklist'                 => 'tasklist#create'
+  get    '/tasklist/:id'             => 'tasklist#show',       as: 'rails_task_list'
+  get    '/tasklist/:id/edit'        => 'tasklist#edit',       as: 'edit_tasklist'
+  put    '/tasklist/:id'             => 'tasklist#update'
+  patch  '/tasklist/:id/done'        => 'tasklist#finished',   as: "done_task_list"
+  patch  '/tasklist/:id'             => 'tasklist#update'
+  delete '/tasklist/:id'             => 'tasklist#delete',     as: 'delete'
+  get    '/people'                   => 'people#index'
+  get    '/person/:id'               => 'people#show',         as: 'person'
   get    '/people/:id/all_tasklist'  => 'people#all_tasklist', as: 'task'
 
 
