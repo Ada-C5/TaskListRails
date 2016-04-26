@@ -1,0 +1,32 @@
+<h1>
+  <% task = @task %>
+
+  <%= task.title %>
+</h1>
+
+  <h3>
+    <%= task.description %>
+  </h3>
+
+  <% if task.person != nil %>
+    <p> This task is assigned to <%= task.person.name %></p>
+
+  <% else %>
+    <p> This task is unassigned </p>
+
+  <% end %>
+
+  <p>
+    <%= task.created_at %>
+  </p>
+
+  <% if task.completed_at == nil %>
+    <p>
+      incomplete
+    </p>
+
+  <% else %>
+    <p>
+      completed
+    </p>
+  <% end %>

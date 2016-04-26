@@ -1,0 +1,50 @@
+
+
+<header>
+  <h1> To Do List </h1>
+</header>
+
+<nav>
+    <ul>
+      <li><a href='/'>Home</a></li>
+
+      <li><%= link_to "Add a New Task!", tasks_new_path %></li>
+
+      <li><%= link_to "Peeps", people_path %></li>
+    </ul>
+</nav>
+
+
+<main>
+  <!-- <%= params %> -->
+
+  <% tasks_to_do = @all_tasks %>
+
+
+    <% tasks_to_do.each do |task| %>
+      <div>
+        <%= link_to task.title, task_path(task.id) %>
+
+        <p>
+          <%= task.description %>
+        </p>
+
+      <% if task.person != nil %>
+        <p> This task is assigned to <%= task.person.name %></p>
+
+      <% else %>
+        <p> This task is unassigned </p>
+
+      <% end %>
+
+        <%= button_to "delete", task_path(task.id), { method: :delete, data: {confirm: 'Are you sure you want to delete?'}} %>
+
+        <%= button_to "complete", tasks_complete_path(task.id), { method: :patch } %>
+
+        <%= link_to "edit", tasks_edit_path(task.id) %>
+      </div>
+    <% end %>
+
+
+
+</main>

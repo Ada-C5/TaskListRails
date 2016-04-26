@@ -1,0 +1,11 @@
+<!-- all partials start with a _ -->
+
+
+  <%= form_for @task do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= collection_select(:task, :person_id, Person.all, :id, :name) %>
+  <%= f.submit %>
+  <% end %>
