@@ -1,0 +1,14 @@
+ <table>
+    <tr class="header-row">
+
+      <th><h3>Traveler Name</h3></th>
+      <th><h3>Assigned Tasks</h3></th>
+   
+    </tr>
+    <tr class="table-row"><% @people.each do |person| %></tr>
+    	<td class="travelers"><%= link_to person.name, "/people/#{person.name}", class: "links" %></td>
+			<td><%= @count[person.id] %></td>
+    <% end %>
+
+  </table>
+
