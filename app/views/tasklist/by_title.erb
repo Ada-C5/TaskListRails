@@ -1,0 +1,30 @@
+<h1> class = "Bytitle">Task List</h1>
+<%params%>
+<section class="section">
+
+
+<ul class = "by_title">
+  <%@tasklist.each do |task|%>
+<li>
+ <%= link_to task.title, "#{task.title}"%>
+   <li>
+     <%=task.description%>
+   </li>
+
+   <li>
+     <%=task.completed_at %>
+   </li>
+   <li>
+
+   </li>
+   <label><input type="checkbox" name="status" value="task.completion_status"></label>
+   <%=task.completion_status%>
+</li>
+
+
+<%end%>
+</ul>
+
+
+</section>
+<%= link_to "home", root_path%>

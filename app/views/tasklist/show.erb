@@ -1,0 +1,29 @@
+
+
+
+<section class="more_info">
+
+  <span>Name:
+    <%if @all_tasklist.person != nil%>
+    <%=@all_tasklist.person.name%>
+    <%end%>
+
+  </span><br>
+
+
+   <span>Title: <%=@all_tasklist.title%></span><br>
+
+   <span>
+     Description: <%=@all_tasklist.description%>
+   </span><br>
+
+   <span>
+     Date Created: <%=@all_tasklist.completed_at%>
+   </span><br>
+
+   <span>Completion Status: <%=@all_tasklist.completion_status%></span><br><br>
+
+<%= link_to "home", root_path%>
+<%# I didn't need the each because it only returned one thing and wasn't an array"%>
+
+</section>

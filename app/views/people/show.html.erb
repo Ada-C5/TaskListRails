@@ -1,0 +1,21 @@
+
+<h1>More Info</h1>
+<%@person.each do |task|%>
+
+<%=task.name%>
+<%end%>
+
+<%=link_to 'all_tasklist',task_path%>
+
+
+
+
+
+<li>
+  <%= link_to "home", root_path%>
+</li>
+
+<li>
+
+<%= link_to "People", '/people'%>
+</li>

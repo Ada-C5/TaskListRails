@@ -1,0 +1,15 @@
+
+<section class= "form">
+  <span><%=form_for @tasklist do |f| %></span><br>
+  <span>Title:<%= f.text_field :title %></span><br>
+  <span><% f.label :title %></span><br>
+  <span>Description:<%= f.text_field :description %></span><br>
+  <span><% f.label :description %></span><br>
+  <span><%f.label :Person %></span><br>
+  <span>Name:<%= f.select "person_id",
+  options_from_collection_for_select( @all_people , "id", "name"), :include_blank => true %></span><br><br>
+  <span> <%= f.submit %></span><br><br>
+  <% end %>
+  <%= link_to "home", root_path%>
+
+</section>

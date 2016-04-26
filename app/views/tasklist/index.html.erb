@@ -1,0 +1,48 @@
+
+
+<section class = "index">
+
+    <%@all_tasklist.each do |task|%>
+    <ul class = "task_description">
+
+
+
+
+
+
+        <span><%= link_to task.title, rails_task_list_path(task.id)%></span>
+
+
+        <span>
+          <%if task.person != nil%>
+          <%=task.person.name%>
+          <%end%>
+
+      </span>
+
+
+        <span>
+          <%= link_to "Edit task", edit_tasklist_path(task.id)%>
+        </span>
+
+
+
+        <span>
+          <%= link_to 'Delete',delete_path(task.id),
+
+          method: :delete,
+          data: { confirm: 'Are you sure?' } %>
+        <span>
+
+        <span><%=link_to "Done!",done_task_list_path(task.id),method: :patch%></span>
+  </ul>
+    <% end %>
+
+
+<article class= "nav">
+  <%= link_to "People", '/people'%>
+  <%= link_to "Add new Task", tasklist_new_path%>
+
+</article>
+
+</section>
