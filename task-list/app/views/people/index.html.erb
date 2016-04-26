@@ -1,0 +1,8 @@
+<h2>PEOPLE with TASKS!</h2>
+<ul>
+  <% @people.each do |peeps| %>
+  <li><%= link_to peeps.name, "people/#{peeps.id}"%>
+  <%="Incomplete Tasks: "%> <%=@list[(peeps.id)] ? "#{@list[(peeps.id)]}": "0" %>
+  </li>
+  <% end %>
+</ul>

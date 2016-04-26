@@ -1,0 +1,16 @@
+<h2>TASK STUFF</h2>
+<ul>
+  <% @list.each do |stuff| %>
+  <li> <%= "Title: #{stuff.title}" unless stuff.title.nil?%>
+    <% unless stuff.description.empty?%>
+    <%= "Description: #{ stuff.description}" %>
+  <% end %>
+  <%= "Created At:  #{stuff.created_at}" unless stuff.created_at.nil?%>
+  <%= "Updated At:  #{stuff.updated_at}" unless stuff.updated_at.nil?%>
+
+  <% if stuff.completed_on != nil%>
+    <%= "Completed On: #{stuff.completed_on}" %>
+  <%end%>
+</li>
+<%end%>
+</ul>
