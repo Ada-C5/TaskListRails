@@ -1,0 +1,36 @@
+<% task ||= @tasks %>
+<% task.each do |task|%>
+  <% @status = task.status %>
+
+  <div class = "<%= @status[1] %> task-box">
+    <div class = "task-info">
+      <%= link_to task_path(task.id) do %>
+        <h2 class="title"><%=task.title%></h2>
+      <% end %>
+      <% if task.person %>
+        <%= link_to person_path(task.person_id) do %>
+          <%= task.person.name %>
+        <% end %>
+      <% end %>
+      <p class="description">
+        <%= task.description %>
+      </p>
+      <%= task.completed_at %>
+    </div>
+
+    <% path = @status[0] == "complete" ? complete_task_path(task.id) : uncomplete_task_path(task.id) %>
+    <%= link_to path, method: :patch do %>
+      <div class = "checkbox"></div>
+    <% end %>
+
+    <div class = "task-edits">
+      <%= link_to edit_task_path(task.id) do %>
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+      <% end %>
+      <%= button_to task_path(task.id), class: "task-edits-buttons", data: {confirm: "Are you sure you want to delete permanently?"}, method: :delete do %>
+        <i class="fa fa-trash" aria-hidden="true"></i>
+      <% end %>
+    </div>
+  </div>
+
+<%end%>

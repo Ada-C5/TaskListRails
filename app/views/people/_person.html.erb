@@ -1,0 +1,18 @@
+<% person ||= @person %>
+<div class="task-box <%= "center-task-box" if current_page?(person_path(person.id)) %>" >
+  <div class="person-icon">
+    <i class="fa fa-user-secret" aria-hidden="true"></i>
+  </div>
+  <div class="task-info">
+    <%= link_to person_path(person.id), class: "title" do %>
+      <h2><%= person.name %></h2>
+    <% end %>
+    <p class="person">Tasks To Do: <%= person.uncompleted_tasks %>
+    <% if request.env['PATH_INFO'] != people_path %>
+      <p class="person"><%= person.email %></p>
+      </div>
+      <%= link_to "See All Tasks For #{person.name}", person_tasks_path(person.id), class: "all-tasks" %>
+    <% else %>
+      </div>
+    <% end %>
+</div>

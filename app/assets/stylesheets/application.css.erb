@@ -1,0 +1,251 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ * {
+   box-sizing: border-box;
+ }
+
+ html {
+   font-size: 16px;
+   font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
+ }
+
+ body {
+   background-color: #19334d;
+   color: #ecf2f9;
+   padding: 4rem;
+ }
+
+ h1 {
+   font-size: 3.5rem;
+ }
+
+ h2 {
+   margin: .25rem 0;
+ }
+
+ a {
+   color: white;
+   text-decoration: none;
+ }
+
+ header.title {
+   width: 100%;
+   text-align: center;
+   font-size: 1.25rem;
+ }
+
+ /** Home Page LOL **/
+ article {
+   padding: 3rem 0;
+ }
+
+ /** Task Index **/
+
+ .button {
+   width: 17rem;
+   height: 3.5rem;
+   margin: 3% auto;
+   padding: 1rem;
+   background: #E4C158;
+   border: none;
+   border-radius: .25rem;
+   font-size: 1.45rem;
+   text-align: center;
+   color: white;
+   cursor: pointer;
+ }
+
+ .button:hover {
+   background: #E3B429;
+ }
+
+ .button p {
+   margin: 0;
+   padding: 0;
+ }
+
+ .float-left {
+   float: left;
+ }
+
+ .float-right {
+   float: right;
+ }
+
+ .column-title{
+   display: inline-block;
+   clear: both;
+   width: 100%;
+   text-align: center;
+ }
+
+   /** Task **/
+ .task-info {
+   display: inline-block;
+   width: 75%;
+   min-height: 4rem;
+   margin-left: .25rem;
+   padding: .5rem .3rem;
+ }
+
+ .task-info p {
+   margin: .2rem 0 0 0;
+   padding-left: .6rem;
+   color: #CDD2D7;
+ }
+
+ .task-box {
+   background-color: #54789B;
+   width: 45%;
+   border: .1rem solid #18314e;
+   border-radius: .3rem;
+   color: #ecf2f9;
+   margin: 2% 2.5%;
+   float: left;
+ }
+
+ .center-task-box {
+   float: none;
+   margin: 2% auto;
+ }
+
+ .complete {
+   font-style: italic;
+   background-color: rgb(50, 77, 100);
+   background-color: rgba(50, 77, 100, .7);
+   float: left;
+ }
+
+ .uncomplete:nth-child(2n+1) {
+   float: right;
+ }
+
+ .checkbox {
+   height: 2.5rem;
+   width: 2.5rem;
+   margin: 2%;
+   background-color: #ABB8C4;
+   background-image: url(<%= asset_path 'check.png' %>);
+   opacity: 0.3;
+   background-size: contain;
+   border: .25rem solid #ABB8C4;
+   border-radius: .25rem;
+   vertical-align: middle;
+   float: left;
+   overflow: auto;
+ }
+
+ .checkbox:hover {
+   background-color: #E9E9E9;
+   border: .25rem solid #E9E9E9;
+   background-image: url(<%= asset_path 'check.png' %>);
+   opacity: 0.6;}
+
+ .complete .checkbox  {
+   background-image: url(<%= asset_path 'check.png' %>);
+   z-index: 1;
+   opacity: 1;
+   background-repeat: no-repeat;
+   background-size: cover;
+ }
+
+ .task-edits {
+   float: right;
+   width: 5%;
+   margin: 1% 0.5% 1% 1%;
+   font-size: 1rem;
+ }
+
+.task-edits-buttons {
+  display: inline-block;
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+ .task-edits i {
+   font-size: 1.5rem;
+   color: #9fbfdf;
+   padding: .2rem 0;
+ }
+
+ .task-edits i:hover {
+   cursor: pointer;
+   color: white;
+ }
+
+ .complete:nth-child(2n+1)  {
+   float: right;
+ }
+
+ /** FORM **/
+
+ .create-task {
+   width: 50%;
+   text-align: center;
+   margin: auto;
+ }
+
+ .create-task form > * {
+   display: block;
+   margin: auto;
+   padding: .2rem;
+ }
+
+ .create-task form label {
+   margin: 4%;
+ }
+
+ .create-task form textarea,
+ .create-task form input[type=text] {
+   width: 100%;
+   margin-top: 2%;
+   padding: .5rem;
+   background-color: #EDEDED;
+   border-radius: .25rem;
+   font-size: 1.3rem;
+ }
+
+ .create-task form textarea:focus,
+ .create-task form input[type=text]:focus,
+ .create-task select:focus {
+   background-color: white;
+}
+
+.create-task select {
+  width: 17rem;
+  height: 3rem;
+  background-color: #EDEDED;
+  font-size: 1.3rem;
+}
+
+/** People **/
+.person-icon {
+  float: left;
+  padding: 1rem 0 0 1rem;
+  font-size: 3rem;
+}
+
+.all-tasks {
+  display: block;
+  margin: 1rem;
+}
+
+
+
+
+
+ /** END **/

@@ -1,0 +1,27 @@
+<section class="create-task">
+  <% task_type = @task.title.nil? ? "Create New" : "Update" %>
+  <h2><%= task_type %> Task</h2>
+
+
+  <%= form_for @task do |f| %>
+    <%= f.label :title do %>
+      <%= f.text_field :title, placeholder: "Buy a dozen puppies", required: true  %>
+    <% end %>
+
+    <%= f.label :description do %>
+      <%= f.text_area :description, placeholder: "An optional description of the task", rows: "12" %>
+    <% end %>
+
+    <%= f.label :person do %>
+      <% if @task.person_id %>
+        <%= collection_select(:person, :person_id, Person.all, :id, :name, {include_blank: "Assign Task", selected: @task.person.id }) %>
+      <% else %>
+        <%= collection_select(:person, :person_id, Person.all, :id, :name, {include_blank: "Assign Task"}) %>
+      <% end %>
+    <% end %>
+
+    <%= f.submit class: "button" %>
+  <% end %>
+
+
+</section>

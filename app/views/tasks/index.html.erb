@@ -1,0 +1,22 @@
+<%= link_to tasks_new_path do %>
+  <div class = "button">
+      <p>New task</p>
+  </div>
+<% end %>
+<section>
+  <span class = "column-title">
+    <h2>Tasks to do:</h2>
+  </span>
+
+  <%= render :partial => 'task', :object => @uncompleted_tasks %>
+
+</section>
+<section>
+
+  <span class = "column-title">
+    <h2>Completed tasks:</h2>
+  </span>
+
+  <%= render :partial => 'task', :object => @completed_tasks %>
+
+</section>
