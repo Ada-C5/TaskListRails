@@ -1,0 +1,26 @@
+<h1>Here's a list of Task Owners!</h1>
+<table class="table table-striped table-hover table-users">
+
+
+
+<thead>
+  <tr>
+    <th class="hidden-phone">Owners</th>
+    <th>Unfinished Tasks</th>
+  </tr>
+</thead>
+
+<tbody>
+  <% @people.each do |person| %>
+    <tr>
+    <td class="hidden-phone">
+      <%= link_to person.name, "/people/#{person.id}" %>
+    </td>
+    <td>
+    <%= Task.where(person_id: person.id, completed_at: nil).length %>
+    </td>
+  </tr>
+  <%end%>
+</tbody>
+</ul>
+</table>

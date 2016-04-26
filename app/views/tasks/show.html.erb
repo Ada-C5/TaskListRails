@@ -1,0 +1,9 @@
+<h1><%= @task.name %></h1>
+<ul>
+  <li>Description: <%= @task.description %></li>
+  <li>Assigned to: <%= @task.person.name %></li>
+  <li>Status: <%= @task.completed_at != nil ? "Completed" : "Not done"%></li>
+  <li>Completed on: <%= @task.completed_at %></li>
+</ul>
+
+<%= link_to "Edit Task", "/tasks/#{@task.id}/edit" %>

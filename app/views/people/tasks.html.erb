@@ -1,0 +1,20 @@
+<h1><%= @person.name %></h1>
+
+<% @unfinished = Task.where(person_id: @person.id, completed_at: nil) %>
+<h2> Not completed </h2>
+<ul>
+  <% @unfinished.each do |task| %>
+  <li><%= task.name %>
+  </li>
+  <% end %>
+</ul>
+
+<% @finished = Task.where(person_id: @person.id).where.not(completed_at: nil) %>
+
+<h2> Completed </h2>
+<ul>
+  <% @finished.each do |task| %>
+  <li><%= task.name %>
+  </li>
+  <% end %>
+</ul>
