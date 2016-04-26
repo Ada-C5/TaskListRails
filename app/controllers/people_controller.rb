@@ -2,6 +2,7 @@ class PeopleController < ApplicationController
 
 	def index
 		@people = Person.all
+		@task = Task.all
 		@count = Task.group(:person_id).where(completed_at: nil).count
 	end
 

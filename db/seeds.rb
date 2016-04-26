@@ -29,19 +29,19 @@
 
 first_tasks.each do |task|
 	new_task = Task.create(task)
-	new_person = Person.create(first_person)
+	new_person = Person.find_or_create_by(first_person)
 	new_person.tasks << new_task
 end
 
 second_tasks.each do |task|
 	new_task = Task.create(task)
-	new_person = Person.create(second_person)
+	new_person = Person.find_or_create_by(second_person)
 	new_person.tasks << new_task
 end
 
 third_tasks.each do |task|
 	new_task = Task.create(task)
-	new_person = Person.create(third_person)
+	new_person = Person.find_or_create_by(third_person)
 	new_person.tasks << new_task
 end
 
