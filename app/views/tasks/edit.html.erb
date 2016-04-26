@@ -1,0 +1,19 @@
+<h2> Edit Task </h2>
+
+<%= form_for @task, method: :patch, url: task_update_path(@task) do |f| %>
+  <%= f.label :task_name %>
+  <%= f.text_field :task_name %>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+
+  <%= f.label :status %>
+  <%= f.text_field :status %>
+
+  <%= f.label :due_date %>
+  <%= f.text_field :due_date %>
+
+  <%= f.submit %>
+<% end %>
+
+<a href='/'>See task list again...</a>

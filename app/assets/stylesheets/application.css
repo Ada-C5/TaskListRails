@@ -1,0 +1,84 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ * {
+   box-sizing: border-box;
+ }
+
+ html {
+   background-image: url('../assets/corkboard.jpg');
+ }
+
+ .container {
+   background-color: white;
+   padding-left: 2em;
+   padding-right: 2em;
+   padding-bottom: 2em;
+   margin: 4em;
+   box-shadow: 10px 10px 5px rgba(0, 0, 0, .5);
+ }
+
+ .tack {
+   height: 50px;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+ }
+
+
+ table {
+   border-collapse: collapse;
+   margin-bottom:10px;
+ }
+
+ th, td {
+   border-bottom: 1px solid #cecfd5;
+   padding: 10px 15px;
+ }
+
+ .call_to_action {
+   margin-top: 40px;
+ }
+
+ /******** FORM FORMATTING *********/
+
+ input[type=text] {
+   display: block;
+   width: 70%;
+   margin-bottom: 2em;
+   padding: .5em;
+ }
+ input[type=textarea] {
+   display: block;
+   width: 70%;
+   height: 90px;
+   margin-bottom: 2em;
+   padding: .5em;
+ }
+
+ input[type=submit] {
+   display: block;
+   width: 20%;
+ }
+
+ /**** FIGURE THIS OUT LATER ****/
+ /*.pretty_button {
+ font-size: 2em;
+ padding: 20px;
+
+ }*/
+
+ /*********************************/
