@@ -2,7 +2,214 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 //
+
+input[type="checkbox"].checkbox {
+  background-image: url("/assets/check_box_faded.jpg");
+
+    height: 50px;
+    width: 50px;
+    border-radius: 10%;
+    transition: box-shadow 0.4s, border 0.4s;
+}
+
+
+input[type="checkbox"].checkbox:checked + label {
+    background-color: #468847;
+    background: url("/assets/check_box2.jpg") no-repeat;
+
+}
+
+
+
+////////table color
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+    background-color: rgb(241,242,243);
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th {
+    background-color: rgb(227,230,229);
+}
+
+.table>caption+thead>tr:first-child>th, .table>colgroup+thead>tr:first-child>th, .table>thead:first-child>tr:first-child>th, .table>caption+thead>tr:first-child>td, .table>colgroup+thead>tr:first-child>td, .table>thead:first-child>tr:first-child>td {
+    border-top: 0;
+    background-color: darkslategrey;
+}
+
+// input[type="checkbox"].checkbox:disabled + label {
+//     opacity: 0.5;
+// }
+
+////////////
+// input[type=checkbox] {
+//   display: none;
+//   background: url("/assets/check_box_faded.jpg") no-repeat;
 //
+// }
+// /*
+// - Style each label that is directly after the input
+// - position: relative; will ensure that any position: absolute children will position themselves in relation to it
+// */
+//
+// input[type=checkbox] + label {
+//   background: url("/assets/check_box_faded.jpg") no-repeat;
+//   height: 50px;
+//   width: 50px;
+//   border-radius: 10%;
+//   transition: box-shadow 0.4s, border 0.4s;
+//   border: solid 5px #FFF;
+//   box-shadow: 0 0 1px #FFF;/* Soften the jagged edge */
+//   cursor: pointer;
+// }
+// /* Provide a border when hovered and when the checkbox before it is checked */
+//
+// input[type=checkbox] + label:hover,
+// input[type=checkbox]:checked + label {
+//   border: solid 5px green;
+//   box-shadow: 0 0 1px #F00;
+//   background: url("/assets/check_box2.jpg") no-repeat;
+//
+//
+//   /* Soften the jagged edge */
+// }
+// /*
+// - Create a pseudo element :after when checked and provide a tick
+// - Center the content
+// */
+//
+// input[type=checkbox]:checked + label:after {
+//   content: '\2714';
+//   /*content is required, though it can be empty - content: '';*/
+//   background: url("/assets/check_box2.jpg") no-repeat;
+//   height: 1em;
+//   top: 0;
+//   left: 0;
+//   bottom: 0;
+//   right: 0;
+//   margin: auto;
+//   color: #F00;
+//   line-height: 1;
+//   font-size: 18px;
+// }
+
+
+html {
+  background-image: url("/assets/background_image_office.jpg");
+    background-size: cover;
+}
+
+header {
+  padding-bottom: 9px;
+  margin-top: 0px;
+  margin: 0px 0 20px;
+  border-bottom: 1px solid #eee;
+  height: 150px;
+  background-color: rgb(89, 101, 95);
+  text-align: center;
+  color: white;
+}
+
+header h1 {
+    font-size: 36px;
+    font-family: fantasy;
+    padding-top: 30px;
+    margin-top: 0;
+}
+
+header h3 {
+    font-size: 24px;
+    font-family: cursive;
+    margin-top: 5px;
+}
+
+#footer {
+  // padding-bottom: 9px;
+  // margin: 10px 0 0;
+  // border-bottom: 1px solid #eee;
+  height: 50px;
+  background-color: rgb(89, 101, 95);
+}
+
+
+.body {
+  background-image: url("/assets/background_image_office.jpg");
+
+  background-size: cover;
+}
+
+.table>thead>tr>th {
+   vertical-align: bottom;
+   /* border-bottom: 2px solid #ddd; */
+  //  background: cadetblue;
+   background-color: rgb(164, 177, 169);
+
+   color: whitesmoke;
+   text-align: center;
+   font-family: initial;
+   font-size: larger;
+   font-weight: bold;
+   font-variant: small-caps;
+}
+
+
+
+//
+// body{
+//   background-image: url("../images/background_image_office.jpg")
+// }
+
+#check_box{
+  height: 2rem;
+  width: 2rem;
+  background: url("../images/blank_box2.jpg") no-repeat center center;
+  background-size: cover;
+  box-shadow: 1px 1px 2px #888888;
+}
+
+
+#check_box:hover {
+  width: 2rem;
+  height: 2rem;
+  background: url("../images/checked_box.jpg") no-repeat center center;
+  background-size: contain;
+  box-shadow: 1px 1px 2px #888888;
+  border-radius: 2px;
+}
+
+/**CHECK BOX  - not completed */
+
+#checked_box{
+  height: 2rem;
+  width: 2rem;
+  background: url("../images/checked_box.jpg") no-repeat center center;
+  background-size: cover;
+  box-shadow: 1px 1px 2px #888888;
+}
+
+#checked_box:hover {
+  width: 2rem;
+  height: 2rem;
+  background: url("../images/blank_box2.jpg") no-repeat center center;
+  background-size: contain;
+  box-shadow: 1px 1px 2px #888888;
+  border-radius: 2px;
+}
+
+/* if we want to add a feature to hover over completed box */
+/*.completed_box #check_complete_box:hover {
+  width: 2rem;
+  height: 2rem;
+  background: url("../images/checked_box.jpg") no-repeat center center;
+  background-size: contain;
+  box-shadow: 1px 1px 2px #888888;
+  border-radius: 2px;
+}*/
+
+
 // html {
 //   font-size: 16px;
 //   height: 100%;
@@ -10,9 +217,7 @@
 //   font-family: Courier;
 // }
 //
-// body{
-//   background-image: url("../images/background_image_office.jpg")
-// }
+
 //
 // label {
 //   background: #ccc;

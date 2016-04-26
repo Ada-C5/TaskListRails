@@ -1,5 +1,8 @@
+<%= params %>
+
+
 <fieldset>
-  <legend>Create New Task</legend>
+  <legend>Create New User</legend>
   <%= form_for @task, :html => { :class => "form-horizontal" } do |f| %>
     <div class="control-group">
       <%=f.label :name %>
@@ -15,10 +18,7 @@
       </div>
     </div>
 
-    <br>
-    <div class="form-actions", class="dropdown", class="btn btn-primary dropdown-toggle">
-      <%=f.label "Person"%>
-      <%= f.select :person_id, Person.pluck(:name), :class => "dropdown-menu" %>    </div>
+
     <br>
 
     <div class="form-actions">

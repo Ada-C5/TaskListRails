@@ -11,18 +11,23 @@ def random_time
 end
 
 tasks = [
-  { name: "The First Task", description: "first thing I need to do", completed_at: random_time, status: "no", complete_by: random_time },
-  { name: "Go to Brunch", description: "second task" },
-  { name: "Go to Lunch", description: "third task", completed_at: random_time, status: "no", complete_by: random_time },
-  { name: "Go to Second Lunch", description: "fourth task" },
-  { name: "Play Video Games", description: "blah", completed_at: random_time, status: "no", complete_by: random_time },
-  { name: "High Five Somebody You Don't Know", description: "high five", completed_at: random_time, status: "no", complete_by: random_time },
-  { name: "Plant Flowers", description: "", completed_at: random_time, status: "no", complete_by: random_time },
-  { name: "Call Mom", description: "" },
-  { name: "She worries, you know.", description: "" },
-  { name: "Nap.", description: "", completed_at: random_time, status: "no", complete_by: random_time }
+  { name: "The First Task", description: "first thing I need to do", completed_at: random_time, person: "Prince" },
+  { name: "Go to Brunch", description: "second task", person: "Prince" },
+  { name: "Go to Lunch", description: "third task", completed_at: random_time, person: "MJ" },
+  { name: "Go to Second Lunch", description: "fourth task", person: "Prince" },
+  { name: "Play Video Games", description: "blah", completed_at: random_time, person: "MJ" },
+  { name: "High Five Somebody You Don't Know", description: "high five", completed_at: random_time, person: "Prince" },
+  { name: "Plant Flowers", description: "", completed_at: random_time, person: "Prince" },
+  { name: "Call Mom", description: "", person: "Prince" },
+  { name: "She worries, you know.", description: "", person: "Tupac" },
+  { name: "Nap.", description: "", completed_at: random_time, person: "Prince" }
 ]
 
 tasks.each do |task|
-  Task.create task
+
+  person_name = task.delete(:person)
+
+  person = Person.find_or_create_by(name: person_name)
+
+  person.tasks << Task.create(task)
 end

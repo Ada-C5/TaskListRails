@@ -5,20 +5,34 @@ class TasksController < ApplicationController
   end
 
   def show
-    @task = Task.where(id: params[:id]).first  # have this available in your index.html
+    @task = Task.find(params[:id])  # have this available in your index.html
     render :show
   end
 
-  # def task_id
-  #   # @task = Task.where(id: params[:id]) #probably put this in a method
-  #   @task = Task.find(params[:id])
-  #   render :show
-  # end
-
   def new
     @task = Task.new
-    # render :new
+  end
 
+  def edit
+    @task = Task.find(params[:id])
+    render :new
+  end
+
+  def update
+    @task = Task.find(params[:id])
+    @task.update(task_params)
+    redirect_to root_path
+  end
+
+  def destroy
+    Task.find(params[:id]).destroy
+    redirect_to root_path
+  end
+
+  def save_edit
+    @task = Task.find(params[:id])
+    @task.update(task_edit_params[:task]) #probably put this in a method
+    redirect_to root_path
   end
 
   def create
@@ -30,9 +44,18 @@ class TasksController < ApplicationController
     end
   end
 
-  private
-  def task_create_params
-    params.permit(task: [:name, :description])
+  def status
+    @task = Task.find(params[:id])
+
+    if @task.completion_status
+      @task.update(completion_status: false)
+    else
+      @task.update(completion_status: true)
+    end
+    redirect_to root_path
   end
+
+  private
+
 
 end
