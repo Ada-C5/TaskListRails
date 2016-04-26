@@ -2,7 +2,7 @@ require 'chronic'
 
 class TasksController < ApplicationController
   def index #homepage
-    @all_tasks = Task.all.order(:date_completed DESC)
+    @all_tasks = Task.all.order(date_completed: :desc)
   end
 
   def new
