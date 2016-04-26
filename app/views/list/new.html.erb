@@ -1,0 +1,21 @@
+<h2>Create a new task!</h2>
+
+<%= form_for @list do |f| %>
+
+  <%= f.label :title%>
+  <%= f.text_field :title %>
+  <br />
+  <br />
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <br />
+  <br />
+  <%= f.label :"Select a Name" %>
+  <%= f.select(:person_id) do %>
+  <%=      options_from_collection_for_select(Person.all, :id, :name ) %>
+  <%end%>
+  <br />
+  <br />
+  <%= f.submit :'SUBMIT!!' %>
+<%end%>
+<br />

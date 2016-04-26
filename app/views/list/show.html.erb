@@ -1,0 +1,20 @@
+<h2><%= @list.title %></h2>
+<ul>
+  <% unless @list.description.empty?%>
+  <li><%= "Description: #{ @list.description}" %></li>
+  <% end %>
+  <li><%= "Created At:  #{@list.created_at}" unless @list.created_at.nil?%></li>
+  <li><%= "Updated At:  #{@list.updated_at}" unless @list.updated_at.nil?%></li>
+
+  <% if @list.completed_on != nil%>
+    <li><%= "Completed On: #{@list.completed_on}" %>
+  <%end%>
+  </li>
+
+  <% if @list.person_id != nil%>
+    <li><%= "Task Belongs To: #{@people.name}" %>
+  <%end%>
+  </li>
+</ul>
+
+<%= link_to "Edit", "/list/#{@list.id}/edit"%>

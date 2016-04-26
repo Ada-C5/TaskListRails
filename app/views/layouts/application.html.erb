@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TaskList</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header class="homeheader">
+    <h1>TO DO LIST</h1>
+    <nav>
+      <ul>
+        <li>
+          <%= link_to "HOME 🏠", root_path%>
+        </li>
+        <li><%= link_to "Add a Task 📋", tasks_path%></li>  
+        <li>
+          <%= link_to "People👨‍👩‍👧‍", peepz_path%>
+        </li>
+      </ul>
+    </nav>
+  </header>
+<%= yield %>
+
+
+</body>
+</html>

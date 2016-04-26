@@ -1,0 +1,17 @@
+
+<ul>
+  <% @lists.each do |list| %>
+  <li>
+    <%= if list.completed_on != nil
+      link_to "✅", incomplete_path(list.id), method: :patch
+    else
+      link_to "⬜", completez_path(list.id), method: :patch
+    end%>
+    <%= link_to list.title, "/list/#{list.id}"%>
+    <%= "Description: #{list.description}" if list.description != ""%>
+    <%= "Completed on: #{list.completed_on}" if list.completed_on != nil %>
+    <%= "Owner: #{Person.find(list.person_id).name}" if list.person_id != nil %>
+    <%= button_to 'Delete 🗑',url_for(action: :destroy,id: list.id),method: :delete, data: {confirm: "Are you sure you want to delete this task?"} %>
+  </li>
+  <% end %>
+</ul>

@@ -1,0 +1,20 @@
+<h2>Edit A Task</h2>
+
+<%= form_for @list , method: :patch, url: editz_path(@list) do |f| %>
+  <%= f.label :title%>
+  <%= f.text_field :title %>
+  <br />
+  <br />
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <br />
+  <br />
+  <%= f.label :"Select a Name" %>
+  <%= f.select(:person_id) do %>
+  <%=      options_from_collection_for_select(Person.all, :id, :name) %>
+  <%end%>
+  <br />
+  <br />
+  <%= f.submit :'SUBMIT!!' %>
+<%end%>
+<br />
