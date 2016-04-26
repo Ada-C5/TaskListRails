@@ -1,0 +1,10 @@
+<h2>Task Owners</h2>
+
+<ul class="people-list">
+  <% @all_people.each do |person|  %>
+    <li>
+      <%= link_to person.name, person_path(person.id) %>
+      (<%= person.tasks.where(completed_at: nil).count %>)
+    </li>
+  <% end %>
+</ul>

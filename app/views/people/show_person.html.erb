@@ -1,0 +1,15 @@
+<h2><%= @person.name %></h2>
+
+<ul class="info">
+  <li><h3>Task Owner:</h3> <%= @person.name %></li>
+  <li><h3>Tasks Still Incomplete:</h3>
+    <% # @tasks returns a collection, but you can't see the contents unless you iterate over it %>
+    <ul>
+      <% @tasks.each do |task| %>
+        <li><%= task.name %></li>
+      <% end %>
+    </ul>
+  </li>
+</ul>
+
+<%= link_to "View Completed", all_tasks_path, class: "more" %>

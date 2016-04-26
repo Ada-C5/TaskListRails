@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TaskListRails</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link href='https://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css'>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header>
+    <h1>Task Tracker</h1>
+    <nav class="topnav">
+      <%= link_to "Tasks", tasks_path %>
+      <%= link_to "People", people_path %>
+    </nav>
+  </header>
+
+<%= yield %>
+
+</body>
+</html>

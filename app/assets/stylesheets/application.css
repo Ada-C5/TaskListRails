@@ -1,0 +1,178 @@
+/***** GLOBAL *****/
+
+body {
+  font-size: 16px;
+  font-family: 'Times New Roman', serif;
+  margin: 0;
+}
+
+header {
+  background-color: pink;
+}
+
+.topnav {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.topnav a {
+  display: inline-block;
+  margin: 0 1rem 0.25rem 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-top: 0;
+  text-align: center;
+  font-family: 'Coming Soon', cursive;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: white;
+}
+
+form {
+  margin: 1rem;
+}
+
+/***** TASK INDEX *****/
+
+.add_link {
+  font-family: 'Coming Soon', cursive;
+  display: block;
+  text-align: center;
+  margin: 1rem auto;
+  font-size: 2rem;
+}
+
+.add_link a:hover {
+  color: pink;
+}
+
+.tasklist {
+  padding: 0;
+  list-style-type: none;
+}
+
+.incomplete {
+  width: 30%;
+  background-color: pink;
+  padding: 1rem;
+  margin: 1rem auto;
+  border-radius: 15%;
+  font-family: 'Coming Soon', cursive;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.person_name {
+  font-size: 1rem;
+}
+
+.options {
+  margin: 0 0.25rem;
+  font-size: smaller;
+  list-style-type: none;
+  text-align: right;
+}
+
+.options li {
+  display: inline;
+}
+
+.options form {
+  margin: 0;
+  display: inline;
+}
+
+.complete {
+  width: 30%;
+  background-color: #BBA3D0;
+  padding: 1rem;
+  margin: 1rem auto;
+  border-radius: 15%;
+  font-family: 'Coming Soon', cursive;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+/***** SHOW TASK *****/
+
+.info {
+  padding: 0;
+  list-style-type: none;
+}
+
+.info > li {
+  width: 30%;
+  background-color: pink;
+  padding: 1rem;
+  margin: 1rem auto;
+  border-radius: 15%;
+  font-size: 1rem;
+}
+
+.info h3 {
+  margin: 0.25rem;
+  font-family: 'Coming Soon', cursive;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/**** PEOPLE INDEX ****/
+
+.people-list {
+  font-size: 1.5rem;
+  width: 25%;
+  border-radius: 15%;
+  background-color: pink;
+  margin: 3rem auto;
+  padding: 1rem;
+  list-style-type: none;
+  text-align: center;
+}
+
+.people-list li {
+  margin: 0.5rem 0;
+}
+
+/**** SHOW PEOPLE ****/
+
+.more {
+  font-size: 1.75rem;
+  font-family: 'Coming Soon', cursive;
+  display: block;
+  text-align: center;
+}
+
+.more:hover {
+  color: pink;
+}
+
+
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */

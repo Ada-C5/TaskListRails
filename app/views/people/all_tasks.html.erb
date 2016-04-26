@@ -1,0 +1,20 @@
+<h2><%= @person.name %></h2>
+
+<ul class="info">
+  <li><h3>Task Owner:</h3> <%= @person.name %></li>
+  <li><h3>Tasks Still Incomplete:</h3>
+    <ul>
+      <% @incomplete_tasks.each do |task| %>
+        <li><%= task.name %></li>
+      <% end %>
+    </ul>
+  </li>
+
+  <li><h3>Tasks Completed:</h3>
+    <ul>
+      <% @complete_tasks.each do |task| %>
+        <li><%= task.name %></li>
+      <% end %>
+    </ul>
+  </li>
+</ul>
