@@ -47,7 +47,7 @@ h1 {
 }
 
 html {
-  background: image-url('/assets/corkboard.jpg');
+  background-image: url('/assets/corkboard.jpg');
 }
 
 .container {
