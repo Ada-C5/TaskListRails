@@ -25,9 +25,9 @@
  </li>
 
  */
-body {
-  background-color: gray
-}
+
+
+
 
 
 
@@ -37,7 +37,7 @@ body {
 }
 
 
-.task_description li{
+.task_description span{
   font-family: American Typewriter;
   color:black;
   margin: 2rem;

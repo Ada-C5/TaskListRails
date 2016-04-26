@@ -9,32 +9,32 @@
 
 
 
-        <li class="heading">
-          <%= link_to task.title, rails_task_list_path(task.id)%>
-        </li>
 
-        <li>
+        <span><%= link_to task.title, rails_task_list_path(task.id)%></span>
+
+
+        <span>
           <%if task.person != nil%>
           <%=task.person.name%>
           <%end%>
 
-        </li>
+      </span>
 
 
-        <li>
+        <span>
           <%= link_to "Edit task", edit_tasklist_path(task.id)%>
-        </li>
+        </span>
 
 
 
-        <li>
+        <span>
           <%= link_to 'Delete',delete_path(task.id),
 
           method: :delete,
           data: { confirm: 'Are you sure?' } %>
-        </li>
+        <span>
 
-        <%=link_to "Done!",done_task_list_path(task.id),method: :patch%>
+        <span><%=link_to "Done!",done_task_list_path(task.id),method: :patch%></span>
   </ul>
     <% end %>
 
