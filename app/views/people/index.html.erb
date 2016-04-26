@@ -1,0 +1,7 @@
+<% @people.each do |person| %>
+
+			<li class="person">
+				<%= link_to person.name, person_detail_path(person.id) %>
+		 	</li>
+
+<% end %>
