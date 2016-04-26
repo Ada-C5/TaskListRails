@@ -1,0 +1,34 @@
+<h2><%= "Title:  #{@single_task.title}" unless @single_task.title.nil? %></h2>
+
+<ul class="list">
+  <div class="tile detailed">
+<%# display details (when NOT NIL) about the single task we are showing (based on ID) %>
+
+<%# make the details list manaully BUT may want to turn this into an array or hash for looping incase we require more details down the road. For now, three is quick! %>
+
+      <li>
+        <%= "Description:  #{@single_task.description}" unless @single_task.description.empty? %>
+      </li>
+
+      <li>
+        <%= link_to "Person: #{@single_task.person.name}", person_path(@single_task.person_id)%>
+      </li>
+
+      <li>
+        <%= "Added at:  #{@single_task.added_at}" unless @single_task.added_at.nil? %>
+      </li>
+
+      <li>
+        <%= "Completed at:  #{@single_task.completed_at}" unless @single_task.completed_at.nil? %>
+      </li>
+
+      <li>
+        <%= "Updated at:  #{@single_task.updated_at}" unless @single_task.updated_at.nil? %>
+      </li>
+    </div>
+  </ul>
+
+
+  <p>
+  <%= link_to "EDIT", edit_task_path(@single_task.id) %>
+  </p>

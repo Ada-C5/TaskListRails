@@ -1,0 +1,51 @@
+<h2><%= "#{@person.name}'s Tasks:" %></h2>
+
+<%# loop through all tasks and display task titles %>
+<div class="list">
+  <% @tasks.each do |task| %>
+    <ul class="tile <%= "complete" if task.complete == true %>">
+      <li>
+        <%= link_to task.title, task_path(task.id), class: "single-task" %>
+      </li>
+
+        <ul>
+
+          <% if task.complete != true %>
+            <%# if the task is not complete, we give the option to mark complete %>
+            <%= form_for task do |f| %>
+            <%# i have no freaking idea how this works, but I wanted to use the update action to mark the task completed instead of making a new action and this got the information I wanted to update into my params hash, so yay! %>
+
+                <%= f.hidden_field :completed_at, value: DateTime.now %>
+                <%= f.hidden_field :complete, value: true %>
+
+              <li>
+                <%= f.submit "COMPLETE", data: { confirm: "Good job! Task completed :)." } %>
+              </li>
+
+            <% end %>
+          <% else %>
+            <%# task is complete and so we give the user the option to mark incomplete %>
+            <%= form_for task do |f| %>
+
+                <%= f.hidden_field :completed_at, value: nil %>
+                <%= f.hidden_field :complete, value: false %>
+
+              <li>
+                <%= f.submit "INCOMPLETE"%>
+              </li>
+
+            <% end %>
+          <% end %>
+
+          <li>
+            <%= link_to "EDIT", edit_task_path(task.id) %>
+          </li>
+
+          <%# use button to because we are not on a get path %>
+          <li>
+            <%= button_to "DELETE", task_path(task.id), method: :delete, data: { confirm: 'Are you certain you want to delete this?' } %>
+          </li>
+        </ul>
+    </ul>
+  <% end %>
+</div>

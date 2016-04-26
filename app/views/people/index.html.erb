@@ -1,0 +1,18 @@
+<h2>Helpers:</h2>
+
+<%# loop through all tasks and display task titles %>
+<div class="list">
+  <% @people.each do |person| %>
+    <ul class="tile">
+      <li>
+        <%= link_to person.name, person_path(person.id), class: "single-task"%>
+      </li>
+
+        <ul>
+          <li>
+            <%= "Uncomplete Tasks: #{Task.where( person_id: person.id, complete: false || nil ).count }" %>
+          </li>
+        </ul>
+    </ul>
+  <% end %>
+</div>

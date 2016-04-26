@@ -1,0 +1,17 @@
+  <div class="fill-fields">
+
+    <%= form_for @single_task do |f| %>
+    <!-- use the instance to give form_for all the information they need to know about tasks! -->
+      <%= field_set_tag 'Task Information' do %>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+        <%= f.label :person_id %>
+        <%= f.select :person_id, options_from_collection_for_select(Person.all, :id, :name, @single_task.person_id), :include_blank => true %>
+        <%= f.label :description %>
+        <%= f.text_field :description %>
+
+        <%= f.submit %>
+
+      <% end %>
+    <% end %>
+  </div>

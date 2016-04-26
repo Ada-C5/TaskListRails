@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tasklist</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+  <header>
+
+    <h1>Tasklist!</h1>
+    <nav class="user-choice">
+      <%= link_to "See All Tasks", root_path %>
+      <%= link_to "Add Task", "/tasks/new" %>
+      <%= link_to "See All Helpers", "/people" %>
+
+    </nav>
+  </header>
+
+  <main>
+    <%= yield %>
+
+  </main>
+
+</body>
+</html>
