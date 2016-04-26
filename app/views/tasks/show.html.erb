@@ -1,0 +1,29 @@
+<h1>GET TO WORK!</h1>
+
+
+  <% @tasks.each do |task| %>
+  <div class = "task show <%= task.completed.nil? ? 'completed' : 'notdone' %>">
+      <span>Task:<%= task.name %><br></span>
+      <% if !task.description.nil? %>
+       Description:<%= task.description %><br>
+       <% end %>
+       <% if !task.person.nil? %>
+         Person:<%= link_to task.person.name, "/people/#{task.person_id}" %><br>
+       <% end %>
+       <% if !task.priority.nil? %>
+          Priority: <%= task.priority %>
+       <% end %>
+       <% if !task.completed.nil? %>
+          Completed: <%= task.completed %>
+       <% end %>
+       <br>
+      <div class = "butts">
+         <%= link_to "/tasks/#{task.id}/edit", method: :get, class: 'edit' do  %>
+         <i class="fa fa-pencil" aria-hidden="true"></i>
+         <% end %>
+         <%= link_to delete_path(task.id), method: :delete , :data => {:confirm => 'Are you sure?'} do %>
+         <i class="fa fa-trash" aria-hidden="true"></i>
+         <% end %>
+       </div>
+  </div>
+    <% end %>

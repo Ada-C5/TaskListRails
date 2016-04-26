@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Taskmaster</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <link rel="icon" type="image/png" href="<%=image_path("check2.png")%>">
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+<div class ="bottom">
+<p class= 'bottom'><%= link_to "All to-dos", root_path %></p>
+<p class= "bottom"><%= link_to "Add a task", "/tasks/new"%></p>
+<p class= 'bottom'><%= link_to "Peeps", "/people" %></p>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<% if params[:action] == "new" %>
+  <h1> Add a task </h1>
+  <% else %>
+  <h1> Edit task </h1>
+  <% end %>
+
+<%= form_for @task do |f| %>
+  <%= f.label :Name %>
+  <%= f.text_field :name  %><br>
+  <%= f.label :Person %>
+  <%= f.select "person_id", options_from_collection_for_select(@all_people, "id", "name", @current_user), :include_blank => true %> <br>
+  <%= f.label :description %>
+  <%= f.text_area :description , cols:25, rows:3 %><br>
+
+  <%= f.label :priority %>
+  <label>
+  High<%= f.radio_button :priority, 'high' %>
+  </label>
+  <label>
+  Medium<%= f.radio_button :priority, 'medium' %>
+  </label>
+  <label>
+  Low<%= f.radio_button :priority, 'low' %><br>
+  </label>
+
+  <% if params[:action] == "edit" %>
+  <%= f.label :completed %>
+  <%= f.radio_button :completed, Time.now %>
+  <% end %>
+
+  <%= f.submit class: "button"%>
+<% end %>

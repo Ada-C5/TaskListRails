@@ -1,0 +1,20 @@
+<h1><%= @person.name %>, get your shit done. </h1>
+
+
+<h2> Here are your completed tasks: </h2>
+<ul>
+<% @person.tasks.where.not(completed: nil).each do |task| %>
+  <li>
+    <%= link_to task.name , "/show/#{task.id}" %>
+  </li>
+  <% end %>
+</ul>
+
+<h2> Here are your UN-completed tasks: </h2>
+<ul>
+<% @person.tasks.where(completed: nil).each do |task| %>
+  <li>
+    <%= link_to task.name , "/show/#{task.id}" %>
+  </li>
+  <% end %>
+</ul>

@@ -1,0 +1,38 @@
+<h1> Get these things done, you slacker!</h1>
+
+<div class= "container">
+  <% @tasks = @tasks.all.order(completed: :desc) %>
+  <% @tasks.each do |task| %>
+
+  <div class = "task <%= task.completed.nil? ? 'completed' : 'notdone' %>">
+    <% if !task.completed.nil? %>
+    <%= image_tag "check2.png" %>
+    <% end %>
+      <span><%= link_to task.name, "/show/#{task.id}"%><br></span>
+      <% if !task.person.nil? %>
+        Person:<%= link_to task.person.name, "/people/#{task.person_id}" %><br>
+      <% end %>
+
+
+        <% if task.completed.nil? %>
+          <%= link_to "/tasks/#{task.id}/complete", method: :patch, :action =>"complete" do %>
+          <i class="fa fa-square-o" aria-hidden="true"></i>
+          <% end %>
+        <% else %>
+          <%= link_to "/tasks/#{task.id}/incomplete", method: :patch, :action =>"incomplete" do %>
+          <i class="fa fa-check-square-o" aria-hidden="true"></i>
+
+        <% end %>
+
+
+
+        <% end %>
+        <%= link_to "/tasks/#{task.id}/edit", method: :get, class: 'edit' do  %>
+        <i class="fa fa-pencil" aria-hidden="true"></i>
+        <% end %>
+       <%= link_to delete_path(task.id), method: :delete , :data => {:confirm => 'Are you sure?'} do %>
+       <i class="fa fa-trash" aria-hidden="true"></i>
+       <% end %>
+  </div>
+    <% end %>
+</div>

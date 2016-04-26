@@ -1,0 +1,7 @@
+<% @people = @people.first %>
+
+<h1><span class="name"><%= link_to @people.name , "/people/#{@people.id}/tasks"%></span></h1>
+<ul>
+  <li> Age: <%= @people.age %></li>
+  <li> Catchphrase: "<%= @people.catchphrase %>"</li>
+</ul>
