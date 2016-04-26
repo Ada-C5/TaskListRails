@@ -15,7 +15,7 @@ class TasklistController < ApplicationController
 
     def finished
       @tasklist = RailsTaskList.find(params[:id])
-      @tasklist.update(completion_status: "done")
+      @tasklist.update(completion_status: "Done!")
       redirect_to root_path
     end
 

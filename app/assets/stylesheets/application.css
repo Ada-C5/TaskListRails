@@ -36,11 +36,17 @@
 
 }
 
+.index{
+  margin-top: 18%;
+  margin-left: 15%;
+  position: relative;
+}
+
 
 .task_description span{
   font-family: American Typewriter;
   color:black;
-  margin: 2rem;
+  margin: 1.2rem;
   width: 15%;
   display: inline-block;
   list-style-type: none;
@@ -114,7 +120,7 @@
 
 .nav {
   margin-left: 50%;
-
+  font-family: American Typewriter;
 }
 
 
@@ -133,4 +139,31 @@
 .text_box{
 
   background: rgba(0, 0, 0, 0.4);
+}
+
+
+
+.done:before{
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-image: url("./type.jpg");
+  width: 100%;
+  height: 100%;
+  opacity : 100.0;
+  z-index: -1;
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
+
+}
+
+
+.done{
+
+  margin-left: 20%;
+  margin-top: 17%;
+  font-family: American Typewriter;
+
 }
