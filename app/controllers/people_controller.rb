@@ -5,7 +5,8 @@ class PeopleController < ApplicationController
 
 
   def show
-    @all_people = Person.find(params[:id])
+    @people = Person.find(params[:id])
+
   end
 
   def all_tasklist

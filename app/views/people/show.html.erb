@@ -1,9 +1,11 @@
 
 <h1>More Info</h1>
+<%@person.each do |task|%>
 
-<%=@all_people.name%>
+<%=task.name%>
+<%end%>
 
-<%=link_to 'all_tasklist', "/people/#{@person.id}/all_tasks"%>
+<%=link_to 'all_tasklist',task_path%>
 
 
 

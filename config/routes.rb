@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   delete '/tasklist/:id' => 'tasklist#delete', as: 'delete'
   get    '/people'       => 'people#index'
   get    '/person/:id'   => 'people#show', as: 'person'
-  get    '/people/:id/all_tasklist'  => 'people#all_tasklist'
+  get    '/people/:id/all_tasklist'  => 'people#all_tasklist', as: 'task'
 
 
 
