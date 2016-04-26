@@ -1,0 +1,6 @@
+<h1>People and their incomplete tasks:</h1>
+<h2><%@people.each do |person|%>
+  <%= link_to person.name, "/people/#{person.id}" %>: <%=person.tasks.length%> tasks
+  <br />
+  <%end%>
+</h2>

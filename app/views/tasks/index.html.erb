@@ -1,0 +1,54 @@
+
+
+<section class = "not-complete">
+  <h2>Adventures to be had:</h2>
+
+<% @tasks.each do |task| %>
+  <div class = "task-box uncomplete" >
+    <% if task.completed == nil%>
+      <%= link_to task.task, "/tasks/#{task.id}" %>: <%= task.description %>
+        <%=button_to "/tasks/complete/#{task.id}" do%>
+          <i class="fa fa-check-square" aria-hidden="true"></i>
+        <%end%>
+        <div class = "owner">
+          Belongs to: <%=task.person.name %>
+        </div>
+      <div class = task-edits>
+        <%= link_to "/tasks/edit/#{task.id}" do%>
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        <%end%>
+        <%= button_to "/tasks/delete/#{task.id}", data: {confirm: "DELETE DIS SHIT??"}, method: :delete do%>
+        <i class="fa fa-trash" aria-hidden="true"></i>
+        <%end%>
+      </div>
+      <%end%>
+  </div>
+  <%end%>
+</section>
+
+<section class = "are-complete">
+
+<h2>Done:</h2>
+<% @tasks.each do |task| %>
+<div class = "task-box completed" >
+    <% if task.completed%>
+    <%= link_to task.task, "/tasks/#{task.id}" %>: <%= task.description %>
+    <%=button_to "/tasks/uncomplete/#{task.id}" do%>
+      <i class="fa fa-check-square" aria-hidden="true"></i>
+    <%end%>
+    <div class = "owner">
+      Belongs to: <%=task.person.name %>
+    </div>
+  <div class = task-edits>
+    <%= link_to "/tasks/edit/#{task.id}" do%>
+    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    <%end%>
+    <%= button_to "/tasks/delete/#{task.id}", data: {confirm: "DELETE DIS SHIT??"}, method: :delete do%>
+    <i class="fa fa-trash" aria-hidden="true"></i>
+    <%end%>
+      </div>
+      </div>
+      <%end%>
+  </div>
+  <%end%>
+</section>

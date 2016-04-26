@@ -1,0 +1,4 @@
+<h1>People#show</h1>
+<h1><%= @person.name %>'s ToDo:</h1>
+<div class = "individual-todo">
+  <h2><%=@person.tasks.where({completed: !=nil})%></h2>

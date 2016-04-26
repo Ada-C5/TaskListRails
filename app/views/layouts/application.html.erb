@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TaskListRails</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,600' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <header>
+    <h1 class=title>A Mathematical List of <br />Adventures to Complete</h1>
+    <nav>
+      <ul>
+        <li>
+          <%= link_to "Adventures", tasks_path %>
+        </li>
+        <li class="newt">
+          <%= link_to "New Task", tasks_new_path %>
+        </li>
+        <li>
+          <%= link_to "Individuals", people_path %>
+        </li>
+      </ul>
+
+    </nav>
+  </header>
+<main>
+
+<%= yield %>
+</main>
+
+</body>
+</html>
