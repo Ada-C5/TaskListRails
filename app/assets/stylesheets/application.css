@@ -1,0 +1,197 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/*body {
+  background-color: #ACACDE;
+}
+
+h1 {
+  color: #B8336A;
+  text-align: center;
+}
+
+.task_list {
+  width: 60%;
+  margin: auto;
+}
+
+.task_list a {
+  color: #2F3233;
+  text-decoration: none;
+}
+
+.task_list a:hover {
+  color: #fff;
+}
+
+.tag {
+  color: #B8336A;
+}*/
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-image: url('/assets/corkboard.jpg');
+}
+
+.container {
+  clear: both;
+  background-color: white;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 2em;
+  margin: 4em;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, .5);
+}
+
+.top_page {
+  padding-top: 3em;
+  padding-left: 3em;
+  padding-right: 3em;
+  margin: auto;
+}
+
+.title {
+  color: hotpink;
+  font-size: 2em;
+}
+
+.center {
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main_nav {
+  /*background: #642871;*/
+  width: 50%;
+  margin: auto;
+}
+
+nav ul {
+  width: 100%;
+  list-style-type: none;
+  overflow: auto;
+}
+
+nav li {
+  float: left;
+  display: inline-block;
+}
+
+nav li a {
+  background: #642871;
+  color: #fff;
+  margin-left: 3em;
+  padding: 1em;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  color: hotpink;
+}
+
+.tackl {
+  float: left;
+  height: 60px;
+  display: block;
+  margin-top: 20px;
+}
+
+.tackr {
+  float: right;
+  height: 60px;
+  display: block;
+  margin-top: 20px;
+}
+
+.content {
+  clear:both;
+  padding: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  margin-bottom:10px;
+}
+
+th, td {
+  border-bottom: 1px solid #cecfd5;
+  padding: 10px 15px;
+}
+
+.call_to_action {
+  margin-top: 40px;
+}
+
+.taskes_name{
+  color: blue;
+  text-decoration: none;
+}
+
+.complete_task {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.complete_check {
+  color: gray;
+}
+
+.incomplete_check {
+  color: blue;
+}
+
+.small_print {
+  font-size: .8em;
+}
+
+.tag {
+  color: navy;
+}
+
+/******** FORM FORMATTING *********/
+
+input[type=text] {
+  display: block;
+  width: 70%;
+  margin-bottom: 2em;
+  padding: .5em;
+}
+input[type=textarea] {
+  display: block;
+  width: 70%;
+  height: 90px;
+  margin-bottom: 2em;
+  padding: .5em;
+}
+
+input[type=submit] {
+  display: block;
+  width: 20%;
+}
+
+/**** FIGURE THIS OUT LATER ****/
+/*.pretty_button {
+font-size: 2em;
+padding: 20px;
+
+}*/
+
+/*********************************/

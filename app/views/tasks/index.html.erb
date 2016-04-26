@@ -1,0 +1,53 @@
+<h1> Here's the list of tasks: </h1>
+
+<table class = "task_list">
+  <tr>
+    <th>Complete?</th>
+    <th>Task Name</th>
+    <th>Description</th>
+    <th>Assigned To</th>
+    <th>Completed at</th>
+    <th>Edit Task</th>
+    <th>Delete Task</th>
+
+  </tr>
+<% @tasks.each do |task| %>
+  <% if task.completed_at.nil? %>
+    <% is_complete = "taskes_name" %>
+    <% check_class = "incomplete_check" %>
+  <% else %>
+    <% is_complete = "complete_task" %>
+    <% check_class = "complete_check" %>
+  <% end %>
+
+  <tr>
+    <td>
+      <%= link_to complete_path(task.id), :class=>check_class, method: :patch do %>
+        <i class="fa fa-check-square" aria-hidden="true"></i>
+      <% end %>
+    </td>
+    <td>
+      <%= link_to task.name, "/tasks/#{task.id}", :class=>is_complete%>
+    </td>
+    <td>
+      <%=task.description%>
+    </td>
+    <td>
+      <%= task.person_id %>
+      <% #Person.where(:id => whoid).first.name%>
+    </td>
+    <td>
+      <%=task.completed_at%>
+    </td>
+    <td>
+      <%= link_to 'Edit', "tasks/#{task.id}/edit", method: :get %>
+    </td>
+    <td>
+      <%= link_to 'Delete',  "/tasks/#{task.id}", data: { confirm: 'Are you sure?' }, method: :delete %>
+    </td>
+  </tr>
+<%end%>
+</table>
+
+
+<p><%= link_to "Add New Task", "/tasks/new" %></p>
