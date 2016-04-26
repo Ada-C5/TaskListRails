@@ -1,0 +1,12 @@
+<div class="tasks_to_do">
+  <ul>
+    <li>
+      <h3>TaskMasters</h3>
+        <%@show_all.each do |person| %>
+            <%= link_to person.first_name, "/people/#{person.id}" %><br>
+            <%="name: #{person.first_name} #{person.last_name}"%><br>
+            <%="favorite color: #{person.fav_color}" %><br>
+        <%end%>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,48 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>TaskListRails</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Task List</title>
+    <meta charset="UTF-8">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <!-- <link rel="stylesheet" type="css" href="app/assets/stylesheets/tasks.scss"> -->
+    <%= stylesheet_link_tag("styles.css") %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+</head>
+
+  <body>
+    <header>
+      <h1><%= @page_title %></h1>
+
+      <nav class="nav_bar">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/tasks">View All Tasks</a></li>
+          <li><a href="/tasks/new">New Task</a></li>
+          <li><a href="/people">Task Masters</a></li>
+          <!-- <li><a href="/task/:title">Look Up a Task</a></li> -->
+        </ul>
+      </nav>
+    </header>
+
+    <article>
+      <%= yield %>
+    </article>
+
+
+</html>
