@@ -51,8 +51,8 @@ class TasksController < ApplicationController
     end
     @task.save
 
-    person = Person.find(params[:people])
-    person.tasks << @task
+    # person = Person.find(params[:people])
+    # person.tasks << @task
     # @all_tasks = Queries.new.display_tasks
     redirect_to action: "index"
   end

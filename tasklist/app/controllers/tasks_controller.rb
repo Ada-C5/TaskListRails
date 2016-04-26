@@ -50,9 +50,7 @@ class TasksController < ApplicationController
       @task.date_completed = ""
     end
     @task.save
-    p params
-    person = Person.find(params[:people])
-    person.tasks << @task
+
     # @all_tasks = Queries.new.display_tasks
     redirect_to action: "index"
   end
