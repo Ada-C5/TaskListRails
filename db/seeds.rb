@@ -27,7 +27,9 @@ people = [
   { name: "Lisa" },
   { name: "Chris" },
   { name: "Renji" },
-  { name: "Jas" }
+  { name: "Jas" },
+  { name: "Dan" },
+  { name: "Takeko" }
 ]
 
 tasks.each do |task|
