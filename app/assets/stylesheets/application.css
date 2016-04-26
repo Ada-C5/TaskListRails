@@ -69,6 +69,23 @@
   background-attachment: fixed;
 }
 
+.form:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-image: url("./type.jpg");
+  width: 100%;
+  height: 100%;
+  opacity : 100.0;
+  z-index: -1;
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
+
+}
+
+
 
 .more_info:before{
   content: "";
@@ -101,7 +118,19 @@
 }
 
 
+.form{
+  margin-left: 20%;
+  margin-top: 17%;
+  font-family: American Typewriter;
+}
+
+
 .body {
   background-color: gray;
   background-image: url("./notes.jpg");
+}
+
+.text_box{
+
+  background: rgba(0, 0, 0, 0.4);
 }
