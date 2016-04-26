@@ -1,0 +1,9 @@
+
+<ul>
+<% @all_people.each do  |person| %>
+
+ <li><%= link_to person.name, person_path(person.id) %></li>
+    <p> uncompleted tasks: <%= person.tasks.where(completed_at: nil).count %> </p> <%#count is a rails method, not a ruby method! %>
+
+<% end %>
+</ul>
