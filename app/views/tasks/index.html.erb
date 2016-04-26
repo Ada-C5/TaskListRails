@@ -35,6 +35,7 @@
             <%="completed at: #{entry.completed}"%><br>
             <%="owner: #{Person.find(entry.person_id).first_name}" %><br>
             <%=button_to "Delete task", delete_path(entry.id), method: :delete, data: {confirm: "Are you sure?"}%>
+            <%# use ternary for mark_complete button: task_type = @task.title? ? "create new"%> 
             <%= button_to "Edit", "/tasks/#{entry.id}/edit", method: :get %>
             <br>
           <%end%>

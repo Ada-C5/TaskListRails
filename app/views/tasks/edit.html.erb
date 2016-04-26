@@ -1,15 +1,7 @@
 <div class="tasks_to_do">
   <ul>
     <li>
-      <%= form_for @task do |f| %>
-        <%= f.label :title %>
-        <%= f.text_field :title %><br/>
-        <%= f.label :description %>
-        <%= f.text_field :description %><br/>
-        <%= f.label :Person %>
-        <%= f.select "person_id", options_from_collection_for_select( @all_people, "id", "first_name", @task.person_id) %><br>
-        <%= f.submit %>
-      <% end %>
+      <%=render partial: 'form'%>
     </li>
   </ul>
 </div>
