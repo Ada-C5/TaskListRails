@@ -1,0 +1,109 @@
+html {
+	font-family: 'Quicksand', sans-serif;
+	height: auto;
+}
+
+body {
+	margin-top: 0rem;
+	text-align: center;
+	background-color: lightblue;
+}
+
+h1 {
+  font-size: 4rem;
+	color: #03577B;
+  margin-bottom: 1rem;
+}
+
+nav {
+	background-color: #03577B;
+	margin-bottom: 2rem;
+}
+
+nav a {
+  display: inline-block;
+  padding: 1rem;
+	color: white;
+}
+
+a {
+	text-decoration: none;
+  color: navy;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+table.all-tasks {
+  text-align: left;
+	background-color: rgba(255, 255, 255, 0.35);
+	border: .2rem solid #03577B;
+	width:50%;
+	margin-left:25%;
+	margin-right:25%;
+  border-spacing: 0rem;
+}
+
+.center {
+  text-align: center;
+}
+
+table.single-task {
+	background-color: rgba(255, 255, 255, 0.35);
+	border: .2rem solid #03577B;
+	width:60%;
+	margin-left:20%;
+	margin-right:20%;
+	border-spacing: 0rem;
+}
+
+table.all-names{
+	text-align: left;
+	background-color: rgba(255, 255, 255, 0.35);
+	border: .2rem solid #03577B;
+	width:40%;
+	margin-left:30%;
+	margin-right:30%;
+  border-spacing: 0rem;
+}
+
+th, td {
+  padding: .75rem;
+}
+
+th {
+  font-size: 1.50rem;
+	color: #04709F;
+	border-bottom: .15rem solid #03577B;
+	margin: 0rem;
+}
+
+tr:nth-child(even) {
+  background-color: lightblue;
+}
+
+table {
+  margin-bottom: 3rem;
+}
+
+input[type=text] {
+  	padding: .5rem;
+		background-color: white;
+		border: .2rem solid #03577B;
+		border-radius: 2.5rem;
+		width:20%;
+    margin: 8px 0;
+}
+
+ input[type=button], input[type=submit], input[type=reset] {
+  background-color: white;
+  border: .2rem solid #03577B;
+  border-radius: 2.5rem;
+  font-size: .75rem;
+  color: black;
+  padding: 10px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}

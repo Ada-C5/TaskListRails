@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task List</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header>
+    <h1>Your Task List</h1>
+    <nav>
+      <%= link_to "In-Progress Tasks", root_path %>
+      <%= link_to "New Task", tasks_add_path %>
+      <%= link_to "Completed Tasks", tasks_completed_path %>
+      <%= link_to "People", people_path %>
+    </nav>
+  </header>
+
+  <section>
+    <%= yield %>
+  </section>
+
+</body>
+</html>

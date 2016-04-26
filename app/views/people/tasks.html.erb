@@ -1,0 +1,35 @@
+<h2>Personal Tasks</h2>
+
+<table class = "single-task">
+	<tr>
+		<th>Name</th>
+  </tr>
+
+  <tr>
+    <td><%= @selected_person.name %></td>
+  </tr>
+</table>
+
+<table class = "single-task">
+	<tr>
+		<th>Unfinished Tasks</th>
+  </tr>
+    <% tasks_to_do = @selected_person.tasks.where("tasks.completed_at IS NULL") %>
+    <% tasks_to_do.each do |task| %>
+      <tr>
+				<td>
+					<%= task.title %>
+				</td>
+			</tr>
+    <% end %>
+</table>
+
+<table class = "single-task">
+	<tr>
+		<th>Completed Tasks</th>
+  </tr>
+    <% done_tasks = @selected_person.tasks.where("tasks.completed_at IS NOT NULL") %>
+    <% done_tasks.each do |task| %>
+      <tr><td><%= task.title %></td></tr>
+    <% end %>
+</table>

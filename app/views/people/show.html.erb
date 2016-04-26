@@ -1,0 +1,26 @@
+<h2>Personal Details</h2>
+
+<table class = "single-task">
+	<tr>
+		<th>Name</th>
+    <th>Unfinished Tasks</th>
+    <th>Finished Tasks</th>
+	</tr>
+
+  <% tasks_to_do = @selected_person.tasks.where("tasks.completed_at IS NULL") %>
+  <% done_tasks = @selected_person.tasks.where("tasks.completed_at IS NOT NULL") %>
+
+  <tr>
+    <td>
+			<%= @selected_person.name %>
+		</td>
+    <td>
+			<%= tasks_to_do.length %>
+		</td>
+    <td>
+			<%= done_tasks.length %>
+		</td>
+  </tr>
+</table>
+
+<%= link_to "Full Task List", all_tasks_path(@selected_person.id) %>
