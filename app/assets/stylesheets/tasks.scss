@@ -76,7 +76,7 @@ header li a:hover{
 }
 
 .task-item {
- background-image: url("../assets/chalkboard.png");
+ // background-image: url("../assets/chalkboard.png");
  background-position: center;
  background-repeat: no-repeat;
  display: inline-block;
@@ -87,6 +87,7 @@ header li a:hover{
  text-align: left;
  width: 205px;
  overflow: auto;
+ background-size: 100%;
  border-style: dotted;
  border-color: blue;
 }

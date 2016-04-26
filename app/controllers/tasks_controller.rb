@@ -39,11 +39,13 @@ class TasksController < ApplicationController
   end
 
   def update
+    # assigning the value of id to an instance @task
     @task = Task.find(params[:id])
     if @task.update_attributes(task_edit_params[:task])
-      # flash[:success] = "Profile updated"
+
       redirect_to "/tasks/#{@task.id}"
     else
+      flash[:error] = @task.errors.full_messages
       render :new
     end
   end
@@ -52,7 +54,7 @@ class TasksController < ApplicationController
     @task = Task.where(id: params[:id])
     @task.destroy_all
       redirect_to root_path
-  #     flash[:alert] = "Task deleted"
+      flash[:alert] = "Task deleted"
   end
 
 
@@ -68,6 +70,7 @@ class TasksController < ApplicationController
        render :new
       end
   end
+
 
 
 

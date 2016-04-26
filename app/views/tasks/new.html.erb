@@ -9,6 +9,17 @@
 <%= f.label :description %>
 <%= f.text_field :description %>
 
+<!-- this will render anywhere on the page -->
+
+<% if flash[:error] != nil %>
+<div>
+  <!-- this is an array of errors  -->
+  <% flash[:error].each do |msg|%>
+  <%= msg %>
+  <% end %>
+</div>
+<% end %>
+
 <%= f.select :person_id, Person.all.map {|person| [person.name, person.id]} %>
 
 <%= f.submit %>
