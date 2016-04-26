@@ -1,4 +1,7 @@
 class Task < ActiveRecord::Base
-  belongs_to :person
+
   validates :name, :description, presence: true
+  validates :label_code, presence: true
+
+    belongs_to :person
 end

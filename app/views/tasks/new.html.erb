@@ -1,6 +1,6 @@
 <h1> Test </h1>
 
-<pre><%= params %></pre>
+<!-- <pre><%= params %></pre> -->
 
 <%= form_for @task do |f| %>
 <%= f.label :name %>
@@ -11,17 +11,28 @@
 
 <!-- this will render anywhere on the page -->
 
-<% if flash[:error] != nil %>
-<div>
-  <!-- this is an array of errors  -->
-  <% flash[:error].each do |msg|%>
-  <%= msg %>
+<% if @task.errors.any? %>
+<ul class= "errors">
+  <% @task.errors.each do |column, message| %>
+  <li>
+    <strong><%=column.capitalize %></strong> <%= message %>
+  </li>
   <% end %>
-</div>
+</ul>
 <% end %>
 
 <%= f.select :person_id, Person.all.map {|person| [person.name, person.id]} %>
-
 <%= f.submit %>
 
+<% end %>
+
+
+<!-- ========================================================================== -->
+<!-- another way to write an error message -->
+<!-- #<% if flash[:error] != nil %> -->
+<!-- <div>
+  <!- #<% flash[:error].each do |msg|%> -->
+  <!-- <%= msg %>
+  <% end %>
+</div>
 <% end %>

@@ -26,7 +26,8 @@ class TasksController < ApplicationController
     if @task.save  #save returns true if the database insert succeeds
       #begins new request,
       redirect_to root_path # go to the index so we can see the album in the list
-    else  # save failed
+    else  # if save failed
+      flash[:error] = @task.errors.full_messages
       # ends current request
       render :new # show the new task form view again
     end
@@ -42,7 +43,6 @@ class TasksController < ApplicationController
     # assigning the value of id to an instance @task
     @task = Task.find(params[:id])
     if @task.update_attributes(task_edit_params[:task])
-
       redirect_to "/tasks/#{@task.id}"
     else
       flash[:error] = @task.errors.full_messages
@@ -81,11 +81,11 @@ private
   end
 
   def task_edit_params
-    params.permit(task: [:name, :description, :person_id])
+    params.permit(task: [:name, :description, :person_id, :label_code])
   end
 
   def completed_params
-    params.permit(task: [:completed_at, true])
+    params.permit(task: [:completed_at, true, :label_code])
   end
 end
 
