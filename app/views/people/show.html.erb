@@ -3,3 +3,5 @@
   <li>Description: <%= @person.email %></li>
   <li>Unfinished Tasks: <%=Task.where(person_id: @person.id, completed_at: nil).length%></li>
 </ul>
+
+<%= link_to "See all tasks", "/people/#{@person.id}/tasks" %>
