@@ -1,0 +1,13 @@
+<h1>List of People</h1>
+<div class="task-container">
+ <% @people.each do |person| %>
+ <%= link_to person.name, "/people/#{person.id}" %>
+ <% person.tasks.each do |task| %>
+   <% uncompleted_tasks = [] %>
+    <% if task.completion_status != "done" %>
+    <% uncompleted_tasks << task %>
+    <%= uncompleted_tasks.length %>
+    <% end %>
+ <% end %>
+<% end %>
+</div>

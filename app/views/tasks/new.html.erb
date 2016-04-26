@@ -1,0 +1,38 @@
+<h1> Test </h1>
+
+<!-- <pre><%= params %></pre> -->
+
+<%= form_for @task do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<%= f.label :description %>
+<%= f.text_field :description %>
+
+<!-- this will render anywhere on the page -->
+
+<% if @task.errors.any? %>
+<ul class= "errors">
+  <% @task.errors.each do |column, message| %>
+  <li>
+    <strong><%=column.capitalize %></strong> <%= message %>
+  </li>
+  <% end %>
+</ul>
+<% end %>
+
+<%= f.select :person_id, Person.all.map {|person| [person.name, person.id]} %>
+<%= f.submit %>
+
+<% end %>
+
+
+<!-- ========================================================================== -->
+<!-- another way to write an error message -->
+<!-- #<% if flash[:error] != nil %> -->
+<!-- <div>
+  <!- #<% flash[:error].each do |msg|%> -->
+  <!-- <%= msg %>
+  <% end %>
+</div>
+<% end %>

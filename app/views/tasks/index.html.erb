@@ -1,0 +1,22 @@
+<img src="assets/todolist.png" alt="to_do_list">
+
+<div class="task-container">
+ <% @tasks.each do |task| %>
+  <div class="task-item">
+    <%= link_to task.name, "/tasks/#{task.id}" %>
+        <%= task.description %>
+
+      <% if task.person != nil %>
+        Assigned to: <%= task.person.name %>
+
+        Completed on: <%= task.completed_at %>
+
+      <% end %>
+        <%= link_to "people", "/people" %>
+        <%= button_to "Edit", "/tasks/#{task.id}/edit", method: :get %>
+        <%= button_to "Complete?", "/tasks/#{task.id}/complete", method: :patch %>
+        <%= button_to "Delete", "/tasks/#{task.id}", method: :delete,
+        :onclick => "return confirm('Are you sure you want to delete this task?')" %> <br/> <br/>
+      </div>
+      <% end %>
+</div>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TaskListRails</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header>
+    <nav>
+        <ul>
+          <li class="home_link"><%= link_to "Home", root_path %></li>
+          <li class="add_task_link"><%= link_to "Add Task", '/tasks/new' %></li>
+        </ul>
+      </nav>
+    </header>
+
+<%= yield %>
+
+</body>
+</html>

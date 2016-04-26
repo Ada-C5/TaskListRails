@@ -1,0 +1,93 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+  box-sizing: border-box;
+}
+
+html { font: normal normal 16px/1.5 Century Gothic; }
+
+body {
+}
+
+h1 {
+margin-left: 42rem;
+margin-top: -5rem;
+padding-top: 8rem;
+font-size: 21px;
+}
+
+header a {
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  color: #FFFFFF;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.home_link {
+  padding: 27px 8px 0 21px;
+  clear: left;
+  list-style-type: none;
+  margin-top:0.8%;
+  margin: 0 10px;
+  vertical-align: top;
+  width: 100px;
+  height: 100px;
+  background: rgb(161, 200, 162);
+  border-radius: 50px;
+}
+
+.add_task_link  {
+  padding: 11px 0px 0 29px;
+  clear: left;
+  list-style-type: none;
+  margin: 31px 0px 0px 12px;
+  vertical-align: top;
+  width: 100px;
+  height: 100px;
+  background: rgb(161, 200, 162);
+  border-radius: 50px;
+}
+
+header {
+  background: white url("../assets/palms.png") center repeat;
+  // background-repeat: round;
+  border-style: solid;
+  border-color: rgb(33, 48, 63);
+}
+
+header li a:hover{
+  color: #0c7113;
+}
+
+.task-container {
+ background-color: rgba(255,255,255,.7);
+ // border-radius: 5px;
+ color:#4D434F;
+ display: flex;
+ flex-wrap: wrap;
+ // margin: auto;
+ overflow: auto;
+ // padding: 2%;
+ border-style: dotted;
+ border-color: red;
+ width: 100%;
+
+}
+
+.task-item {
+ // background-image: url("../assets/chalkboard.png");
+ background-position: center;
+ background-repeat: no-repeat;
+ display: inline-block;
+ font-size: 20px;
+ font-weight: 300;
+ margin: .5rem;
+ padding: 0rem;
+ text-align: left;
+ width: 205px;
+ overflow: auto;
+ background-size: 100%;
+ border-style: dotted;
+ border-color: blue;
+}
