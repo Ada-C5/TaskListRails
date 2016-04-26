@@ -1,0 +1,14 @@
+<h1> Here's the list of tasks: </h1>
+
+<ul class = "task_info">
+  <li><div class="tag">Name:</div><%=@task.name%></li>
+  <li><div class="tag">Description:</div><%=@task.description%></li>
+  <li><div class="tag">Completed at:</div><%=@task.completed_at%></li>
+  <li><div class="tag">Belongs to:</div>
+    <% if @task.person_id.nil? %>
+      <div class = "small_print">Not assigned yet.</a>
+    <% else %>
+      <%=@task.person_id%></li>
+    <% end %>
+  </ul>
+  <div class = "action_link"><%= link_to 'Edit', "/tasks/#{@task.id}/edit", method: :get %></div>

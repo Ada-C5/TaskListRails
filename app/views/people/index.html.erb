@@ -1,0 +1,23 @@
+<h1> Here's the list of People: </h1>
+
+<table class = "person_list">
+<tr>
+  <th>Name</th>
+  <th>Uncompleted Tasks</th>
+  <th>All Tasks</th>
+</tr>
+<% @people.each do |person| %>
+<tr>
+  <td>
+    <%= link_to person.name, "/people/#{person.id}" %>
+  </td>
+  <td>
+    <%= Task.where(person_id: person.id).where.not(completed_at: nil).count %>
+  </td>
+  <td>
+    <%= link_to "See all tasks", "/people/#{person.id}/tasks" %>
+  </td>
+
+</tr>
+<% end %>
+</table>
