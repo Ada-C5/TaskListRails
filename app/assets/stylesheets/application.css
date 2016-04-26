@@ -27,13 +27,37 @@
  */
 
 
+.index_people:before{
 
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-image: url("./type.jpg");
+  width: 100%;
+  height: 100%;
+  opacity : 100.0;
+  z-index: -1;
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
+
+}
+
+.index_people{
+  margin-top: 18%;
+  margin-left: 20%;
+  position: relative;
+  font-family: American Typewriter;
+  list-style-type: none;
+
+
+}
 
 
 
 .heading{
    text-align: center;
-
 }
 
 .index{
