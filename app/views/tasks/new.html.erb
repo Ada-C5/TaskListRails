@@ -13,7 +13,11 @@
     <% end %>
 
     <%= f.label :person do %>
-      <%= collection_select(:person, :person_id, Person.all, :id, :name, {include_blank: "Assign Task"}) %>
+      <% if @task.person_id %>
+        <%= collection_select(:person, :person_id, Person.all, :id, :name, {include_blank: "Assign Task", selected: @task.person.id }) %>
+      <% else %>
+        <%= collection_select(:person, :person_id, Person.all, :id, :name, {include_blank: "Assign Task"}) %>
+      <% end %>
     <% end %>
 
     <%= f.submit class: "button" %>
