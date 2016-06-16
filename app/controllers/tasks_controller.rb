@@ -46,7 +46,6 @@ class TasksController < ApplicationController
 		show_completed
 	end
 
-
 	def delete
 	Task.find(params[:id]).destroy
    redirect_to root_path
