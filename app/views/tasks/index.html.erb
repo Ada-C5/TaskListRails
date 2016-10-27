@@ -1,0 +1,40 @@
+<h1>Here is the big list of things I have to do!!!!</h1>
+<div class="task-container">
+   <%@all_tasks.each do |task| %>
+   <% if task.completed_at == "" %>
+
+   <div class="task-item">
+     <% elsif task.completed_at != "" %>
+
+    <div class="task-item-azul">
+      <% else %>
+      <%= "ERROR" %>
+
+      <% end %>
+
+     <p class="text">
+     <%= link_to task.name, task_path(task.id)%>
+       <br>
+       <%=task.completed_at%>
+       <br>
+       <% if task.person %>
+          <%= task.person.name %>
+       <% end %>
+
+     </p>
+     <div class="buttons">
+
+
+
+<%= button_to "Edit", edit_task_path(task.id), method: :get %>
+<% if task.completed_at == ""%>
+<%= button_to "Completed!!", completed_path(task.id), method: :patch %>
+  <% else %>
+<%= button_to "Opps um!!", uncompleted_path(task.id), method: :patch %>
+<% end %>
+
+<%= button_to "Remove That", destroy_path(task.id), method: :delete, data: { confirm: "Are you sure?" }  %>
+</div>
+</div>
+ <%end%>
+</div>

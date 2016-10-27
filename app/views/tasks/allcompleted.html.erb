@@ -1,0 +1,18 @@
+<h1>Here are all the completed tasks!!!!</h1>
+<div class="task-container">
+
+  <%@all_tasks.each do |task| %>
+  <div class="task-item-azul">
+    <p class="text"><%= link_to task.name, task_path(task.id)%>
+      <br>
+      <%=task.completed_at%>
+    </p>
+
+    <div class="buttons">
+      <%= button_to "Opps um!!", uncompleted_path(task.id), method: :patch %>
+      <%= button_to "Remove That", destroy_path(task.id), method: :delete, data: { confirm: "Are you sure?" }  %>
+    </div>
+  </div>
+
+  <%end%>
+</div>

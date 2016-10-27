@@ -1,0 +1,26 @@
+<h1>HI!! Let's add a new task!</h1>
+<div class="task-container">
+
+<div class="form">
+<%= form_for @task, class: "main-form" do |f| %>
+
+<%= f.label :name, value="New Task" %>
+<%= f.text_field :name, :require => true %>
+<br>
+<%= f.label :description %>
+<%= f.text_field :description %>
+<br>
+
+<%= f.label :completed_at, value="If completed, when?" %>
+<%= f.text_field :completed_at %>
+<br>
+
+<%= f.label :person_id, value="Who's doing it?" %>
+<%= f.collection_select :person_id, Person.all, :id, :name, :require => true, class: "drop" %>
+<br>
+<br>
+<br>
+<%= f.submit %>
+<% end %>
+</div>
+</div>
