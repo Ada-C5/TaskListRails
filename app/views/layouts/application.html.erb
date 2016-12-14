@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Travel Checklist</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
+  <link href='https://fonts.googleapis.com/css?family=Sofia|Oswald|Calligraffitti|Karla|Marck+Script' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<div class="header-wrapper">
+<header>
+<%= image_tag "sailboat.png", alt: "sailboat in ocean during sunset" %>
+<h1>Travel Checklist</h1>
+
+<nav>
+<ul>
+  <li><%= link_to 'home', root_path, class: "nav-links" %></li>
+  <span>|</span>
+  <li><%= link_to 'add a new task', '/tasks/new', class: "nav-links" %></li>
+  <span>|</span>
+  <li><%= link_to 'completed tasks', '/tasks/completed', class: "nav-links" %></li>
+    <span>|</span>
+  <li><%= link_to 'travelers', '/people', class: "nav-links" %></li>
+</ul>
+</nav>
+	</header>
+	</div>
+<body>
+
+<%= yield %>
+
+</body>
+</html>

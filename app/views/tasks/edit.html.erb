@@ -1,0 +1,21 @@
+<h2 class="forms">Edit Task</h2>
+<div class="form-formatting">
+<%= form_for @edit, method: :patch, url: edit_update_path(@edit) do |f| %>
+	<%= f.label :'Title:' %>
+	<br>
+	<%= f.text_field :title, class: 'field' %>
+	<br>
+	<%= f.label :'Description:' %>
+	<br>
+	<%= f.text_field :description, class: 'field' %>
+	<br>
+	<%= f.label :'Reassign to:' %>
+	<br>
+ <%= f.select(:person_id) do %>
+ 	<%= options_from_collection_for_select(Person.all, :id, :name, @current_user) %>
+<% end %>
+<br>
+			<%= f.submit %>
+	<% end %>
+
+	</div>
